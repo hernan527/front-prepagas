@@ -38,7 +38,10 @@
               "src/assets/css/style.min6a4d.css",
               "src/assets/css/magnific-popup.css",
               "src/assets/css/classic-themes.min68b3.css",
-              "src/assets/css/queplan/style-queplan.css"
+              "src/assets/css/queplan/style-queplan.css",
+              "src/assets/css/main.css"
+
+    
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
@@ -109,7 +112,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.css",
+   "./node_modules/bootstrap/dist/css/bootstrap.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "node_modules/primeng/resources/themes/saga-blue/theme.css",
@@ -121,8 +124,8 @@
               "src/assets/css/style.min6a4d.css",
               "src/assets/css/magnific-popup.css",
               "src/assets/css/classic-themes.min68b3.css",
-              "src/assets/css/queplan/style-queplan.css"
-
+              "src/assets/css/queplan/style-queplan.css",
+              "src/assets/css/main.css"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js", 

@@ -54,8 +54,10 @@
         <!-- <app-filters-products [product]="products" ></app-filters-products> -->
         <aside class="col-lg-3 filters-sidebar">
           <app-filters-products
-          
-        
+          [isSmallScreen]="isSmallScreen"
+          [product]="products"
+          [sidebarVisible]="sidebarVisible"
+          [anchoSidebar]="anchoSidebar"
         ></app-filters-products>
       </aside>
 
@@ -286,3 +288,4 @@
                   </div>
               </p-dialog>
           </div>
+        
