@@ -24,6 +24,7 @@ import rfdc from 'rfdc';
 import { Credit } from './../../../../data/interfaces';
 import { CREDIT_DATA_ITEMS } from './../../../../data/constants/mock';
 import { Planes } from  './../../../../data/interfaces/planes';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 declare var addProp:any;
 declare var desectItem:any;
 declare var showandHide:any;
@@ -111,7 +112,7 @@ selectedRating : FormControl = new FormControl('');
   formDataInicialJSON: any[];
   sidebarVisible = false; // Por defecto, el sidebar está visible
   anchoSidebar = '80%'; // Ancho por defecto del sidebar
-
+  isSmallScreen = false; // Aquí debes tener la propiedad isSmallScreen
   		// data constants
       public credits: Credit[] = CREDIT_DATA_ITEMS;
 
@@ -131,7 +132,8 @@ selectedRating : FormControl = new FormControl('');
     private productoService:ProductsService,
     private cotizacionService: CotizacionService,
     private localStorageService: LocalStorageService,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private breakpointObserver: BreakpointObserver
     ) {
       this.buildForm();
       this.formDataInicial = this.formBuilder.group({
@@ -601,21 +603,49 @@ closeButon() {
       this.planes = planes;
       this.empresas = empresas;
     });
-   
-         
-      const formData = this.dataFormularios.getFormularioData();
 
-      caches.open('products').then(cache => {
-        cache.match('productos').then(response => {
-          if (!formData && response) {
+    this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Tablet])
+    .subscribe(result => {
+      this.isSmallScreen = result.matches;
+    });
+  
+      let formularioData = this.dataFormularios.getFormularioData();
+      console.log('formData   results 608:', formularioData)
+      console.log('formularioData', formularioData)
+      console.log('formularioData   :', formularioData.storedData)
+
+      const storedData = formularioData.storedData;
+      console.log('storedData', storedData)
+      let formData = formularioData.formdata;
+      console.log('formData   :', formData)
+
+
+      if (!formData || formData === undefined || formData === null) {
+        console.log('formData if', formData)
+        console.log('formData if this', this.formData)
+        console.log('storedData', storedData)
+
+        // Corregir la asignación de this.formData
+        formData = storedData;
+    }
+
+
+
+
+   
+    
+      caches.open('formData').then(cache => {
+        cache.match('formData').then(response => {
+          if (!formData) {
             // 'this.products' se encuentra en la caché, puedes obtener los datos
-            response.json().then(products => {
-             console.log('productos GET en cache', products);
-             this.productosFiltrados = products
+             response.json().then(products => {
+             console.log('formData GET en cache', formData);
+             this.formData = formData
            });
           } 
       
-       
+          console.log('this.formData 643', formData);
+
   
         this.cotizacionService.getPrecios(formData).subscribe(
           (response: Planes) => {
@@ -625,7 +655,7 @@ closeButon() {
       
            
          
-            const tipo: string = formData.tipo;                       
+            // const tipo: string = formData.tipo;                       
 
             
             this.products = response;
@@ -634,9 +664,13 @@ closeButon() {
 caches.open('products').then(cache => {
   // Almacena 'this.products' en la caché
   const productosResponse = new Response(JSON.stringify(this.productosFiltrados));
-  cache.put('productos', productosResponse);  
+  cache.put('productos', productosResponse); 
+  const formDataResponse = new Response(JSON.stringify(formData));
+  cache.put('formData', formDataResponse); 
 
   console.log('productos PUT en cache', productosResponse )
+  console.log('formData PUT en cache', formDataResponse )
+
 });
       
                      },

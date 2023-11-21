@@ -46,41 +46,53 @@
 
 
 
+  		
 
-<div class="item row mb-5 shadow d-flex text-center justify-content-center align-items-center bg-primary">
-	
+<div class="row card-insurance shadow d-flex text-center justify-content-center align-items-center"  style="padding-left:0px;margin-left:0px" >
 
-	<div class="col-12 col-lg-10 bg-white card-insurance" [ngClass]="product.compare ? 'product compare' : 'product'">	
+	<span class="land"></span>
 
-		<div class="row">
-			<div class="col-lg-3">
-				<img [src]="product.images[0].url" [alt]="product.name" />
-				<div class="col-xl-4 col-sm-6">
+	<div class="col-12 col-lg-10  " [ngClass]="product.compare ? 'product compare' : 'product'">	
+		
+
+		<div class="row ">
+			<div class="col-lg-3 " >
+				<div class="itemside align-items-center">
+			<div class="aside" style="margin-top:20px;margin-bottom:20px;background-color:red;margin-left:0px;margin-right: 0px;">
+					<img [src]="product.images[0].url" [alt]="product.name" [ngStyle]="{ 'width': '100%', 'height': 'auto' }" />
+				</div>
+			<div class="info" style="text-align: left;font-size: 10px;margin-top:20px">
 					<span>
-					<i class="me-2 text-success fa fa-check"></i> Free worldwide shipping </span>
+					<i class="me-2 text-success fa fa-check"></i> Free worldwid</span>
 					<br>
 					<span>
-					<i class="me-2 text-success fa fa-check"></i> Pay with installment </span>
+					<i class="me-2 text-success fa fa-check"></i> Pay with </span>
 				  </div>
+
+
+<div class="rating-wrap" style="border:none;margin-top:40px">
+    <p-rating [(ngModel)]="value" [readonly]="true" [stars]=5 [cancel]="false"></p-rating>
+</div>
 			</div>
-			
+		</div>
 			<div class="col-lg-9 pt-2">
 				<div class="row g-2 justify-content-center">
 					<div class="col-6 col-md-4">
-						<small class="d-block text-uppercase fw-bold">Nombre del Plan</small>
-						<h2 class="my-0">{{product.name}}</h2>
-						<div class="form-text text-extra-small fw-bolder text-uppercase">Dólares americanos</div>
+						<small class="d-block text-uppercase fw-bold">Valor </small>
+						<h5 class="my-0">{{ product.valorLista }}</h5>
+						<div class="form-text text-extra-small fw-bolder text-uppercase" style="font-size:8px">Dólares americanos</div>
 					</div>
 					<div class="col-6 col-md-4">
 						<small class="d-block text-uppercase fw-bold">Precio</small>
-						<h2 class="my-0">{{ product.precio }}</h2>
-						<div class="form-text text-extra-small fw-bolder text-uppercase">valor opcional</div>
+						<h5 class="my-0">{{ product.precio }}</h5>
+						<div class="form-text text-extra-small fw-bolder text-uppercase" style="font-size:8px">valor opcional</div>
 					</div>
 					<div class="col-6 col-md-4">
-						<small class="d-block text-uppercase fw-bold">Valor Plan</small>
-						<h2 class="my-0">{{ product.valorLista }}</h2>
-						<div class="form-text text-extra-small fw-bolder text-uppercase"></div>
+						<small class="d-block text-uppercase fw-bold">Plan</small>
+						<h5 class="my-0">{{ getFormattedProductName() }}</h5>
+						<div class="form-text text-extra-small fw-bolder text-uppercase" style="font-size:8px"></div>
 					</div>
+					<!-- <h5>ReadOnly</h5>  -->
 				</div>
 				<hr />
 				<div class="row g-2 pb-3 pb-lg-0">
@@ -88,70 +100,76 @@
 						<span class="form-text text-extra-small fw-bolder"><i class="fal fa-hospital icon mr-1" [ngStyle]="iconStyles"></i> Prestadores </span>
 
 						<!-- <div class="form-text text-extra-small fw-bolder text-uppercase">Promoción</div> -->
-						<h5 class="text-muted mb-0">{{ product.promoPorcentaje * 100}} %: {{ product.promoDescuento }}</h5>
+						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.promoPorcentaje * 100}} %: {{ product.promoDescuento }}</h5>
 					</div>
 					<div class="col-6 col-md-3">
-						<span class="form-text text-extra-small fw-bolder"><i class="fal icon mr-1 fa-procedures" [ngStyle]="iconStyles"></i> Internación </span>
+						<span class="form-text text-extra-small fw-bolder" style="font-size:9px"><i class="fal icon mr-1 fa-procedures" [ngStyle]="iconStyles"></i> Internación </span>
 						<!-- <div class="form-text text-extra-small fw-bolder text-uppercase">Aporte Obra Social</div> -->
-						<h5 class="text-muted mb-0">{{ product.aporteOS }}</h5>
+						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.aporteOS }}</h5>
 					</div>
 					<div class="col-6 col-md-3">
-						<span container="body" class="form-text text-extra-small fw-bolder">
+						<span container="body" class="form-text text-extra-small fw-bolder" style="font-size:9px">
 							<i class="fal icon mr-1 fa-user-md" [ngStyle]="iconStyles"></i> Ambulatoria </span>
 						<!-- <div class="form-text text-extra-small fw-bolder text-uppercase">monto de crédito</div> -->
-						<h5 class="text-muted mb-0">{{ product.aporteOS }}</h5>
+						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.aporteOS }}</h5>
 					</div>
 					<div class="col-6 col-md-3">
-						<span container="body" class="form-text text-extra-small fw-bolder">
+						<span container="body" class="form-text text-extra-small fw-bolder" style="font-size:9px">
 							<i class="fal icon mr-1 fa-heart-rate" [ngStyle]="iconStyles"></i> Urgencia </span>
 						<!-- <div class="form-text text-extra-small fw-bolder text-uppercase">crédito bancario</div> -->
-						<h5 class="text-muted mb-0">{{ product.aporteOS }}</h5>
+						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.aporteOS }}</h5>
 					</div>
 				</div>
 				<div class="row g-2 pb-3 pb-lg-0">
 					<div class="col-6 col-md-3">
-						<div class="form-text text-extra-small fw-bolder text-uppercase">Promoción</div>
-						<h5 class="text-muted mb-0">{{ product.promoPorcentaje * 100}} %: {{ product.promoDescuento }}</h5>
+						<div class="form-text text-extra-small fw-bolder text-uppercase" style="font-size:9px">Promoción</div>
+						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.promoPorcentaje * 100}} %: {{ product.promoDescuento }}</h5>
 					</div>
 					<div class="col-6 col-md-3">
-						<div class="form-text text-extra-small fw-bolder text-uppercase">Aporte Obra Social</div>
-						<h5 class="text-muted mb-0">{{ product.aporteOS }}</h5>
+						<div class="form-text text-extra-small fw-bolder text-uppercase" style="font-size:9px">Aporte Obra Social</div>
+						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.aporteOS }}</h5>
 					</div>
 					<div class="col-6 col-md-3">
-						<div class="form-text text-extra-small fw-bolder text-uppercase">monto de crédito</div>
-						<h5 class="text-muted mb-0">{{ product.aporteOS }}</h5>
+						<div class="form-text text-extra-small fw-bolder text-uppercase" style="font-size:9px">monto de crédito</div>
+						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.aporteOS }}</h5>
 					</div>
 					<div class="col-6 col-md-3">
-						<div class="form-text text-extra-small fw-bolder text-uppercase">crédito bancario</div>
-						<h5 class="text-muted mb-0">{{ product.aporteOS }}</h5>
+						<div class="form-text text-extra-small fw-bolder text-uppercase" style="font-size:9px">crédito bancario</div>
+						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.aporteOS }}</h5>
 					</div>
 				</div>
 			</div>
+			
 		</div>
+		
+	
 	</div>
-	<div class="col-12 col-lg-2 text-white py-3 py-lg-0">
+	
+	<div class="col-12 col-lg-2 text-white py-3 py-lg-0 bg-primary" style="border-radius: 0 10px 10px 0;">
+		<div style="margin-top:10px;margin-left:0px;margin-right:0p">
 		<small class="d-block text-uppercase fw-bold">Total a pagar</small>
 		<h4 class="mb-1 me-1">{{product.precio}}</h4>
             <span class="text-danger mb-1 me-1"><s>{{product.price}}</s></span>
           
           <h6 class="text-success"><span>{{product.precio}}</span></h6>
 		<div class="form-text text-white text-extra-small fw-bolder text-uppercase pb-3">mensual</div>
-		<button (click)="openDialog(product)" class="btn btn-outline-primary btn-sm mt-2" type="button">Detalles</button>
-		<button (click)='toggleCompare()' class="btn btn-outline-primary btn-sm mt-2" type="button"> {{product.compare ? "Remover" : "Comparar"}}
+		<!-- <button (click)="openDialog(product)" class="btn btn-outline-primary btn-sm mt-2" type="button">Detalles</button> -->
+		<button *ngIf="collapsed" (click)="expand()">Expand</button>
+     <button *ngIf="!collapsed" (click)="collapse()">Collapse</button>
+		<button (click)='toggleCompare()' > {{product.compare ? "Remover" : "Comparar"}}
 		</button>
 		  <!-- <button class="btn btn-primary" >Add to cart</button> -->
+		</div>
+
 	</div>
+<!-- <div class="collapsible" [@collapse]="collapsed" style="margin:-10px;background-color: rgb(112, 33, 33);border-radius: 0px 0px 10px 10px;">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non expedita asperiores id dolore hic, recusandae reiciendis. Reiciendis maiores tenetur quidem iusto, laborum illum. Perspiciatis et veniam, iste enim ab deserunt!</p>
+	  </div>
+	 -->
 
 
 
-
-
-
-
-
-		
-
-
+	
 
 
 

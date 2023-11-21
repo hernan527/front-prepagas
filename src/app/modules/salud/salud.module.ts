@@ -13,6 +13,7 @@ import { FormQuoteComponent } from './components/atoms/form-quote/form-quote.com
 import { FormQueplanComponent } from './components/atoms/form-queplan/form-queplan.component';
 import { GetQuoteComponent } from './components/atoms/get-quote/get-quote.component';
 import { CotizarFormComponent } from './components/atoms/cotizar-form/cotizar-form.component';
+import {RatingModule} from 'primeng/rating';
 
 
 
@@ -107,6 +108,7 @@ const publicApi = [
 		TabViewModule,
 		ButtonModule,
 		TableModule,
+		RatingModule,
 
 		...modules
 	],

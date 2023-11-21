@@ -1,32 +1,4 @@
 
-.inner-first-items{
-  flex:1;
-  display:flex;
-  flex-direction:row;
-  max-width:200px
-}
-/* .individual{
-  background-image:url(../../../../../../assets/js/scripts/style/images/individual2.webp)
-}
-.pareja{
-  background-image:url(../../../../../../assets/js/scripts/style/images/pareja2.webp)
-}
-.individualehijos{
-  background-image:url(../../../../../../assets/js/scripts/style/images/individualehijos2.webp)
-}
-.parejaehijos{
-  background-image:url(../../../../../../assets/js/scripts/style/images/parejaehijos2.webp)
-} */
-/* .desregulado{
-  background-image:url()
-}
-.particular{
-  background-image:url()
-} */
-
-.inner-square-div img{
-  display:inerhit
-}
 .inner-square-dos-div{
   flex:1;
   max-width:200px;
@@ -69,8 +41,7 @@ span {
   margin: 0 10px;
 }
 /* Estilos para el botón */
-/* Estilos para el botón /*/
-/* Estilos para el botón */
+
 .btn {
   display: flex;
   align-items: center;
@@ -193,3 +164,80 @@ section {
 /* .main-container{text-align: center;} */
 	/* .main-container{margin: 0 0 10px 0;} */
 	/* .main-container b{width: 100%; margin: 0 0 15px 0; box-shadow: 0 5px 5px rgba(0,0,0,0.1);} */
+
+.button {
+    cursor: pointer;
+    padding: 0px;
+    border: none;
+    background-color: #e0e0e0;
+    margin: 0;  /* Elimina los márgenes */
+    padding: 0;  /* Elimina el relleno */
+    text-align: left;
+
+  }
+
+  
+  span {
+    font-size: 8px;
+    margin: 0px;
+    padding: 0;  /* Elimina el relleno */
+
+    text-align: left;
+  }
+
+.menos{
+  background-image:url(../../../../../../assets/css/imagens/menos.jpg)
+}
+
+.mas{
+  background-image:url(../../../../../../assets/css/imagens/mas.jpg)
+}
+.flex-contenedor{
+  /* border: 1px solid black; */
+  /* background: #ccc; */
+  padding: 0px;
+  display: flex;
+  flex-flow: row wrap;
+  /* justify-content: center; */
+  align-content: center;
+  max-height: 50px;
+  justify-content:space-between;
+}
+.inner-square-tres-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100px;
+  max-height: 50px; /* Ajusta la altura según sea necesario */
+  margin: 0;
+  padding: 0;
+}
+
+.inner-square-tres-div p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.p {
+      font-size: 8px;
+
+}
+
+.inner-square-cuatro-div {
+  flex: 1;
+  max-width: 25px;
+  max-height: 25px;
+  display: flex;
+  margin: 0;  /* Elimina los márgenes */
+  padding: 0;  /* Elimina el relleno */
+  justify-content: space-between;
+  align-items: center;
+  /* margin-top: 12,5;  Elimina los márgenes */
+
+
+}
+.inner-square-cuatro-div.active {
+  /* Estilos cuando está activo */
+  background-color: #3498db;
+  color: #fff;
+}

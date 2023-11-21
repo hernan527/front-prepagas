@@ -1,415 +1,216 @@
 .contenedor-responsivo {
-    position: relative;
-    overflow: hidden;
-    // padding-top: 56.25%;
-    margin-bottom: 10px;
-    border: rounded;
-  }
-  
-  .iframe-responsivo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-  // @import '../../styles/_variables.scss';
-  // $image-overlay-opacity: 0.7;
-  // $product-main-color: $green;
-  
-  // .product {
-  //   cursor: pointer;
-  //   position: relative;
-  //   padding-bottom: 0px;
-  //   border-radius: 5px;
-  //   overflow: hidden;
-  //   transition: all 500ms ease-out;
-  //   margin-bottom: 30px;
-  //   border: 1px solid #ddd;
-  //   &:hover {
-  //     box-shadow: 0 13px 21px -5px rgba(0, 0, 0, 0.2);
-  //     .image_overlay {
-  //       opacity: $image-overlay-opacity;
-  //     }
-  
-  //     .view_details {
-  //       opacity: 1;
-  //       width: 152px;
-  //       font-size: 15px;
-  //       margin-left: -75px;
-  //       top: 35%;
-  //       transition: all 200ms ease-out;
-  //     }
-  //   }
-  
-  //   img {
-  //     width: 100%;
-  //   }
-  
-  //   &.compare {
-  //     .image_overlay {
-  //       opacity: $image-overlay-opacity;
-  //     }
-  //   }
-  
-  //   .stats-container {
-  //     background: #fff;
-  //     padding: 25px 15px;
-  //     position: absolute;
-  //     bottom: 0;
-  //     width: 100%;
-  
-  //     .product_name {
-  //       font-size: 22px;
-  //       color: #393c45;
-  //     }
-  
-  //     p {
-  //       font-size: 16px;
-  //       color: #b1b1b3;
-  //       margin: 0;
-  //     }
-  
-  //     .product_price {
-  //       float: right;
-  //       color: $product-main-color;
-  //       font-size: 22px;
-  //       font-weight: 600;
-  //     }
-  //   }
-  
-  //   .image_overlay {
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     width: 100%;
-  //     height: 100%;
-  //     background: $product-main-color;
-  //     opacity: 0;
-  //     transition: all 200ms ease-out;
-  //   }
-  
-  //   .view_details {
-  //     position: absolute;
-  //     top: 112px;
-  //     left: 50%;
-  //     margin-left: -85px;
-  //     border: 2px solid #fff;
-  //     color: #fff;
-  //     font-size: 19px;
-  //     text-align: center;
-  //     text-transform: uppercase;
-  //     font-weight: 700;
-  //     padding: 10px 0;
-  //     width: 172px;
-  //     opacity: 0;
-  //     transition: all 200ms ease-out;
-  
-  //     &:hover {
-  //       background: #fff;
-  //       color: $product-main-color;
-  //       cursor: pointer;
-  //     }
-  //   }
-  // }
-  .ll-hero {
-    background: linear-gradient(180deg, #314080 40%, rgba(49, 64, 128, 0) 100%);    padding: 200px 0 100px;
-    position: relative;
-    .container {
-      position: relative;
-      z-index: 3;
-    }
-    &__particles {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    &-text {
-      h1 {
-        font-size: 32px;
-        line-height: 50px;
-      }
-    }
-  }
-  ::ng-deep #home_hero__particles {
-    width: 100%;
-    height: 100%;
-  }
-  
-  // Service
-  .ll-service {
-    position: relative;
-    padding: 64px 15px 0px;
-    &-area {
-      padding: 80px 0;
-    }
-    &__title {
-      font-size: 40px;
-      line-height: 60px;
-      letter-spacing: 1px;
-    }
-    .number {
-      position: absolute;
-      top: 0;
-      left: 0;
-      font-weight: 900;
-      font-size: 123px;
-      line-height: 100px;
-      color: rgba(94, 94, 94, 0.15);
-      font-family: 'Montserrat', sans-serif;
-    }
-    h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      line-height: 24px;
-    }
-    p {
-      font-size: 1rem;
-    }
-  }
-  
-  .ll-about {
-    &__text {
-      h2 {
-        font-size: 38px;
-        line-height: 50px;
-        letter-spacing: 1.5px;
-      }
-      h5 {
-        font-size: 21px;
-        line-height: 31px;
-      }
-      p {
-        font-size: 17px;
-        line-height: 27px;
-        color: #6b7280;
-      }
-    }
-    &__img {
-      $iconSize: 90px;
-      .mat-icon {
-        font-size: $iconSize;
-        width: $iconSize;
-        height: $iconSize;
-        line-height: $iconSize;
-        opacity: 0.8;
-        color: #fff;
-      }
-    }
-  }
-  
-  // how is it work
-  .ll-process {
-    position: relative;
-    padding: 64px 15px 0px;
-    &-area {
-      padding: 80px 0;
-    }
-    .number {
-      position: absolute;
-      top: 0;
-      left: 0;
-      font-weight: 900;
-      font-size: 123px;
-      line-height: 100px;
-      font-family: 'Montserrat', sans-serif;
-      color: rgba(255, 255, 255, 0.25);
-    }
-    h3 {
-      font-size: 1rem;
-      line-height: 24px;
-      position: relative;
-      z-index: 1;
-    }
-    p {
-      font-size: 1rem;
-      position: relative;
-      z-index: 1;
-    }
-  }
-  
-  // Starter
-  .ll-starter {
-    &__card {
-      background: linear-gradient(180deg, #314080 0%, rgba(49, 64, 128, 0.7) 100%);
-    }
-  }
-  @media (min-width: 576px) {
-    // service
-    .ll-service {
-      &__title {
-        font-size: 55px;
-        line-height: 75px;
-        letter-spacing: 3px;
-      }
-      padding: 77px 15px 25px;
-      .number {
-        font-size: 144px;
-        line-height: 115px;
-      }
-      h3 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        line-height: 24px;
-      }
-      p {
-        font-size: 1.09rem;
-      }
-    }
-    // Process
-    .ll-process {
-      padding: 77px 15px 25px;
-      .number {
-        font-size: 144px;
-        line-height: 115px;
-      }
-      h3 {
-        font-size: 1.5rem;
-      }
-      p {
-        font-size: 1.09rem;
-      }
-    }
-  }
-  @media (min-width: 992px) {
-    // service
-    .ll-service {
-      &__title {
-        font-size: 60px;
-        line-height: 75px;
-        letter-spacing: 5px;
-      }
-    }
-  }
-  @media (min-width: 1200px) {
-    // hero
-    .ll-hero {
-      &-text {
-        h1 {
-          font-size: 40px;
-          line-height: 64px;
-        }
-      }
-    }
-    // service
-    .ll-service {
-      &__title {
-        letter-spacing: 15px;
-      }
-    }
-  }
-  @media (min-width: 1440px) {
-    // hero
-    .ll-hero {
-      padding: 200px 0;
-      &-text {
-        h1 {
-          font-size: 42px;
-        }
-      }
-    }
-    // service
-    .ll-service {
-      &__title {
-        font-size: 65px;
-        letter-spacing: 20px;
-      }
-    }
-  }
-  .main-footer{     
-    position: sticky; 
-    bottom: 0;
-  }
-  
-  .feedback {
-  background-color : #31B0D5;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
-  border-color: #46b8da;
-  }
-  
-  #mybutton {
-  position: fixed;
-  bottom: -4px;
-  left: 10px;
-  z-index: 1000;
-  }
-  
-  
-  .selectedItems {
-  background-color : white;
-  width: 80px;
-  height: 800px;
-  position: fixed;
-  bottom: -4px;
-  right: 10px;
-  
-  }
-  .badge {
+  position: relative;
+  overflow: hidden;
+  // padding-top: 56.25%;
+  margin-bottom: 0px;
+  border: rounded;
+}
+
+.iframe-responsivo {
   position: absolute;
   top: 0;
-  right: 50%;
-  font-size: 12px;
-  line-height: 13px;
-  border-radius: 50%;
-  width: 13px;
-  height: 13px;
-  background-color: #ff0000; 
-  border: 4px solid #ff0000;
-  color: #ffffff;
-  text-align: center;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+// @import '../../styles/_variables.scss';
+// $image-overlay-opacity: 0.7;
+// $product-main-color: $green;
+
+// .product {
+//   cursor: pointer;
+//   position: relative;
+//   padding-bottom: 0px;
+//   border-radius: 5px;
+//   overflow: hidden;
+//   transition: all 500ms ease-out;
+//   margin-bottom: 30px;
+//   border: 1px solid #ddd;
+//   &:hover {
+//     box-shadow: 0 13px 21px -5px rgba(0, 0, 0, 0.2);
+//     .image_overlay {
+//       opacity: $image-overlay-opacity;
+//     }
+
+//     .view_details {
+//       opacity: 1;
+//       width: 152px;
+//       font-size: 15px;
+//       margin-left: -75px;
+//       top: 35%;
+//       transition: all 200ms ease-out;
+//     }
+//   }
+
+//   img {
+//     width: 100%;
+//   }
+
+//   &.compare {
+//     .image_overlay {
+//       opacity: $image-overlay-opacity;
+//     }
+//   }
+
+//   .stats-container {
+//     background: #fff;
+//     padding: 25px 15px;
+//     position: absolute;
+//     bottom: 0;
+//     width: 100%;
+
+//     .product_name {
+//       font-size: 22px;
+//       color: #393c45;
+//     }
+
+//     p {
+//       font-size: 16px;
+//       color: #b1b1b3;
+//       margin: 0;
+//     }
+
+//     .product_price {
+//       float: right;
+//       color: $product-main-color;
+//       font-size: 22px;
+//       font-weight: 600;
+//     }
+//   }
+
+//   .image_overlay {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: $product-main-color;
+//     opacity: 0;
+//     transition: all 200ms ease-out;
+//   }
+
+//   .view_details {
+//     position: absolute;
+//     top: 112px;
+//     left: 50%;
+//     margin-left: -85px;
+//     border: 2px solid #fff;
+//     color: #fff;
+//     font-size: 19px;
+//     text-align: center;
+//     text-transform: uppercase;
+//     font-weight: 700;
+//     padding: 10px 0;
+//     width: 172px;
+//     opacity: 0;
+//     transition: all 200ms ease-out;
+
+//     &:hover {
+//       background: #fff;
+//       color: $product-main-color;
+//       cursor: pointer;
+//     }
+//   }
+// }
+
+
+.main-footer{     
+  position: sticky; 
+  bottom: 0;
+}
+
+.feedback {
+background-color : #31B0D5;
+color: white;
+// padding: 10px 20px;
+border-radius: 4px;
+border-color: #46b8da;
+}
+
+#mybutton {
+position: fixed;
+bottom: -4px;
+left: 10px;
+z-index: 1000;
+}
+
+
+.selectedItems {
+background-color : white;
+width: 80px;
+height: 800px;
+position: fixed;
+bottom: -4px;
+right: 10px;
+
+}
+.badge {
+position: absolute;
+top: 0;
+right: 50%;
+font-size: 12px;
+line-height: 13px;
+border-radius: 50%;
+width: 13px;
+height: 13px;
+background-color: #ff0000; 
+border: 4px solid #ff0000;
+color: #ffffff;
+text-align: center;
+}
+.child {
+
+.inner-first {
+  
+}
+margin: 0px ;
+}
+
+.pt-2{
+  justify-content: center;
+}
+  
+  .icon {
+    font-size: 24px; /* El tamaño que desees */
   }
-  .child {
   
-  margin: 0 auto;
+  .icon {
+    color: #ff0000; /* Cambia #ff0000 al color que desees en formato hexadecimal, RGB, o nombre del color */
   }
+  .item-title[_ngcontent-dcc-c429]{
+    font-size:.75rem;
+    color:var(--color-secondary, #808080) 
+  }
+  .card-insurance {
+    padding-top: 0px; /* Ajusta el valor según tus preferencias */
+    padding-bottom: 0px; /* Ajusta el valor según tus preferencias */
+    
+    
+    /* Puedes ajustar otros lados si es necesario */
+    }
+    
+   .row {
+    margin-bottom: 0px; /* Ajusta el valor según tus preferencias */
+    margin-right: 0px; /* Ajusta el valor según tus preferencias */
+   }
   
+     .mb-5 {
+      margin-left: 0px; /* Ajusta el valor según tus preferencias */
+      margin-right: 0px; /* Ajusta el valor según tus preferencias */
+      
+      border-radius: 10px; /* Ajusta el radio según tus preferencias */
+      overflow: hidden; /* Asegura que los bordes redondeados se apliquen correctamente */
+    }
+    
   
-    
-    .icon {
-      font-size: 24px; /* El tamaño que desees */
+    .badge-diagonal {
+      position: absolute;
+      top: 10px; /* Ajusta la posición desde la parte superior según tus preferencias */
+      right: 10px; /* Ajusta la posición desde la parte derecha según tus preferencias */
+      transform: rotate(-45deg); /* Rota el badge -45 grados */
+      background-color: #f00; /* Color de fondo del badge */
+      color: #fff; /* Color del texto del badge */
+      // padding: 5px 10px; /* Ajusta el relleno según tus preferencias */
     }
     
-    .icon {
-      color: #ff0000; /* Cambia #ff0000 al color que desees en formato hexadecimal, RGB, o nombre del color */
-    }
-    .item-title[_ngcontent-dcc-c429]{
-      font-size:.75rem;
-      color:var(--color-secondary, #808080) 
-    }
-    .card-insurance {
-      padding-top: 15px; /* Ajusta el valor según tus preferencias */
-      padding-bottom: 15px; /* Ajusta el valor según tus preferencias */
-      
-      
-      /* Puedes ajustar otros lados si es necesario */
-      }
-      
-     .row {
-      margin-bottom: 5px; /* Ajusta el valor según tus preferencias */
-      margin-right: 5px; /* Ajusta el valor según tus preferencias */
-     }
-    
-       .mb-5 {
-        margin-left: 5px; /* Ajusta el valor según tus preferencias */
-        margin-right: 5px; /* Ajusta el valor según tus preferencias */
-        
-        border-radius: 10px; /* Ajusta el radio según tus preferencias */
-        overflow: hidden; /* Asegura que los bordes redondeados se apliquen correctamente */
-      }
-      
-    
-      .badge-diagonal {
-        position: absolute;
-        top: 10px; /* Ajusta la posición desde la parte superior según tus preferencias */
-        right: 10px; /* Ajusta la posición desde la parte derecha según tus preferencias */
-        transform: rotate(-45deg); /* Rota el badge -45 grados */
-        background-color: #f00; /* Color de fondo del badge */
-        color: #fff; /* Color del texto del badge */
-        padding: 5px 10px; /* Ajusta el relleno según tus preferencias */
-      }
-      

@@ -20,7 +20,6 @@ export class CotizacionService {
     const url = `${this.url}/cotizacion`;
     console.log('en el servicio', url);
     console.log('en el servicio', formCotizar);
-    console.log('en el servicio', formCotizar);
 
     // formCotizar.coeficientes = this.coeficientes;
     return this.http.post(url, formCotizar); // Devuelve el observable directamente

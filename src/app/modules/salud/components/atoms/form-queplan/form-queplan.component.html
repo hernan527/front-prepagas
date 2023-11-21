@@ -1,16 +1,11 @@
 
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
-
-
-
-
 
 
 <script type="text/javascript" src="./../../../../../../assets/js/formularios-cotizar.js"></script>
 
 
 
-	<div id="wrapper" >
+	<div id="wrapper theme" >
 		<div class="form-cotacao"  >
 
 
@@ -34,7 +29,6 @@
 	
 	<div class="main-container">
 		<section class="flex-container">
-		<!-- <div class="inner-first-items" *ngIf="this.formCotizar.get('group').value === '' || this.formCotizar.get('group').value === 1 || this.formCotizar.get('group').value === 3"> -->
 		  <b class="btn inner-square-div img"  *ngIf="this.formCotizar.get('group').value === '' ||  this.formCotizar.get('group').value === 1" [class.active]="formCotizar.get('group').value === 1" (click)="selectGroup(1)">
 			<img src="../../../../../../assets/js/scripts/style/images/individual2.webp">
 
@@ -54,7 +48,6 @@
 	</section>
 
 	<section class="flex-container">
-		<!-- <div  class="inner-first-items"  *ngIf="this.formCotizar.get('group').value === '' || this.formCotizar.get('group').value === 2 || this.formCotizar.get('group').value === 4"> -->
 		  <b class="btn inner-square-div img" *ngIf="this.formCotizar.get('group').value === '' || this.formCotizar.get('group').value === 2" [class.active]="formCotizar.get('group').value === 2" (click)="selectGroup(2)">
 		  <img src="../../../../../../assets/js/scripts/style/images/individualehijos2.webp">
 		</b><div class="overlay"></div>
@@ -67,7 +60,46 @@
 	</section>
 	<section class="flex-container" *ngIf="this.formCotizar.get('group').value !== '' ">
 
-		<b><app-incrementor [valor]="edadTitular" (valorTitularCambiado)="cambiarEdadTitular($event)"></app-incrementor></b>
+		<b><div class="flex-contenedor">
+			<button class="btn inner-square-cuatro-div menos" id="decrementButtonTitular" (click)="decrementar('titular')">
+			</button>
+			<button class="btn inner-square-tres-div">
+			   <p>Edad del<br>titular</p>
+			   <span style="font-size:18px"><strong>{{ edadTitular }}</strong></span>
+			</button>
+			<button class="btn inner-square-cuatro-div mas"  id="incrementButtonTitular" (click)="incrementar('titular')">
+			</button> 
+		  </div>
+		  </b>
+	</section>
+	<section class="flex-container" *ngIf="this.formCotizar.get('group').value === 3  && showEdadConyuge === true || this.formCotizar.get('group').value === 4 && showEdadConyuge === true ">
+
+		<b><div class="flex-contenedor">
+			<button class="btn inner-square-cuatro-div menos" id="decrementButtonConyuge" (click)="decrementar('conyuge')">
+			</button>
+			<button class="btn inner-square-tres-div">
+			   <p>Edad de la<br>Pareja</p>
+			   <span style="font-size:18px"><strong>{{ edadConyuge }}</strong></span>
+			</button>
+			<button class="btn inner-square-cuatro-div mas"  id="incrementButtonConyuge" (click)="incrementar('conyuge')">
+			</button> 
+		  </div>
+		  </b>
+	</section>
+	
+	<section class="flex-container" *ngIf="this.formCotizar.get('group').value === 2  && showCantidadHijos === true || this.formCotizar.get('group').value === 4 && showCantidadHijos === true">
+
+		<b><div class="flex-contenedor">
+			<button class="btn inner-square-cuatro-div menos" id="decrementButtonHijos" (click)="decrementar('hijos')">
+			</button>
+			<button class="btn inner-square-tres-div">
+			   <p>Cantidad de<br>Hijos</p>
+			   <span style="font-size:18px"><strong>{{ cantidadHijos }}</strong></span>
+			</button>
+			<button class="btn inner-square-cuatro-div mas"  id="incrementButtonHijos" (click)="incrementar('hijos')">
+			</button> 
+		  </div>
+		  </b>
 	</section>
 
 	<section class="flex-container">

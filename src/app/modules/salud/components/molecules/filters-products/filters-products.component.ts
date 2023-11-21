@@ -10,6 +10,9 @@ import { Quote } from '../../../../../data/interfaces/interfaces';
   styleUrls: ['./filters-products.component.css']
 })
 export class FiltersProductsComponent implements OnInit  {
+   @Input() isSmallScreen = false;
+   @Input() sidebarVisible = false;
+   @Input() anchoSidebar: any;
   @Input() product: any[];
   @Input() productosFiltrados: any[];
   @Output() filteredProductsChange = new EventEmitter<any[]>(); // Emite los productos filtrados
@@ -39,6 +42,8 @@ export class FiltersProductsComponent implements OnInit  {
   Habitacion_Individual  = this.checkboxOptions['Habitacion_Individual'].value;
   Cobertura_Nacional = this.checkboxOptions['Cobertura_Nacional'].value;
   Sin_Copagos = this.checkboxOptions['Sin_Copagos'].value;
+ 
+
   val: number; // Variable para el valor mínimo del rango de precios
   val2: number; // Variable para el valor máximo del rango de precios
   val3: number;
@@ -46,7 +51,8 @@ export class FiltersProductsComponent implements OnInit  {
   filterKeys: string[]; // Agrega esta variable para almacenar las claves de los filtros
   priceRange: FormControl = new FormControl('');  
   quote: Quote;
- 
+  element =  document.getElementById("is3dCheckBox"); 
+
   constructor(
     private formBuilder: FormBuilder,
     private filterManagerService: ProductsService,
@@ -60,9 +66,9 @@ export class FiltersProductsComponent implements OnInit  {
     this.filtrosSeleccionadosGroup = this.formBuilder.group({
       selectedRating:[this.selectedRating.value],
       priceRange: this.rangeValues,
-        valueSlide3: [this.slide3Values.value],
+      valueSlide3: [this.slide3Values.value],
       valueSlide4: [this.slide4Values.value],
-       PMO_Solo_por_Aportes: [this.PMO_Solo_por_Aportes],
+      PMO_Solo_por_Aportes: [this.PMO_Solo_por_Aportes],
       Cirugia_Estetica: [this.Cirugia_Estetica],
       Ortodoncia_Adultos: [this.Ortodoncia_Adultos],
       Habitacion_Individual: [this.Habitacion_Individual],
@@ -71,6 +77,8 @@ export class FiltersProductsComponent implements OnInit  {
     
       });  
       this.filterManagerService.setForm(this.filtrosSeleccionadosGroup);
+
+    
   }
 
 
@@ -87,7 +95,8 @@ export class FiltersProductsComponent implements OnInit  {
     }
     console.log('Filtros seleccionados:', this.filtrosSeleccionadosGroup.value);
    
-
+         
+  
     this.filtrosSeleccionadosGroup.valueChanges.subscribe(() => {
       console.log('Filtros seleccionados han cambiado:', this.filtrosSeleccionadosGroup.value);
 // 
@@ -121,7 +130,15 @@ export class FiltersProductsComponent implements OnInit  {
       this.filtrosSeleccionadosGroup.get('selectedRating')?.setValue(selectedArray);
       // Envía el formulario actualizado al servicio
       this.filterManagerService.setFilterForm(this.filtrosSeleccionadosGroup.value);
-      this.filterManagerService.applyFiltersDespuesDeOnItemSelect()
+      this.filterManagerService.applyFiltersDespuesDeOnItemSelect();
+         
+    
+      this.filtrosSeleccionadosGroup.valueChanges.subscribe(() => {
+        console.log('Filtros seleccionados han cambiado:', this.filtrosSeleccionadosGroup.value);
+  // 
+        this.applyFilters(this.filtrosSeleccionadosGroup);
+  // 
+      });
 
     });
     
@@ -132,7 +149,15 @@ export class FiltersProductsComponent implements OnInit  {
         this.filtrosSeleccionadosGroup.get('priceRange')?.setValue(newValues);
         // Envía el formulario actualizado al servicio
         // this.filterManagerService.setFilterForm(this.filtrosSeleccionadosGroup.value);
-        // this.filterManagerService.applyFiltersDespuesDeOnItemSelect()
+        // this.filterManagerService.applyFiltersDespuesDeOnItemSelect();
+         
+      
+        this.filtrosSeleccionadosGroup.valueChanges.subscribe(() => {
+          console.log('Filtros seleccionados han cambiado:', this.filtrosSeleccionadosGroup.value);
+    // 
+          this.applyFilters(this.filtrosSeleccionadosGroup);
+    // 
+        });
 
       });
        this.slide3Values.valueChanges.subscribe((newValues) => {
@@ -141,7 +166,15 @@ export class FiltersProductsComponent implements OnInit  {
         this.filtrosSeleccionadosGroup.get('valueSlide3')?.setValue(newValues);
         // Envía el formulario actualizado al servicio
         this.filterManagerService.setFilterForm(this.filtrosSeleccionadosGroup.value);
-        this.filterManagerService.applyFiltersDespuesDeOnItemSelect()
+        this.filterManagerService.applyFiltersDespuesDeOnItemSelect();
+         
+      
+        this.filtrosSeleccionadosGroup.valueChanges.subscribe(() => {
+          console.log('Filtros seleccionados han cambiado:', this.filtrosSeleccionadosGroup.value);
+    // 
+          this.applyFilters(this.filtrosSeleccionadosGroup);
+    // 
+        });
 
       });
 
@@ -151,7 +184,22 @@ export class FiltersProductsComponent implements OnInit  {
         this.filtrosSeleccionadosGroup.get('valueSlide4')?.setValue(newValues);
         // Envía el formulario actualizado al servicio
         this.filterManagerService.setFilterForm(this.filtrosSeleccionadosGroup.value);
-        this.filterManagerService.applyFiltersDespuesDeOnItemSelect()
+        this.filterManagerService.applyFiltersDespuesDeOnItemSelect();
+           
+      
+        this.filtrosSeleccionadosGroup.valueChanges.subscribe(() => {
+          console.log('Filtros seleccionados han cambiado:', this.filtrosSeleccionadosGroup.value);
+    // 
+          this.applyFilters(this.filtrosSeleccionadosGroup);
+          
+          this.filtrosSeleccionadosGroup.valueChanges.subscribe(() => {
+            console.log('Filtros seleccionados han cambiado:', this.filtrosSeleccionadosGroup.value);
+      // 
+            this.applyFilters(this.filtrosSeleccionadosGroup);
+      //     
+          });
+    // 
+        });
 
         
       });
@@ -190,7 +238,7 @@ console.log(this.obtenerRangoDePrecios(productos))
               // Envía el formulario actualizado al servicio
               this.filterManagerService.setFilterForm(this.filtrosSeleccionadosGroup.value);
               this.filterManagerService.applyFiltersDespuesDeOnItemSelect()
-              console.log(this.filtrosSeleccionadosGroup.value);
+              console.log('Esta es la fila 194 ; ' ,this.filtrosSeleccionadosGroup.value);
 
             });
 
@@ -252,16 +300,12 @@ console.log(this.obtenerRangoDePrecios(productos))
   }
   eliminarFiltro(option: string) {
     // Cambia el valor del FormControl correspondiente al hacer clic en la "x"
-    const checkboxControl = this.filtrosSeleccionadosGroup.get(option);
-    if (checkboxControl) {
-      checkboxControl.setValue(false);
-      
-      // Cambia el estado del checkbox al mismo tiempo
-      const checkbox = document.getElementById('subscribe') as HTMLInputElement | null;
-      if (checkbox != null) {
-        checkbox.checked = false; // Establecer el checkbox como desmarcado
-      }
-    }
+    console.log('opcion :',option)
+    console.log('valor true :',this.checkboxOptions[option].value)
+    this.checkboxOptions[option].setValue(false);
+    console.log('valor false :',this.checkboxOptions[option].value)
+
+    
   
     this.filterManagerService.setFilterForm(this.filtrosSeleccionadosGroup.value);
     this.filterManagerService.applyFiltersDespuesDeOnItemSelect()
@@ -274,6 +318,7 @@ console.log(this.obtenerRangoDePrecios(productos))
     // Limpia todos los checkboxes
     this.filterKeys.forEach((key) => {
       this.filtrosSeleccionadosGroup.get(key)?.setValue(false);
+      this.checkboxOptions[key].setValue(false);
     });
     this.filterManagerService.setFilterForm(this.filtrosSeleccionadosGroup.value);
     this.filterManagerService.applyFiltersDespuesDeOnItemSelect()
@@ -295,7 +340,9 @@ console.log(this.obtenerRangoDePrecios(productos))
   console.log('Funcion en componente B activada' + form )
   console.log('Funcion en componente B activada' + this.productosFiltrados )
   this.filterManagerService.filterProducts(form,this.productosFiltrados);
+    
  }
+ 
 
   applyFilters(form: FormGroup): void {
     // Llama a la función filterProducts del servicio y pasa el formulario de filtros como argumento

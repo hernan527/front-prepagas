@@ -1,10 +1,4 @@
-.contenedor-responsivo {
-  position: relative;
-  overflow: hidden;
-  // padding-top: 56.25%;
-  margin-bottom: 10px;
-  border: rounded;
-}
+
 
 .iframe-responsivo {
   position: absolute;
@@ -14,9 +8,7 @@
   height: 100%;
   border: 0;
 }
-// @import '../../styles/_variables.scss';
-// $image-overlay-opacity: 0.7;
-// $product-main-color: $green;
+
 
 // .product {
 //   cursor: pointer;
@@ -43,16 +35,15 @@
 //     }
 //   }
 
-//   img {
-//     width: 100%;
-//   }
+  
+ 
 
 //   &.compare {
 //     .image_overlay {
 //       opacity: $image-overlay-opacity;
 //     }
 //   }
-
+// }
 //   .stats-container {
 //     background: #fff;
 //     padding: 25px 15px;
@@ -113,212 +104,12 @@
 //     }
 //   }
 // }
-.ll-hero {
-  background: linear-gradient(180deg, #314080 40%, rgba(49, 64, 128, 0) 100%);    padding: 200px 0 100px;
-  position: relative;
-  .container {
-    position: relative;
-    z-index: 3;
-  }
-  &__particles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  &-text {
-    h1 {
-      font-size: 32px;
-      line-height: 50px;
-    }
-  }
-}
-::ng-deep #home_hero__particles {
-  width: 100%;
-  height: 100%;
+
+#span {
+  font-size: 8px;
 }
 
-// Service
-.ll-service {
-  position: relative;
-  padding: 64px 15px 0px;
-  &-area {
-    padding: 80px 0;
-  }
-  &__title {
-    font-size: 40px;
-    line-height: 60px;
-    letter-spacing: 1px;
-  }
-  .number {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-weight: 900;
-    font-size: 123px;
-    line-height: 100px;
-    color: rgba(94, 94, 94, 0.15);
-    font-family: 'Montserrat', sans-serif;
-  }
-  h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 24px;
-  }
-  p {
-    font-size: 1rem;
-  }
-}
 
-.ll-about {
-  &__text {
-    h2 {
-      font-size: 38px;
-      line-height: 50px;
-      letter-spacing: 1.5px;
-    }
-    h5 {
-      font-size: 21px;
-      line-height: 31px;
-    }
-    p {
-      font-size: 17px;
-      line-height: 27px;
-      color: #6b7280;
-    }
-  }
-  &__img {
-    $iconSize: 90px;
-    .mat-icon {
-      font-size: $iconSize;
-      width: $iconSize;
-      height: $iconSize;
-      line-height: $iconSize;
-      opacity: 0.8;
-      color: #fff;
-    }
-  }
-}
-
-// how is it work
-.ll-process {
-  position: relative;
-  padding: 64px 15px 0px;
-  &-area {
-    padding: 80px 0;
-  }
-  .number {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-weight: 900;
-    font-size: 123px;
-    line-height: 100px;
-    font-family: 'Montserrat', sans-serif;
-    color: rgba(255, 255, 255, 0.25);
-  }
-  h3 {
-    font-size: 1rem;
-    line-height: 24px;
-    position: relative;
-    z-index: 1;
-  }
-  p {
-    font-size: 1rem;
-    position: relative;
-    z-index: 1;
-  }
-}
-
-// Starter
-.ll-starter {
-  &__card {
-    background: linear-gradient(180deg, #314080 0%, rgba(49, 64, 128, 0.7) 100%);
-  }
-}
-@media (min-width: 576px) {
-  // service
-  .ll-service {
-    &__title {
-      font-size: 55px;
-      line-height: 75px;
-      letter-spacing: 3px;
-    }
-    padding: 77px 15px 25px;
-    .number {
-      font-size: 144px;
-      line-height: 115px;
-    }
-    h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      line-height: 24px;
-    }
-    p {
-      font-size: 1.09rem;
-    }
-  }
-  // Process
-  .ll-process {
-    padding: 77px 15px 25px;
-    .number {
-      font-size: 144px;
-      line-height: 115px;
-    }
-    h3 {
-      font-size: 1.5rem;
-    }
-    p {
-      font-size: 1.09rem;
-    }
-  }
-}
-@media (min-width: 992px) {
-  // service
-  .ll-service {
-    &__title {
-      font-size: 60px;
-      line-height: 75px;
-      letter-spacing: 5px;
-    }
-  }
-}
-@media (min-width: 1200px) {
-  // hero
-  .ll-hero {
-    &-text {
-      h1 {
-        font-size: 40px;
-        line-height: 64px;
-      }
-    }
-  }
-  // service
-  .ll-service {
-    &__title {
-      letter-spacing: 15px;
-    }
-  }
-}
-@media (min-width: 1440px) {
-  // hero
-  .ll-hero {
-    padding: 200px 0;
-    &-text {
-      h1 {
-        font-size: 42px;
-      }
-    }
-  }
-  // service
-  .ll-service {
-    &__title {
-      font-size: 65px;
-      letter-spacing: 20px;
-    }
-  }
-}
 .main-footer{     
   position: sticky; 
   bottom: 0;
@@ -349,29 +140,31 @@ bottom: -4px;
 right: 10px;
 
 }
-.badge {
-position: absolute;
-top: 0;
-right: 50%;
-font-size: 12px;
-line-height: 13px;
-border-radius: 50%;
-width: 13px;
-height: 13px;
-background-color: #ff0000; 
-border: 4px solid #ff0000;
-color: #ffffff;
-text-align: center;
-}
+// .badge {
+// position: absolute;
+// top: 0;
+// right: 50%;
+// font-size: 12px;
+// line-height: 13px;
+// border-radius: 50%;
+// width: 13px;
+// height: 13px;
+// background-color: #ff0000; 
+// border: 4px solid #ff0000;
+// color: #ffffff;
+// text-align: center;
+// }
 .child {
 
-margin: 0 auto;
+margin: 0 ;
 }
 
-
+  
+  
+ 
   
   .icon {
-    font-size: 24px; /* El tamaño que desees */
+    font-size: 18px; /* El tamaño que desees */
   }
   
   .icon {
@@ -381,35 +174,121 @@ margin: 0 auto;
     font-size:.75rem;
     color:var(--color-secondary, #808080) 
   }
+  
+    
+   
+    
+ 
+     
+    
+    // .badge-diagonal {
+    //   position: absolute;
+    //   top: 10px; /* Ajusta la posición desde la parte superior según tus preferencias */
+    //   right: 10px; /* Ajusta la posición desde la parte derecha según tus preferencias */
+    //   transform: rotate(-45deg); /* Rota el badge -45 grados */
+    //   background-color: #f00; /* Color de fondo del badge */
+    //   color: #fff; /* Color del texto del badge */
+    //   padding: 5px 10px; /* Ajusta el relleno según tus preferencias */
+    // }
+    
+    
+
+
+
+
+  /*----------START Modelo https://uiverse.io/mrhyddenn/massive-earwig-94 ---------------------*/
+
+  .container {
+    display: flex;
+  
+  }
+
   .card-insurance {
-    padding-top: 15px; /* Ajusta el valor según tus preferencias */
-    padding-bottom: 15px; /* Ajusta el valor según tus preferencias */
-    
-    
-    /* Puedes ajustar otros lados si es necesario */
-    }
-    
-   .row {
-    margin-bottom: 5px; /* Ajusta el valor según tus preferencias */
+    margin-top: 0px;
+    margin-left: 0px;
     margin-right: 5px; /* Ajusta el valor según tus preferencias */
-   }
+    margin-bottom: 5px; /* Ajusta el valor según tus preferencias */
+    padding-top: 0px; /* Ajusta el valor según tus preferencias */
+    padding-bottom: 0px; /* Ajusta el valor según tus preferencias */
+    background-color: white;
+    position: relative;
+    border-radius: 10px; /* Ajusta el radio según tus preferencias */
+    transition: all 0.3s;
+    padding: 0px;
+ }
+ 
+ .card-insurance img {
+  width: 100%;
+  height: auto;
+}
+  .card-insurance:hover {
+    transform: scale(0.95);
+  }
   
-     .mb-5 {
-      margin-left: 5px; /* Ajusta el valor según tus preferencias */
-      margin-right: 5px; /* Ajusta el valor según tus preferencias */
-      
-      border-radius: 10px; /* Ajusta el radio según tus preferencias */
-      overflow: hidden; /* Asegura que los bordes redondeados se apliquen correctamente */
-    }
-    
+  .card-insurance .land {
+    position: absolute;
+    overflow: hidden;
+    width: 120px;
+    height: 80px;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    overflow: visible; 
+
+
+  }
   
-    .badge-diagonal {
-      position: absolute;
-      top: 10px; /* Ajusta la posición desde la parte superior según tus preferencias */
-      right: 10px; /* Ajusta la posición desde la parte derecha según tus preferencias */
-      transform: rotate(-45deg); /* Rota el badge -45 grados */
-      background-color: #f00; /* Color de fondo del badge */
-      color: #fff; /* Color del texto del badge */
-      padding: 5px 10px; /* Ajusta el relleno según tus preferencias */
-    }
-    
+  .card-insurance .land::before {
+    content: 'Premium';
+    position: absolute;
+    width: 120%;
+    height: 20px;
+    background-image: linear-gradient(0deg, #ff6547 0%, #ffb144  51%, #ff7053  100%);
+    transform: rotate(0deg) translateY(-20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.23);
+    left:-20px;
+
+  }
+  
+  .card-insurance .land::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    bottom: 0;
+    left: 0;
+    height: 10px;
+    z-index: -1;
+    // box-shadow: 140px -30px #cc3f47;
+    // background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  }
+  button {
+    font-size: 16px;
+    border: none;
+    background: #2196F3;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+.itemside {
+}
+  
+
+
+
+
+
+
+
+
+    /*----------END Modelo https://uiverse.io/mrhyddenn/massive-earwig-94 ---------------------*/

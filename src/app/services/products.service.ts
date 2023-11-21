@@ -83,6 +83,7 @@ interface SearchResult {
     private datos: FormData[]; // Variable privada para almacenar los datos  // private _state: State = {
     private eventoFiltering = new Subject<void>();
     private eventoFilterClinicas = new Subject<void>();
+    private filterCache: Map<string, any[]> = new Map();
   //   page: 1,
   //   pageSize: 10,
   //   searchTerm: '',
@@ -202,30 +203,7 @@ interface SearchResult {
   obtenerProductos(): BehaviorSubject<any[]> {
     return this.productosSubject;
   }
-  addClinicas(){
-    //  console.log(this.products)
-    //  console.log(this.clinicas)
     
-     let products = this.products;
-    
-     for ( let i = 0; i<products.length;i++){
-      console.log(this.products[i].id)
-      let clinicPlan = []
-    
-      for ( let x in this.clinicas ){
-        var incluyeid = this.clinicas[x].cartillas.includes(this.products[i].item_id);
-    
-        if ( incluyeid == true ){
-          clinicPlan.push(this.clinicas[x])
-        } 
-        this.products[i].clinicas = clinicPlan;
-      }
-    } 
-    
-    this.itemsService.setItems(this.products);
-    
-    
-    }    
     getProducts(): Observable<any> {
       return new Observable((observer) => {
             this.http.get<any>(this.serverUrl + '/planes').subscribe({
@@ -250,34 +228,40 @@ interface SearchResult {
       }
       
       private filterLogic(form: FormGroup): any[] {        // Obtiene los valores de los filtros del formulario
-        const selectedRating = form.get('selectedRating')?.value;
-        const priceRange = form.get('priceRange')?.value;
-        const valueSlide3 = form.get('valueSlide3')?.value;
-        const valueSlide4 = form.get('valueSlide4')?.value;
-        const PMO_Solo_por_Aportes = form.get('PMO_Solo_por_Aportes')?.value;
-        const Cirugia_Estetica = form.get('Cirugia_Estetica')?.value;
-        const Ortodoncia_Adultos = form.get('Ortodoncia_Adultos')?.value;
-        const Habitacion_Individual = form.get('Habitacion_Individual')?.value;
-        const Cobertura_Nacional = form.get('Cobertura_Nacional')?.value;
-        const Sin_Copagos = form.get('Sin_Copagos')?.value;
-    
+        let selectedRating= form.get('selectedRating')?.value;
+        const priceRange= form.get('priceRange')?.value;
+        const valueSlide3= form.get('valueSlide3')?.value;
+        const valueSlide4= form.get('valueSlide4')?.value;
+        const PMO_Solo_por_Aportes= form.get('PMO_Solo_por_Aportes')?.value;
+        const Cirugia_Estetica= form.get('Cirugia_Estetica')?.value;
+        const Ortodoncia_Adultos= form.get('Ortodoncia_Adultos')?.value;
+        const Habitacion_Individual= form.get('Habitacion_Individual')?.value;
+        const Cobertura_Nacional= form.get('Cobertura_Nacional')?.value;
+        const Sin_Copagos= form.get('Sin_Copagos')?.value;
+        
+
+        if(selectedRating === undefined || null ){
+          selectedRating = 0
+        }
+        
         // Realiza el filtrado de productos
         const filteredProducts = this.products.filter(product => {          // Aplica las condiciones de filtrado
           return (
             // Verifica cada condición de filtro aquí
-            (selectedRating.length === 0 ||  product.rating >= selectedRating) &&
-            (priceRange.length === 0 || (product.precio >= priceRange[0] && product.precio <= priceRange[1])) &&
-            (valueSlide3 === null || product.valueSlide3 >= valueSlide3) &&
-            (valueSlide4 === null || product.valueSlide4 >= valueSlide4) &&
-            (PMO_Solo_por_Aportes === false || product.PMO_Solo_por_Aportes === true) &&
-            (Cirugia_Estetica === false || product.Cirugia_Estetica === true) &&
-            (Ortodoncia_Adultos === false || product.Ortodoncia_Adultos === true) &&
-            (Habitacion_Individual === false || product.Habitacion_Individual === true) &&
-            (Cobertura_Nacional === false || product.Cobertura_Nacional === true) &&
-            (Sin_Copagos === false || product.Sin_Copagos === true)
+            ( selectedRating.length === 0 ||  product.rating >=  selectedRating) &&
+            ( priceRange.length === 0 || (product.precio >= priceRange[0] && product.precio <= priceRange[1])) &&
+            ( valueSlide3 === null || product.valueSlide3 >=  valueSlide3) &&
+            ( valueSlide4 === null || product.valueSlide4 >=  valueSlide4) &&
+            ( PMO_Solo_por_Aportes === false || product.PMO_Solo_por_Aportes === true) &&
+            ( Cirugia_Estetica === false || product.Cirugia_Estetica === true) &&
+            ( Ortodoncia_Adultos === false || product.Ortodoncia_Adultos === true) &&
+            ( Habitacion_Individual === false || product.Habitacion_Individual === true) &&
+            ( Cobertura_Nacional === false || product.Cobertura_Nacional === true) &&
+            ( Sin_Copagos === false || product.Sin_Copagos === true)
           );
         });
     console.log(filteredProducts)
+    
         return filteredProducts;
       }
    

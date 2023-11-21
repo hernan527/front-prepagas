@@ -7,6 +7,9 @@ import {CotizacionService} from './../../../../services/cotizacion.service';
 	styleUrls: ['./default.component.scss'],
 })
 export class DefaultComponent {
+
+	visible: boolean = false;
+
 	@HostListener('window:beforeunload', ['$event'])
 	unloadNotification($event: any): void {
         'Perdera todos los datos ingresados'
@@ -32,5 +35,7 @@ export class DefaultComponent {
 		  console.error('Error en ngOnInit:', error);
 		}
 	  }
-	  
+	  showDialog() {
+        this.visible = true;
+    }  
 }

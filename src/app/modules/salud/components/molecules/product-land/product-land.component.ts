@@ -4,7 +4,14 @@ import { MasDetallesComponent } from '../../templates/mas-detalles/mas-detalles.
 import {MatDialogModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {ServicioDeCompararService} from '../../../../../services/servicio-de-comparar.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-
+import {
+  AUTO_STYLE,
+  animate,
+  state,
+  style,
+  transition,
+  trigger
+} from '@angular/animations';
 
 export interface DialogData1 {
   name: string;
@@ -20,11 +27,20 @@ export interface DialogData1 {
   folleto:any;
 }
 
+const DEFAULT_DURATION = 300;
 
 @Component({
   selector: 'app-product-land',
   templateUrl: './product-land.component.html',
-  styleUrls: ['./product-land.component.scss']
+  styleUrls: ['./product-land.component.scss'],
+  animations: [
+    trigger('collapse', [
+      state('false', style({ height: AUTO_STYLE, visibility: AUTO_STYLE })),
+      state('true', style({ height: '0', visibility: 'hidden' })),
+      transition('false => true', animate(DEFAULT_DURATION + 'ms ease-in')),
+      transition('true => false', animate(DEFAULT_DURATION + 'ms ease-out'))
+    ])
+  ]
 })
 
 
@@ -50,7 +66,9 @@ export class ProductLandComponent implements OnInit{
   public productList : any ;
   public filterCategory : any
   public iconStyles = { '--fa-secondary-opacity': 0.6 };
-
+  collapsed = true;
+  value: number = 5;
+ 
 
   constructor(
     private modalService: ModalService,
@@ -120,5 +138,24 @@ agregarcomparar(){
     });
   }
  
+  
+    getFormattedProductName(): string {
+      // Dividir la cadena por espacios o guiones bajos y omitir el primer elemento
+      const parts = this.product.name.split(/[ _]/).slice(1);
+      // Volver a unir los elementos con un espacio en blanco
+      return parts.join(' ');
+    }
+  
+    toggle() {
+      this.collapsed = !this.collapsed;
+    }
+  
+    expand() {
+      this.collapsed = false;
+    }
+  
+    collapse() {
+      this.collapsed = true;
+    }
 
 }

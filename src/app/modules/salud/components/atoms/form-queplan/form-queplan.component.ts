@@ -1,7 +1,7 @@
 import { Options } from '@angular-slider/ngx-slider';
 import { DOCUMENT } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
-import { Component, OnInit, Input, ElementRef, Renderer2, ViewChild, Inject  } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Renderer2, ViewChild, Inject,HostListener   } from '@angular/core';
 import {FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {ServcioRetornoPrecioService} from '../../../../../services/servcio-retorno-precio.service';
 import { filter } from 'rxjs/operators';
@@ -58,7 +58,11 @@ edades_Hijos: string = '';
 sueldo: string = '';
 showTipo: boolean;
 edadTitular = 0;
+edadConyuge = 0;
+cantidadHijos = 0;
 
+showEdadConyuge: boolean = false;
+showCantidadHijos:boolean = false;
   
 
  constructor(
@@ -92,6 +96,8 @@ save(){
   console.log('Estado del formulario:', this.formCotizar.status);
   if(this.formCotizar.valid){
     console.log('Formulario en metodo save');
+    console.log(this.formCotizar.value);
+
     this.retornarService.setFormularioData(this.formCotizar.value)
 
     console.log(this.formCotizar.value);
@@ -633,6 +639,118 @@ console.log('grupo :' + groupValue)
 // Puedes agregar console.log para depuración si es necesario
 cambiarEdadTitular(nuevaEdad: number) {
     this.edadTitular = nuevaEdad;
+    this.formCotizar.get('edad_1').setValue(this.edadTitular);
+  }
+
+  private intervalTitularId: any;
+  private intervalConyugeId: any;
+  private intervalHijosId: any;
+
+  private timeoutId: any;
+  @HostListener('mousedown', ['$event'])
+
+
+
+  onMouseDown(event: Event,) {
+    if (event.target instanceof HTMLElement) {
+      const clickedButtonId = event.target.id;
+  
+      if (clickedButtonId === 'incrementButtonTitular') {
+        // Botón de incremento presionado
+        this.intervalTitularId = setInterval(() => {
+          this.incrementar('titular');
+        }, 100);
+      } else if (clickedButtonId === 'decrementButtonTitular') {
+        // Botón de decremento presionado
+        this.intervalTitularId = setInterval(() => {
+          this.decrementar('titular');
+        }, 100);
+      } else if (clickedButtonId === 'incrementButtonConyuge') {
+        // Botón de incremento presionado
+        this.intervalConyugeId = setInterval(() => {
+          this.incrementar('conyuge');
+        }, 100);
+      } else if (clickedButtonId === 'decrementButtonConyuge') {
+        // Botón de decremento presionado
+        this.intervalConyugeId = setInterval(() => {
+          this.decrementar('conyuge');
+        }, 100);
+      } else if (clickedButtonId === 'incrementButtonHijos') {
+        // Botón de incremento presionado
+        this.intervalHijosId = setInterval(() => {
+          this.incrementar('hijos');
+        }, 100);
+      } else if (clickedButtonId === 'decrementButtonHijos') {
+        // Botón de decremento presionado
+        this.intervalHijosId = setInterval(() => {
+          this.decrementar('hijos');
+        }, 100);
+      }
+    }
+  } // Asegúrate de cerrar correctamente el bloque
+  
+
+@HostListener('mouseup', ['$event'])
+onMouseUp(event: Event) {
+  // Detén el incremento o decremento cuando se suelta el botón
+  clearInterval(this.intervalTitularId);
+  clearInterval(this.intervalConyugeId);
+  clearInterval(this.intervalHijosId);
+}
+
+  incrementar(beneficiario: string) {
+    const groupValue = this.formCotizar.get('group').value;
+    if (beneficiario === 'titular'){
+      if (this.edadTitular === 0 ){
+        this.edadTitular = 17;
+      }
+      this.edadTitular++;
+      console.log(this.edadTitular)
+      this.formCotizar.get('edad_1').setValue(this.edadTitular);
+      if (groupValue === 2 ){
+        this.showCantidadHijos = true;
+      } else if(  groupValue === 3){
+        this.showEdadConyuge = true;
+      } else if (groupValue === 4){
+        this.showEdadConyuge = true;
+      }
+     } else if (beneficiario === 'conyuge'){
+      if (this.edadConyuge === 0 ){
+        this.edadConyuge = 17;
+      }
+      this.edadConyuge++;
+      console.log(this.edadConyuge)
+      this.formCotizar.get('edad_2').setValue(this.edadConyuge);
+      
+      if (groupValue === 4){
+       
+        this.showCantidadHijos = true;
+      }
+     } else if (beneficiario === 'hijos' ){
+      if( this.cantidadHijos  <= 4)
+      this.cantidadHijos++;
+      console.log(this.cantidadHijos)
+      this.formCotizar.get('numkids').setValue(this.cantidadHijos);
+    
+     }    
+  }
+
+  decrementar(beneficiario: string) {
+    const groupValue = this.formCotizar.get('group').value;
+
+   if (beneficiario === 'titular' && this.edadTitular >= 18 ){
+
+    this.edadTitular--;
+
+    this.formCotizar.get('edad_1').setValue(this.edadTitular);
+   } else if (beneficiario === 'conyuge'  && this.edadConyuge >= 18){
+    this.edadConyuge--;
+    this.formCotizar.get('edad_2').setValue(this.edadConyuge);
+   } else if ( beneficiario === 'hijos'  && this.cantidadHijos >0){
+    this.cantidadHijos--;
+    this.formCotizar.get('numkids').setValue(this.cantidadHijos);
+   }
+    
   }
 }
 
