@@ -10,7 +10,7 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-form-queplan',
   templateUrl: './form-queplan.component.html',
-  styleUrls: ['./form-queplan.component.scss']
+  styleUrls: ['./form-queplan.component.css']
 })
 export class FormQueplanComponent {
   @ViewChild('campoNombre') campoNombre: ElementRef;
