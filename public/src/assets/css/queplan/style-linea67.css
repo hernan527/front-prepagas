@@ -1,0 +1,39 @@
+.box-container[_ngcontent-dcc-c434] {
+  margin-top:40px;
+  padding:32px 90px;
+  border-radius:10px;
+  background:white;
+  border:1px solid #d1d1d1
+}
+@media (max-width: 992px) {
+  .box-container[_ngcontent-dcc-c434] {
+    padding:27px 20px
+  }
+}
+.box-container[_ngcontent-dcc-c434]   h2[_ngcontent-dcc-c434] {
+  font-size:1.6rem;
+  text-align:center
+}
+.box-container[_ngcontent-dcc-c434]   p[_ngcontent-dcc-c434] {
+  color:#756969;
+  font-size:1.05rem;
+  line-height:1.4rem
+}
+.box-container[_ngcontent-dcc-c434]   a[_ngcontent-dcc-c434] {
+  display:flex;
+  color:#fff;
+  margin:25px auto 0;
+  cursor:pointer;
+  transition:.2s;
+  font-weight:600;
+  padding:16px 25px;
+  text-align:center;
+  line-height:1.3rem;
+  border-radius:36px;
+  max-width:max-content;
+  justify-content:center;
+  background-color:#d30b40
+}
+.box-container[_ngcontent-dcc-c434]   a[_ngcontent-dcc-c434]:hover {
+  background-color:#af2046
+}

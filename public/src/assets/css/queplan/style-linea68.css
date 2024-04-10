@@ -1,0 +1,67 @@
+.body-small {
+  flex-direction:column!important;
+  margin-bottom:0!important
+}
+[_nghost-dcc-c172] {
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  min-height:7.5rem
+}
+[_nghost-dcc-c172]     .body-small {
+  flex-direction:column;
+  margin-bottom:0!important
+}
+[_nghost-dcc-c172]   .body-small[_ngcontent-dcc-c172] {
+  flex-direction:column;
+  margin-bottom:0!important
+}
+[_nghost-dcc-c172]     .title-insurance {
+  font-size:.85rem;
+  font-weight:700;
+  text-align:center;
+  margin-bottom:.5rem;
+  text-transform:uppercase
+}
+[_nghost-dcc-c172]     .title-insurance-movil {
+  font-weight:700;
+  font-size:.85rem
+}
+[_nghost-dcc-c172]     .image-company,
+[_nghost-dcc-c172]     .image-insurance {
+  padding:0
+}
+@media (max-width: 992px) {
+  [_nghost-dcc-c172]     .image-company,
+  [_nghost-dcc-c172]     .image-insurance {
+    width:90%;
+    text-align:left
+  }
+}
+[_nghost-dcc-c172]     .image-company img,
+[_nghost-dcc-c172]     .image-insurance img {
+  max-width:100px;
+  max-height:45px
+}
+@media (max-width: 992px) {
+  [_nghost-dcc-c172]     .image-company img,
+  [_nghost-dcc-c172]     .image-insurance img {
+    text-align:center;
+    max-width:120px
+  }
+}
+[_nghost-dcc-c172]     .price-insurance strong,
+[_nghost-dcc-c172]     .code-insurance strong {
+  font-weight:900
+}
+@media (max-width: 992px) {
+  [_nghost-dcc-c172]     .price-insurance,
+  [_nghost-dcc-c172]     .code-insurance {
+    font-size:1.3rem;
+    color:#485160
+  }
+  [_nghost-dcc-c172]     .price-insurance strong,
+  [_nghost-dcc-c172]     .code-insurance strong {
+    font-weight:700
+  }
+}

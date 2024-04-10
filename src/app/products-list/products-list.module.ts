@@ -9,7 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductCardPrimengComponent } from './product-card/product-card-p.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+// import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { FilterPipe } from './pipes/filter.pipe';
 import { RatingFilterPipe } from './pipes/rating.pipe';
 import { SortPipe } from './pipes/sort.pipe';
@@ -86,7 +86,7 @@ const routes: Routes = [
         CommonModule,
         ProductRoutingModule,
         SharedModule,
-        NgxSkeletonLoaderModule,
+        // NgxSkeletonLoaderModule,
         ModalModule,
         ReactiveFormsModule,
         HomeModule,

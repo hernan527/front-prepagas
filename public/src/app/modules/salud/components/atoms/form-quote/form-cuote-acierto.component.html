@@ -1,0 +1,220 @@
+
+
+  
+  <div id="vemmPageScripts"></div>
+ 
+  <section class="form section" ng-cloak>
+    <div class="background-detail left"></div>
+    <div class="background-detail"></div>
+    <form vemm-step name="leadForm" novalidate class="lead-form">
+      <div class="container container--half-width">
+        <div class="form-title">Cote seu Plano de Saúde!</div>
+        <div class="question form-group" vemm-cep vemm-field="postal_code" vemm-label="Qual o seu CEP?"
+          vemm-label-show-required="false" vemm-hide-if-filled  vemm-form-name="leadForm"></div>
+        <div class="form-group"></div><label class="form-group-label" for="plan_type">Escolha um tipo de Plano de
+          Saúde:</label>
+        <div class="form-group">
+          <div class="btn-wrapper--main btn-wrapper btn-wrapper--floating btn-wrapper--equal-sizes sm-btn-wrapper"
+            name="plan_type"><button
+              class="btn--main btn btn--vertical" (click)="selectPlanType('adulto individual')" ><img class="icon" src="style/images/sprite.svg#form--individual"
+                alt="ícone de plano Individual" aria-hidden="true"> Individual / adesão</button> <button
+              class="btn--main btn btn--vertical" (click)="selectPlanType('adulto pareja')"><img class="icon" src="style/images/sprite.svg#form--family"
+                alt="ícone de plano família" aria-hidden="true"> familiar</button> <button
+              class="btn--main btn btn--vertical"><img class="icon" src="style/images/sprite.svg#form--business"
+                alt="ícone de plano empresarial" aria-hidden="true"> empresarial</button>
+              </div>
+          <div class="error"><span>Este campo é
+              requerido.</span>
+            </div>
+        </div>
+        <div vemm-hidden-field vemm-field="plan_type" ></div>
+        <div class="form-group"></div><label class="form-group-label">Possui empresa
+          aberta (CNPJ)?</label>
+        <div class="form-group">
+          <div class="btn-wrapper btn-wrapper--floating btn-wrapper--equal-sizes" name="hasCNPJ"><button
+              class="btn--main btn btn--vertical "
+              ng-click="lead.hasCNPJ = 'Sim'"><img class="icon" src="style/images/sprite.svg#theme--like"
+                alt="ícone de like" aria-hidden="true"> Sim</button> <button
+              class="btn--main btn btn--vertical "
+              ng-click="lead.hasCNPJ = 'Não'"><img class="icon" src="style/images/sprite.svg#theme--dislike"
+                alt="ícone de dislike" aria-hidden="true"> Não</button></div>
+          <div class="error"><span ng-show="attemptedSubmit[step] && lead.hasCNPJ === undefined">Este campo é
+              requerido.</span></div>
+        </div>
+        <div vemm-hidden-field vemm-field="hasCNPJ"
+          vemm-conditional='(lead.plan_type === "Individual" || lead.plan_type === "Familiar")' ></div>
+      </div>
+      <div class="container container--half-width">
+        <div class="btn-wrapper">
+          <div></div>
+          <div><button class="btn btn--next btn--primary" type="submit" ng-click="submit($event)">Continuar <img
+                class="icon icon--small icon--right" src="style/images/sprite.svg#theme--chevron-right"
+                alt="ícone de avançar" aria-hidden="true"></button></div>
+        </div>
+      </div>
+    </form>
+    <form vemm-step name="leadForm2" novalidate class="lead-form">
+      <div class="container container--half-width">
+        <div class="form-title">Falta só mais 1 minuto!</div>
+        <div vemm-text vemm-field="company_name" vemm-label="Razão Social" ng-minlength="3" ng-maxlength="50"
+          vemm-conditional='((lead.plan_type==="Empresarial")||(lead.hasCNPJ==="Sim"))' 
+          vemm-form-name="leadForm2" class="question form-group" vemm-label-show-required="false"></div>
+        <div vemm-cnpj vemm-field="cnpj" vemm-label="CNPJ"  vemm-form-name="leadForm2"
+          vemm-label-show-required="false" vemm-conditional='((lead.plan_type==="Empresarial")||(lead.hasCNPJ==="Sim"))'
+          class="question form-group"></div>
+        <div ng-show='((lead.plan_type==="Empresarial")||(lead.hasCNPJ==="Sim"))'
+          style="font-size:12px;color:#4d72aa;padding:10px 0"><img class="icon icon--small"
+            src="style/images/sprite.svg#form--lock" alt="ícone de dica" aria-hidden="true"> Com o CNPJ nós conseguimos
+          te oferecer uma cotação personalizada</div>
+        <div class="form-group"></div><label
+          class="form-group-label" for="number_users">Número de usuários</label>
+        <div class="form-group">
+          <div class="btn-wrapper btn-wrapper--floating btn-wrapper--equal-sizes grid-btn-wrapper" name="plan_type">
+            <button class="btn "
+              ng-click="lead.number_users = '1'">1</button> <button
+              class="btn " ng-click="lead.number_users = '2'">2</button>
+            <button class="btn "
+              ng-click="lead.number_users = '3'">3</button> <button
+              class="btn " ng-click="lead.number_users = '4'">4</button>
+            <button class="btn "
+              ng-click="lead.number_users = '5 ou mais'">5 ou mais</button></div>
+          <div class="error"><span ng-show="attemptedSubmit[step] && lead.number_users === undefined">Este campo é
+              requerido.</span></div>
+        </div>
+        <div></div>
+        <div vemm-full-name vemm-field="full_name" vemm-label="Nome e Sobrenome" ng-minlength="3" ng-maxlength="60"
+           vemm-form-name="leadForm2" class="question form-group" vemm-label-show-required="false"></div>
+        <div style="font-size:12px;color:#4d72aa;padding:10px 0">Sem abreviações</div>
+        <div class="form-group"></div><label class="form-group-label" for="date_of_birth">Qual a data de
+          Nascimento?</label>
+        <div class="form-group">
+          <div class="question form-group birthday" vemm-date-dropdowns vemm-field="date_of_birth"
+            vemm-label="Qual a data de Nascimento?" vemm-label-class="hidden" vemm-hide-if-filled 
+            vemm-date-valid vemm-form-name="leadForm2" vemm-date-valid></div>
+        </div>
+        <div
+          class="question form-group"></div>
+        <div ng-show='((lead.plan_type!=="Empresarial")&&(lead.hasCNPJ==="Não"))'
+          style="font-size:12px;color:#4d72aa;padding:10px 0"><img class="icon icon--small"
+            src="style/images/sprite.svg#form--lock" alt="ícone de dica" aria-hidden="true"> Com o CPF nós conseguimos
+          te oferecer uma cotação personalizada</div>
+        <div vemm-text vemm-field="profession" vemm-label="Ocupação/Profissão"
+          vemm-conditional='(((lead.plan_type==="Individual")||(lead.plan_type==="Familiar"))&&(lead.hasCNPJ==="Não"))'
+           vemm-form-name="leadForm2" class="question form-group" vemm-label-show-required="false"></div>
+        <div ng-show='(((lead.plan_type==="Individual")||(lead.plan_type==="Familiar"))&&(lead.hasCNPJ==="Não"))'
+          style="font-size:12px;color:#4d72aa;padding:10px 0">Caso não tenha, digite "Não tenho"</div>
+        <div vemm-email vemm-field="email" vemm-label="E-mail" vemm-label-show-required="false" 
+          vemm-form-name="leadForm2" class="question form-group"></div>
+        <div vemm-celular vemm-field="cellphone" vemm-label="Celular" vemm-label-class=""
+          vemm-label-show-required="false" vemm-field-class=""  vemm-form-name="leadForm2"
+          class="question form-group"></div>
+        <div vemm-telefone vemm-field="telephone" vemm-label="Telefone Fixo (Opcional):" vemm-label-class=""
+          vemm-field-class="" vemm-form-name="leadForm2" class="question form-group"></div>
+        <div class="form-group"></div><label ng-show='((lead.plan_type==="Familiar")&&(lead.hasCNPJ==="Não"))'
+          class="form-group-label" for="number_dependants">Número de Dependentes</label>
+        <div class="form-group" ng-show='((lead.plan_type==="Familiar")&&(lead.hasCNPJ==="Não"))'>
+          <div class="btn-wrapper btn-wrapper--floating btn-wrapper--equal-sizes grid-btn-wrapper" name="plan_type">
+            <button class="btn "
+              ng-click="lead.number_dependants = '1'">1</button> <button
+              class="btn "
+              ng-click="lead.number_dependants = '2'">2</button> <button
+              class="btn "
+              ng-click="lead.number_dependants = '3'">3</button> <button
+              class="btn "
+              ng-click="lead.number_dependants = '4'">4</button> <button
+              class="btn "
+              ng-click="lead.number_dependants = '5 ou mais'">5 ou mais</button></div>
+          <div class="error"><span ng-show="attemptedSubmit[step] && lead.number_users === undefined">Este campo é
+              requerido.</span></div>
+        </div>
+        <div vemm-hidden-field vemm-field="hasCNPJ"
+          vemm-conditional='((lead.plan_type==="Familiar")&&(lead.hasCNPJ==="Não"))' ></div>
+      </div>
+      <div class="container container--half-width">
+        <div class="btn-wrapper"><button class="btn btn--ghost btn--previous" ng-click="_previousStep()"><img
+              class="icon icon--small icon--left" src="style/images/sprite.svg#theme--chevron-left"
+              alt="ícone de retroceder" aria-hidden="true"> voltar</button>
+          <div><button class="btn btn--next btn--primary" type="submit" ng-click="submit($event)">Continuar <img
+                class="icon icon--small icon--right" src="style/images/sprite.svg#theme--chevron-right"
+                alt="ícone de avançar" aria-hidden="true"></button></div>
+        </div>
+      </div>
+    </form>
+    <form vemm-step name="leadForm3" novalidate class="lead-form">
+      <div class="container container--half-width">
+        <div class="form-title" style="margin-bottom:15px">Pronto!</div>
+        <div class="form-group" style="margin-top:0"><label for="preferred_contact_method">Como você prefere continuar a
+            sua cotação?</label>
+          <div>
+            <div class="btn-wrapper btn-wrapper--floating btn-wrapper--equal-sizes" name="preferred_contact_method">
+              <button class="btn btn--vertical "
+                ng-click="lead.preferred_contact_method = 'calls'"><img class="icon"
+                  src="style/images/sprite.svg#theme--social-chat" alt="ícone de chat" aria-hidden="true">
+                Telefone</button> <button
+                class="btn btn--vertical "
+                ng-click="lead.preferred_contact_method = 'whatsapp'"><img class="icon"
+                  src="style/images/sprite.svg#theme--social-whatsapp" alt="ícone de whatsapp" aria-hidden="true">
+                Whatsapp</button></div>
+          </div>
+          <div class="error"><span ng-show="attemptedSubmit[step] && lead.preferred_contact_method === undefined">Este
+              campo é requerido.</span></div>
+        </div>
+        <div vemm-hidden-field vemm-field="preferred_contact_method" ></div>
+        <div class="captcha">
+          <div vemm-captcha vemm-field="captcha_ok" vemm-label="Por favor, clique na caixa abaixo:" 
+            vemm-label-show-required="false" vemm-form-name="leadForm5"></div>
+          <div id="vemm-captcha" style="padding:15px">
+            <div class="g-recaptcha" data-sitekey="6LderQkUAAAAAAplly9Sckw-mUtrCOgni2UCB0_q"
+              data-callback="vemmRecaptchaOk" data-size="normal"></div>
+          </div>
+        </div>
+      </div>
+      <div class="container container--half-width">
+        <div class="btn-wrapper"><button class="btn btn--ghost btn--previous" ng-click="_previousStep()"><img
+              class="icon icon--small icon--left" src="style/images/sprite.svg#theme--chevron-left"
+              alt="ícone de retroceder" aria-hidden="true"> voltar</button> <button class="btn btn--primary btn--next"
+            type="submit" ng-click="submitAndClose($event)">Continuar <img class="icon icon--small icon--right"
+              src="style/images/sprite.svg#theme--chevron-right" alt="ícone de avançar" aria-hidden="true"></button>
+        </div>
+      </div>
+    </form>
+    <form vemm-step vemm-step-group="thank-you" class="etapa final">
+      <div class="thankyou-card" ng-show="lead.preferred_contact_method === 'calls'"><img class="icon"
+          src="style/images/sprite.svg#theme--thankyou-phone" alt="ícone de agradecimento">
+        <div class="thankyou-card--title">Obrigado!</div>
+        <div class="thankyou-card--body">Entraremos em contato <b>em até 2 minutos!</b></div>
+      </div>
+      <div class="thankyou-card" ng-show="lead.preferred_contact_method === 'chats'"><img class="icon"
+          src="style/images/sprite.svg#theme--thankyou-chat" alt="ícone de agradecimento">
+        <div class="thankyou-card--title">Obrigado!</div>
+        <div class="thankyou-card--body">Estamos te conectando com um dos nossos atendentes.</div>
+      </div>
+      <div class="thankyou-card" ng-show="lead.preferred_contact_method === 'whatsapp'"><img class="icon"
+          src="style/images/sprite.svg#theme--thankyou-whatsapp" alt="ícone de agradecimento">
+        <div class="thankyou-card--title">Obrigado!</div>
+        <div class="thankyou-card--body">Enviamos uma mensagem para você!</div>
+      </div>
+      <div id="realTimeNotification" class="container container--half-width" style="padding:0">
+        <div class="notification-box-contenet">
+          <div class="spinner"></div>
+          <div class="notification"></div>
+          <div class="progressBar"></div>
+          <div class="broker-found"></div>
+          <div class="user-ratings"></div>
+        </div>
+      </div><button class="btn back-to-home" ng-click="backToHome()">voltar para home</button>
+    </form>
+  </section>
+ 
+  <div id="thankyou-node"></div>
+  <style>
+    * {
+      font-family: 'Open Sans', sans-serif
+    }
+
+    .form-title {
+      font-family: Dosis, sans-serif
+    }
+  </style>
+  <div class="floating-chat"></div>
+ 

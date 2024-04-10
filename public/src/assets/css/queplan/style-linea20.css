@@ -1,0 +1,87 @@
+@media only screen and (max-width: 990px) {
+  [_nghost-dcc-c302]   .company-extended[_ngcontent-dcc-c302] {
+    font-size:1.4rem!important
+  }
+}
+.review-name[_ngcontent-dcc-c302]   h5[_ngcontent-dcc-c302] {
+  font-size:1rem;
+  color:var(--color-text, #1d1d1f)
+}
+.card-testimonios[_ngcontent-dcc-c302] {
+  box-sizing:border-box
+}
+.card-testimonios[_ngcontent-dcc-c302]   p[_ngcontent-dcc-c302] {
+  color:gray;
+  line-height:1.5;
+  font-size:.75rem
+}
+.card-testimonios[_ngcontent-dcc-c302]   .img[_ngcontent-dcc-c302] {
+  width:48px
+}
+@media only screen and (max-width: 992px) {
+  .card-testimonios[_ngcontent-dcc-c302] {
+    min-height:320px
+  }
+}
+@media only screen and (max-width: 576px) {
+  .card-testimonios[_ngcontent-dcc-c302] {
+    min-height:240px
+  }
+  .card-testimonios[_ngcontent-dcc-c302]   p[_ngcontent-dcc-c302] {
+    font-size:.875rem
+  }
+}
+.carousel-control-prev-icon {
+  filter:invert(1)
+}
+.carousel-control-next-icon {
+  filter:invert(1)
+}
+.carousel-indicators li {
+  filter:invert(1);
+  width:10px;
+  height:10px;
+  border-radius:100%
+}
+.review[_ngcontent-dcc-c302]   h5[_ngcontent-dcc-c302] {
+  font-weight:900;
+  font-size:2.4rem;
+  margin-right:10px;
+  color:var(--color-text, #1d1d1f)
+}
+.btn-company[_ngcontent-dcc-c302] {
+  border:none;
+  display:flex;
+  margin:0 auto;
+  color:var(--color-primary, #40B4E5);
+  transition:.3s;
+  margin-top:2rem;
+  padding:1rem 2rem;
+  border-radius:5px;
+  width:max-content;
+  border:1px solid var(--color-primary, #40B4E5)
+}
+@media only screen and (min-width: 992px) {
+  .btn-company[_ngcontent-dcc-c302] {
+    font-size:.875rem
+  }
+}
+.btn-company[_ngcontent-dcc-c302]:hover {
+  opacity:.8;
+  color:#fff;
+  background-color:var(--color-primary, #40B4E5)
+}
+.icon-Google[_ngcontent-dcc-c302] {
+  width:30px
+}
+.star[_ngcontent-dcc-c302] {
+  position:relative;
+  display:inline-block;
+  font-size:2rem;
+  color:#d3d3d3
+}
+.half[_ngcontent-dcc-c302] {
+  position:absolute;
+  display:inline-block;
+  overflow:hidden
+}

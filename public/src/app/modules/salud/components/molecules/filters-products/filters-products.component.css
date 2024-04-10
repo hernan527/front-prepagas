@@ -1,0 +1,389 @@
+.icon-large{
+    font-size: 24px;
+    color:blue /* Cambia el tamaño según tus preferencias */
+}
+.icon-small{
+    font-size: 18px;
+    color:blue /* Cambia el tamaño según tus preferencias */
+    /* Cambia el tamaño según tus preferencias */
+}
+.custom-flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+.article{
+    margin-top:60px
+}
+@import '~primeicons/primeicons.css';
+.container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidenav {
+  padding: 0px;
+}
+mat-button-toggle-group {
+  margin-left: 12px;
+}
+
+.feedback {
+  background-color : #31B0D5;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border-color: #46b8da;
+}
+
+#mybutton {
+  position: fixed;
+  bottom: -4px;
+  left: 10px;
+  z-index: 1000;
+  margin:0;
+  padding:0;
+}
+
+
+.selectedItems {
+  background-color : white;
+  width: 80px;
+  height: 800px;
+  position: fixed;
+  bottom: -4px;
+  right: 10px;
+
+}
+.badge {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  font-size: 12px;
+  line-height: 13px;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  background-color: #ff0000; 
+  border: 4px solid #ff0000;
+  color: #ffffff;
+  text-align: center;
+}
+.child {
+  
+  margin: 0 auto;
+}
+@media screen {
+  #printSection {
+      display: none;
+  }
+}
+
+@media print {
+  body * {
+    visibility:hidden;display:none
+  }
+  main * {
+    visibility:hidden;display:none
+  }
+  #modal-footer * {
+    visibility:hidden;display:none
+  }
+  #mybutton * {
+    visibility:hidden;display:none
+  }
+  #app-compara-select * {
+    visibility:hidden;display:none
+  }
+
+  #printable * {
+    visibility:visible;display:block
+  }
+  #printable {
+    position:absolute;
+    left:0;
+    top:0;
+    right:15;
+    bottom:0;
+  }
+  @media print {
+    #main {position:relative; padding:0; height:1px; overflow:visible;}
+    #printable {position:absolute; width:100%; margin-top:10px; padding-bottom: 3px;
+      ; margin-right:5px;}
+ }
+ @media print {
+  #whatsapp-buttom,   #whatsapp-buttom * {
+    visibility:hidden;display:none
+  }
+}
+#image-filter, #image-filter * {
+  visibility:hidden;display:none
+}
+#hero, #hero * {
+  visibility:hidden;display:none
+}
+#encabezado, #encabezado *
+{
+  visibility:hidden;display:none
+}
+#formularios, #formularios *
+{
+  visibility:hidden;display:none
+}
+#whatsapp-buttom, #whatsapp-buttom * {
+  visibility:hidden;display:none
+}
+#bucle, #bucle * {
+  visibility:hidden;display:none
+}
+#image-filter-flex, #image-filter-flex * {
+  visibility:hidden;display:none
+}
+#conenedor-bucle, #conenedor-bucle * {
+  visibility:hidden;display:none
+}
+#show-filter, #show-filter *
+{
+  visibility:hidden;display:none
+}
+
+
+}
+.ul_checkbox ul{
+  padding: 0;
+  margin: 0;
+}
+.ul_checkbox ul li{
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 10px;
+}
+.ul_checkbox ul li input {
+  margin-right: 4px;
+}
+._ul_product ul{
+  padding: 0;
+  margin: 0;
+}
+.ul_product ul li {
+  list-style-type: none;
+  display: block;
+  font-size: 30px;
+  font-weight: 600px;
+  margin-top: 10px;
+}
+
+.custom-multiselect {
+  width: 500px;
+}
+
+.selected-chips {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  padding-right: 0px; /* Espacio para el icono de eliminar */
+  position: relative;
+}
+
+.remove-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: black;
+  color: #ff0000; /* Color rojo o el que prefieras */
+}
+
+:host ::ng-deep .custom-ms 
+.p-multiselect-label {
+width: 450px !important;
+}
+
+:host ::ng-deep .custom-ms 
+.div {
+width: 450px !important;
+}
+.custom-ms .p-chip.p-highlight {
+  white-space: pre-line;
+  /* Otros estilos personalizados que desees aplicar */
+}
+.custom-ms .p-multiselect-chips {
+  display: flex;
+  flex-direction: column; /* Cambiar la disposición a vertical */
+  align-items: flex-start; /* Alinear elementos a la izquierda */
+}
+
+.custom-ms .p-multiselect-token {
+  margin: 2px 0; /* Agregar margen entre los elementos */
+}
+.p-overlay-badge {
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 2px 6px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.d-lg-block{
+  border: none; /* Elimina el borde */
+  outline: none; /* Elimina el contorno de enfoque (si es aplicable) */
+}
+
+.filter-group {
+  border: 1px solid #ccc; /* Borde sólido de 1 píxel de grosor y color gris suave */
+  border-radius: 5px; /* Redondeo de 5 píxeles para esquinas suaves */
+  padding: 0px; /* Espacio interno para el contenido */
+  margin-top: 15px; /* Margen superior de 15 píxeles */
+}
+
+.small-card {
+  width: 150px; /* Establece el ancho deseado para cada tarjeta */
+  margin-right: 10px; /* Establece el margen derecho entre las tarjetas */
+  display: inline-block; /* Muestra las tarjetas en línea una al lado de la otra */
+}
+
+
+/* Utiliza display: flex en el contenedor para alinear elementos en fila */
+.contenedor-grid {
+  display: flex;
+  flex-wrap: nowrap; /* Evita que los elementos se envuelvan a la siguiente fila */
+  gap: 20px; /* Espacio entre los elementos */
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 10px; /* Espacio entre las tarjetas */
+  width: 100%;
+}
+
+.rectangulo {
+  width: 100%;
+  height: 80px; /* Establece la altura fija deseada para las tarjetas */
+  background-color: #f8fbfd;
+  /* border: 2px solid #4e5153; */
+  border-radius: 10px;
+  display: inline-flex; /* Utilizamos inline-flex en lugar de inline-block para centrar verticalmente y horizontalmente */
+  flex-direction: column; /* Para que los elementos de texto estén en una columna */
+  justify-content: center; /* Centra verticalmente el contenido */
+  align-items: center; /* Centra horizontalmente el contenido */
+  overflow: hidden; /* Evita que el contenido desborde las tarjetas */
+  position: relative;
+
+}
+
+/* Estilos para el texto dentro de la tarjeta */
+.rectangulo h3 {
+  margin: 0; /* Elimina el margen predeterminado del encabezado h3 */
+}
+
+
+#hero {
+  position: sticky;
+  top: 0;
+  background-color: #333;
+  z-index: 100;
+  height: 100px; /* Establece la altura fija deseada */
+  overflow: auto; /* Agrega una barra de desplazamiento si el contenido excede la altura */
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido del hero */
+  padding: 5px;
+}
+.close-icon {
+  position: absolute !important;
+  top: -5px !important; /* Ajusta la distancia desde la parte superior */
+  right: -5px !important; /* Ajusta la distancia desde la derecha */
+  font-size: 13px;
+  color: #030303;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: right;
+  line-height: 20px;
+  cursor: pointer; /* Agrega un cursor de puntero para indicar que es interactivo */
+}
+
+
+
+.center-button {
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform-origin: left;
+  display: inline-block; /* Utilizamos inline-flex en lugar de inline-block para centrar verticalmente y horizontalmente */
+  flex-direction: row; /* Para que los elementos de texto estén en una columna */
+  justify-content:center; /* Centra verticalmente el contenido */
+  align-items: left; /* Centra horizontalmente el contenido */
+  overflow: hidden; /* Evita que el contenido desborde las tarjetas */
+}
+
+.center-button.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.center-button.hide {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.custom-button {
+  font-size: 16px; /* Ajusta el tamaño de fuente del botón */
+  padding: 10px 20px; /* Ajusta el relleno del botón (alto, ancho) */
+}
+/* Estilos para la vista común (se aplicarán a ambas vistas) */
+.common-view {
+  /* Establece un tamaño fijo para el contenedor */
+  width: 100%; /* Ancho del 100% del contenedor principal */
+  max-width: 100%; /* Ancho máximo deseado del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0px; /* Espacio entre elementos en ambas vistas */
+}
+
+.left-column {
+  flex: 0 0 300px; /* Ancho fijo de la columna izquierda */
+  position: sticky;
+  top: 0; /* La columna se vuelve fija en la parte superior */
+  height: 100%; /* Opcional: ajusta la altura de la columna según tus necesidades */
+  background-color: #f0f0f0; /* Color de fondo de la columna izquierda */
+  padding: 0px; /* Espacio interno de la columna izquierda */
+}
+
+.content {
+  flex: 1; /* El contenido principal ocupa el espacio restante */
+  padding: 0px; /* Espacio interno del contenido principal */
+}
+
+/* Estilos para eliminar márgenes y padding en todas las pantallas */
+/* Estilos para eliminar márgenes y padding en todas las pantallas */
+#aside_filter.left-column {
+  margin: 0; /* Elimina todos los márgenes */
+  padding: 0; /* Elimina todo el padding */
+  width: 100%; /* Ocupa todo el ancho del componente */
+}
+

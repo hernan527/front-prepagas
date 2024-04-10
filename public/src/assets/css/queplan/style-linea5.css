@@ -1,0 +1,119 @@
+[_nghost-dcc-c124]   .inv-header[_ngcontent-dcc-c124] {
+  z-index:999;
+  transition:box-shadow .2s ease-in-out;
+  background-color:#fff;
+  height:75px;
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0
+}
+[_nghost-dcc-c124]   .inv-header[_ngcontent-dcc-c124]   .container-fluid[_ngcontent-dcc-c124]   .d-flex[_ngcontent-dcc-c124] {
+  min-height:75px
+}
+[_nghost-dcc-c124]   .inv-header.active[_ngcontent-dcc-c124],
+[_nghost-dcc-c124]   .inv-header.active-scroll[_ngcontent-dcc-c124] {
+  background-color:#fff;
+  box-shadow:0 0 12px #0000004d;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0
+}
+[_nghost-dcc-c124]   .inv-header.active.is-home[_ngcontent-dcc-c124],
+[_nghost-dcc-c124]   .inv-header.active-scroll.is-home[_ngcontent-dcc-c124] {
+  background-color:#fffffff7
+}
+[_nghost-dcc-c124]   .inv-header[_ngcontent-dcc-c124]:not(.is-home) {
+  background-color:#fff;
+  border-bottom:2px solid #f0f0f0
+}
+body.modal-open .inv-header {
+  padding-right:16px!important
+}
+.internal-traffic[_ngcontent-dcc-c124] {
+  top:0;
+  right:0;
+  padding:3px 35px;
+  position:absolute;
+  background:#49bce9;
+  border-radius:0 0 0 7px
+}
+.internal-traffic[_ngcontent-dcc-c124]   p[_ngcontent-dcc-c124] {
+  color:#fff;
+  margin-bottom:0
+}
+@media only screen and (max-width: 992px) {
+  .internal-traffic[_ngcontent-dcc-c124] {
+    padding:2px 22px
+  }
+  .internal-traffic[_ngcontent-dcc-c124]   span[_ngcontent-dcc-c124] {
+    display:none
+  }
+}
+.referido[_ngcontent-dcc-c124] {
+  cursor:pointer;
+  top:0;
+  right:0;
+  padding:3px 35px;
+  position:absolute;
+  background:#d93959;
+  border-radius:0 0 0 7px
+}
+.referido[_ngcontent-dcc-c124]   p[_ngcontent-dcc-c124] {
+  color:#fff;
+  margin-bottom:0
+}
+@media only screen and (max-width: 992px) {
+  .referido[_ngcontent-dcc-c124] {
+    padding:2px 22px;
+    top:0
+  }
+}
+.fa-bells[_ngcontent-dcc-c124] {
+  font-size:25px!important;
+  align-self:center;
+  margin-left:15px;
+  transition:.5s
+}
+.fa-bells[_ngcontent-dcc-c124]:hover {
+  opacity:.7
+}
+.notification[_ngcontent-dcc-c124] {
+  background:red;
+  color:#fff;
+  border-radius:100%;
+  padding:5px;
+  position:absolute;
+  top:16px;
+  right:-10px;
+  font-size:.75rem;
+  font-weight:600
+}
+@media only screen and (max-width: 1405px) {
+  .class-notification {
+    transform:translateY(0)!important;
+    right:0!important;
+    left:auto!important;
+    top:55px!important;
+    min-width:250px
+  }
+  .class-notification .arrow {
+    left:75%!important;
+    margin-left:2.4rem!important
+  }
+}
+.internal[_ngcontent-dcc-c124] {
+  color:#98dbf7
+}
+.icon-contact[_ngcontent-dcc-c124] {
+  background-image:url(https://cdn.queplan.cl/shared/images/footer/contact-bl.svg);
+  background-repeat:no-repeat;
+  color:transparent;
+  width:18px;
+  display:inline-block
+}
+.icon-contact[_ngcontent-dcc-c124]:before {
+  content:"i";
+  background:transparent
+}

@@ -1,0 +1,99 @@
+@media (max-width: 992px){
+    .image-insurance[_ngcontent-dcc-c429]{
+        text-align:left!important
+    }
+}
+.title-insurance[_ngcontent-dcc-c429]{
+    font-size:1.125rem;
+    font-weight:600;
+    text-align:center;
+    text-transform:uppercase
+}
+@media only screen and (max-width: 700px){
+    .title-insurance[_ngcontent-dcc-c429]{
+        font-size:1rem
+    }
+}
+.info-qp75a30caf-insurance[_ngcontent-dcc-c429]{
+    width:100%;
+    line-height:1.5
+}
+.info-qp75a30caf-insurance[_ngcontent-dcc-c429] .icon[_ngcontent-dcc-c429]{
+    font-size:1.2rem;
+    text-align:center;
+    color:var(--color-primary, #40B4E5)
+}
+.nota-insurance[_ngcontent-dcc-c429]{
+    font-size:1rem!important;
+    background-color:#ff0046;
+    border-radius:5px;
+    font-weight:600;
+    padding:2px 1px 2px 4px;
+    margin:0rem .2rem;
+    color:var(--color-white, #ffffff)
+}
+.font-size-nota[_ngcontent-dcc-c429]{
+    font-size:1rem!important
+}
+ .prestadores{
+    white-space:pre
+}
+ .ngx-pagination .current{
+    background:var(--color-primary, #40B4E5)!important
+}
+.tieneCopago[_ngcontent-dcc-c429] i[_ngcontent-dcc-c429]{
+    color:#5e5
+}
+.best-product[_ngcontent-dcc-c429]{
+    border:4px solid #5ecf90
+}
+.best-product[_ngcontent-dcc-c429] .margin-best[_ngcontent-dcc-c429]{
+    margin-top:35px!important
+}
+@media only screen and (max-width: 768px){
+    .best-product[_ngcontent-dcc-c429] .margin-best[_ngcontent-dcc-c429]{
+        margin-top:18px!important
+    }
+}
+.best-product[_ngcontent-dcc-c429] .span-best[_ngcontent-dcc-c429]{
+    top:-1px;
+    left:-1px;
+    height:28px;
+    position:absolute;
+    text-align:center;
+    background:#5ecf90;
+    width:calc(100% + 2px)
+}
+@media only screen and (max-width: 768px){
+    .best-product[_ngcontent-dcc-c429] .span-best[_ngcontent-dcc-c429]{
+        height:25px;
+        text-align:left
+    }
+}
+.best-product[_ngcontent-dcc-c429] .span-best[_ngcontent-dcc-c429] span[_ngcontent-dcc-c429]{
+    font-size:.875rem!important;
+    margin-left:8px
+}
+.item-title[_ngcontent-dcc-c429]{
+    font-size:.75rem;
+    color:var(--color-secondary, #808080)
+}
+.item-value[_ngcontent-dcc-c429]{
+    line-height:1.5
+}
+.text-libre-eleccion[_ngcontent-dcc-c429]{
+    white-space:break-spaces;
+    font-size:.875rem;
+    font-weight:500
+}
+.item-title[_ngcontent-dcc-c429]{
+    font-size:.75rem!important;
+    color:var(--color-secondary, #808080)
+}
+.card-items[_ngcontent-dcc-c429] span[_ngcontent-dcc-c429]{
+    font-size:.875rem;
+    font-weight:500;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis
+}

@@ -1,0 +1,25 @@
+<div class="container d-flex align-items-center justify-content-center">
+  <div class="item active">
+    <a (click)="filter('clinicas')">
+      <img src="../../../assets/images/iconos/sanatorio.png" alt="">
+    </a>
+  </div>
+  <div class="item">
+    <a (click)="filter('attributes')">
+      <img src="../../../assets/images/iconos/sanatorio.png" alt="">
+    </a>
+  </div>
+  <div class="item">
+    <a (click)="filter('folleto')">
+      <img src="../../../assets/images/iconos/sanatorio.png" alt="">
+    </a>
+  </div>
+  <div class="item">
+    <a (click)="filter('')">
+      <img src="../../../assets/images/iconos/sanatorio.png" alt="">
+    </a>
+  </div>
+</div>
+
+<app-compara-clinicas *ngIf="showDiv2" [productos]="productos" [clinicasVal]='clinicasVal' [items]='items'></app-compara-clinicas>
+<app-compara-attributes *ngIf="showDiv1" [productos]="productos"></app-compara-attributes>

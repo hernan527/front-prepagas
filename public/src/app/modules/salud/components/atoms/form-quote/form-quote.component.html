@@ -1,0 +1,252 @@
+<section class="form section" >
+   
+  <div class="background-detail left"></div>
+  <div class="background-detail"></div>
+  <div class="container container--half-width">
+     <div class="form-title">Cotice su Plan de Salúd!</div>
+     <div class="form-group" *ngIf="selectedZonaType ==='' || selectedVolverType === 'zona'">
+        <label for="full_name">Zona de residencia</label>
+        <div class="btn-wrapper--main " name="plan_type">
+         <button class="square" [class.active]="selectedZonaType === 'CABA'" (click)="selectZonaType('CABA')">
+         CABA
+         </button>
+         <button class="square" [class.active]="selectedZonaType === 'GBA Norte'" (click)="selectZonaType('GBA Norte')">
+         GBA Norte
+         </button>
+         <button class="square" [class.active]="selectedZonaType === 'GBA Sur'" (click)="selectZonaType('GBA Sur')">
+            GBA Sur
+         </button>
+           <button class="square" [class.active]="selectedZonaType === 'GBA Oeste'" (click)="selectZonaType('GBA Oeste')">
+               GBA Oeste
+         </button>
+       </div>
+     </div>
+     <label class="form-group-label" for="plan_type" *ngIf="selectedGrupoType ==='' && selectedZonaType !== ''">
+      Complete el grupo familiar:
+     </label>
+     <div *ngIf="selectedGrupoType ==='' && selectedZonaType !== ''">
+        <div class="btn-wrapper--main btn-wrapper btn-wrapper--floating btn-wrapper--equal-sizes sm-btn-wrapper" name="plan_type">
+           <button class="btn--main btn btn--vertical" [class.active]="selectedPlanType === 'adulto individual'" (click)="selectPlanType('adulto individual')">
+              <img class="icon" src="../../../../../../assets/js/scripts/style/images/sprite.svg#form--individual" alt="ícone de plano Individual" aria-hidden="true">
+           Soltero/a
+           </button>
+           <button class="btn--main btn btn--vertical" [class.active]="selectedPlanType === 'adulto pareja'" (click)="selectPlanType('adulto pareja')">
+              <img class="icon" src="../../../../../../assets/js/scripts/style/images/sprite.svg#form--family" alt="ícone de plano família" aria-hidden="true">
+           Pareja
+           </button>
+           <!-- <button class="btn--main btn btn--vertical" [class.active]="selectedPlanType === 'empresa'" (click)="selectPlanType('empresa')">
+              <img class="icon" src="../../../../../../assets/js/scripts/style/images/sprite.svg#form--business" alt="ícone de plano empresarial" aria-hidden="true">
+              empresarial
+           </button> -->
+         </div>
+      </div>
+     <div class="container container--half-width" *ngIf="selectedGrupoType.includes('adulto') && selectedHijosType !== ' con hijos' && selectedHijosType !== ' sin hijos' && selectedVolverType !== 'zona' ">
+   
+     <div class="form-group" >
+     <label class="form-group-label">Ingresa con hijos?</label>
+      <div class="form-group">
+        <div class="btn-wrapper btn-wrapper--floating btn-wrapper--equal-sizes" name="">
+          <button class="btn" [class.active]="selectedHijosType === ' con hijos'" (click)="selectHijosType(' con hijos')">
+              Si
+           </button>
+           <button class="btn" [class.active]="selectedHijosType === ' sin hijos'" (click)="selectHijosType(' sin hijos')">              <!-- <img class="icon" src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--dislike" alt="ícone de dislike" aria-hidden="true"> -->
+              No
+           </button>
+        </div>
+      </div>
+      </div>
+  </div> 
+ 
+
+</div>  
+<div class="container container--half-width" *ngIf="selectedGrupoType.includes('adulto') && selectedHijosType.includes('hijos') && selectedAportesType !== 'D' && selectedAportesType !== 'P' &&  selectedVolverType !== 'zona'">
+   
+   <div class="form-group" >
+   <label class="form-group-label">Hace aportes a la obra social por el empleo?</label>
+    <div class="form-group">
+      <div class="btn-wrapper btn-wrapper--floating btn-wrapper--equal-sizes" name="">
+        <button class="btn" [class.active]="selectedAportesType === 'D'" (click)="selectAportesType('D')">
+            Si
+         </button>
+         <button class="btn" [class.active]="selectedAportesType === 'P'" (click)="selectAportesType('P')">              <!-- <img class="icon" src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--dislike" alt="ícone de dislike" aria-hidden="true"> -->
+            No
+         </button>
+      </div>
+    </div>
+    </div>
+</div> 
+<form [formGroup]="formCotizar"  (ngSubmit)="save($event)" *ngIf="!formularioEnviado">
+
+  <div class="container container--half-width" *ngIf="selectedGrupoType.includes('hijos') && selectedAportesType !== '' &&  selectedVolverType !== 'zona'" >
+   <p>Valor en tiempo real: {{ selectedGrupoType }}</p>
+   <p>Es empleado en relacion de dependencia: {{ selectedAportesType }}</p>       <div class="row">
+      <div class="col-md-12" *ngIf="selectedGrupoType.includes('adulto') || selectedGrupoType.includes('hijos')">
+         <div class="row">
+            <div class="form-group col">
+              <label for="edad_1">titular</label>
+              <!-- <input class="form-control" type="text" id="edad_1" required> -->
+            
+              <input formControlName="edad_1" type="text" maxlength="2" minlength="2"   class="form-control"  placeholder="Edad +18" required> 
+              <div *ngIf="submitted && formCotizar.get('edad_1').hasError('required')">
+               Este campo es obligatorio.
+             </div>
+             <div *ngIf="submitted && formCotizar.get('edad_1').hasError('min')">
+               La edad debe ser mayor o igual a 18.
+             </div>
+             <div *ngIf="submitted && formCotizar.get('edad_1').hasError('max')">
+               La edad debe ser menor o igual a 64.
+             </div>            
+            </div>
+            <div class="form-group col" *ngIf="selectedGrupoType.includes('pareja')" >
+              <label for="full_name2">pareja</label>
+              <input type="text" class="form-control" maxlength="2" minlength="2" required formControlName="edad_2" placeholder="Edad +18">
+              <div *ngIf="submitted && formCotizar.get('edad_2').hasError('required')">
+               Este campo es obligatorio.
+             </div>
+             <div *ngIf="submitted && formCotizar.get('edad_2').hasError('min')">
+               La edad debe ser mayor o igual a 18.
+             </div>
+             <div *ngIf="submitted && formCotizar.get('edad_2').hasError('max')">
+               La edad debe ser menor o igual a 64.
+             </div>
+            </div>
+            <div class="form-group col" *ngIf="selectedGrupoType.includes('con')">
+              <label for="full_name3">hijos</label>
+              <input type="text" class="form-control" required  maxlength="1" minlength="1" formControlName="numkids" placeholder="Cant. hijos">
+              <div *ngIf="submitted && formCotizar.get('numkids').hasError('required')">
+               Este campo es obligatorio.
+             </div>
+             <div *ngIf="submitted && formCotizar.get('numkids').hasError('min')">
+               La edad debe ser mayor o igual a 1.
+             </div>
+             <div *ngIf="submitted && formCotizar.get('numkids').hasError('max')">
+               La edad debe ser menor o igual a 5.
+             </div>
+            </div>
+          </div>
+          
+          
+      </div>
+      <div class="form-group" *ngIf="selectedAportesType === 'D'">
+         <label for="full_name">
+          Sueldo
+         </label>
+         <input type="text" formControlName="sueldo" maxlength="7" minlength="6" placeholder="Ingrese su sueldo bruto o los aportes a la obra social" required >
+      </div>
+  
+  <div class="container container--half-width"  *ngIf="selectedGrupoType.includes('hijos') && selectedAportesType !=='' &&  selectedVolverType !== 'zona'">
+   <div class="btn-wrapper" >
+     <button class="btn btn--ghost btn--previous" (click)="selectVolverType('zona')">
+        <img class="icon icon--small icon--left" src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--chevron-left" alt="ícone de retroceder" aria-hidden="true">
+        volver
+     </button>
+   <div>
+   
+      <button class="btn back-to-home"    [disabled]="formCotizar.invalid" type="submit">cotizar</button>
+   </div>
+ </div>
+</div>
+</div>
+</div>
+</form>
+
+     
+<form [formGroup]="formPersonalData"  (ngSubmit)="salvar($event)"  *ngIf="formularioEnviado === true">
+    
+
+         <div class="container container--half-width" *ngIf="selectedContactoType !== 'true'">
+
+           <div class="form-group" formControlName="name" >
+            <label for="nombre">
+               Nombre completo
+            </label>
+            <input #campoNombre type="text" required>
+
+         </div>
+        <div class="form-group" formControlName="email" >
+           <label for="email">
+            email
+           </label>
+           <input type="text"  required>
+        </div>
+        <div class="form-group" formControlName="phone" >
+           <label for="cellphone">
+            Celular
+           </label>
+           <input type="text" required>
+        </div>
+      
+        <div>          
+         <div class="btn" (click)="selectContactoType('true')" type="button">ver cotizacion</div>
+
+       <!-- <button class="btn btn--ghost btn--previous">
+   
+          <img cass="icon icon--small icon--right" src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--chevron-right" alt="ícone de avançar" aria-hidden="true">
+       </button> -->
+    </div>
+      </div> 
+    
+   
+      <div class="container container--half-width">
+        <div class="form-title" style="margin-bottom:15px">
+         Pronto!
+        </div>
+        <div class="form-group" style="margin-top: 0">
+         <label for="preferred_contact_method">
+            Como você prefere continuar a sua cotação?
+           </label>
+           <div>
+              <div class="btn-wrapper btn-wrapper--floating btn-wrapper--equal-sizes" name="preferred_contact_method">
+                 <button class="btn btn--vertical" (click)="selectContactoType('phone')"><img class="icon" src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--social-chat" alt="ícone de chat" aria-hidden="true">
+                 TELÉFONO
+                </button>
+                <button class="btn btn--vertical" (click)="selectContactoType('whatsapp')">
+                  <img class="icon" src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--social-whatsapp" alt="ícone de whatsapp" aria-hidden="true">
+                 Whatsapp
+                </button>
+              </div>
+           </div>
+           <div class="error">
+            <span>
+               Este campo é requerido.
+            </span>
+           </div>
+        </div>
+     </div>
+     <button class="btn back-to-home"  [disabled]="formPersonalData.invalid" type="submit">cotizar</button>
+
+   </form>
+
+
+
+     <!-- <div class="container container--half-width">
+        <div class="btn-wrapper"><button class="btn btn--ghost btn--previous"><img
+           class="icon icon--small icon--left" src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--chevron-left"
+           alt="ícone de retroceder" aria-hidden="true"> voltar</button> <button class="btn btn--primary btn--next"
+           type="submit">Continuar <img class="icon icon--small icon--right"
+           src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--chevron-right" alt="ícone de avançar" aria-hidden="true"></button>
+        </div>
+     </div>  -->
+    <div class="thankyou-card" *ngIf="selectedContactoType === 'phone' && formularioEnviado === true">
+        <img class="icon"
+           src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--thankyou-phone" alt="ícone de agradecimento">
+        <div class="thankyou-card--title">Gracias!</div>
+        <div class="thankyou-card--body">Entraremos em contato <b>em até 2 minutos!</b></div>
+     </div>
+
+     <!-- <div class="thankyou-card" >
+        <img class="icon"
+           src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--thankyou-chat" alt="ícone de agradecimento">
+        <div class="thankyou-card--title">Gracias!</div>
+        <div class="thankyou-card--body">Estaremos contactandole con uno de nuestros asesores.</div>
+     </div> -->
+
+    <div class="thankyou-card" *ngIf="selectedContactoType === 'whatsapp' && formularioEnviado === true">
+        <img class="icon"
+           src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--thankyou-whatsapp" alt="ícone de agradecimento">
+        <div class="thankyou-card--title">Gracias!</div>
+        <div class="thankyou-card--body">Estaremos enviandole un mensaje!</div>
+     </div>
+
+
+   </section>

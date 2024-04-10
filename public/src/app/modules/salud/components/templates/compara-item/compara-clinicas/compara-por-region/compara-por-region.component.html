@@ -1,0 +1,63 @@
+<mat-card>
+    <mat-card-title> Categories </mat-card-title>
+    <mat-card-content>
+      <mat-list role="list" fxLayout="row">
+        <mat-list-item routerLinkActive="active" role="listitem" *ngFor="let item of regiones | async" [routerLink]="'/'+item">
+          {{item}}
+        </mat-list-item>
+      </mat-list>
+  
+    </mat-card-content>
+  </mat-card>
+  
+  <mat-card>
+    <mat-card-title> Products </mat-card-title>
+    <mat-card-content>
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let item of clinicas | async">
+          <!-- {{item.title}} -->
+          <!-- {{item.price}} -->
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+
+
+    <div class="overflow-x-auto w-full" style="overflow-y: visible; height: 100%">
+      <table class="table w-full">
+        <thead class="sticky-header">
+          <tr>
+            <th>Nombre</th>
+             <ng-container *ngFor="let prop of clinicasVal[0][0] | keyvalue">
+              <ng-container *ngIf="prop.key !== 'nombre' && prop.key !== 'barrio'">
+                <th >{{ prop.key }}</th>
+              </ng-container>
+            </ng-container>
+         
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let item of clinicasVal[0]; let i = index">
+            <tr>
+              <td  class="nombre-col" matTooltipShowDelay="500">{{ item.nombre }}<br><span class="badge-custom">{{item.barrio}}</span></td>
+        
+              <ng-container *ngFor="let prop of item | keyvalue">
+                <ng-container *ngIf="prop.key !== 'nombre'">
+                  <td [ngClass]="{'check': prop.value == 'ok', 'no-check': prop.value == 'no'}">
+                    <ng-container *ngIf="prop.value == 'ok'">
+                       <br>                     
+                          <i class="fa fa-check  icon-container"></i>
+                    </ng-container>
+                    <ng-container *ngIf="prop.value == 'no'">
+ <br>                     <i class="fa fa-times fa-times-circle text-red-500 icon-container"></i>
+                    </ng-container>
+                  </td>
+                </ng-container>
+              </ng-container>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  
+  

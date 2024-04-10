@@ -1,0 +1,43 @@
+.grid[_nghost-dcc-c171]   .list-insurance-wrapper[_ngcontent-dcc-c171] {
+  display:grid;
+  grid-gap:14px;
+  grid-template-columns:repeat(auto-fit,minmax(251px,307px))
+}
+@media (max-width: 576px) {
+  .grid[_nghost-dcc-c171]   .list-insurance-wrapper[_ngcontent-dcc-c171] {
+    grid-template-columns:repeat(auto-fit,minmax(251px,350px))
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .grid[_nghost-dcc-c171]   .list-insurance-wrapper[_ngcontent-dcc-c171] {
+    grid-template-columns:repeat(auto-fit,245px)
+  }
+}
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .grid[_nghost-dcc-c171]   .list-insurance-wrapper[_ngcontent-dcc-c171] {
+    grid-template-columns:repeat(auto-fit,260px);
+    grid-gap:8px
+  }
+}
+[_nghost-dcc-c171]   .loading-layer[_ngcontent-dcc-c171]:before {
+  background-color:#ffffffe6;
+  position:absolute;
+  content:" ";
+  height:100%;
+  width:100%;
+  z-index:2;
+  left:0;
+  top:0
+}
+[_nghost-dcc-c171]     pagination-controls {
+  display:block;
+  text-align:center
+}
+[_nghost-dcc-c171]     pagination-controls .ngx-pagination {
+  padding:0
+}
+.spinner-text[_ngcontent-dcc-c171] {
+  position:absolute;
+  right:0;
+  left:0
+}

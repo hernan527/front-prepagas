@@ -1,0 +1,7059 @@
+[
+   {
+      "id":1,
+      "entidad":"ASOCIACION MEDICA DE LOMAS DE ZAMORA S.A POLICLINICO LOMAS",
+      "nombre":"Policlinico Lomas",
+      "direccion":"Avenida Hipólito Yrigoyen 8439",
+      "telefono":"",
+      "barrio/localidad":"LOMAS DE ZAMORA",
+      "partido":"LOMAS DE ZAMORA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1832",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":2,
+      "entidad":"CLINICA MARIANO MORENO",
+      "nombre":"Hospital Privado Mariano Moreno",
+      "direccion":"Uruguay 146",
+      "telefono":"",
+      "barrio/localidad":"PASO DEL REY",
+      "partido":"MORENO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1744",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":3,
+      "entidad":"CLINICA MATERNO INFANTIL DE QUILMES2",
+      "nombre":"Cl. Materno Infantil De Quilmes",
+      "direccion":"BRANDZEN 128",
+      "telefono":"",
+      "barrio/localidad":"QUILMES",
+      "partido":"QUILMES",
+      "provincia":"BUENOS AIRES",
+      "CP":"1878",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":4,
+      "entidad":"CLINICA MATERNO INFANTIL PRIVADA LOMAS",
+      "nombre":"Cl. Materno Infantil Priv. Lomas",
+      "direccion":"Acevedo 253",
+      "telefono":"",
+      "barrio/localidad":"LOMAS DE ZAMORA",
+      "partido":"LOMAS DE ZAMORA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1832",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":5,
+      "entidad":"CLINICA MODELO DE LANUS",
+      "nombre":"Cl. Mod. De Lanus",
+      "direccion":"Avenida Hipólito Yrigoyen 4835",
+      "telefono":"",
+      "barrio/localidad":"VALENTIN ALSINA",
+      "partido":"LANÚS",
+      "provincia":"BUENOS AIRES",
+      "CP":"1824",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":6,
+      "entidad":"CLINICA Ntra. Sra. DE FATIMA",
+      "nombre":"Cl. Ntra. Sra. De Fatima",
+      "direccion":"VICTOR VERGANI 830",
+      "telefono":"",
+      "barrio/localidad":"ZELAYA",
+      "partido":"PILAR",
+      "provincia":"BUENOS AIRES",
+      "CP":"1629",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":7,
+      "entidad":"CLINICA PRIVADA CIUDAD",
+      "nombre":"Cl. Priv. Ciudad",
+      "direccion":"Reinalda Rodriguez nº 3784",
+      "telefono":"",
+      "barrio/localidad":"CIUDAD EVITA",
+      "partido":"LA MATANZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1778",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":8,
+      "entidad":"CLINICA PRIVADA DE OJOS SANTA LUCIA",
+      "nombre":"Cl. Priv. De Ojos Sta. Lucia",
+      "direccion":"Almirante Brown 438",
+      "telefono":"",
+      "barrio/localidad":"QUILMES",
+      "partido":"QUILMES",
+      "provincia":"BUENOS AIRES",
+      "CP":"1878",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":9,
+      "entidad":"Clinica Privada Libertad",
+      "nombre":"Cl. Priv. Libertad",
+      "direccion":"Av. Eva Perón 4855",
+      "telefono":"",
+      "barrio/localidad":"LIBERTAD",
+      "partido":"MERLO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1716",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":10,
+      "entidad":"CLINICA PRIVADA MITRE",
+      "nombre":"Cl. Priv. Mitre",
+      "direccion":"Bartolomé Mitre 164",
+      "telefono":"",
+      "barrio/localidad":"RAMOS MEJIA",
+      "partido":"LA MATANZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1704",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":11,
+      "entidad":"CLINICA PRIVADA PROVINCIAL (DE MERLO)",
+      "nombre":"Cl. Priv. Provincial (De Merlo)",
+      "direccion":"Garay 2260",
+      "telefono":"",
+      "barrio/localidad":"SAN ANTONIO DE PADUA",
+      "partido":"MERLO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1722",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":12,
+      "entidad":"Hospital Español",
+      "nombre":"Hosp. Español",
+      "direccion":"Calle 9 Nº 175 (Entre 35 y 36) - LA PLATA",
+      "telefono":"",
+      "barrio/localidad":"LA PLATA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1900",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":13,
+      "entidad":"SANATORIO CLINICA MODELO LAFERRERE",
+      "nombre":"Srio. Cl. Mod. Laferrere",
+      "direccion":"Avenida Luro 6055",
+      "telefono":"",
+      "barrio/localidad":"GREGORIO DE LAFERRERE",
+      "partido":"LA MATANZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1757",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         217,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":14,
+      "entidad":"SANATORIO CLINICA PRIVADA ALCORTA",
+      "nombre":"Srio. Cl. Priv. Alcorta",
+      "direccion":"Aristóbulo del Valle 2629",
+      "telefono":"",
+      "barrio/localidad":"PASO DEL REY",
+      "partido":"MORENO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1744",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         213,
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":15,
+      "entidad":"SANATORIO CLINICA PRIVADA CATAN",
+      "nombre":"Srio. Cl. Priv. Catan",
+      "direccion":"José León Larre 250",
+      "telefono":"",
+      "barrio/localidad":"GONZALEZ CATAN",
+      "partido":"LA MATANZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1759",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":16,
+      "entidad":"SANATORIO CLINICA PRIVADA FATIMA",
+      "nombre":"Srio. Cl. Priv. Fatima",
+      "direccion":"Spadaccini 1084",
+      "telefono":"",
+      "barrio/localidad":"MAQUINISTA F. SAVIO ESTE",
+      "partido":"ESCOBAR",
+      "provincia":"BUENOS AIRES",
+      "CP":"1625",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":17,
+      "entidad":"SANATORIO DEL OESTE - (EX IMC SANATORIO ITUZAINGO)",
+      "nombre":"Srio. Del Oeste - (Ex Imc Srio. Ituzaingo)",
+      "direccion":"Gral. Olazabal 319",
+      "telefono":"",
+      "barrio/localidad":"ITUZAINGO SUR",
+      "partido":"ITUZAINGÓ",
+      "provincia":"BUENOS AIRES",
+      "CP":"1714",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":18,
+      "entidad":"Sanatorio Modelo Estrella",
+      "nombre":"Srio. Mod. Estrella",
+      "direccion":"Av. Bruzzone 685/87",
+      "telefono":"",
+      "barrio/localidad":"MONTE GRANDE",
+      "partido":"ESTEBAN ECHEVERRÍA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1842",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":19,
+      "entidad":"SANATORIO MODELO ESTRELLA",
+      "nombre":"Srio. Mod. Estrella",
+      "direccion":"Av. Bruzzone 685/87",
+      "telefono":"",
+      "barrio/localidad":"MONTE GRANDE",
+      "partido":"ESTEBAN ECHEVERRÍA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1842",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":20,
+      "entidad":"SANATORIO MODELO QUILMES",
+      "nombre":"Srio. Mod. Quilmes",
+      "direccion":"Andrés Baranda 282",
+      "telefono":"",
+      "barrio/localidad":"QUILMES OESTE",
+      "partido":"QUILMES",
+      "provincia":"BUENOS AIRES",
+      "CP":"1878",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":21,
+      "entidad":"SANATORIO NUEVOS AIRES SA",
+      "nombre":"Srio. Nuevos Aires Sa",
+      "direccion":"J. Canale 30",
+      "telefono":"",
+      "barrio/localidad":"TRISTAN SUAREZ",
+      "partido":"EZEIZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1806",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":22,
+      "entidad":"SANATORIO SANTA CLARA FLORENCIO VARELA",
+      "nombre":"Srio. Sta. Clara Florencio Varela",
+      "direccion":"General Juan M. de Pueyrredón 396",
+      "telefono":"",
+      "barrio/localidad":"VILLA VATTEONE",
+      "partido":"FLORENCIO VARELA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1888",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":23,
+      "entidad":"CEMIC - HOSPITAL UNIVERSITARIO SEDE LAS HERAS.",
+      "nombre":"Cemic - Hosp. Universitario Sede Las Heras.",
+      "direccion":"AV. GRAL. LAS HERAS 2900",
+      "telefono":"",
+      "barrio/localidad":"RECOLETA",
+      "partido":"COMUNA 2",
+      "provincia":"CABA",
+      "CP":"1425",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":24,
+      "entidad":"CENTRO DE TERAPIA RADIANTE ACEVEDO",
+      "nombre":"Ctro. De Terapia Radiante Acevedo",
+      "direccion":"Manuel Acevedo 365",
+      "telefono":"",
+      "barrio/localidad":"LOMAS DE ZAMORA",
+      "partido":"LOMAS DE ZAMORA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1832",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":25,
+      "entidad":"CENTRO DE TRAUMATOLOGIA - VALLS",
+      "nombre":"Ctro. De Traumatologia - Valls",
+      "direccion":"Av. Pueyrredón 2332",
+      "telefono":"",
+      "barrio/localidad":"RECOLETA",
+      "partido":"COMUNA 2",
+      "provincia":"CABA",
+      "CP":"1119",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         216,
+         "FINAL"
+      ]
+   },
+   {
+      "id":26,
+      "entidad":"CENTRO MEDICO HEPTA",
+      "nombre":"Ctro. Med. Hepta",
+      "direccion":"Avenida Fondo de la Legua 577",
+      "telefono":"",
+      "barrio/localidad":"SAN ISIDRO",
+      "partido":"SAN ISIDRO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1642",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":27,
+      "entidad":"CENTRO MEDICO LABORAL LUZURIAGA",
+      "nombre":"Ctro. Med. Laboral Luzuriaga",
+      "direccion":"Luzuriaga 246",
+      "telefono":"",
+      "barrio/localidad":"LLAVALLOL",
+      "partido":"LOMAS DE ZAMORA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1836",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":28,
+      "entidad":"Centro Medico San Jeronimo",
+      "nombre":"Ctro. Med. San Jeronimo",
+      "direccion":"Avenida San Martín Nº 2335 - Lomas del Mirador",
+      "telefono":"",
+      "barrio/localidad":"LOMAS DEL MIRADOR",
+      "partido":"LA MATANZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1752",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":29,
+      "entidad":"Centro Medico Santa Rita",
+      "nombre":"Ctro. Med. Sta. Rita",
+      "direccion":"BLANCO ENCALADA 158",
+      "telefono":"",
+      "barrio/localidad":"SAN ISIDRO",
+      "partido":"SAN ISIDRO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1642",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":30,
+      "entidad":"CENTRO MEDICO TALAR",
+      "nombre":"Ctro. Med. Talar",
+      "direccion":"Ruta 197 y Panamericana",
+      "telefono":"",
+      "barrio/localidad":"GENERAL PACHECO",
+      "partido":"TIGRE",
+      "provincia":"BUENOS AIRES",
+      "CP":"1617",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":31,
+      "entidad":"CLINICA AIRES DE PACHECO",
+      "nombre":"Cl. Aires De Pacheco",
+      "direccion":"Avenida Hipólito Yrigoyen 2270",
+      "telefono":"",
+      "barrio/localidad":"LOS TRONCOS DEL TALAR",
+      "partido":"TIGRE",
+      "provincia":"BUENOS AIRES",
+      "CP":"1648",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":32,
+      "entidad":"CLINICA ANGELUS",
+      "nombre":"Cl. Angelus",
+      "direccion":"Avenida Fondo de la Legua 390",
+      "telefono":"",
+      "barrio/localidad":"VILLA ADELINA",
+      "partido":"SAN ISIDRO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1642",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":33,
+      "entidad":"CLINICA AVELLANEDA MEDICAL CENTER",
+      "nombre":"Cl. Avellaneda Medical Center",
+      "direccion":"Juan B. Palaá 325",
+      "telefono":"",
+      "barrio/localidad":"AVELLANEDA",
+      "partido":"AVELLANEDA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1870",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":34,
+      "entidad":"Clinica Calchaqui 19 de Enero",
+      "nombre":"Cl. Calchaqui 19 De Enero",
+      "direccion":"Av. Calchaquí 24",
+      "telefono":"",
+      "barrio/localidad":"QUILMES OESTE",
+      "partido":"QUILMES",
+      "provincia":"BUENOS AIRES",
+      "CP":"1879",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         703,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":35,
+      "entidad":"Clinica de los Virreyes",
+      "nombre":"Cl. De Los Virreyes",
+      "direccion":"Ciudad de la Paz 1157",
+      "telefono":"",
+      "barrio/localidad":"BELGRANO",
+      "partido":"COMUNA 13",
+      "provincia":"CABA",
+      "CP":"1428",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":36,
+      "entidad":"CLINICA DEL NIÑO DE QUILMES",
+      "nombre":"Cl. Del Niño De Quilmes",
+      "direccion":"Avenida Lamadrid 444",
+      "telefono":"",
+      "barrio/localidad":"QUILMES",
+      "partido":"QUILMES",
+      "provincia":"BUENOS AIRES",
+      "CP":"1878",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":37,
+      "entidad":"Clinica del Niño y La Familia",
+      "nombre":"Cl. Del Niño Y La Familia",
+      "direccion":"Avenida Colón 2749",
+      "telefono":"",
+      "barrio/localidad":"MAR DEL PLATA",
+      "partido":"GENERAL PUEYRREDÓN",
+      "provincia":"BUENOS AIRES",
+      "CP":"7600",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":38,
+      "entidad":"CLINICA DELTA",
+      "nombre":"Cl. Delta",
+      "direccion":"Boulevard Sarmiento 154",
+      "telefono":"",
+      "barrio/localidad":"CAMPANA",
+      "partido":"CAMPANA",
+      "provincia":"BUENOS AIRES",
+      "CP":"2804",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":39,
+      "entidad":"Clinica Dim Rivadavia",
+      "nombre":"Cl. Dim Rivadavia",
+      "direccion":"Avenida Rivadavia 14252",
+      "telefono":"",
+      "barrio/localidad":"RAMOS MEJIA",
+      "partido":"LA MATANZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1704",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         "FINAL"
+      ]
+   },
+   {
+      "id":40,
+      "entidad":"Clinica Espora",
+      "nombre":"Cl. Espora",
+      "direccion":"Avenida Tomás Espora 645",
+      "telefono":"",
+      "barrio/localidad":"ADROGUE",
+      "partido":"ALMIRANTE BROWN",
+      "provincia":"BUENOS AIRES",
+      "CP":"1846",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":41,
+      "entidad":"CLINICA I.M.A.",
+      "nombre":"Cl. I.M.A.",
+      "direccion":"Francisco Seguí 593",
+      "telefono":"",
+      "barrio/localidad":"ADROGUE",
+      "partido":"ALMIRANTE BROWN",
+      "provincia":"BUENOS AIRES",
+      "CP":"1846",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         101,
+         102,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":42,
+      "entidad":"Clinica los Almendros",
+      "nombre":"Cl. Los Almendros",
+      "direccion":"San Luis 425",
+      "telefono":"",
+      "barrio/localidad":"ZELAYA",
+      "partido":"PILAR",
+      "provincia":"BUENOS AIRES",
+      "CP":"1629",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":43,
+      "entidad":"CLINICA MODELO DE MORON",
+      "nombre":"Cl. Mod. De Moron",
+      "direccion":"República Oriental de Uruguay 224",
+      "telefono":"",
+      "barrio/localidad":"MORON",
+      "partido":"MORÓN",
+      "provincia":"BUENOS AIRES",
+      "CP":"1708",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         213,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":44,
+      "entidad":"CLINICA MONTE GRANDE",
+      "nombre":"Cl. Monte Grande",
+      "direccion":"General Rodríguez 158",
+      "telefono":"",
+      "barrio/localidad":"MONTE GRANDE",
+      "partido":"ESTEBAN ECHEVERRÍA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1842",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":45,
+      "entidad":"CLINICA Ntra. Sra. DE LA DULCE ESPERA",
+      "nombre":"Cl. Ntra. Sra. De La Dulce Espera",
+      "direccion":"General Ferre 521",
+      "telefono":"",
+      "barrio/localidad":"SARANDI",
+      "partido":"AVELLANEDA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1872",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":46,
+      "entidad":"CLINICA PRIVADA ARANZAZU",
+      "nombre":"Cl. Priv. Aranzazu",
+      "direccion":"Avenida Presidente Teniente General Juan Domingo Perón 1212",
+      "telefono":"",
+      "barrio/localidad":"VIRREYES",
+      "partido":"SAN FERNANDO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1646",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":47,
+      "entidad":"CLINICA PRIVADA COLON",
+      "nombre":"Cl. Priv. Colon",
+      "direccion":"Colón 3263",
+      "telefono":"",
+      "barrio/localidad":"RAFAEL CALZADA",
+      "partido":"ALMIRANTE BROWN",
+      "provincia":"BUENOS AIRES",
+      "CP":"1847",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":48,
+      "entidad":"CLINICA PRIVADA CRISTO REY",
+      "nombre":"Cl. Priv. Cristo Rey",
+      "direccion":"Av. Gaspar Campos n°4988",
+      "telefono":"",
+      "barrio/localidad":"JOSE C. PAZ",
+      "partido":"JOSÉ C. PAZ",
+      "provincia":"BUENOS AIRES",
+      "CP":"3044",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":49,
+      "entidad":"Cl. Privada de Excelencia Médica Belgrano",
+      "nombre":"Cl. Priv. De Excelencia Médica Belgrano",
+      "direccion":"Calle 4 1074",
+      "telefono":"",
+      "barrio/localidad":"LA PLATA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1900",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":50,
+      "entidad":"CLINICA PRIVADA DEL BUEN PASTOR",
+      "nombre":"Cl. Priv. Del Buen Pastor",
+      "direccion":"Avenida Gral. Enrique Mosconi 1716",
+      "telefono":"",
+      "barrio/localidad":"LOMAS DEL MIRADOR",
+      "partido":"LA MATANZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1752",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         217,
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":51,
+      "entidad":"CLINICA PRIVADA DEL CARMEN SRL",
+      "nombre":"Cl. Priv. Del Carmen Srl",
+      "direccion":"Avenida Rivadavia 585",
+      "telefono":"",
+      "barrio/localidad":"ZARATE",
+      "partido":"ZÁRATE ",
+      "provincia":"BUENOS AIRES",
+      "CP":"2800",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":52,
+      "entidad":"CLINICA PRIVADA DRES. MARCELO S. TACHELLA",
+      "nombre":"Cl. Priv. Dres. Marcelo S. Tachella",
+      "direccion":"Avenida Rivadavia 15577",
+      "telefono":"",
+      "barrio/localidad":"HAEDO",
+      "partido":"MORÓN",
+      "provincia":"BUENOS AIRES",
+      "CP":"1706",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":53,
+      "entidad":"CLINICA PRIVADA ENRIQUE MOSCONI",
+      "nombre":"Cl. Priv. Enrique Mosconi",
+      "direccion":"Calle 8 3419",
+      "telefono":"",
+      "barrio/localidad":"VILLA NUEVA",
+      "partido":"BERISSO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1923",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":54,
+      "entidad":"CLINICA PRIVADA GENERAL BELGRANO",
+      "nombre":"Cl. Priv. General Belgrano",
+      "direccion":"Camino Gral. Belgrano 960",
+      "telefono":"",
+      "barrio/localidad":"QUILMES OESTE",
+      "partido":"QUILMES",
+      "provincia":"BUENOS AIRES",
+      "CP":"1878",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":55,
+      "entidad":"CLINICA PRIVADA GUEMES",
+      "nombre":"Cl. Priv. Guemes",
+      "direccion":"Mariano Moreno 1360",
+      "telefono":"",
+      "barrio/localidad":"LUJAN",
+      "partido":"LUJÁN",
+      "provincia":"BUENOS AIRES",
+      "CP":"6700",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":56,
+      "entidad":"Clinica Privada Instituto Medico Modelo",
+      "nombre":"Cl. Priv. Inst. Med. Mod.",
+      "direccion":"Calle 841 2469",
+      "telefono":"",
+      "barrio/localidad":"SAN FRANCISCO SOLANO",
+      "partido":"QUILMES",
+      "provincia":"BUENOS AIRES",
+      "CP":"1881",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":57,
+      "entidad":"CLINICA PRIVADA IPENSA",
+      "nombre":"Cl. Priv. Ipensa",
+      "direccion":"Calle 59 436",
+      "telefono":"",
+      "barrio/localidad":"LA PLATA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1900",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":58,
+      "entidad":"Clinica Privada Lujan",
+      "nombre":"Cl. Priv. Lujan",
+      "direccion":"Buenos Aires 50",
+      "telefono":"",
+      "barrio/localidad":"VILLA VATTEONE",
+      "partido":"FLORENCIO VARELA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1888",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":59,
+      "entidad":"CLINICA PRIVADA OLIVOS",
+      "nombre":"Cl. Priv. Olivos",
+      "direccion":"Avenida Maipú 1660",
+      "telefono":"",
+      "barrio/localidad":"OLIVOS",
+      "partido":"VICENTE LÓPEZ",
+      "provincia":"BUENOS AIRES",
+      "CP":"1636",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         213,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":60,
+      "entidad":"CLINICA PRIVADA PASSO",
+      "nombre":"Cl. Priv. Passo",
+      "direccion":"Avenida Eva Perón 3097",
+      "telefono":"",
+      "barrio/localidad":"TEMPERLEY",
+      "partido":"LOMAS DE ZAMORA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1834",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":61,
+      "entidad":"Clinica Privada Provincial",
+      "nombre":"Cl. Priv. Provincial",
+      "direccion":"25 de Mayo 70",
+      "telefono":"",
+      "barrio/localidad":"MARCOS PAZ",
+      "partido":"MARCOS PAZ",
+      "provincia":"BUENOS AIRES",
+      "CP":"1727",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":62,
+      "entidad":"Clinica Privada Ranelagh",
+      "nombre":"Cl. Priv. Ranelagh",
+      "direccion":"Camino General Manuel Belgrano 4786",
+      "telefono":"",
+      "barrio/localidad":"RANELAGH",
+      "partido":"BERAZATEGUI",
+      "provincia":"BUENOS AIRES",
+      "CP":"1886",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":63,
+      "entidad":"Clinica Privada San Fernando",
+      "nombre":"Cl. Priv. San Fernando",
+      "direccion":"Gral. Lavalle 1439",
+      "telefono":"",
+      "barrio/localidad":"SAN FERNANDO",
+      "partido":"SAN FERNANDO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1646",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         "FINAL"
+      ]
+   },
+   {
+      "id":64,
+      "entidad":"Clinica Privada San Marcos",
+      "nombre":"Cl. Priv. San Marcos",
+      "direccion":"Pringles",
+      "telefono":"",
+      "barrio/localidad":"GENERAL VILLEGAS (EST. VILLEGAS)",
+      "partido":"GENERAL VILLEGAS",
+      "provincia":"BUENOS AIRES",
+      "CP":"6230",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":65,
+      "entidad":"Clinica Privada San Vicente",
+      "nombre":"Cl. Priv. San Vicente",
+      "direccion":"AVENIDA SARMIENTO 901",
+      "telefono":"",
+      "barrio/localidad":"SAN VICENTE",
+      "partido":"SAN VICENTE",
+      "provincia":"BUENOS AIRES",
+      "CP":"1865",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":66,
+      "entidad":"CLINICA PRIVADA SANATORIO GENERAL SARMIENTO",
+      "nombre":"Cl. Priv. Srio. General Sarmiento",
+      "direccion":"Avenida Presidente Juan Domingo Perón 1796",
+      "telefono":"",
+      "barrio/localidad":"SAN MIGUEL",
+      "partido":"SAN MIGUEL",
+      "provincia":"BUENOS AIRES",
+      "CP":"1663",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":67,
+      "entidad":"CLINICA PRIVADA SANATORIO MODELO BURZACO",
+      "nombre":"Cl. Priv. Srio. Mod. Burzaco",
+      "direccion":"Avenida Tomás Espora 3250",
+      "telefono":"",
+      "barrio/localidad":"BURZACO",
+      "partido":"ALMIRANTE BROWN",
+      "provincia":"BUENOS AIRES",
+      "CP":"1852",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":68,
+      "entidad":"CLINICA PRIVADA SANATORIO URQUIZA",
+      "nombre":"Cl. Priv. Srio. Urquiza",
+      "direccion":"Urquiza 1537",
+      "telefono":"",
+      "barrio/localidad":"QUILMES OESTE",
+      "partido":"QUILMES",
+      "provincia":"BUENOS AIRES",
+      "CP":"1878",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":69,
+      "entidad":"CLINICA PRIVADA SANTA MARIA",
+      "nombre":"Cl. Priv. Sta. Maria",
+      "direccion":"E. Marengo 3908",
+      "telefono":"",
+      "barrio/localidad":"VILLA BALLESTER",
+      "partido":"GENERAL SAN MARTÍN",
+      "provincia":"BUENOS AIRES",
+      "CP":"1653",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         213,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":70,
+      "entidad":"CLINICA SAGRADO CORAZON DON TORCUATO",
+      "nombre":"Cl. Sagrado Corazon Don Torcuato",
+      "direccion":"Alvear 650",
+      "telefono":"",
+      "barrio/localidad":"DON TORCUATO ESTE",
+      "partido":"TIGRE",
+      "provincia":"BUENOS AIRES",
+      "CP":"1611",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":71,
+      "entidad":"Clinica San Camilo",
+      "nombre":"Cl. San Camilo",
+      "direccion":"Sivori 814",
+      "telefono":"",
+      "barrio/localidad":"CAMPANA",
+      "partido":"CAMPANA",
+      "provincia":"BUENOS AIRES",
+      "CP":"2804",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":72,
+      "entidad":"Clinica Zabala",
+      "nombre":"Cl. Zabala",
+      "direccion":"cabildo 1295",
+      "telefono":"",
+      "barrio/localidad":"BELGRANO",
+      "partido":"COMUNA 13",
+      "provincia":"CABA",
+      "CP":"1426",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":73,
+      "entidad":"CONSULTORIOS EXTERNOS CLINICA MODELO DE MORON ANEXO CASTELAR",
+      "nombre":"Cons. Ext. Cl. Mod. De Moron Anexo Castelar",
+      "direccion":"AVENIDA PRESIDENTE PERON 6202 ESQUINA LOS INDIOS",
+      "telefono":"",
+      "barrio/localidad":"CASTELAR",
+      "partido":"MORÓN",
+      "provincia":"BUENOS AIRES",
+      "CP":"1712",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":74,
+      "entidad":"CONSULTORIOS EXTERNOS CLINICA PRIVADA DRES. MARCELO S. TACHELLA SA",
+      "nombre":"Cons. Ext. Cl. Priv. Dres. Marcelo S. Tachella Sa",
+      "direccion":"Avda. Rivadavia Nº 15571",
+      "telefono":"",
+      "barrio/localidad":"HAEDO",
+      "partido":"MORÓN",
+      "provincia":"BUENOS AIRES",
+      "CP":"1706",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":75,
+      "entidad":"CONSULTORIOS EXTERNOS DE LA CLINICA BOEDO",
+      "nombre":"Cons. Ext. De La Cl. Boedo",
+      "direccion":"Hipólito Irigoyen 8389 - PB",
+      "telefono":"",
+      "barrio/localidad":"LOMAS DE ZAMORA",
+      "partido":"LOMAS DE ZAMORA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1832",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":76,
+      "entidad":"CONSULTORIOS EXTERNOS DE LA CLINICA Ntra. Sra. DE LA DULCE ESPERA",
+      "nombre":"Cons. Ext. De La Cl. Ntra. Sra. De La Dulce Espera",
+      "direccion":"Avenida Manuel Belgrano 2994",
+      "telefono":"",
+      "barrio/localidad":"SARANDI",
+      "partido":"AVELLANEDA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1872",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":77,
+      "entidad":"CONSULTORIOS EXTERNOS DEL SANATORIO ANCHORENA",
+      "nombre":"Cons. Ext. Del Srio. Anchorena",
+      "direccion":"JUYAREZ N 4178",
+      "telefono":"",
+      "barrio/localidad":"CIUDAD DEL LIBERTADOR GENERAL SAN MARTIN",
+      "partido":"GENERAL SAN MARTÍN",
+      "provincia":"BUENOS AIRES",
+      "CP":"1650",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":78,
+      "entidad":"Hospital Italiano",
+      "nombre":"Hosp. Italiano",
+      "direccion":"DR. RAMON CARRILLO 2215",
+      "telefono":"",
+      "barrio/localidad":"CIUDAD DEL LIBERTADOR GENERAL SAN MARTIN",
+      "partido":"GENERAL SAN MARTÍN",
+      "provincia":"BUENOS AIRES",
+      "CP":"1650",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":79,
+      "entidad":"HOSPITAL ITALIANO DE LA PLATA",
+      "nombre":"Hosp. Italiano De La Plata",
+      "direccion":"Avenida 51 1725",
+      "telefono":"",
+      "barrio/localidad":"RINGUELET",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1900",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":80,
+      "entidad":"HOSPITAL ITALIANO DE SAN JUSTO",
+      "nombre":"Hosp. Italiano De San Justo",
+      "direccion":"Calle Presidente Perón Nº 2231",
+      "telefono":"",
+      "barrio/localidad":"SAN JUSTO",
+      "partido":"LA MATANZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1754",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         217,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         403,
+         404,
+         "FINAL"
+      ]
+   },
+   {
+      "id":81,
+      "entidad":"HOSPITAL PRIVADO 24 DE SEPTIEMBRE",
+      "nombre":"Hosp. Priv. 24 De Septiembre",
+      "direccion":"Santa Juana de Arco 3545/55",
+      "telefono":"",
+      "barrio/localidad":"CIUDADELA",
+      "partido":"TRES DE FEBRERO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1702",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":82,
+      "entidad":"HOSPITAL PRIVADO DR. ALBERTO DUHAU",
+      "nombre":"Hosp. Priv. Dr. Alberto Duhau",
+      "direccion":"General Lavalle 2066",
+      "telefono":"",
+      "barrio/localidad":"JOSE C. PAZ",
+      "partido":"JOSÉ C. PAZ",
+      "provincia":"BUENOS AIRES",
+      "CP":"1665",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":83,
+      "entidad":"HOSPITAL PRIVADO MODELO",
+      "nombre":"Hosp. Priv. Mod.",
+      "direccion":"Julio Argentino Roca 1811",
+      "telefono":"",
+      "barrio/localidad":"FLORIDA",
+      "partido":"VICENTE LÓPEZ",
+      "provincia":"BUENOS AIRES",
+      "CP":"1602",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":84,
+      "entidad":"HOSPITAL PRIVADO SUDAMERICANO",
+      "nombre":"Hosp. Priv. Sudamericano",
+      "direccion":"Calle 2 432",
+      "telefono":"",
+      "barrio/localidad":"LA PLATA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1900",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":85,
+      "entidad":"Hospital Universitario Austral",
+      "nombre":"Hosp. Universitario Austral",
+      "direccion":"Avenida Juan Domingo Perón 1500",
+      "telefono":"",
+      "barrio/localidad":"PRESIDENTE DERQUI",
+      "partido":"PILAR",
+      "provincia":"BUENOS AIRES",
+      "CP":"1635",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         217,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         403,
+         404,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":86,
+      "entidad":"Instituto Central de Medicina",
+      "nombre":"Inst. Central De Medicina",
+      "direccion":"Calle 43 581",
+      "telefono":"",
+      "barrio/localidad":"LA PLATA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1900",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":87,
+      "entidad":"Instituto de Diagnostico de La Plata",
+      "nombre":"Inst. De Diagnostico De La Plata",
+      "direccion":"Calle 62 - 370",
+      "telefono":"",
+      "barrio/localidad":"LA PLATA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1900",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":88,
+      "entidad":"INSTITUTO DE OFTALMOLOGIA PRIETO DIAZ",
+      "nombre":"Inst. De Oftalmologia Prieto Diaz",
+      "direccion":"Avenida 53 693",
+      "telefono":"",
+      "barrio/localidad":"LA PLATA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1900",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":89,
+      "entidad":"INSTITUTO MEDICO AGUERO",
+      "nombre":"Inst. Med. Aguero",
+      "direccion":"Agüero 1395",
+      "telefono":"",
+      "barrio/localidad":"VILLA SARMIENTO",
+      "partido":"MORÓN",
+      "provincia":"BUENOS AIRES",
+      "CP":"1708",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":90,
+      "entidad":"INSTITUTO MEDICO ARGENTINO DE BERISSO SA",
+      "nombre":"Inst. Med. Argentino De Berisso Sa",
+      "direccion":"12 N 4295",
+      "telefono":"",
+      "barrio/localidad":"VILLA NUEVA",
+      "partido":"BERISSO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1923",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":91,
+      "entidad":"INSTITUTO MEDICO BRANDSEN",
+      "nombre":"Inst. Med. Brandsen",
+      "direccion":"Ferrari 128",
+      "telefono":"",
+      "barrio/localidad":"CORONEL BRANDSEN",
+      "partido":"BRANDSEN",
+      "provincia":"BUENOS AIRES",
+      "CP":"1980",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":92,
+      "entidad":"Instituto Medico de la Ribera",
+      "nombre":"Inst. Med. De La Ribera",
+      "direccion":"La Merced e/ Perú y Sarmiento  286",
+      "telefono":"",
+      "barrio/localidad":"ENSENADA",
+      "partido":"ENSENADA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1925",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":93,
+      "entidad":"Instituto Medico Mater Dei",
+      "nombre":"Inst. Med. Mater Dei",
+      "direccion":"Calle 45 - 915",
+      "telefono":"",
+      "barrio/localidad":"LA PLATA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1900",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":94,
+      "entidad":"INSTITUTO MEDICO PLATENSE",
+      "nombre":"Inst. Med. Platense",
+      "direccion":"Calle 51 Nº 315",
+      "telefono":"",
+      "barrio/localidad":"LA PLATA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1900",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":95,
+      "entidad":"INSTITUTO OTORRINOLARINGOLOGICO",
+      "nombre":"Inst. Otorrinolaringologico",
+      "direccion":"Juan Domingo Perón 2150",
+      "telefono":"",
+      "barrio/localidad":"BALVANERA",
+      "partido":"COMUNA 3",
+      "provincia":"CABA",
+      "CP":"1040",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":96,
+      "entidad":"Instituto Pediatrico Castelar",
+      "nombre":"Inst. Pediatrico Castelar",
+      "direccion":"MONTES DE OCA 2231",
+      "telefono":"",
+      "barrio/localidad":"CASTELAR",
+      "partido":"MORÓN",
+      "provincia":"BUENOS AIRES",
+      "CP":"1712",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":97,
+      "entidad":"NUEVA CLINICA DEL NIÑO DE LA PLATA",
+      "nombre":"Nueva Cl. Del Niño De La Plata",
+      "direccion":"Calle 63 Nº 763",
+      "telefono":"",
+      "barrio/localidad":"LA PLATA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1900",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":98,
+      "entidad":"NUEVA CLINICA PRIVADA BECCAR",
+      "nombre":"Nueva Cl. Priv. Beccar",
+      "direccion":"Julian Navarro 48",
+      "telefono":"",
+      "barrio/localidad":"BECCAR",
+      "partido":"SAN ISIDRO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1643",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":99,
+      "entidad":"NUEVO SANATORIO BERAZATEGUI",
+      "nombre":"Nuevo Srio. Berazategui",
+      "direccion":"Rigolleau (14) Nº 4121 esq. 141",
+      "telefono":"",
+      "barrio/localidad":"BERAZATEGUI",
+      "partido":"BERAZATEGUI",
+      "provincia":"BUENOS AIRES",
+      "CP":"1884",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":100,
+      "entidad":"POLICLINICA BANCARIA 9 DE JULIO - OSBA",
+      "nombre":"Policlinica Bancaria 9 De Julio - Osba",
+      "direccion":"Av. Gaona 2197",
+      "telefono":"",
+      "barrio/localidad":"CABALLITO",
+      "partido":"COMUNA 6",
+      "provincia":"006",
+      "CP":"1416",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":101,
+      "entidad":"POLICLINICA CRISTO CAMINANTE",
+      "nombre":"Policlinica Cristo Caminante",
+      "direccion":"Barragán Bastilla 5651",
+      "telefono":"",
+      "barrio/localidad":"GONZALEZ CATAN",
+      "partido":"LA MATANZA",
+      "provincia":"427",
+      "CP":"1759",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         217,
+         "FINAL"
+      ]
+   },
+   {
+      "id":102,
+      "entidad":"POLICLINICA MPS MEDICINA PLATENSE SOLIDARIA SA",
+      "nombre":"Policlinica Mps Medicina Platense Solidaria Sa",
+      "direccion":"Avenida 44 1022",
+      "telefono":"",
+      "barrio/localidad":"LA PLATA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1900",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":103,
+      "entidad":"POLICLINICA PRIVADA ALVEAR",
+      "nombre":"Policlinica Priv. Alvear",
+      "direccion":"AVENIDA MARCELO T. DE ALVEAR 2737/2757",
+      "telefono":"",
+      "barrio/localidad":"DON TORCUATO OESTE",
+      "partido":"TIGRE",
+      "provincia":"BUENOS AIRES",
+      "CP":"1611",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":104,
+      "entidad":"REHABILITACION SAN JERONIMO",
+      "nombre":"Rehabilitacion San Jeronimo",
+      "direccion":"Villegas Nº 2154",
+      "telefono":"",
+      "barrio/localidad":"SAN JUSTO",
+      "partido":"LA MATANZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1754",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         217,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":105,
+      "entidad":"SANATORIO ANCHORENA SAN MARTIN",
+      "nombre":"Srio. Anchorena San Martin",
+      "direccion":"Liniers 1632",
+      "telefono":"",
+      "barrio/localidad":"GENERAL SAN MARTÍN",
+      "partido":"GENERAL SAN MARTÍN",
+      "provincia":"BUENOS AIRES",
+      "CP":"7600",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":106,
+      "entidad":"Sanatorio Argentino del Plata",
+      "nombre":"Srio. Argentino Del Plata",
+      "direccion":"56 N° 874",
+      "telefono":"",
+      "barrio/localidad":"LA PLATA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1900",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":107,
+      "entidad":"SANATORIO AUGUSTO TIMOTEO VANDOR",
+      "nombre":"Srio. Augusto Timoteo Vandor",
+      "direccion":"General Belgrano 76",
+      "telefono":"",
+      "barrio/localidad":"CAMPANA",
+      "partido":"CAMPANA",
+      "provincia":"126",
+      "CP":"2804",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":108,
+      "entidad":"Sanatorio Bernal",
+      "nombre":"Srio. Bernal",
+      "direccion":"Avenida San Martín 572",
+      "telefono":"",
+      "barrio/localidad":"BERNAL OESTE",
+      "partido":"QUILMES",
+      "provincia":"BUENOS AIRES",
+      "CP":"1876",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":109,
+      "entidad":"SANATORIO CLINICA SAN JOSE OBRERO",
+      "nombre":"Srio. Cl. San Jose Obrero",
+      "direccion":"FLANDES Y SAN MARTIN S/N",
+      "telefono":"",
+      "barrio/localidad":"ESTACION JAUREGUI VILLA FLANDRIA",
+      "partido":"LUJÁN",
+      "provincia":"BUENOS AIRES",
+      "CP":"6706",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":110,
+      "entidad":"SANATORIO DE LA TRINIDAD DE RAMOS MEJIA",
+      "nombre":"Srio. De La Trinidad De Ramos Mejia",
+      "direccion":"Avenida Rivadavia N° 13280",
+      "telefono":"",
+      "barrio/localidad":"RAMOS MEJIA",
+      "partido":"LA MATANZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1704",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         601,
+         602,
+         603,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":111,
+      "entidad":"SANATORIO DE LA TRINIDAD SAN ISIDRO",
+      "nombre":"Srio. De La Trinidad San Isidro",
+      "direccion":"Avenida Fondo de la Legua 851",
+      "telefono":"",
+      "barrio/localidad":"SAN ISIDRO",
+      "partido":"SAN ISIDRO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1642",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         215,
+         216,
+         403,
+         404,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":112,
+      "entidad":"SANATORIO DEL OESTE (EX IMC SANATORIO MERLO)",
+      "nombre":"Srio. Del Oeste (Ex Imc Srio. Merlo)",
+      "direccion":"Avenida del Libertador 295",
+      "telefono":"",
+      "barrio/localidad":"MERLO",
+      "partido":"MERLO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1722",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         213,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":113,
+      "entidad":"SANATORIO LA TORRE LOMAS DEL MIRADOR",
+      "nombre":"Srio. La Torre Lomas Del Mirador",
+      "direccion":"Av. General Mosconi 1527",
+      "telefono":"",
+      "barrio/localidad":"LOMAS DEL MIRADOR",
+      "partido":"LA MATANZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1752",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":114,
+      "entidad":"SANATORIO MEDICO LOS TILOS",
+      "nombre":"Srio. Med. Los Tilos",
+      "direccion":"Calle 41Nº 347",
+      "telefono":"",
+      "barrio/localidad":"LA PLATA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1900",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":115,
+      "entidad":"Sanatorio Modelo Adrogue",
+      "nombre":"Srio. Mod. Adrogue",
+      "direccion":"Avenida Tomás Espora 2250",
+      "telefono":"",
+      "barrio/localidad":"BURZACO",
+      "partido":"ALMIRANTE BROWN",
+      "provincia":"BUENOS AIRES",
+      "CP":"1852",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         703,
+         704,
+         705,
+         "FINAL"
+      ]
+   },
+   {
+      "id":116,
+      "entidad":"Sanatorio Modelo de Caseros",
+      "nombre":"Srio. Mod. De Caseros",
+      "direccion":"Lisandro Medina 2285",
+      "telefono":"",
+      "barrio/localidad":"CASEROS",
+      "partido":"TRES DE FEBRERO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1678",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":117,
+      "entidad":"Sanatorio Vicente Lopez - La Torre",
+      "nombre":"Srio. Vicente Lopez - La Torre",
+      "direccion":"San Martín 2142",
+      "telefono":"",
+      "barrio/localidad":"FLORIDA",
+      "partido":"VICENTE LÓPEZ",
+      "provincia":"BUENOS AIRES",
+      "CP":"1602",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":118,
+      "entidad":"SANATORIO MODELO Ntra. Sra. DE LA MERCED",
+      "nombre":"Srio. Mod. Ntra. Sra. De La Merced",
+      "direccion":"Julio Besada 6969",
+      "telefono":"",
+      "barrio/localidad":"MARTIN CORONADO",
+      "partido":"TRES DE FEBRERO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1682",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":119,
+      "entidad":"SANATORIO Ntra. Sra. DEL PILAR",
+      "nombre":"Srio. Ntra. Sra. Del Pilar",
+      "direccion":"Avenida Gaona 3979",
+      "telefono":"",
+      "barrio/localidad":"CIUDADELA",
+      "partido":"TRES DE FEBRERO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1702",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":120,
+      "entidad":"Sanatorio Plaza",
+      "nombre":"Srio. Plaza",
+      "direccion":"Florentino Ameghino 650",
+      "telefono":"",
+      "barrio/localidad":"MAQUINISTA F. SAVIO ESTE",
+      "partido":"ESCOBAR",
+      "provincia":"BUENOS AIRES",
+      "CP":"1625",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":121,
+      "entidad":"SANATORIO PRIVADO FIGUEROA PAREDES ( ISIDRO CASANOVA )",
+      "nombre":"Figueroa Paredes ( Isidro Casanova )",
+      "direccion":"Dante Alighieri 3637",
+      "telefono":"",
+      "barrio/localidad":"ISIDRO CASANOVA",
+      "partido":"LA MATANZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1765",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":122,
+      "entidad":"SANATORIO PRIVADO FIGUEROA PAREDES ( MARIANO ACOSTA )",
+      "nombre":"Figueroa Paredes ( Mariano Acosta )",
+      "direccion":"Tres Sargentos 540",
+      "telefono":"",
+      "barrio/localidad":"MARIANO ACOSTA",
+      "partido":"MERLO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1723",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":123,
+      "entidad":"SANATORIO PRIVADO FIGUEROA PAREDES LAFERRERE DE SICOMED",
+      "nombre":"Figueroa Paredes (Laferrere)",
+      "direccion":"Ruta Nacional 3 10841",
+      "telefono":"",
+      "barrio/localidad":"GREGORIO DE LAFERRERE",
+      "partido":"LA MATANZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1757",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":124,
+      "entidad":"SANATORIO PRIVADO MADERO",
+      "nombre":"Srio. Priv. Madero",
+      "direccion":"Domingo Millan 20",
+      "telefono":"",
+      "barrio/localidad":"VILLA EDUARDO MADERO",
+      "partido":"LA MATANZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1768",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":125,
+      "entidad":"SANATORIO PRIVADO MARIANO ACOSTA SA",
+      "nombre":"Srio. Priv. Mariano Acosta Sa",
+      "direccion":"Tres Sargentos 540",
+      "telefono":"",
+      "barrio/localidad":"MARIANO ACOSTA",
+      "partido":"MERLO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1723",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":126,
+      "entidad":"SANATORIO PROFESOR ITOIZ",
+      "nombre":"Srio. Profesor Itoiz",
+      "direccion":"Avenida Adolfo Alsina 174/82",
+      "telefono":"",
+      "barrio/localidad":"WILDE",
+      "partido":"AVELLANEDA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1870",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":127,
+      "entidad":"Sanatorio Ramon Cereijo",
+      "nombre":"Srio. Ramon Cereijo",
+      "direccion":"lavalle 1686",
+      "telefono":"",
+      "barrio/localidad":"SAN NICOLAS",
+      "partido":"COMUNA 1",
+      "provincia":"CABA",
+      "CP":"1048",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         703,
+         704,
+         "FINAL"
+      ]
+   },
+   {
+      "id":128,
+      "entidad":"Sanatorio San Francisco",
+      "nombre":"Srio. San Francisco",
+      "direccion":"Avenida Mitre Nº 2455",
+      "telefono":"",
+      "barrio/localidad":"AVELLANEDA",
+      "partido":"AVELLANEDA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1870",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":129,
+      "entidad":"Sanatorio San Jose De Villa Elisa",
+      "nombre":"Srio. San Jose De Villa Elisa",
+      "direccion":"Calle 15 esq. 55",
+      "telefono":"",
+      "barrio/localidad":"VILLA ELISA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1894",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":130,
+      "entidad":"Sanatorio San Lucas",
+      "nombre":"Srio. San Lucas",
+      "direccion":"Belgrano 369",
+      "telefono":"",
+      "barrio/localidad":"SAN ISIDRO",
+      "partido":"SAN ISIDRO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1642",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         214,
+         216,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         402,
+         403,
+         404,
+         601,
+         602,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":131,
+      "entidad":"SANATORIO SAN MAURICIO",
+      "nombre":"Srio. San Mauricio",
+      "direccion":"Av. Sáenz 456",
+      "telefono":"",
+      "barrio/localidad":"GONZALEZ CATAN",
+      "partido":"LA MATANZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1759",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":132,
+      "entidad":"Sanatorio Santa Sofia",
+      "nombre":"Srio. Sta. Sofia",
+      "direccion":"Los Ceibos 1792",
+      "telefono":"",
+      "barrio/localidad":"VILLA ADELINA",
+      "partido":"SAN ISIDRO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1607",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":133,
+      "entidad":"CLINICA PRIVADA DEL NIÑO Y LA FAMILIA",
+      "nombre":"Cl. Priv. Del Niño Y La Familia",
+      "direccion":"CALLE 843 2416",
+      "telefono":"",
+      "barrio/localidad":"SAN FRANCISCO SOLANO",
+      "partido":"QUILMES",
+      "provincia":"BUENOS AIRES",
+      "CP":"1881",
+      "url":"clinicadelninoylafamilia.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":134,
+      "entidad":"Centro Medico Nordelta",
+      "nombre":"Ctro. Med. Nordelta",
+      "direccion":"Avenida De Los Lagos 6785",
+      "telefono":"",
+      "barrio/localidad":"RINCON DE MILBERG",
+      "partido":"TIGRE",
+      "provincia":"BUENOS AIRES",
+      "CP":"1648",
+      "url":"cm-nordelta.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":135,
+      "entidad":"CLINICA PRIVADA CENTRO SA",
+      "nombre":"Cl. Priv. Ctro. Sa",
+      "direccion":"España 352",
+      "telefono":"",
+      "barrio/localidad":"GENERAL RODRIGUEZ",
+      "partido":"GENERAL RODRÍGUEZ",
+      "provincia":"BUENOS AIRES",
+      "CP":"1748",
+      "url":"http://clinicaprivadacentro.com.ar/",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":136,
+      "entidad":"Clinica Instituto Medico de La Rivera",
+      "nombre":"Cl. Inst. Med. De La Rivera",
+      "direccion":"La Merced 286",
+      "telefono":"",
+      "barrio/localidad":"ENSENADA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1925",
+      "url":"http://www.clinicadelaribera.com.ar/",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":137,
+      "entidad":"INSTITUTO MEDICO DE ALTA COMPLEJIDAD - IMAC",
+      "nombre":"Inst. Med. De Alta Complejidad - IMAC",
+      "direccion":"Av. Díaz Vélez 4363",
+      "telefono":"",
+      "barrio/localidad":"ALMAGRO",
+      "partido":"COMUNA 5",
+      "provincia":"CABA",
+      "CP":"",
+      "url":"http://www.instituto-imac.com.ar/",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         213,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":138,
+      "entidad":"CENTRO PRIVADO DE OJOS",
+      "nombre":"Ctro. Priv. De Ojos",
+      "direccion":"Av. Rivadavia 1902",
+      "telefono":"",
+      "barrio/localidad":"BALVANERA",
+      "partido":"CABA",
+      "provincia":"CABA",
+      "CP":"1429",
+      "url":"http://www.privadodeojos.com",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":139,
+      "entidad":"SANATORIPO SOLANO INSTITUTO MEDICO MODELO",
+      "nombre":"Sanatoripo Solano Inst. Med. Mod.",
+      "direccion":"Calle 841 2469",
+      "telefono":"",
+      "barrio/localidad":"SAN FRANCISCO SOLANO",
+      "partido":"QUILMES",
+      "provincia":"BUENOS AIRES",
+      "CP":"1881",
+      "url":"https://sanatorioimm.com.ar/",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":140,
+      "entidad":"GRUPO PEDIATRICO HOSPITAL MILITAR",
+      "nombre":"Grupo Pediatrico Hosp. Militar",
+      "direccion":"Av. Luis María Campos 726, Piso 8",
+      "telefono":"",
+      "barrio/localidad":"PALERMO",
+      "partido":"CABA",
+      "provincia":"CABA",
+      "CP":"1426",
+      "url":"https://www.grupopediatrico.com.ar/",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":141,
+      "entidad":"HOSPITAL BRITANICO DE BUENOS AIRES CENTRAL",
+      "nombre":"Hosp. Britanico De Buenos Aires Central",
+      "direccion":"Perdriel 74",
+      "telefono":"",
+      "barrio/localidad":"BARRACAS",
+      "partido":"COMUNA 4",
+      "provincia":"CABA",
+      "CP":"1275",
+      "url":"https://www.hbritanicoweb.com.ar/",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         102,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":142,
+      "entidad":"Sanatorio San Juan",
+      "nombre":"Srio. San Juan",
+      "direccion":"Av. Hipolito Yrigoyen 5132",
+      "telefono":"",
+      "barrio/localidad":"LANUS ESTE",
+      "partido":"LANÚS",
+      "provincia":"BUENOS AIRES",
+      "CP":"1824",
+      "url":"sanatoriosanjuan.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":143,
+      "entidad":"Instituto Alexander Fleming",
+      "nombre":"Inst. Alexander Fleming",
+      "direccion":"Avenida Crámer 1180",
+      "telefono":"",
+      "barrio/localidad":"COLEGIALES",
+      "partido":"COMUNA 13",
+      "provincia":"CABA",
+      "CP":"C1426ANZ",
+      "url":"www.alexanderfleming.org",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":144,
+      "entidad":"Clinica Bazterrica",
+      "nombre":"Cl. Bazterrica",
+      "direccion":"Billinghurst 2072 (esquina Juncal)",
+      "telefono":"",
+      "barrio/localidad":"RECOLETA",
+      "partido":"COMUNA 2",
+      "provincia":"CABA",
+      "CP":"1425",
+      "url":"www.bazterrica.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":145,
+      "entidad":"Clinica Bessone",
+      "nombre":"Cl. Bessone",
+      "direccion":"Paunero 1652",
+      "telefono":"",
+      "barrio/localidad":"SAN MIGUEL",
+      "partido":"SAN MIGUEL",
+      "provincia":"BUENOS AIRES",
+      "CP":"1663",
+      "url":"www.bessone.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":146,
+      "entidad":"CLINICA DEL SOL",
+      "nombre":"Cl. Del Sol",
+      "direccion":"Avenida Coronel Díaz 2211",
+      "telefono":"",
+      "barrio/localidad":"RECOLETA",
+      "partido":"COMUNA 2",
+      "provincia":"CABA",
+      "CP":"1425",
+      "url":"www.cdelsol.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":147,
+      "entidad":"CEMIC - HOSPITAL UNIVERSITARIO SEDE SAAVEDRA",
+      "nombre":"Cemic - Hosp. Universitario Sede Saavedra",
+      "direccion":"Galván 4102",
+      "telefono":"",
+      "barrio/localidad":"COGHLAN",
+      "partido":"COMUNA 12",
+      "provincia":"CABA",
+      "CP":"1431",
+      "url":"www.cemic.edu.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         214,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":148,
+      "entidad":"CENTRO DE OJOS LOMAS",
+      "nombre":"Ctro. De Ojos Lomas",
+      "direccion":"Avenida Almirante Brown 2461",
+      "telefono":"",
+      "barrio/localidad":"LOMAS DE ZAMORA",
+      "partido":"LOMAS DE ZAMORA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1832",
+      "url":"www.centrodeojoslomas.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":149,
+      "entidad":"CENTRO GALLEGO DE BUENOS AIRES",
+      "nombre":"Ctro. Gallego De Buenos Aires",
+      "direccion":"Avenida Belgrano 2199",
+      "telefono":"",
+      "barrio/localidad":"BALVANERA",
+      "partido":"COMUNA 3",
+      "provincia":"CABA",
+      "CP":"1094",
+      "url":"www.centrogallegoba.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         704,
+         "FINAL"
+      ]
+   },
+   {
+      "id":150,
+      "entidad":"CLINICA ADVENTISTA BELGRANO",
+      "nombre":"Cl. Adventista Belgrano",
+      "direccion":"Estomba 1710",
+      "telefono":"",
+      "barrio/localidad":"AGRONOMIA",
+      "partido":"COMUNA 15",
+      "provincia":"CABA",
+      "CP":"1430",
+      "url":"www.clinicaadventista.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         213,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":151,
+      "entidad":"Clinica De Cirugia Especializada",
+      "nombre":"Cl. De Cirugia Especializada",
+      "direccion":"Larrea 926",
+      "telefono":"",
+      "barrio/localidad":"RECOLETA",
+      "partido":"COMUNA 2",
+      "provincia":"CABA",
+      "CP":"C1117ABD",
+      "url":"www.clinicacce.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":152,
+      "entidad":"CLIMEDICA",
+      "nombre":"Climedica",
+      "direccion":"Saavedra 1039",
+      "telefono":"",
+      "barrio/localidad":"SAN CRISTOBAL",
+      "partido":"COMUNA 3",
+      "provincia":"CABA",
+      "CP":"1229",
+      "url":"www.clinicaclimedica.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":153,
+      "entidad":"Clinica de la Comunidad",
+      "nombre":"Cl. De La Comunidad",
+      "direccion":"La Merced 383",
+      "telefono":"",
+      "barrio/localidad":"VILLA CATELA",
+      "partido":"ENSENADA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1925",
+      "url":"www.clinicaensenada.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":154,
+      "entidad":"Clinica de la Esperanza",
+      "nombre":"Cl. De La Esperanza",
+      "direccion":"Tres Arroyos 2060",
+      "telefono":"",
+      "barrio/localidad":"VILLA GENERAL MITRE",
+      "partido":"COMUNA 11",
+      "provincia":"CABA",
+      "CP":"1416",
+      "url":"www.clinicaesperanza.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":155,
+      "entidad":"Clinica Oftalmologica Malbran",
+      "nombre":"Cl. Oftalmologica Malbran",
+      "direccion":"Parera 164",
+      "telefono":"",
+      "barrio/localidad":"RETIRO",
+      "partido":"COMUNA 1",
+      "provincia":"CABA",
+      "CP":"1014",
+      "url":"www.clinicamalbran.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":156,
+      "entidad":"Clinica de Microcirugia",
+      "nombre":"Cl. De Microcirugia",
+      "direccion":"TENIENTE GENERAL JUAN DOMINGO PERON 1834",
+      "telefono":"",
+      "barrio/localidad":"BALVANERA",
+      "partido":"COMUNA 3",
+      "provincia":"CABA",
+      "CP":"1040",
+      "url":"www.clinicamicrocirugia.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":157,
+      "entidad":"CLINICA SAN JERONIMO - SEDE ABASTO",
+      "nombre":"Cl. San Jeronimo - Sede Abasto",
+      "direccion":"Gallo 548",
+      "telefono":"",
+      "barrio/localidad":"ALMAGRO",
+      "partido":"COMUNA 5",
+      "provincia":"CABA",
+      "CP":"1172",
+      "url":"www.clinicasanjeronimo.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":158,
+      "entidad":"Clinica Cruz Celeste",
+      "nombre":"Cl. Cruz Celeste",
+      "direccion":"Bermúdez 2895",
+      "telefono":"",
+      "barrio/localidad":"VILLA LUZURIAGA",
+      "partido":"LA MATANZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1754",
+      "url":"www.cruzceleste.com",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":159,
+      "entidad":"Clinica Y Maternidad Suizo Argentina",
+      "nombre":"Cl. Y Maternidad Suizo Argentina",
+      "direccion":"Av. Pueyrredón 1461",
+      "telefono":"",
+      "barrio/localidad":"RECOLETA",
+      "partido":"COMUNA 2",
+      "provincia":"CABA",
+      "CP":"1118",
+      "url":"www.cymsa.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":160,
+      "entidad":"Diagnostico Maipu por Imagenes",
+      "nombre":"Diagnostico Maipu Por Imagenes",
+      "direccion":"CABILDO 457",
+      "telefono":"",
+      "barrio/localidad":"PALERMO",
+      "partido":"COMUNA 14",
+      "provincia":"CABA",
+      "CP":"1426",
+      "url":"www.diagnosticomaipu.com",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":161,
+      "entidad":"FUNDACION ARAUZ",
+      "nombre":"Fundacion Arauz",
+      "direccion":"Tte. Gral. Juan Domingo Perón 2238",
+      "telefono":"",
+      "barrio/localidad":"BALVANERA",
+      "partido":"COMUNA 3",
+      "provincia":"CABA",
+      "CP":"1040",
+      "url":"www.farauzorl.org.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         213,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":162,
+      "entidad":"HOSPITAL PRIVADO DE NIÑOS FUNDACION HOSPITALARIA",
+      "nombre":"Hosp. Priv. De Niños Fundacion Hosp.aria",
+      "direccion":"Av. Crámer 4601",
+      "telefono":"",
+      "barrio/localidad":"SAAVEDRA",
+      "partido":"COMUNA 12",
+      "provincia":"CABA",
+      "CP":"C1429AKK",
+      "url":"www.fh.org.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":163,
+      "entidad":"FLENI - SEDE BELGRANO",
+      "nombre":"Fleni - Sede Belgrano",
+      "direccion":"Montañeses 2325",
+      "telefono":"",
+      "barrio/localidad":"BELGRANO",
+      "partido":"COMUNA 13",
+      "provincia":"CABA",
+      "CP":"1428",
+      "url":"www.fleni.org.ar/web/fleni_sedebelgrano.php",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         217,
+         218,
+         219,
+         220,
+         221,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         404,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":164,
+      "entidad":"INSTITUTO DE CARDIOLOGIA Y CIRUGIA CARDIOVASCULAR - FUNDACION FAVALORO (EDIFICIO CENTRAL)",
+      "nombre":"Inst. De Cardiologia Y Cirugia Cardiovascular - Fundacion Favaloro (Edificio Central)",
+      "direccion":"Av. Belgrano 1746",
+      "telefono":"",
+      "barrio/localidad":"MONSERRAT",
+      "partido":"COMUNA 1",
+      "provincia":"CABA",
+      "CP":"C1093AAS",
+      "url":"www.fundacionfavaloro.org",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         403,
+         404,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":165,
+      "entidad":"CENTRO DE INTERNACION E INVESTIGACION CLINICA FUNDALEU",
+      "nombre":"Ctro. De Internacion E Investigacion Cl. Fundaleu",
+      "direccion":"JOSE EVARISTO URIBURU 1450 / 1520",
+      "telefono":"",
+      "barrio/localidad":"RECOLETA",
+      "partido":"COMUNA 2",
+      "provincia":"CABA",
+      "CP":"1114",
+      "url":"www.fundaleu.org",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         401,
+         402,
+         403,
+         404,
+         "FINAL"
+      ]
+   },
+   {
+      "id":166,
+      "entidad":"Hospital Aleman",
+      "nombre":"Hosp. Aleman",
+      "direccion":"Avenida Pueyrredón 1650",
+      "telefono":"",
+      "barrio/localidad":"RECOLETA",
+      "partido":"COMUNA 2",
+      "provincia":"CABA",
+      "CP":"1118",
+      "url":"www.hospitalaleman.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         217,
+         218,
+         219,
+         220,
+         221,
+         106,
+         107,
+         108,
+         109,
+         110,
+         403,
+         404,
+         601,
+         602,
+         603,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":167,
+      "entidad":"HOSPITAL ITALIANO DE BUENOS AIRES",
+      "nombre":"Hosp. Italiano De Buenos Aires",
+      "direccion":"Gascón 450",
+      "telefono":"",
+      "barrio/localidad":"BOEDO",
+      "partido":"COMUNA 5",
+      "provincia":"CABA",
+      "CP":"1199",
+      "url":"www.hospitalitaliano.org.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         403,
+         404,
+         "FINAL"
+      ]
+   },
+   {
+      "id":168,
+      "entidad":"HOSPITAL ASOCIACION DE BENEFICENCIA HOSPITAL SIRIO LIBANES",
+      "nombre":"Hosp. Asociacion De Beneficencia Hosp. Sirio Libanes",
+      "direccion":"Campana 4658",
+      "telefono":"",
+      "barrio/localidad":"VILLA DEVOTO",
+      "partido":"COMUNA 11",
+      "provincia":"CABA",
+      "CP":"1419",
+      "url":"www.hospitalsiriolibanes.org",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         "FINAL"
+      ]
+   },
+   {
+      "id":169,
+      "entidad":"INSTITUTO ARGENTINO DE DIAGNOSTICO Y TRATAMIENTO",
+      "nombre":"Inst. Argentino De Diagnostico Y Tratamiento",
+      "direccion":"Marcelo T. de Alvear 2346",
+      "telefono":"",
+      "barrio/localidad":"RECOLETA",
+      "partido":"COMUNA 2",
+      "provincia":"CABA",
+      "CP":"1122",
+      "url":"www.iadt.com",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":170,
+      "entidad":"ICBA INSTITUTO CARDIOVASCULAR DE BUENOS AIRES",
+      "nombre":"Icba Inst. Cardiovascular De Buenos Aires",
+      "direccion":"BLANCO ENCALADA 1543/47",
+      "telefono":"",
+      "barrio/localidad":"BELGRANO",
+      "partido":"COMUNA 13",
+      "provincia":"CABA",
+      "CP":"C1428DCO",
+      "url":"www.icba-cardiovascular.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         213,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":171,
+      "entidad":"IFER - INSTITUTO DE GINECOLOGIA Y FERTILIDAD",
+      "nombre":"Ifer - Inst. De Ginecologia Y Fertilidad",
+      "direccion":"Marcelo T. de Alvear 2261 7º Piso",
+      "telefono":"",
+      "barrio/localidad":"RECOLETA",
+      "partido":"COMUNA 2",
+      "provincia":"CABA",
+      "CP":"1122",
+      "url":"www.ifer.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":172,
+      "entidad":"INSTITUTO MEDICO DE OBSTETRICIA (I.M.O)",
+      "nombre":"Inst. Med. De Obstetricia (I.M.O)",
+      "direccion":"Presidente J.D. Perón 2275",
+      "telefono":"",
+      "barrio/localidad":"BALVANERA",
+      "partido":"COMUNA 3",
+      "provincia":"CABA",
+      "CP":"1040",
+      "url":"www.imobstetricia.com.ar/home.htm",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":173,
+      "entidad":"Instituto Dupuytren de Traumatologia y Ortopedia",
+      "nombre":"Inst. Dupuytren De Traumatologia Y Ortopedia",
+      "direccion":"Av. Belgrano 3402 1º Piso",
+      "telefono":"",
+      "barrio/localidad":"BOEDO",
+      "partido":"COMUNA 5",
+      "provincia":"CABA",
+      "CP":"1210",
+      "url":"www.institutodupuytren.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":174,
+      "entidad":"INSTITUTO QUIRURGICO DEL CALLAO",
+      "nombre":"Inst. Quirurgico Del Callao",
+      "direccion":"Callao  483/486 /499 / Lavalle 1790",
+      "telefono":"",
+      "barrio/localidad":"CONSTITUCION",
+      "partido":"COMUNA 1",
+      "provincia":"CABA",
+      "CP":"1048",
+      "url":"www.iqdc.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":175,
+      "entidad":"Instituto Superior De Otorrinolaringologia",
+      "nombre":"Inst. Superior De Otorrinolaringologia",
+      "direccion":"Pasteur 740",
+      "telefono":"",
+      "barrio/localidad":"BALVANERA",
+      "partido":"COMUNA 3",
+      "provincia":"CABA",
+      "CP":"1028",
+      "url":"www.iso-otorrino.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         "FINAL"
+      ]
+   },
+   {
+      "id":176,
+      "entidad":"Sanatorio Las Lomas",
+      "nombre":"Srio. Las Lomas",
+      "direccion":"Avenida Diego Carman 555",
+      "telefono":"",
+      "barrio/localidad":"SAN ISIDRO",
+      "partido":"SAN ISIDRO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1642",
+      "url":"www.laslomas.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         216,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":177,
+      "entidad":"CLINICA LA SAGRADA FAMILIA",
+      "nombre":"Cl. La Sagrada Familia",
+      "direccion":"José Hernández 1642",
+      "telefono":"",
+      "barrio/localidad":"BELGRANO",
+      "partido":"COMUNA 13",
+      "provincia":"CABA",
+      "CP":"1426",
+      "url":"www.sagradafamilia.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":178,
+      "entidad":"Sanatorio Agote",
+      "nombre":"Srio. Agote",
+      "direccion":"Dr. Luis Agote 2477",
+      "telefono":"",
+      "barrio/localidad":"RECOLETA",
+      "partido":"COMUNA 2",
+      "provincia":"CABA",
+      "CP":"1425",
+      "url":"www.sanatorioagote.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         "FINAL"
+      ]
+   },
+   {
+      "id":179,
+      "entidad":"SANATORIO ANCHORENA",
+      "nombre":"Srio. Anchorena",
+      "direccion":"Anchorena 1872",
+      "telefono":"",
+      "barrio/localidad":"RECOLETA",
+      "partido":"COMUNA 2",
+      "provincia":"CABA",
+      "CP":"1425",
+      "url":"www.sanatorio-anchorena.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         402,
+         403,
+         404,
+         "FINAL"
+      ]
+   },
+   {
+      "id":180,
+      "entidad":"Sanatorio Colegiales",
+      "nombre":"Srio. Colegiales",
+      "direccion":"Conde 851",
+      "telefono":"",
+      "barrio/localidad":"BELGRANO",
+      "partido":"COMUNA 13",
+      "provincia":"CABA",
+      "CP":"1426",
+      "url":"www.sanatoriocolegiales.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         213,
+         215,
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         402,
+         403,
+         404,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":181,
+      "entidad":"Sanatorio De Los Arcos",
+      "nombre":"Srio. De Los Arcos",
+      "direccion":"AV. JUAN B. JUSTO 909",
+      "telefono":"",
+      "barrio/localidad":"PALERMO",
+      "partido":"COMUNA 14",
+      "provincia":"CABA",
+      "CP":"1425",
+      "url":"www.sanatoriodelosarcos.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":182,
+      "entidad":"SANATORIO FINOCHIETTO - OBRA SOCIAL DEL PERSONAL DE DIRECCION DE ACCION SOCIAL DE EMPRESARIOS (ASE)",
+      "nombre":"Srio. Finochietto",
+      "direccion":"Córdoba 2674",
+      "telefono":"",
+      "barrio/localidad":"BALVANERA",
+      "partido":"COMUNA 3",
+      "provincia":"003",
+      "CP":"C1187AAN",
+      "url":"www.sanatoriofinochietto.com",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         106,
+         107,
+         108,
+         109,
+         110,
+         403,
+         404,
+         601,
+         602,
+         603,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":183,
+      "entidad":"SANATORIO GUEMES",
+      "nombre":"Srio. Guemes",
+      "direccion":"Francisco Acuña de Figueroa 1240",
+      "telefono":"",
+      "barrio/localidad":"PALERMO",
+      "partido":"COMUNA 14",
+      "provincia":"CABA",
+      "CP":"1180",
+      "url":"www.sanatorioguemes.com",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":184,
+      "entidad":"Sanatorio Mater Dei",
+      "nombre":"Srio. Mater Dei",
+      "direccion":"San Martín de Tours 2952",
+      "telefono":"",
+      "barrio/localidad":"PALERMO",
+      "partido":"COMUNA 14",
+      "provincia":"CABA",
+      "CP":"1425",
+      "url":"www.sanatoriomaterdei.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         214,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         403,
+         404,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":185,
+      "entidad":"SANATORIO DE LA TRINIDAD MITRE",
+      "nombre":"Srio. De La Trinidad Mitre",
+      "direccion":"Bartolomé Mitre 2553",
+      "telefono":"",
+      "barrio/localidad":"BALVANERA",
+      "partido":"COMUNA 3",
+      "provincia":"CABA",
+      "CP":"1039",
+      "url":"www.sanatoriomitre.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         213,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         601,
+         602,
+         603,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":186,
+      "entidad":"Sanatorio Otamendi Y Miroli",
+      "nombre":"Srio. Otamendi Y Miroli",
+      "direccion":"Azcuénaga 870",
+      "telefono":"",
+      "barrio/localidad":"RECOLETA",
+      "partido":"COMUNA 2",
+      "provincia":"CABA",
+      "CP":"1115",
+      "url":"www.sanatorio-otamendi.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         404,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":187,
+      "entidad":"Sanatorio San Jose",
+      "nombre":"Srio. San Jose",
+      "direccion":"Sánchez de Bustamante 1674",
+      "telefono":"",
+      "barrio/localidad":"RECOLETA",
+      "partido":"COMUNA 2",
+      "provincia":"CABA",
+      "CP":"1425",
+      "url":"www.sanatoriosanjose.org.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":188,
+      "entidad":"Sanatorio San Pablo",
+      "nombre":"Srio. San Pablo",
+      "direccion":"Alvear 1444",
+      "telefono":"",
+      "barrio/localidad":"SAN FERNANDO",
+      "partido":"SAN FERNANDO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1646",
+      "url":"www.sanatoriosanpablo.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         213,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":189,
+      "entidad":"Centro Médico Trinidad Barrio Norte",
+      "nombre":"Ctro. Médico Trinidad Barrio Norte",
+      "direccion":"Av. Córdoba 1712",
+      "telefono":"",
+      "barrio/localidad":"Barrio Norte",
+      "partido":"CABA",
+      "provincia":"CABA",
+      "CP":"1055",
+      "url":"www.sanatoriosdelatrinidad.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":190,
+      "entidad":"Centro Medico Trinidad Jockey Club",
+      "nombre":"Ctro. Med. Trinidad Jockey Club",
+      "direccion":"Av. Sir Alexander Fleming 590",
+      "telefono":"",
+      "barrio/localidad":"San Isidro",
+      "partido":"San Isidro",
+      "provincia":"BUENOS AIRES",
+      "CP":"1642",
+      "url":"www.sanatoriosdelatrinidad.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":191,
+      "entidad":"CASA HOSPITAL SAN JUAN DE DIOS",
+      "nombre":"Casa Hosp. San Juan De Dios",
+      "direccion":"Doctor Gabriel Ardoino 714",
+      "telefono":"",
+      "barrio/localidad":"RAMOS MEJIA",
+      "partido":"LA MATANZA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1704",
+      "url":"www.sanjuandedios.org.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         213,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":192,
+      "entidad":"Clinica y Maternidad Santa Isabel",
+      "nombre":"Cl. Y Maternidad Sta. Isabel",
+      "direccion":"Av. Directorio 2037",
+      "telefono":"",
+      "barrio/localidad":"FLORES",
+      "partido":"COMUNA 7",
+      "provincia":"CABA",
+      "CP":"C1406DKG",
+      "url":"www.santaisabel.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":193,
+      "entidad":"SANATORIO DE LA PROVIDENCIA",
+      "nombre":"Srio. De La Providencia",
+      "direccion":"Tucumán 1863",
+      "telefono":"",
+      "barrio/localidad":"BALVANERA",
+      "partido":"COMUNA 3",
+      "provincia":"CABA",
+      "CP":"1050",
+      "url":"www.sdelaprovidencia.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         213,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":194,
+      "entidad":"Sanatorio Juncal",
+      "nombre":"Srio. Juncal",
+      "direccion":"Avenida Almirante Brown 2779",
+      "telefono":"",
+      "barrio/localidad":"TEMPERLEY",
+      "partido":"LOMAS DE ZAMORA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1834",
+      "url":"www.sjuncal.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":195,
+      "entidad":"SANATORIO PRIVADO DEL NIÑO",
+      "nombre":"Srio. Priv. Del Niño",
+      "direccion":"Adolfo Alsina 1519",
+      "telefono":"",
+      "barrio/localidad":"LOMAS DE ZAMORA",
+      "partido":"LOMAS DE ZAMORA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1832",
+      "url":"www.spdnlomas.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":196,
+      "entidad":"SANATORIO DE LA TRINIDAD PALERMO",
+      "nombre":"Srio. De La Trinidad Palermo",
+      "direccion":"Cerviño 4720",
+      "telefono":"",
+      "barrio/localidad":"PALERMO",
+      "partido":"COMUNA 14",
+      "provincia":"CABA",
+      "CP":"1425",
+      "url":"www.trinidadpalermo.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         212,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":197,
+      "entidad":"SANATORIO DE LA TRINIDAD QUILMES",
+      "nombre":"Srio. De La Trinidad Quilmes",
+      "direccion":"Avenida Carlos Pellegrini 499",
+      "telefono":"",
+      "barrio/localidad":"QUILMES OESTE",
+      "partido":"QUILMES",
+      "provincia":"BUENOS AIRES",
+      "CP":"1878",
+      "url":"www.trinidadquilmes.com.ar",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         601,
+         602,
+         603,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":198,
+      "entidad":"CLINICA UNIVERSITARIA ( UAI )",
+      "nombre":"Cl. Universitaria ( Uai )",
+      "direccion":"Portela 2967/75",
+      "telefono":"",
+      "barrio/localidad":"VILLA LUGANO",
+      "partido":"COMUNA 8",
+      "provincia":"008",
+      "CP":"1437",
+      "url":"www.uaisalud.com.ar/hu/home.html",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":199,
+      "entidad":"CLINICA PRIVADA CORPORACION MEDICA GENERAL SAN MARTIN",
+      "nombre":"Cl. Priv. Corporacion Medica General San Martin",
+      "direccion":"Matheu N° 4023 / Consultorios Felix Ballester 2221",
+      "telefono":"",
+      "barrio/localidad":"GENERAL SAN MARTÍN",
+      "partido":"GENERAL SAN MARTÍN",
+      "provincia":"BUENOS AIRES",
+      "CP":"1650",
+      "url":"www.webcorporacion.com.ar/sanatorio.php",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":200,
+      "entidad":"CLINICA CITY BELL",
+      "nombre":"Cl. City Bell",
+      "direccion":"CALLE 13 B 344",
+      "telefono":"",
+      "barrio/localidad":"City Bell",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1898",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         101,
+         102,
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":201,
+      "entidad":"CENTRO DE ATENCION AMBULATORIA RETIRO (HOSPITAL BRITANICO)",
+      "nombre":"Ctro. De Atencion Ambulatoria Retiro (Hosp. Britanico)",
+      "direccion":"Suipacha 732",
+      "telefono":"",
+      "barrio/localidad":"MICROCENTRO",
+      "partido":"COMUNA 1",
+      "provincia":"CABA",
+      "CP":"1008",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         102,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":202,
+      "entidad":"CENTRO DE ATENCION DEL HOSPITAL BRITANICO ( FLORIDA )",
+      "nombre":"Ctro. De Atencion Del Hosp. Britanico ( Florida )",
+      "direccion":"Avenida Maipu 1450",
+      "telefono":"",
+      "barrio/localidad":"VICENTE LOPEZ",
+      "partido":"VICENTE LÓPEZ",
+      "provincia":"BUENOS AIRES",
+      "CP":"",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         102,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":203,
+      "entidad":"CENTRO DE ATENCION DEL HOSPITAL BRITANICO ( LANUS )",
+      "nombre":"Ctro. De Atencion Del Hosp. Britanico ( Lanus )",
+      "direccion":"Avenida Yrigoyen 4429",
+      "telefono":"",
+      "barrio/localidad":"Lanus",
+      "partido":"Lanus",
+      "provincia":"BUENOS AIRES",
+      "CP":"",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":204,
+      "entidad":"CENTRO DE ATENCION DEL HOSPITAL BRITANICO ( LOMAS DE ZAMORA )",
+      "nombre":"Ctro. De Atencion Del Hosp. Britanico ( Lomas De Zamora )",
+      "direccion":"Pereyra Lucena 580",
+      "telefono":"",
+      "barrio/localidad":"VICENTE LOPEZ",
+      "partido":"LOMAS DE ZAMORA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1832",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         212,
+         214,
+         215,
+         216,
+         217,
+         218,
+         219,
+         220,
+         221,
+         102,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         401,
+         402,
+         403,
+         404,
+         601,
+         602,
+         603,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":205,
+      "entidad":"CENTRO DE ATENCION DEL HOSPITAL BRITANICO ( QUILMES )",
+      "nombre":"Ctro. De Atencion Del Hosp. Britanico ( Quilmes )",
+      "direccion":"Av. Caseros 1750",
+      "telefono":"",
+      "barrio/localidad":"Don Bosco",
+      "partido":"QUILMES",
+      "provincia":"BUENOS AIRES",
+      "CP":"",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":206,
+      "entidad":"Centro de Ojos del Sur Bonaerense Ciocchi",
+      "nombre":"Ctro. De Ojos Del Sur Bonaerense Ciocchi",
+      "direccion":"Sarandí 199",
+      "telefono":"",
+      "barrio/localidad":"LOMAS DE ZAMORA",
+      "partido":"LOMAS DE ZAMORA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1832",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":207,
+      "entidad":"CLINICA DE LA COMUNIDAD DE ENSENADA",
+      "nombre":"Cl. De La Comunidad De Ensenada",
+      "direccion":"LA MERCED 383",
+      "telefono":"",
+      "barrio/localidad":"ENSENADA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1925",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         103,
+         104,
+         105,
+         106,
+         107,
+         108,
+         109,
+         110,
+         "FINAL"
+      ]
+   },
+   {
+      "id":208,
+      "entidad":"Clinica Privada del Centro Pediatrica",
+      "nombre":"Cl. Priv. Del Ctro. Pediatrica",
+      "direccion":"Calle 12 761",
+      "telefono":"",
+      "barrio/localidad":"LA PLATA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1900",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":209,
+      "entidad":"Clinica Privada Dr. J.J. Vaccarini",
+      "nombre":"Cl. Priv. Dr. J.J. Vaccarini",
+      "direccion":"C. 80 570",
+      "telefono":"",
+      "barrio/localidad":"LA PLATA",
+      "partido":"LA PLATA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1900",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":210,
+      "entidad":"CONSULTORIOS EXTERNOS DEL HOSPITAL ITALIANO ( CASEROS )",
+      "nombre":"Cons. Ext. Del Hosp. Italiano ( Caseros )",
+      "direccion":"Avenida San Martín 2282",
+      "telefono":"",
+      "barrio/localidad":"CASEROS",
+      "partido":"TRES DE FEBRERO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1678",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":211,
+      "entidad":"CONSULTORIOS EXTERNOS DEL HOSPITAL ITALIANO ( LOMAS DE ZAMORA )",
+      "nombre":"Cons. Ext. Del Hosp. Italiano ( Lomas De Zamora )",
+      "direccion":"España 151",
+      "telefono":"",
+      "barrio/localidad":"LOMAS DE ZAMORA",
+      "partido":"LOMAS DE ZAMORA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1832",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":212,
+      "entidad":"CONSULTORIOS EXTERNOS DEL HOSPITAL ITALIANO ( MORON )",
+      "nombre":"Cons. Ext. Del Hosp. Italiano ( Moron )",
+      "direccion":"Avenida Rivadavia 17955",
+      "telefono":"",
+      "barrio/localidad":"MORON",
+      "partido":"MORON",
+      "provincia":"BUENOS AIRES",
+      "CP":"1708",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":213,
+      "entidad":"CONSULTORIOS EXTERNOS DEL HOSPITAL ITALIANO ( SAN ISIDRO )",
+      "nombre":"Cons. Ext. Del Hosp. Italiano ( San Isidro )",
+      "direccion":"Avenida Centenario 635",
+      "telefono":"",
+      "barrio/localidad":"SAN ISIDRO",
+      "partido":"SAN ISIDRO",
+      "provincia":"BUENOS AIRES",
+      "CP":"1642",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":214,
+      "entidad":"CONSULTORIOS EXTERNOS DEL HOSPITAL ITALIANO ( VILLA DEL PARQUE )",
+      "nombre":"Cons. Ext. Del Hosp. Italiano ( Villa Del Parque )",
+      "direccion":"Cuenca 2586",
+      "telefono":"",
+      "barrio/localidad":"VILLA DEL PARQUE",
+      "partido":"COMUNA 11",
+      "provincia":"CABA",
+      "CP":"1417",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":215,
+      "entidad":"Instituto de la Vision",
+      "nombre":"Inst. De La Vision",
+      "direccion":"M.T. de Alvear 2261",
+      "telefono":"",
+      "barrio/localidad":"RECOLETA",
+      "partido":"CABA",
+      "provincia":"CABA",
+      "CP":"1122",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         601,
+         602,
+         603,
+         "FINAL"
+      ]
+   },
+   {
+      "id":216,
+      "entidad":"Sanatorio Carlos Miner",
+      "nombre":"Srio. Carlos Miner",
+      "direccion":"HIPOLITO YRIGOYEN 523",
+      "telefono":"",
+      "barrio/localidad":"ZARATE",
+      "partido":"ZARATE",
+      "provincia":"BUENOS AIRES",
+      "CP":"2800",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         703,
+         704,
+         705,
+         706,
+         "FINAL"
+      ]
+   },
+   {
+      "id":218,
+      "entidad":"SWISS MEDICAL CENTER BARRIO NORTE",
+      "nombre":"Swiss Medical Center Barrio Norte",
+      "direccion":"AV SANTA FE 2479 PISO 2",
+      "telefono":"",
+      "barrio/localidad":"RECOLETA",
+      "partido":"CABA",
+      "provincia":"CABA",
+      "CP":"",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":219,
+      "entidad":"SWISS MEDICAL CENTER MICROCENTRO",
+      "nombre":"Swiss Medical Center Microcentro",
+      "direccion":"25 DE MAYO 264",
+      "telefono":"",
+      "barrio/localidad":"SAN NICOLAS",
+      "partido":"CABA",
+      "provincia":"",
+      "CP":"",
+      "url":"",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         "FINAL"
+      ]
+   },
+   {
+      "id":220,
+      "entidad":"CENTRO DE OJOS ESTEBAN ECHEVERRIA",
+      "nombre":"Ctro. De Ojos Esteban Echeverria",
+      "direccion":"Leandro N. Alem 648",
+      "telefono":"",
+      "barrio/localidad":"MONTE GRANDE",
+      "partido":"ESTEBAN ECHEVERRÍA",
+      "provincia":"BUENOS AIRES",
+      "CP":"1842",
+      "url":"0",
+      "imagen":[
+         
+      ],
+      "tipo":"",
+      "especialidades":[
+         
+      ],
+      "planes":[
+         211,
+         "FINAL"
+      ]
+   }
+]

@@ -17,7 +17,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import { CompararSelectComponent } from './comparar-select/comparar-select.component';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+// import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 
 
@@ -48,7 +48,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     MatRadioModule,
     MatCheckboxModule,
     MatRadioModule,
-    NgxSkeletonLoaderModule 
+    // NgxSkeletonLoaderModule 
 
     // ,     NgParticlesModule
 ],

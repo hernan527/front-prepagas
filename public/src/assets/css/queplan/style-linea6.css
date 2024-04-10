@@ -1,0 +1,16 @@
+.logo[_ngcontent-dcc-c191] {
+  vertical-align:middle;
+  width:13rem;
+  height:2.7rem
+}
+.logo[_ngcontent-dcc-c191]     img {
+  max-width:15rem
+}
+.navbar-brand[_ngcontent-dcc-c191] {
+  min-width:12rem
+}
+@media screen and (max-width: 400px) {
+  .logo[_ngcontent-dcc-c191] {
+    width:14rem
+  }
+}

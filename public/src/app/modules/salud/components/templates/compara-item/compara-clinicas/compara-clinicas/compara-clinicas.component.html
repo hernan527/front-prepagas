@@ -1,0 +1,193 @@
+
+<mat-tab-group animationDuration="100ms" id="mat-tab-group" *ngIf="showDiv2">
+  
+  <p >Clínicas, Sanatorios y Hospitales Privados</p>
+  <mat-tab label="CABA">
+    <div class="overflow-x-auto w-full" style="overflow-y: visible; height: 100%">
+      <table class="table w-full">
+        <thead class="sticky-header">
+          <tr>
+            <th>Nombre</th>
+             <ng-container *ngFor="let prop of clinicasVal[0][0] | keyvalue">
+              <ng-container *ngIf="prop.key !== 'nombre' && prop.key !== 'barrio' && prop && prop.key">
+                <th >{{ findEmpresaById(prop.key) }}  <br>{{ findNameById(prop.key) }}            
+                </th>      
+              </ng-container>
+            </ng-container>
+         
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let item of clinicasVal[0]; let i = index">
+            <tr>
+              <td  class="nombre-col" matTooltipShowDelay="500">{{ item.nombre }}<br><span class="badge-custom">{{item.barrio}}</span></td>
+        
+              <ng-container *ngFor="let prop of item | keyvalue">
+                <ng-container *ngIf="prop.key !== 'nombre'">
+                  <td>
+                    <br>
+                    <i *ngIf="prop.value == 'ok'" class="features__tick icon-container"></i>
+                    <i *ngIf="prop.value == 'no'" class="features__cross icon-container"></i>
+                  </td>
+                </ng-container>
+                
+              </ng-container>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </mat-tab>
+  
+  
+  
+  
+  
+  <mat-tab label="GBA Norte">
+    <div class="overflow-x-auto w-full" style="overflow-y: visible; height: 100%">
+      <table class="table w-full">
+        <thead class="sticky-header">
+          <tr>
+            <th>Nombre</th>
+             <ng-container *ngFor="let prop of clinicasVal[0][0] | keyvalue">
+              <ng-container *ngIf="prop.key !== 'nombre' && prop.key !== 'barrio' && prop && prop.key">
+                <th >{{ findEmpresaById(prop.key) }}  <br>{{ findNameById(prop.key) }}            
+                </th>      
+              </ng-container>
+            </ng-container>
+         
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let item of clinicasVal[1]; let i = index">
+            <tr>
+              <td  class="nombre-col" matTooltipShowDelay="500">{{ item.nombre }}<br><span class="badge-custom">{{item.barrio}}</span></td>
+        
+              <ng-container *ngFor="let prop of item | keyvalue">
+                <ng-container *ngIf="prop.key !== 'nombre'">
+                  <td>
+                    <br>
+                    <i *ngIf="prop.value == 'ok'" class="features__tick icon-container"></i>
+                    <i *ngIf="prop.value == 'no'" class="features__cross icon-container"></i>
+                  </td>
+                </ng-container>
+                
+              </ng-container>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+</mat-tab>
+
+<mat-tab label="GBA Oeste">
+  <div class="overflow-x-auto w-full" style="overflow-y: visible; height: 100%">
+    <table class="table w-full">
+      <thead class="sticky-header">
+        <tr>
+          <th>Nombre</th>
+             <ng-container *ngFor="let prop of clinicasVal[0][0] | keyvalue">
+              <ng-container *ngIf="prop.key !== 'nombre' && prop.key !== 'barrio' && prop && prop.key">
+                <th >{{ findEmpresaById(prop.key) }}  <br>{{ findNameById(prop.key) }}            
+                </th>      
+              </ng-container>
+            </ng-container>
+       
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let item of clinicasVal[2]; let i = index">
+          <tr>
+            <td  class="nombre-col" matTooltipShowDelay="500">{{ item.nombre }}<br><span class="badge-custom">{{item.barrio}}</span></td>
+      
+            <ng-container *ngFor="let prop of item | keyvalue">
+              <ng-container *ngIf="prop.key !== 'nombre'">
+                <td>
+                  <br>
+                  <i *ngIf="prop.value == 'ok'" class="features__tick icon-container"></i>
+                  <i *ngIf="prop.value == 'no'" class="features__cross icon-container"></i>
+                </td>
+              </ng-container>
+              
+            </ng-container>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</mat-tab>
+<mat-tab label="GBA Sur">
+  <div class="overflow-x-auto w-full" style="overflow-y: visible; height: 100%">
+    <table class="table w-full">
+      <thead class="sticky-header">
+        <tr>
+          <th>Nombre</th>
+             <ng-container *ngFor="let prop of clinicasVal[0][0] | keyvalue">
+              <ng-container *ngIf="prop.key !== 'nombre' && prop.key !== 'barrio' && prop && prop.key">
+                <th >{{ findEmpresaById(prop.key) }}  <br>{{ findNameById(prop.key) }}            
+                </th>      
+              </ng-container>
+            </ng-container>
+       
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let item of clinicasVal[3]; let i = index">
+          <tr>
+            <td  class="nombre-col" matTooltipShowDelay="500">{{ item.nombre }}<br><span class="badge-custom">{{item.barrio}}</span></td>
+      
+            <ng-container *ngFor="let prop of item | keyvalue">
+              <ng-container *ngIf="prop.key !== 'nombre'">
+                <td>
+                  <br>
+                  <i *ngIf="prop.value == 'ok'" class="features__tick icon-container"></i>
+                  <i *ngIf="prop.value == 'no'" class="features__cross icon-container"></i>
+                </td>
+              </ng-container>
+              
+            </ng-container>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</mat-tab>
+
+<mat-tab label="La Plata">
+  <div class="overflow-x-auto w-full" style="overflow-y: visible; height: 100%">
+    <table class="table w-full">
+      <thead class="sticky-header">
+        <tr>
+          <th>Nombre</th>
+             <ng-container *ngFor="let prop of clinicasVal[0][0] | keyvalue">
+              <ng-container *ngIf="prop.key !== 'nombre' && prop.key !== 'barrio' && prop && prop.key">
+                <th >{{ findEmpresaById(prop.key) }}  <br>{{ findNameById(prop.key) }}            
+                </th>      
+              </ng-container>
+            </ng-container>
+       
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let item of clinicasVal[4]; let i = index">
+          <tr>
+            <td  class="nombre-col" matTooltipShowDelay="500">{{ item.nombre }}<br><span class="badge-custom">{{item.barrio}}</span></td>
+      
+            <ng-container *ngFor="let prop of item | keyvalue">
+              <ng-container *ngIf="prop.key !== 'nombre'">
+                <td>
+                  <br>
+                  <i *ngIf="prop.value == 'ok'" class="features__tick icon-container"></i>
+                  <i *ngIf="prop.value == 'no'" class="features__cross icon-container"></i>
+                </td>
+              </ng-container>
+              
+            </ng-container>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</mat-tab>
+</mat-tab-group>
+<!-- <app-compara-por-region></app-compara-por-region> -->

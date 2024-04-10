@@ -1,0 +1,38 @@
+[
+{
+  "item_id":1,
+  "nombre":"SanCor Salud"
+ },
+ {
+   "item_id":2,
+   "nombre":"Galeno"
+  },
+  {
+   "item_id":3,
+   "nombre":"OMINT"
+  },
+  {
+   "item_id":4,
+   "nombre":"Swiss Medical"
+  },
+  {
+   "item_id":5,
+   "nombre":"OSDE"
+  },
+  {
+   "item_id":6,
+   "nombre":"Medife"
+  },
+  {
+   "item_id":7,
+   "nombre":"Premedcic"
+  },
+  {
+   "item_id":8,
+   "nombre":"Fosdic"
+  },
+  {
+   "item_id":9,
+   "nombre":"Avalian"
+  }
+]

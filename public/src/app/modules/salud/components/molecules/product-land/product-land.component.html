@@ -1,0 +1,106 @@
+
+
+
+<div class="item row mb-5 shadow d-flex text-center justify-content-center align-items-center bg-primary">
+	
+
+	<div class="col-12 col-lg-10 bg-white card-insurance" [ngClass]="product.compare ? 'product compare' : 'product'">	
+
+		<div class="row">
+			<div class="col-lg-3">
+				<img [src]="product.images[0].url" [alt]="product.name" />
+				<div class="col-xl-4 col-sm-6">
+					<span>
+					<i class="me-2 text-success fa fa-check"></i> Free worldwide shipping </span>
+					<br>
+					<span>
+					<i class="me-2 text-success fa fa-check"></i> Pay with installment </span>
+				  </div>
+			</div>
+			
+			<div class="col-lg-9 pt-2">
+				<div class="row g-2 justify-content-center">
+					<div class="col-6 col-md-4">
+						<small class="d-block text-uppercase fw-bold">Nombre del Plan</small>
+						<h2 class="my-0">{{product.name}}</h2>
+						<div class="form-text text-extra-small fw-bolder text-uppercase">Dólares americanos</div>
+					</div>
+					<div class="col-6 col-md-4">
+						<small class="d-block text-uppercase fw-bold">Precio</small>
+						<h2 class="my-0">{{ product.precio }}</h2>
+						<div class="form-text text-extra-small fw-bolder text-uppercase">valor opcional</div>
+					</div>
+					<div class="col-6 col-md-4">
+						<small class="d-block text-uppercase fw-bold">Valor Plan</small>
+						<h2 class="my-0">{{ product.valorLista }}</h2>
+						<div class="form-text text-extra-small fw-bolder text-uppercase"></div>
+					</div>
+				</div>
+				<hr />
+				<div class="row g-2 pb-3 pb-lg-0">
+					<div class="col-6 col-md-3">
+						<span class="form-text text-extra-small fw-bolder"><i class="fal fa-hospital icon mr-1" [ngStyle]="iconStyles"></i> Prestadores </span>
+
+						<!-- <div class="form-text text-extra-small fw-bolder text-uppercase">Promoción</div> -->
+						<h5 class="text-muted mb-0">{{ product.promoPorcentaje * 100}} %: {{ product.promoDescuento }}</h5>
+					</div>
+					<div class="col-6 col-md-3">
+						<span class="form-text text-extra-small fw-bolder"><i class="fal icon mr-1 fa-procedures" [ngStyle]="iconStyles"></i> Internación </span>
+						<!-- <div class="form-text text-extra-small fw-bolder text-uppercase">Aporte Obra Social</div> -->
+						<h5 class="text-muted mb-0">{{ product.aporteOS }}</h5>
+					</div>
+					<div class="col-6 col-md-3">
+						<span container="body" class="form-text text-extra-small fw-bolder">
+							<i class="fal icon mr-1 fa-user-md" [ngStyle]="iconStyles"></i> Ambulatoria </span>
+						<!-- <div class="form-text text-extra-small fw-bolder text-uppercase">monto de crédito</div> -->
+						<h5 class="text-muted mb-0">{{ product.aporteOS }}</h5>
+					</div>
+					<div class="col-6 col-md-3">
+						<span container="body" class="form-text text-extra-small fw-bolder">
+							<i class="fal icon mr-1 fa-heart-rate" [ngStyle]="iconStyles"></i> Urgencia </span>
+						<!-- <div class="form-text text-extra-small fw-bolder text-uppercase">crédito bancario</div> -->
+						<h5 class="text-muted mb-0">{{ product.aporteOS }}</h5>
+					</div>
+				</div>
+				<div class="row g-2 pb-3 pb-lg-0">
+					<div class="col-6 col-md-3">
+						<div class="form-text text-extra-small fw-bolder text-uppercase">Promoción</div>
+						<h5 class="text-muted mb-0">{{ product.promoPorcentaje * 100}} %: {{ product.promoDescuento }}</h5>
+					</div>
+					<div class="col-6 col-md-3">
+						<div class="form-text text-extra-small fw-bolder text-uppercase">Aporte Obra Social</div>
+						<h5 class="text-muted mb-0">{{ product.aporteOS }}</h5>
+					</div>
+					<div class="col-6 col-md-3">
+						<div class="form-text text-extra-small fw-bolder text-uppercase">monto de crédito</div>
+						<h5 class="text-muted mb-0">{{ product.aporteOS }}</h5>
+					</div>
+					<div class="col-6 col-md-3">
+						<div class="form-text text-extra-small fw-bolder text-uppercase">crédito bancario</div>
+						<h5 class="text-muted mb-0">{{ product.aporteOS }}</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-12 col-lg-2 text-white py-3 py-lg-0">
+		<small class="d-block text-uppercase fw-bold">Total a pagar</small>
+		<h4 class="mb-1 me-1">{{product.precio}}</h4>
+            <span class="text-danger mb-1 me-1"><s>{{product.price}}</s></span>
+          
+          <h6 class="text-success"><span>{{product.precio}}</span></h6>
+		<div class="form-text text-white text-extra-small fw-bolder text-uppercase pb-3">mensual</div>
+		<button (click)="openDialog(product)" class="btn btn-outline-primary btn-sm mt-2" type="button">Detalles</button>
+		<button (click)='toggleCompare()' class="btn btn-outline-primary btn-sm mt-2" type="button"> {{product.compare ? "Remover" : "Comparar"}}
+		</button>
+		  <!-- <button class="btn btn-primary" >Add to cart</button> -->
+	</div>
+
+
+
+
+
+
+
+
+		

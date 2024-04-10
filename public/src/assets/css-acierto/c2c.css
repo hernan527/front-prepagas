@@ -1,0 +1,33 @@
+.c2cBox {
+	margin:5px 0;
+}
+.c2cBox .formulario {
+	width:380px;
+	margin-top:5px;
+	padding-left:0px;
+}
+.c2cBox .field { padding:0px; }
+.c2cBox .field .txt {
+background-color:#FFFFFF !important;
+border:1px solid #5C6063;
+width:360px;
+}
+.c2cBox .field textarea {
+width: 360px;
+height:30px;
+font-family:Arial,Helvetica,sans-serif;
+font-size:13px;
+border:1px solid #5C6063;	
+}
+.c2cBox .label { padding:15px 10px 7px 0px; }
+.c2cBox .label span { font-weight:bold; }
+.c2cBox .chk {
+	float:left;
+	margin:10px 6px 10px -4px;
+	_margin-left:10px 6px 10px -7px;
+	padding:0;
+}
+.c2cBox .polit {
+	float:left;
+	margin:11px 0px;
+}

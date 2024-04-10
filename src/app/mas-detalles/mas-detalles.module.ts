@@ -26,7 +26,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+// import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { DialogModule } from 'primeng/dialog';
 import { TabViewModule } from 'primeng/tabview';
 import { DialogService } from 'primeng/dynamicdialog';
@@ -52,7 +52,7 @@ import { ButtonModule } from 'primeng/button';
         PdfViewerModule,
         ReactiveFormsModule,
         MaterialModule,
-        NgxSkeletonLoaderModule,
+        // NgxSkeletonLoaderModule,
         SharedModule,
         DialogModule,
         TabViewModule,

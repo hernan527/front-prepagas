@@ -1,0 +1,11 @@
+[_nghost-dcc-c123] {
+  position:sticky;
+  top:0;
+  z-index:999;
+  width:100%;
+  @media only screen and (min-width: 1200px) {
+    display:inline-block;
+    min-height:75px
+  }
+}
+/*# sourceMappingURL=sticky-header.component.ts-angular-inline--5.css.map*/

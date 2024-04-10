@@ -1,0 +1,44 @@
+.qp-seguros-home {
+  padding:1px;
+  background:#f8f8f8
+}
+.qp-seguros-home .qp-box-shadow {
+  transition:.2s;
+  box-shadow:none;
+  padding:36px 39px;
+  background:white
+}
+@media only screen and (max-width: 992px) {
+  .qp-seguros-home .qp-box-shadow {
+    padding:36px 20px
+  }
+}
+.qp-seguros-home .qp-box-shadow a {
+  width:60%;
+  display:block;
+  margin:0 auto;
+  transition:.2s;
+  padding:18px 20px;
+  border-radius:4px;
+  color:var(--color-third, #0E6FC5);
+  border:1px solid var(--color-third, #0E6FC5)
+}
+@media only screen and (min-width: 992px) {
+  .qp-seguros-home .qp-box-shadow a {
+    font-size:.875rem
+  }
+}
+.qp-seguros-home .qp-box-shadow a:hover {
+  background:var(--color-light, #f1f1f1)
+}
+.qp-seguros-home .qp-box-shadow h3 {
+  font-weight:600;
+  font-size:1.5rem;
+  margin-top:34px;
+  margin-bottom:16px;
+  color:var(--color-third, #0E6FC5)
+}
+.qp-seguros-home .qp-box-shadow p {
+  margin-bottom:1.25rem;
+  line-height:1.25rem
+}

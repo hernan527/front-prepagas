@@ -1,0 +1,48 @@
+<div class="item">
+    <a class="logo" href="../planes-de-salud-precios/omint-plan-de-salud/cotizar/index.html"><img src="{{product.images[0].url}}" alt="{{ product.name }}"  title="{{ product.name }}"></a>
+    <div class="row g-2 pb-3 pb-lg-0">
+        <div class="row g-2 justify-content-center">
+            <div class="col-6 col-md-3">
+                <small class="d-block text-uppercase fw-bold">Nombre del Plan</small>
+                <h4 class="my-0">{{product.name}}</h4>
+                <div class="form-text text-extra-small fw-bolder text-uppercase">Dólares americanos</div>
+            </div>
+            <div class="col-6 col-md-3">
+                <small class="d-block text-uppercase fw-bold">Precio</small>
+                <h4 class="my-0">{{ product.precio }}</h4>
+                <div class="form-text text-extra-small fw-bolder text-uppercase">valor opcional</div>
+            </div>
+            <div class="col-6 col-md-3">
+                <small class="d-block text-uppercase fw-bold">Valor Plan</small>
+                <h4 class="my-0">{{ product.valorLista }}</h4>
+                <div class="form-text text-extra-small fw-bolder text-uppercase"></div>
+            </div>
+        </div>
+        <hr />
+        <div class="col-6 col-md-3">
+            <div class="col-6 col-md-3">
+                <div class="form-text text-extra-small fw-bolder text-uppercase">Promoción</div>
+                <h5 class="text-muted mb-0">{{ product.promoPorcentaje * 100}} %: {{ product.promoDescuento }}</h5>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="form-text text-extra-small fw-bolder text-uppercase">Aporte Obra Social</div>
+                <h5 class="text-muted mb-0">{{ product.aporteOS }}</h5>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="form-text text-extra-small fw-bolder text-uppercase">monto de crédito</div>
+                <h5 class="text-muted mb-0"></h5>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="form-text text-extra-small fw-bolder text-uppercase">crédito bancario</div>
+                <h5 class="text-muted mb-0"></h5>
+            </div>
+        </div>
+    </div>
+    
+    <div class="inv-cob"><h5 class="inv">Investimento: <img src='../assets/imagenes/imagens/icone-cifrao.svg'>
+       
+    </h5>
+    <h5 class="cob">Cobertura:
+       
+    </h5>
+</div>

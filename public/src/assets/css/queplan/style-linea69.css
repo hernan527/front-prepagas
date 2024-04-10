@@ -1,0 +1,14 @@
+.h1-movil {
+  font-size:29px
+}
+.h2-movil {
+  font-size:1rem;
+  line-height:20px
+}
+.h3-movil {
+  text-align:center;
+  margin-top:20px
+}
+.text-primary {
+  color:var(--color-primary)!important
+}

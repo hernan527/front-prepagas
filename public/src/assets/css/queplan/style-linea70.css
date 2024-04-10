@@ -1,0 +1,16 @@
+.mssg-personas[_ngcontent-dcc-c179] {
+  display:flex;
+  color:#797979;
+  font-size:.95rem;
+  margin-top:-6px;
+  align-items:baseline;
+  justify-content:center
+}
+.icon-info-persons[_ngcontent-dcc-c179] {
+  color:#555
+}
+.icon-info-persons[_ngcontent-dcc-c179]   i[_ngcontent-dcc-c179] {
+  cursor:help;
+  font-size:1rem;
+  margin-left:2px
+}
