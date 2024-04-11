@@ -539,10 +539,10 @@ closeButon() {
   ngOnInit(): void {
     
     this.formDataInicial = this.formBuilder.group({
-      grupo: 2,
+      grupo: 1,
       empresa_prepaga: 0,
       edad_1: 19,
-      edad_2: 21,
+      edad_2: 0,
       numkids: 0,
       tipo: 'P',
       agree: true,
@@ -593,7 +593,7 @@ closeButon() {
         this.cotizacionService.getCotizacion(this.formDataInicial.value).subscribe(
           (response: ResponseData) => {
             console.log('Respuesta del servidor:', response);
-            this.products = response.planes;
+            this.products = response;
             // this.secureProducts = response.planes;
             this.addClinicas();
               this.productosFiltrados = this.products
