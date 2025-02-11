@@ -195,10 +195,18 @@ onResize(event: any) {
 
 
     compareProdList() {
-      // console.log(this.servicioComparar.compareList)
+      console.log('this.products:', this.products);
+      if(this.products.resultado){
+        this.products = this.products.resultado
+        console.log('this.products.resultado:', this.products);
+
+      }
+      
+
+      console.log('this.servicioComparar.compareList',this.servicioComparar.compareList)
       this.compareLength = this.products.filter((p: { compare: any; }) => p.compare).length;
       this.compareList = this.products.filter((p: { compare: any; }) => p.compare);
-      // console.log(this.compareList)
+      console.log('this.compareList',this.compareList)
       var planesSel = this.products.filter(p => p.compare);
       this.servicioComparar.compareList = this.products.filter((p: { compare: any; }) => p.compare)
       // console.log(this.servicioComparar.compareList)
@@ -216,7 +224,7 @@ onResize(event: any) {
       
     }
 
-  listadoColumna1 (compareProdList){
+  listadoColumna1 (compareProdList: string | any[]){
     let listaCompleta = [];
     
     for ( let i = 0 ; i < compareProdList.length ; i++ ){
@@ -590,6 +598,7 @@ closeButon() {
     
   // }
   async ngOnInit(): Promise<void> {
+    
     this.isLoaded = false; 
     
     forkJoin([
@@ -619,34 +628,33 @@ closeButon() {
           } 
       
        
-  
-        this.cotizacionService.getPrecios(formData).subscribe(
-          (response: Planes) => {
-            
-
-           
-      
-           
-         
-            const tipo: string = formData.tipo;                       
-
-            
-            this.products = response;
-              this.productosFiltrados = this.products
-         // Abre la caché (puedes darle un nombre específico)
-caches.open('products').then(cache => {
-  // Almacena 'this.products' en la caché
-  const productosResponse = new Response(JSON.stringify(this.productosFiltrados));
-  cache.put('productos', productosResponse);  
-
-  console.log('productos PUT en cache', productosResponse )
-});
-      
-                     },
-                (error) => {
-                  console.error('Error en la solicitud al servidor:', error);
+          this.cotizacionService.getPrecios(formData).subscribe(
+            (response: Planes) => {
+              const tipo: string = formData.tipo;
+              this.products = response;
+              setTimeout(() => { // Wrap in setTimeout
+              this.productosFiltrados = this.products.filter((product: { tipo: string; }) => product.tipo === tipo);
+          
+              caches.open('products').then(cache => {
+                const productosResponse = new Response(JSON.stringify(this.productosFiltrados));
+                cache.put('productos', productosResponse).then(() => {
+                  console.log('Productos PUT en cache', productosResponse);
+                }).catch(cacheError => {
+                  console.error('Error al almacenar en cache', cacheError);
+                });
+              }).catch(cacheOpenError => {
+                console.error('Error al abrir cache', cacheOpenError);
+              });
+          
+              this.compareProdList();
+              this.onItemSelect(this.selectedClinica);
+            }, 0);
+          },
+          (error: any) => {
+            console.error('Error en la solicitud al servidor:', error);
           }
-        );              
+        );
+                     
         setTimeout(() => {
           this.isLoaded = true;
         }, 4000);

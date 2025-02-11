@@ -42,13 +42,24 @@
 <!-- <aside class="col-lg-3 ">
  <app-filters-products  [product]="products" ></app-filters-products>
 </aside> -->
-<div class="collapse content" *ngIf="!sidebarVisible">
+<!-- <div class="collapse content d-none" *ngIf="!sidebarVisible">
+  
   <app-filters-products [product]="products"  [productosFiltrados]="productosFiltrados"></app-filters-products>
-  <!-- Contenido principal aquí -->
-</div>
-<aside class=" col-lg-3 filters-sidebar">
-  <app-filters-products [product]="products"></app-filters-products>
-</aside>
+</div> -->
+      <!-- Contenido principal aquí -->
+
+<!-- <aside class="col-lg-3 filters-sidebar">
+  <app-filters-products [product]="products" *ngIf="!sidebarVisible"></app-filters-products>
+</aside> -->
+    <!-- <app-filters-products [product]="products" ></app-filters-products> -->
+    <aside class="col-lg-3 filters-sidebar">
+      <app-filters-products
+      [isSmallScreen]="isSmallScreen"
+      [product]="products"
+      [sidebarVisible]="sidebarVisible"
+      [anchoSidebar]="anchoSidebar"
+    ></app-filters-products>
+  </aside>
 
 <main class="col-lg-9">
 <ng-container *ngIf="!(loading$ | async); else loadingTpl">
@@ -117,14 +128,14 @@
     <i *ngIf="SortDirection === 'desc'" class="fas fa-sort-alpha-up-alt  fa-2x"></i>
   </button>
 </div>
-<div class="btn-group" id="view">
+<!-- <div class="btn-group" id="view">
   <button [class.text-primary]="view === 'list'" (click)="view = 'list';"  type="button"  class="btn btn-secondary custom-hidden-button" data-bs-toggle="tooltip" title="List view"> 
     <i class="fa fa-bars"></i>
   </button>
   <button [class.text-primary]="view === 'grid'" (click)="view = 'grid';" type="button"  type="button" class="btn btn-secondary custom-hidden-button" data-bs-toggle="tooltip" title="Grid view"> 
     <i class="fa fa-th"></i>
   </button>
-  </div>
+  </div> -->
 </div>
 
 
@@ -143,20 +154,18 @@
 <div class="row ">
 <div class="d-flex flex-column justify-content-center surface-card p-2 shadow-2 border-round  " style="background-color: rgba(255, 215, 0, 0.6); margin: 0 5px 5px 5px; align-items: center; animation: shake 0.5s ease-in-out;">
   <div class="text-lg font-medium text-600 mb-2"><strong>Paso 1:</strong> Ingresa tu <strong>edad</strong> para calcular precios exactos y obtener los mejores planes</div>
-  <button pButton pRipple type="button" label="Completar Perfil" class="p-button-raised p-button-danger" (click)="openModa('custom-modal-3')" style="animation: aura 0.5s ease-in-out;">
-   
-  </button>
+  <button pButton pRipple type="button" label="Completar Perfil" class="p-button-raised p-button-danger" (click)="openModa('custom-modal-3')" style="animation: aura 0.5s ease-in-out;"></button>
 </div>
 
   
   
     <ng-container *ngIf="isLoaded">
       
-        <div *ngFor="let product of productosFiltrados | filter: SearchEmpresa:'empresa'  |  sort: [SortbyParam, SortDirection]" class="items col-lg-4 col-md-6 col-sm-6 ">
+        <!-- <div *ngFor="let product of productosFiltrados | filter: SearchEmpresa:'empresa'  |  sort: [SortbyParam, SortDirection]" class="d-flex flex-column justify-content-center col-lg-4 col-md-6 col-sm-6 ">
          
           <app-product-card *ngIf="view === 'grid'" [product]="product"></app-product-card>
         </div>
-      
+       -->
       
 
   
@@ -244,12 +253,16 @@
   </div>
 </p-dialog>
 
-<p-sidebar [(visible)]="sidebarVisible" [style]="{ 'width': anchoSidebar }">
+<!-- <p-sidebar [(visible)]="sidebarVisible" [style]="{ 'width': anchoSidebar }"> -->
   
-    <app-filters-products [product]="products" ></app-filters-products>
+    <!-- <app-filters-products [product]="products" ></app-filters-products> -->
+    <!-- <app-filters-products
+    [isSmallScreen]="isSmallScreen"
+    [products]="products"
+  
+  ></app-filters-products> -->
 
-
-</p-sidebar>
+<!-- </p-sidebar> -->
 <!-- Botón para activar el sidebar en dispositivos móviles -->
 <button class="mobile-filters-button p-button p-button-raised" (click)="sidebarVisible = true">
 <i class="pi pi-filter"></i> Fiiltros
@@ -258,9 +271,21 @@
 
 
         <jw-modal id='custom-modal-3' >
-        <body class="theme">  
-        <app-form-queplan>   <button type="button" class="btn" (click)="closeModa('custom-modal-3')">Cerrar</button>
-         
-        </app-form-queplan> </body> 
-        </jw-modal>
-      
+          <app-form-queplan>  <button type="button" class="btn" (click)="closeModa('custom-modal-3')">Cerrar</button>
+          </app-form-queplan>
+          </jw-modal>
+        </section>
+        <div class="card flex justify-content-center">
+          <p-button (click)="showDialog()" icon="pi pi-external-link" label="Show"></p-button>
+          <p-dialog header="Header" [(visible)]="visible" [style]="{ width: '50vw' }">
+              <div class="flex py-2 justify-content-center">
+                <body class="theme" >
+                  <!-- <app-form-quote></app-form-quote> -->
+                  <app-form-queplan class="theme"></app-form-queplan>
+                  </body>
+                  
+                  <!-- <p-dropdown appendTo="body" [options]="cities" [(ngModel)]="selectedCity" placeholder="Select a City" optionLabel="name"></p-dropdown> -->
+              </div>
+          </p-dialog>
+      </div>
+    

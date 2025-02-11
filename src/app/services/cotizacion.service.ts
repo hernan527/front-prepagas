@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SERVER_URL } from '../constants';
+import { tap, catchError } from 'rxjs/operators';  // Add this import
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,17 +17,29 @@ export class CotizacionService {
 
 
 
-  constructor(private http: HttpClient) { }
-
-  getPrecios(formCotizar: any) {
+  constructor(private http: HttpClient) {
+    this.planes = this.getPlanes();
+   }
+   getPrecios(formCotizar: any) {
     const url = `${this.url}/cotizacion`;
-    console.log('en el servicio', url);
-    console.log('en el servicio', formCotizar);
-    console.log('en el servicio', formCotizar);
-
-    // formCotizar.coeficientes = this.coeficientes;
-    return this.http.post(url, formCotizar); // Devuelve el observable directamente
+    console.log('En el servicio', url);
+    console.log('Form Cotizar:', formCotizar);
+  
+    // Send POST request and handle response
+    this.precios = this.http.post<any>(url, formCotizar).pipe(
+      tap(response => {
+        console.log('Respuesta recibida:', response);
+      }),
+      catchError(error => {
+        console.error('Error al obtener precios:', error);
+        throw error; // Rethrow the error so the caller can handle it
+      })
+    );
+  
+    // Return the observable so the caller can subscribe to it
+    return this.precios; // Return the observable directly
   }
+  
   
  
 

@@ -1,7 +1,200 @@
   
    
   
+    
+<ng-container *ngIf="isSmallScreen; else showAsSidebar">
+  <p-sidebar [(visible)]="sidebarVisible" [style]="{ 'width': anchoSidebar }">
+    <div class="flex flex-wrap gap-2  ">
+      <!-- <p-button badge="" [style]="{ 'font-size': '24px', 'margin': '0px' }" label=":"><strong>Resultados</strong></p-button> -->
 
+    
+      <div id="aside_filter left-column" class="card d-lg-block mb-5">
+    
+       <div class="card-header">
+        <div class="d-flex mb-3">
+          <div class="flex-grow-1">
+            <i class="pi pi-filter icon-small"><span class="fs-16">Filtros</span></i>
+          </div>
+          <div class="flex-shrink-0">
+            <a href="javascript:void(0);" class="text-decoration-underline" (click)="limpiarTodo()">Limpiar todo</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Agregar el listado de selecciones de filtros aquí -->
+      <div class="selected-filters">
+        <ng-container *ngFor="let key of filterKeys">
+          <div class="filter-chip" *ngIf="filtrosSeleccionadosGroup.get(key)?.value">
+            {{ key }}
+            <button (click)="eliminarFiltro(key)">
+              <i class="pi pi-times"></i>
+            </button>
+          </div>
+        </ng-container>
+      </div>
+      
+      <article class="filter-group">
+        <header class="card-header d-flex justify-content-center align-items-center" style="background-color: #FFD700; margin: 0; opacity: 0.6">
+          Completar Perfil
+   
+        </header>
+        <div class="card-body d-flex justify-content-center">
+          <div class="row mb-12">
+            <div class="d-flex justify-content-between align-items-end" style="margin: 0 5px;">
+              <i class="pi pi-user icon-large" style="margin-right: 10px;"><span style="font-size: 20px;">   {{quote.adultos}}</span></i>
+              <i class="pi pi-users icon-small" style="margin: 0 10px;"><span style="font-size: 20px;">   {{quote.menores}}</span></i>
+              <i class="pi pi-map icon-large"  style="margin-left: 10px;"><span style="font-size: 20px;">{{quote.region}}</span></i>
+            </div>
+          </div>
+        </div>
+      
+        <div class="d-flex justify-content-center" style="margin: 20px;"> <!-- Ajusta el valor de margin según tus preferencias -->
+          <button pButton pRipple type="button" icon="pi pi-pencil" label="Completar Perfil" class="p-button-raised p-button-danger" style="animation: aura 0.5s ease-in-out;">
+          </button>
+        </div>
+      </article>
+      
+        <article class="filter-group" >
+          <header class="card-header d-flex justify-content-center align-items-center" style="background-color: #34869b; margin: 0; opacity: 0.6" >
+            <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside2">
+            <i class="icon-control fa fa-chevron-down"><span style="color:white;font-size:18px">Precio</span></i> 
+            </a>
+          </header>
+          <div class="collapse show" id="collapse_aside2">
+            <div class="card-body">
+              <p-slider [formControl]="rangeValues" [range]="true" (onChange)="onRangeChange($event)"></p-slider>              <div class="row mb-3">
+                <p>Rango de precios seleccionado: <span>{{ val }}</span>  y 
+                  <span>{{ val2 }}</span>
+                  </p>
+              </div>
+              
+<div class="row mb-3">
+</div>
+         <div class="row mb-3">
+              <div class="col-6">
+              <label for="min" class="form-label">Min</label>
+              <input class="form-control" id="min" placeholder="{{ val }}" type="number">
+              </div>
+            
+              
+              <div class="col-6">
+              <label for="max" class="form-label">Max</label>
+              <input class="form-control" id="max" placeholder="{{ val2 }}" type="number">
+              </div>
+            </div>
+            <button class="btn btn-light w-100" type="button" (click)="aplicarFiltro()">Aplicar</button>  
+                    </div> 
+          </div>
+          </article> 
+       
+      <form [formGroup]="filtrosSeleccionadosGroup" >
+          <article class="filter-group" >
+            <header class="card-header d-flex justify-content-center align-items-center" style="background-color: #34869b; margin: 0; opacity: 0.6" >
+              <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside1">
+              <i class="icon-control fa fa-chevron-down"><span style="color:white;font-size:18px">Beneficios preferentes</span></i> 
+              </a>
+            </header>
+      
+      <div class="collapse show" id="collapse_aside1">
+        <div class="card-body border-bottom">
+          <div>
+
+            <p class="text-muted text-uppercase fs-13 fw-medium mb-2">Odontologia</p>
+            <p-slider [formControl]="slide3Values" (onChange)="onSlide3Change($event)"></p-slider>
+          </div>
+          <div>
+            <p class="text-muted text-uppercase fs-13 fw-medium mb-2">Beneficio2</p>
+            <p-slider [formControl]="slide4Values" (onChange)="onSlide4Change($event)"></p-slider>
+          </div>
+        </div>
+    
+      </div>
+      </article>
+    
+      <article class="filter-group">
+      <header class="card-header ">
+        <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside_brands">
+        <i class="icon-control fa fa-chevron-down"></i>  Brands 
+        </a>
+      </header>
+      <div class="collapse show" id="collapse_aside_brands">
+        <div class="card-body">
+          <div *ngFor="let option of getCheckboxOptions()">
+            <div class="checkbox-item">
+              <label>
+                <input
+                  type="checkbox"
+                  [formControl]="checkboxOptions[option]"
+                  [id]="option"
+                  [checked]="checkboxOptions[option].value"
+                >
+                {{ option }}
+                <!-- <i class="pi pi-times" (click)="eliminarFiltro(option)"></i> -->
+                <div class="checkmark"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+   
+      
+      </article>
+    
+    
+      
+    
+    <article class="filter-group"  >
+      <header class="card-header">
+        <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside3">
+        <i class="icon-control fa fa-chevron-down"></i>Detalles de cobertura 
+        </a>
+      </header>
+      <div class="collapse show" id="collapse_aside3">
+        <div class="card-body">
+          <label class="checkbox-btn">
+          <input type="checkbox">
+          <span class="btn btn-light"></span>
+          </label>
+    
+          <label class="checkbox-btn">
+          <input type="checkbox">
+          <span class="btn btn-light">Sin Copagos</span>
+          </label>
+    
+          <label class="checkbox-btn">
+          <input type="checkbox">
+          <span class="btn btn-light">Habitacion individual</span>
+          </label>
+    
+          <label class="checkbox-btn">
+          <input type="checkbox">
+          <span class="btn btn-light">Cobertura Nacional</span>
+          </label>
+        </div>
+      </div>
+      </article> 
+      <article class="filter-group" >
+        <header class="card-header">
+          <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside3">
+          <i class="icon-control fa fa-chevron-down"></i>  Rating
+          </a>
+        </header>
+        <div class="collapse show" id="collapse_aside3">
+          <div class="card-body">
+      <p-rating [formControl]="selectedRating"></p-rating>
+    </div>
+    </div>
+    </article> 
+    
+    </form>
+    </div> 
+    <!-- ===== Card for sidebar filter .// ===== -->
+  </div>
+  </p-sidebar>
+</ng-container>
+<ng-template #showAsSidebar>
+    
 
     <div class="flex flex-wrap gap-2  ">
       <!-- <p-button badge="" [style]="{ 'font-size': '24px', 'margin': '0px' }" label=":"><strong>Resultados</strong></p-button> -->
@@ -129,13 +322,14 @@
                 >
                 {{ option }}
                 <!-- <i class="pi pi-times" (click)="eliminarFiltro(option)"></i> -->
+                <div class="checkmark"></div>
               </label>
             </div>
           </div>
         </div>
       </div>
       
-      
+   
       
       </article>
     
@@ -189,4 +383,4 @@
     </div> 
     <!-- ===== Card for sidebar filter .// ===== -->
   </div>
-    
+</ng-template>
