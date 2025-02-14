@@ -1,0 +1,45 @@
+<section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Encuentra el Seguro de Salud ideal y<br>
+        contrátalo 100% online
+      </h1>
+      
+      <p class="hero-subtitle">
+        Compara <a href="/seguros-de-salud" class="text-link">Seguros de Salud</a> y 
+        <a href="/planes-isapres" class="text-link">Planes de Isapres</a> de forma rápida y segura
+      </p>
+  
+      <div class="hero-buttons">
+        
+        <button *ngFor="let button of heroButtons" 
+        [routerLink]="button.routerLink" 
+        [ngClass]="button.class"
+                [class]="'hero-button ' + button.class">
+          <i class="fas {{button.icon}}"></i>
+          <div class="button-text">
+            <span class="button-title">{{button.text}}</span>
+            <span class="button-subtitle">{{button.subtext}}</span>
+          </div>
+        </button>
+      </div>
+  <!-- <div class="button-container">
+  <button 
+    *ngFor="let button of heroButtons"
+    [routerLink]="button.routerLink" 
+    [ngClass]="button.class"
+    class="hero-button">
+    <i [class]="'fa ' + button.icon"></i>
+    <span>
+      <strong>{{ button.text }}</strong><br>
+      <small>{{ button.subtext }}</small>
+    </span>
+  </button>
+</div> -->
+      <div class="hero-image">
+        <img src="https://cdn.queplan.cl/images/hero-cl.webp" 
+             alt="Ejemplo de lista de productos"
+             class="hero-example">
+      </div>
+    </div>
+  </section>

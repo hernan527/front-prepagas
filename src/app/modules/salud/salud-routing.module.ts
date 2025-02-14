@@ -9,7 +9,7 @@ import { EmpresasComponent } from './pages/empresas/empresas.component';
 
 
 const routes: Routes = [
-	{ path: ``, component: DefaultComponent },
+	{ path: ``, component: ResultsComponent },
 	{ path: INTERNAL_PATHS.ASESORI_SALUD_RESULTS, component: ResultsComponent },
 	{ path: INTERNAL_PATHS.ASESORI_SALUD_DETAILS, component: DetailsComponent },
 	{ path: INTERNAL_PATHS.ASESORI_SALUD_COMPARE, component: CompareComponent },
