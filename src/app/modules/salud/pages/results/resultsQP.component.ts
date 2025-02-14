@@ -24,6 +24,8 @@ import rfdc from 'rfdc';
 import { Credit } from './../../../../data/interfaces';
 import { CREDIT_DATA_ITEMS } from './../../../../data/constants/mock';
 import { Planes } from  './../../../../data/interfaces/planes';
+
+
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 declare var addProp:any;
 declare var desectItem:any;
@@ -39,13 +41,13 @@ interface ResponseData {
 
   
   selector: 'app-results',
-  templateUrl: './results.component.html',
-  styleUrls: ['./results.component.scss'],
+  templateUrl: './resultsQP.component.html',
+  styleUrls: ['./resultsQP.component.css'],
   
  
   changeDetection: ChangeDetectionStrategy.Default,
 })
-export class Results1Component implements OnInit {
+export class ResultsComponent implements OnInit {
   @ViewChild('scroller') scroller!: CdkVirtualScrollViewport;
   itemsPerPage = 10; // Número de elementos por página
   totalProducts = 100; // Número total de productos en tu lista (ajusta esto según tus datos reales)

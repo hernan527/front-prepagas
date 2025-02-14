@@ -6,7 +6,8 @@ import { ModalModule } from './../../_modal'
 // import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { SharedModule } from '../../shared/shared.module';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSliderModule } from '@angular/material/slider';
 // atoms
 import { FormLeadComponent } from './components/atoms/form-lead/form-lead.component';
 import { FormQuoteComponent } from './components/atoms/form-quote/form-quote.component';
@@ -14,13 +15,16 @@ import { FormQueplanComponent } from './components/atoms/form-queplan/form-quepl
 import { GetQuoteComponent } from './components/atoms/get-quote/get-quote.component';
 import { CotizarFormComponent } from './components/atoms/cotizar-form/cotizar-form.component';
 
-
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
 
 // pages 
 import { DefaultComponent } from './pages/default/default.component';
 import { ResultsOriginalComponent } from './pages/results/results-original.component';
+import { ResultsComponent } from './pages/results/resultsQP.component';
 
-import { ResultsComponent } from './pages/results/results.component';
+import { Results1Component } from './pages/results/results.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { CompareComponent } from './pages/compare/compare.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -81,6 +85,7 @@ const publicApi = [
 		FilterPipe,
 		SortPipe,
 		EmpresasComponent,
+		Results1Component,
 		...components
  
 	],
@@ -107,6 +112,11 @@ const publicApi = [
 		TabViewModule,
 		ButtonModule,
 		TableModule,
+		MatInputModule,
+		MatSelectModule,
+		MatButtonModule,
+		MatCheckboxModule,
+		MatSliderModule,
 
 		...modules
 	],

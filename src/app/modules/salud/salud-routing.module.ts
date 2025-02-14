@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { INTERNAL_PATHS } from '../../data/constants/routes';
 import { DefaultComponent } from './pages/default/default.component';
-import { ResultsComponent } from './pages/results/results.component';
+import { ResultsComponent } from './pages/results/resultsQP.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { CompareComponent } from './pages/compare/compare.component';
 import { EmpresasComponent } from './pages/empresas/empresas.component';

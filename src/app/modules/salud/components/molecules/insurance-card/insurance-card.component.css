@@ -1,0 +1,34 @@
+.insurance-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .insurance-logo {
+    max-height: 2.5rem;
+    object-fit: contain;
+  }
+  
+  .coverage-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    gap: 0.5rem;
+  }
+  
+  .price-tag {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+  .btn-detail {
+    width: 100%;
+  }

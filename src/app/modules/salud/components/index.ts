@@ -3,7 +3,8 @@ import {
     CotizarFormComponent,
     FormQueplanComponent,
     FormLeadComponent,
-    FormQuoteComponent
+    FormQuoteComponent,
+    SearchFormComponent
 } from './atoms';
 // molecules
 import { 
@@ -11,12 +12,15 @@ import {
     ProductCardComponent,
     ProductLandComponent,
     ResultComponent,
-    IncrementorComponent
+    IncrementorComponent,
+    InsuranceCardComponent,
+    FiltersComponent
 } from './molecules';
 
 // organisms
 import {
-	HeroSectionComponent
+	HeroSectionComponent,
+    HeaderComponent
 } from './organisms';
 
 // templates
@@ -50,7 +54,11 @@ export const components = [
     FormQueplanComponent,
     FormLeadComponent,
     FormQuoteComponent,
-    IncrementorComponent
+    IncrementorComponent,
+    InsuranceCardComponent,
+    FiltersComponent,
+    HeaderComponent,
+    SearchFormComponent
 ];
 
 

@@ -1,0 +1,21 @@
+<div class="insurance-card">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-3">
+        <img [src]="insurance.logo" [alt]="insurance.name" class="insurance-logo">
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="coverage-item">
+          <i class="fas fa-hospital"></i>
+          <span>{{ insurance.hospitalCoverage }}% Cobertura Hospitalaria</span>
+        </div>
+        <div class="coverage-item">
+          <i class="fas fa-user-md"></i>
+          <span>{{ insurance.ambulatoryCoverage }}% Cobertura Ambulatoria</span>
+        </div>
+      </div>
+      <div class="col-12 col-lg-3 text-right">
+        <div class="price-tag">$ {{ insurance.price.toLocaleString() }}</div>
+        <button mat-raised-button color="primary" class="btn-detail">Ver Detalle</button>
+      </div>
+    </div>
+  </div>
