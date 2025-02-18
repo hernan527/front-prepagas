@@ -24,6 +24,8 @@ import rfdc from 'rfdc';
 import { Credit } from './../../../../data/interfaces';
 import { CREDIT_DATA_ITEMS } from './../../../../data/constants/mock';
 import { Planes } from  './../../../../data/interfaces/planes';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 declare var addProp:any;
 declare var desectItem:any;
@@ -40,12 +42,12 @@ interface ResponseData {
   
   selector: 'app-results',
   templateUrl: './results.component.html',
-  styleUrls: ['./results.component.scss'],
+  styleUrls: ['./results.component.css'],
   
  
   changeDetection: ChangeDetectionStrategy.Default,
 })
-export class Results1Component implements OnInit {
+export class ResultsComponent implements OnInit {
   @ViewChild('scroller') scroller!: CdkVirtualScrollViewport;
   itemsPerPage = 10; // Número de elementos por página
   totalProducts = 100; // Número total de productos en tu lista (ajusta esto según tus datos reales)
@@ -80,7 +82,7 @@ export class Results1Component implements OnInit {
   layout: string = 'list';
   visibleTopSidebar: boolean = false;
   SortbyParam: string = 'empresa'; // Valor por defecto
-selectedRating : FormControl = new FormControl('');
+  selectedRating : FormControl = new FormControl('');
   isLoaded: boolean;
   advanceSearchExpanded: boolean = false;
   planes : any = [];
@@ -110,9 +112,9 @@ selectedRating : FormControl = new FormControl('');
   
   formDataInicial: FormGroup; // Formulario inicial con valores predeterminados
   formDataInicialJSON: any[];
-  sidebarVisible = false; // Por defecto, el sidebar está visible
+  sidebarVisible: boolean =  false; // Por defecto, el sidebar está visible
   anchoSidebar = '80%'; // Ancho por defecto del sidebar
-
+  isSmallScreen: boolean = false; // Default value
   		// data constants
       public credits: Credit[] = CREDIT_DATA_ITEMS;
 
@@ -133,12 +135,18 @@ selectedRating : FormControl = new FormControl('');
     private cotizacionService: CotizacionService,
     private localStorageService: LocalStorageService,
     private renderer: Renderer2,
+    private breakpointObserver: BreakpointObserver,
 
     // @Inject(MAT_DIALOG_DATA) public data: DialogData
     ) {
-      this.buildForm();
-      this.formDataInicial = this.formBuilder.group({
-        // Define tus campos y valores iniciales aquí
+
+        this.formDataInicial = this.crearFormularioInicial();
+     
+
+     
+    }
+    private crearFormularioInicial(): FormGroup {
+      return this.formBuilder.group({
         grupo: 2,
         empresa_prepaga: 0,
         edad_1: 19,
@@ -163,10 +171,9 @@ selectedRating : FormControl = new FormControl('');
           region: 'AMBA',
         }),
       });
-
     }
-     // Ejemplo de cómo acceder al formulario desde otro componente
-  
+    
+
     SortbyParamControl = new FormControl(this.SortbyParam);
     public productosActualizados:Array<any> = []
     private buildForm(){
@@ -342,6 +349,12 @@ removeFilter( id: any ) {
         this.setInitialFilters();
 } 
 
+sidebar(){
+console.log('apreto el boton filtros sidebarVisible',this.sidebarVisible)
+console.log('apreto el boton filtros anchoSidebar ',this.anchoSidebar)
+console.log('apreto el boton filtros isSmallScreen ',this.isSmallScreen)
+
+}
 toggleBadgeVisibility() {
     this.hidden = !this.hidden;
   }
@@ -597,6 +610,8 @@ closeButon() {
   //   });
     
   // }
+
+  
   async ngOnInit(): Promise<void> {
     
     this.isLoaded = false; 
@@ -613,54 +628,98 @@ closeButon() {
       this.planes = planes;
       this.empresas = empresas;
     });
-   
-         
-      const formData = this.dataFormularios.getFormularioData();
+  //  console.log('sidebarVisible  :',this.sidebarVisible)
+  //        console.log('anchoSidebar  :',this.anchoSidebar);
+  //        console.log('isSmallScreen  :',this.isSmallScreen);
 
-      caches.open('products').then(cache => {
-        cache.match('productos').then(response => {
-          if (!formData && response) {
-            // 'this.products' se encuentra en la caché, puedes obtener los datos
-            response.json().then(products => {
-             console.log('productos GET en cache', products);
-             this.productosFiltrados = products
-           });
-          } 
-      
-       
-          this.cotizacionService.getPrecios(formData).subscribe(
-            (response: Planes) => {
-              const tipo: string = formData.tipo;
-              this.products = response;
-              setTimeout(() => { // Wrap in setTimeout
-              this.productosFiltrados = this.products.filter((product: { tipo: string; }) => product.tipo === tipo);
-          
-              caches.open('products').then(cache => {
-                const productosResponse = new Response(JSON.stringify(this.productosFiltrados));
-                cache.put('productos', productosResponse).then(() => {
-                  console.log('Productos PUT en cache', productosResponse);
-                }).catch(cacheError => {
-                  console.error('Error al almacenar en cache', cacheError);
-                });
-              }).catch(cacheOpenError => {
-                console.error('Error al abrir cache', cacheOpenError);
-              });
-          
-              this.compareProdList();
-              this.onItemSelect(this.selectedClinica);
-            }, 0);
-          },
-          (error: any) => {
-            console.error('Error en la solicitud al servidor:', error);
-          }
-        );
-                     
+  
+  
+
+  // Comprobar si hay datos en caché
+  let cachedProducts: any[] | null = null;
+  await caches.open('products').then((cache) => {
+    cache.match('productos').then((response) => {
+      if (response) {
+        response.json().then((products) => {
+          cachedProducts = products;
+          console.log('Productos obtenidos de la caché:', cachedProducts);
+        });
+      }
+    });
+  });
+  let formData = this.dataFormularios.getFormularioData();
+console.log( 'formData :',formData)
+  // Lógica para usar datos iniciales o cacheados
+  if (!formData && !cachedProducts) {
+    this.dataFormularios.setFormularioData(this.formDataInicial.value)
+    formData = this.dataFormularios.getFormularioData();
+    console.log('Usando datos iniciales del formulario : ',formData);
+ 
+  } else if (!formData && cachedProducts) {
+    this.productosFiltrados = cachedProducts;
+  }
+
+  // Si hay datos del formulario, realiza la solicitud de precios
+  if (formData) {
+    console.log('Datos del formulario disponibles:', formData);
+    this.cotizacionService.getPrecios(formData).subscribe(
+      (response: Planes) => {
+        const tipo: string = formData.tipo;
+        this.products = response;
+
         setTimeout(() => {
-          this.isLoaded = true;
-        }, 4000);
+          this.productosFiltrados = this.products.filter((product: { tipo: string }) => product.tipo === tipo);
 
-      });
-    });      
+          // Guardar productos filtrados en caché
+          caches.open('products').then((cache) => {
+            const productosResponse = new Response(JSON.stringify(this.productosFiltrados));
+            cache.put('productos', productosResponse).then(() => {
+              console.log('Productos almacenados en caché:', productosResponse);
+            }).catch((cacheError) => {
+              console.error('Error al almacenar en caché:', cacheError);
+            });
+          });
+
+          // Actualizar la vista con los productos
+          this.compareProdList();
+          this.onItemSelect(this.selectedClinica);
+        }, 0);
+      },
+      (error: any) => {
+        console.error('Error en la solicitud de precios:', error);
+      }
+    );
+  }
+
+  // Observadores y configuraciones adicionales
+  this.SortbyParamControl.valueChanges.subscribe((selectedValue: string) => {
+    console.log('Nuevo valor seleccionado:', selectedValue);
+  });
+
+  this.empresa.valueChanges.subscribe((selectedValue: string) => {
+    console.log('Valor seleccionado de la empresa:', selectedValue);
+  });
+
+  this.productoService.filteredProducts$.subscribe((filteredProducts) => {
+    this.productosFiltrados = filteredProducts;
+  });
+
+  this.productoService.eventoFilterClinicas$.subscribe(() => {
+    this.productosFiltrados = this.filtrarPorClinicasExistente(this.productosFiltrados, this.selectedClinica);
+  });
+
+  this.productoService.productosFiltrados$.subscribe((productos) => {
+    this.productosFiltrados = productos;
+  });
+
+  this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Tablet])
+    .subscribe((result) => {
+      this.isSmallScreen = result.matches;
+    });
+
+  setTimeout(() => {
+    this.isLoaded = true;
+  }, 4000);
 
     if ( !this.productosFiltrados){
       this.productosFiltrados = this.products
@@ -707,7 +766,10 @@ closeButon() {
       //   });
       // });
       
-      
+         this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Tablet])
+    .subscribe(result => {
+      this.isSmallScreen = result.matches;
+    });
  
  
       

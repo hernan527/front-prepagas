@@ -1,0 +1,190 @@
+<!-- 
+<div class="row justify-content-center surface-card shadow-2 border-round contenedor-responsivo " style="margin-right:-23px">
+  <div [ngClass]="product.compare ? 'product compare' : 'product'">
+    <div class="card shadow-0 border rounded-3">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12 col-lg-4 col-xl-4 mb-4 mb-lg-4">
+          <div style="margin:-12px;padding-top:20px">
+            <img *ngIf="product.images && product.images.length > 0" src="{{product.images[0].url}}" alt="{{ product.name }}" class="w-100">
+            <a href=""> 
+             <div class="hover-overlay">[]
+                <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-6 border-2 border-dashed surface-border">
+          <h5>{{ product.name }}</h5>
+          <div class="d-flex flex-row">
+            <p-rating [readonly]="true" [cancel]="false"></p-rating>
+            <span>{{product.precio  | currency }}</span>
+          </div>
+          <p-divider></p-divider>
+        </div>
+        <div class="col-md-6 col-lg-2 col-xl-2 border-sm-start-none border-start">
+          <div class="d-flex flex-row align-items-center mb-1">
+            <h4 class="mb-1 me-1">{{product.precio}}</h4>
+            <span class="text-danger"><s>{{product.price}}</s></span>
+          </div>
+          <h6 class="text-success"><span>{{product.precio}}</span></h6>
+          <div class="d-flex flex-column mt-4">
+          <button (click)="openDialog(product)" class="btn btn-outline-primary btn-sm mt-2" type="button">Detalles</button>
+          <button (click)='toggleCompare()' class="btn btn-outline-primary btn-sm mt-2" type="button"> {{product.compare ? "Remover" : "Comparar"}}
+          </button>
+            <button class="btn btn-primary" >Add to cart</button>
+
+          </div>
+        </div>
+       
+      </div>
+      
+    </div>
+  </div>
+</div>
+</div> -->
+
+
+
+
+<div _ngcontent-ng-c1132987951="" class="item row mb-5 shadow d-flex text-center justify-content-center align-items-center card card-insurance list ng-star-inserted" style="padding-left:0px" _nghost-ng-c4193683943="">
+	   <article _ngcontent-ng-c4193683943="" intersectionobserver="" class="card--qp4b73876finsurance-container ng-star-inserted">
+     
+       <div _ngcontent-ng-c4193683943="" class="container">
+       </div>
+	<div class="col-12 col-lg-10 bg-white card-insurance" _ngcontent-ng-c4193683943="" [ngClass]="product.compare ? 'product compare' : 'product'">	
+
+		<div class="row"  _ngcontent-ng-c4193683943="" style="padding-left:0px">
+			<div class="col-lg-3">
+				<img [src]="product.images[0].url" [alt]="product.name" />
+				<ul style="text-align: left; font-size: 9px; margin-left: 0;">
+					<li><i class=" text-success fa fa-check"></i>Free worldwide shipping</li>
+					<li><i class=" text-success fa fa-check"></i>Pay with installment</li>
+					<li><i class=" text-success fa fa-check"></i>Pay with installment</li>
+				  </ul>
+				  
+			
+			</div>
+			
+			<div _ngcontent-ng-c4193683943="" class="col-lg-9 pt-2">
+				<div _ngcontent-ng-c4193683943="" class="row g-2 justify-content-center">
+					<div _ngcontent-ng-c4193683943="" class="col-6 col-md-4">
+						<small class="d-block text-uppercase fw-bold">Valor </small>
+						<h5 class="my-0">{{ product.valorLista }}</h5>
+						<div _ngcontent-ng-c4193683943="" class="form-text text-extra-small fw-bolder text-uppercase" style="font-size:8px">Dólares americanos</div>
+					</div>
+					<div class="col-6 col-md-4">
+						<small class="d-block text-uppercase fw-bold">Precio</small>
+						<h5 class="my-0">{{ product.precio }}</h5>
+						<div class="form-text text-extra-small fw-bolder text-uppercase" style="font-size:8px">valor opcional</div>
+					</div>
+					<div class="col-6 col-md-4">
+						<small class="d-block text-uppercase fw-bold">Plan</small>
+						<h5 class="my-0">{{ getFormattedProductName() }}</h5>
+						<div class="form-text text-extra-small fw-bolder text-uppercase" style="font-size:8px"></div>
+					</div>
+				</div>
+
+				<hr />
+
+				<div class="row g-2 pb-3 pb-lg-0">
+					<div class="col-6 col-md-3">
+						<span class="form-text text-extra-small fw-bolder"><i class="fal fa-hospital icon mr-1" [ngStyle]="iconStyles"></i> Prestadores </span>
+
+						<!-- <div class="form-text text-extra-small fw-bolder text-uppercase">Promoción</div> -->
+						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.promoPorcentaje * 100}} %: {{ product.promoDescuento }}</h5>
+					</div>
+					<div class="col-6 col-md-3">
+						<span class="form-text text-extra-small fw-bolder" style="font-size:9px"><i class="fal icon mr-1 fa-procedures" [ngStyle]="iconStyles"></i> Internación </span>
+						<!-- <div class="form-text text-extra-small fw-bolder text-uppercase">Aporte Obra Social</div> -->
+						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.aporteOS }}</h5>
+					</div>
+					<div class="col-6 col-md-3">
+						<span container="body" class="form-text text-extra-small fw-bolder" style="font-size:9px">
+							<i class="fal icon mr-1 fa-user-md" [ngStyle]="iconStyles"></i> Ambulatoria </span>
+						<!-- <div class="form-text text-extra-small fw-bolder text-uppercase">monto de crédito</div> -->
+						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.aporteOS }}</h5>
+					</div>
+					<div class="col-6 col-md-3">
+						<span container="body" class="form-text text-extra-small fw-bolder" style="font-size:9px">
+							<i class="fal icon mr-1 fa-heart-rate" [ngStyle]="iconStyles"></i> Urgencia </span>
+						<!-- <div class="form-text text-extra-small fw-bolder text-uppercase">crédito bancario</div> -->
+						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.aporteOS }}</h5>
+					</div>
+				</div>
+				<div class="row g-2 pb-3 pb-lg-0">
+					<div class="col-6 col-md-3">
+						<div class="form-text text-extra-small fw-bolder text-uppercase" style="font-size:9px">Promoción</div>
+						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.promoPorcentaje * 100}} %: {{ product.promoDescuento }}</h5>
+					</div>
+					<div class="col-6 col-md-3">
+						<div class="form-text text-extra-small fw-bolder text-uppercase" style="font-size:9px">Aporte Obra Social</div>
+						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.aporteOS }}</h5>
+					</div>
+					<div class="col-6 col-md-3">
+						<div class="form-text text-extra-small fw-bolder text-uppercase" style="font-size:9px">monto de crédito</div>
+						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.aporteOS }}</h5>
+					</div>
+					<div class="col-6 col-md-3">
+						<div class="form-text text-extra-small fw-bolder text-uppercase" style="font-size:9px">crédito bancario</div>
+						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.aporteOS }}</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div _ngcontent-ng-c4193683943="" align="" class="col-12 col-lg-2 text-white py-3 py-lg-0">
+		 <div _ngcontent-ng-c4193683943="" class="price-insurance ng-star-inserted">
+                <div _ngcontent-ng-c4193683943="" class="content-price text-center ng-star-inserted">
+                   <p _ngcontent-ng-c4193683943="" class="d-flex align-items-center justify-content-center container-price-label m-0 ng-star-inserted">
+                      <span _ngcontent-ng-c4193683943="" class="price-label">Desde
+                      </span>
+                  
+                   </p>
+                   <div _ngcontent-ng-c4193683943="" class="d-flex align-items-center justify-content-center ng-star-inserted">
+                      <p _ngcontent-ng-c4193683943="" class="m-0 price-qp4b73876f-value">
+                         ${{ product.precio }} 
+                         <small _ngcontent-ng-c4193683943="" class="price-suffix text-nowrap ml-1 ng-star-inserted">/mes
+                         </small>
+                      </p>
+                   </div>
+                </div>
+             </div>
+		                  
+         <div _ngcontent-ng-c4193683943="" _nghost-ng-c1382562721="" class="ng-star-inserted">
+             </div>
+		<div _ngcontent-ng-c4193683943=""  class="form-text text-white text-extra-small fw-bolder text-uppercase pb-3">mensual</div>
+<!-- 		<button (click)="openDialog(product)" class="btn btn-outline-primary btn-sm mt-2" type="button">Detalles</button>
+		<button (click)='toggleCompare()' class="btn btn-outline-primary btn-sm mt-2" type="button"> {{product.compare ? "Remover" : "Comparar"}}
+		</button> -->
+		<div _ngcontent-ng-c4193683943="">
+                <div _ngcontent-ng-c4193683943="" class="button-insurance ng-star-inserted">
+                   <a _ngcontent-ng-c4193683943="" href="/Isapre/Nueva-Mas-Vida/Planes/PPS24370/solicitar">
+                   <span _ngcontent-ng-c4193683943="">Solicitar
+                   </span>
+                   </a>
+                </div>
+               <!--  <div _ngcontent-ng-c4193683943="" class="view-detail text-center ng-star-inserted">
+                   <a _ngcontent-ng-c4193683943="" href="/Isapre/Nueva-Mas-Vida/Planes/PPS24370">Ver Detalle
+                   </a>
+                </div> -->
+             </div>
+		  <!-- <button class="btn btn-primary" >Add to cart</button> -->
+	</div>
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+		

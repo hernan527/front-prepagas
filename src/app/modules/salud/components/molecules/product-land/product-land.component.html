@@ -47,12 +47,14 @@
 
 
 
-<div class="item row mb-5 shadow d-flex text-center justify-content-center align-items-center bg-primary" style="padding-left:0px">
-	
+<div _ngcontent-ng-c1132987951="" class="item row mb-5 shadow d-flex text-center justify-content-center align-items-center card card-insurance list ng-star-inserted" style="padding-left:0px" _nghost-ng-c4193683943="">
+	   <article _ngcontent-ng-c4193683943="" intersectionobserver="" class="card--qp4b73876finsurance-container ng-star-inserted">
+     
+       <div _ngcontent-ng-c4193683943="" class="container">
+       </div>
+	<div class="col-12 col-lg-10 bg-white card-insurance" _ngcontent-ng-c4193683943="" [ngClass]="product.compare ? 'product compare' : 'product'">	
 
-	<div class="col-12 col-lg-10 bg-white card-insurance" [ngClass]="product.compare ? 'product compare' : 'product'">	
-
-		<div class="row"  style="padding-left:0px">
+		<div class="row"  _ngcontent-ng-c4193683943="" style="padding-left:0px">
 			<div class="col-lg-3">
 				<img [src]="product.images[0].url" [alt]="product.name" />
 				<!-- <ul style="text-align: left; font-size: 9px; margin-left: 0;">
@@ -64,12 +66,12 @@
 			
 			</div>
 			
-			<div class="col-lg-9 pt-2">
-				<div class="row g-2 justify-content-center">
-					<div class="col-6 col-md-4">
+			<div _ngcontent-ng-c4193683943="" class="col-lg-9 pt-2">
+				<div _ngcontent-ng-c4193683943="" class="row g-2 justify-content-center">
+					<div _ngcontent-ng-c4193683943="" class="col-6 col-md-4">
 						<small class="d-block text-uppercase fw-bold">Valor </small>
 						<h5 class="my-0">{{ product.valorLista }}</h5>
-						<div class="form-text text-extra-small fw-bolder text-uppercase" style="font-size:8px">Dólares americanos</div>
+						<div _ngcontent-ng-c4193683943="" class="form-text text-extra-small fw-bolder text-uppercase" style="font-size:8px">Dólares americanos</div>
 					</div>
 					<div class="col-6 col-md-4">
 						<small class="d-block text-uppercase fw-bold">Precio</small>
@@ -82,7 +84,9 @@
 						<div class="form-text text-extra-small fw-bolder text-uppercase" style="font-size:8px"></div>
 					</div>
 				</div>
+
 				<hr />
+
 				<div class="row g-2 pb-3 pb-lg-0">
 					<div class="col-6 col-md-3">
 						<span class="form-text text-extra-small fw-bolder"><i class="fal fa-hospital icon mr-1" [ngStyle]="iconStyles"></i> Prestadores </span>
@@ -129,16 +133,42 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-12 col-lg-2 text-white py-3 py-lg-0">
-		<small class="d-block text-uppercase fw-bold">Total a pagar</small>
-		<h4 class="mb-1 me-1">{{product.precio}}</h4>
-            <span class="text-danger mb-1 me-1"><s>{{product.price}}</s></span>
-          
-          <h6 class="text-success"><span>{{product.precio}}</span></h6>
-		<div class="form-text text-white text-extra-small fw-bolder text-uppercase pb-3">mensual</div>
-		<button (click)="openDialog(product)" class="btn btn-outline-primary btn-sm mt-2" type="button">Detalles</button>
+	<div _ngcontent-ng-c4193683943="" align="" class="col-12 col-lg-2 text-white py-3 py-lg-0">
+		 <div _ngcontent-ng-c4193683943="" class="price-insurance ng-star-inserted">
+                <div _ngcontent-ng-c4193683943="" class="content-price text-center ng-star-inserted">
+                   <p _ngcontent-ng-c4193683943="" class="d-flex align-items-center justify-content-center container-price-label m-0 ng-star-inserted">
+                      <span _ngcontent-ng-c4193683943="" class="price-label">Desde
+                      </span>
+                  
+                   </p>
+                   <div _ngcontent-ng-c4193683943="" class="d-flex align-items-center justify-content-center ng-star-inserted">
+                      <p _ngcontent-ng-c4193683943="" class="m-0 price-qp4b73876f-value">
+                         ${{ product.precio }} 
+                         <small _ngcontent-ng-c4193683943="" class="price-suffix text-nowrap ml-1 ng-star-inserted">/mes
+                         </small>
+                      </p>
+                   </div>
+                </div>
+             </div>
+		                  
+         <div _ngcontent-ng-c4193683943="" _nghost-ng-c1382562721="" class="ng-star-inserted">
+             </div>
+		<div _ngcontent-ng-c4193683943=""  class="form-text text-white text-extra-small fw-bolder text-uppercase pb-3">mensual</div>
+<!-- 		<button (click)="openDialog(product)" class="btn btn-outline-primary btn-sm mt-2" type="button">Detalles</button>
 		<button (click)='toggleCompare()' class="btn btn-outline-primary btn-sm mt-2" type="button"> {{product.compare ? "Remover" : "Comparar"}}
-		</button>
+		</button> -->
+		<div _ngcontent-ng-c4193683943="">
+                <div _ngcontent-ng-c4193683943="" class="button-insurance ng-star-inserted">
+                   <a _ngcontent-ng-c4193683943="" href="/Isapre/Nueva-Mas-Vida/Planes/PPS24370/solicitar">
+                   <span _ngcontent-ng-c4193683943="">Solicitar
+                   </span>
+                   </a>
+                </div>
+               <!--  <div _ngcontent-ng-c4193683943="" class="view-detail text-center ng-star-inserted">
+                   <a _ngcontent-ng-c4193683943="" href="/Isapre/Nueva-Mas-Vida/Planes/PPS24370">Ver Detalle
+                   </a>
+                </div> -->
+             </div>
 		  <!-- <button class="btn btn-primary" >Add to cart</button> -->
 	</div>
 

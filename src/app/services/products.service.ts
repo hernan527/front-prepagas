@@ -246,8 +246,9 @@ interface SearchResult {
       filterProducts(form: FormGroup, listadoPlanes: any[]): void {
         this.products=listadoPlanes // Copia de los productos originales
         const filteredProducts = this.filterLogic(form); // Realiza el filtrado de productos
-        this.filteredProductsSubject.next(filteredProducts); // Actualiza la variable en el componente
-      }
+        this.filteredProductsSubject.next(filteredProducts);
+        console.log('filteredProducts ',filteredProducts)
+      } 
       
       private filterLogic(form: FormGroup): any[] {        // Obtiene los valores de los filtros del formulario
         const selectedRating = form.get('selectedRating')?.value;

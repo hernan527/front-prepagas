@@ -5,8 +5,8 @@ import { createSlug } from './../../../../../shared/utils';
 
 @Component({
 	selector: 'app-ranking-section',
-	templateUrl: './ranking-section.component.html',
-	styleUrls: ['./ranking-section.component.scss'],
+	templateUrl: './rankingQP-section.component.html',
+	styleUrls: ['./rankingQP-section.component.css'],
 })
 export class RankingSectionComponent implements OnInit {
 	@Output() selectionChange = new EventEmitter<string>();

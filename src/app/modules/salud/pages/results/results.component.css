@@ -1,0 +1,28 @@
+/* Estilos globales */
+:root {
+    --primary-color: #00a4b2;
+    --secondary-color: #243179;
+    --text-color: #333;
+    --background-color: #f5f5f5;
+    --white: #ffffff;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px;
+  }
+  
+  /* Header Styles */
+.filters-sidebar {
+  position: relative;
+  z-index: 1; /* Asegúrate de que esté por encima si está siendo ocultado */
+  display: block;
+}

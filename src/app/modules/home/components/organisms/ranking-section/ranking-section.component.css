@@ -1,0 +1,228 @@
+/* Add application styles & imports to this file! */
+
+/* Existing styles */
+.description {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+  }
+  
+  .description h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
+  
+  .description ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .description li {
+    margin-bottom: 30px;
+  }
+  
+  .description li p {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+  
+  .description .img-responsive {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .description .img-responsive:hover {
+    transform: translateY(-5px);
+  }
+  
+  .description .first-column {
+    padding-right: 30px;
+  }
+  
+  .description .second-column {
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .description .second-column p {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  
+  .description .second-column img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .green-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .green-btn:hover {
+    background-color: #218838;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .green-btn .glyphicon {
+    margin-left: 8px;
+    font-size: 0.9em;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .description {
+      padding: 40px 0;
+    }
+    
+    .description h2 {
+      font-size: 1.8rem;
+    }
+    
+    .description .first-column {
+      padding-right: 0;
+      margin-bottom: 30px;
+    }
+    
+    .description .second-column {
+      margin-top: 30px;
+    }
+  }
+  
+  /* Ranking Section Styles */
+  .ranking-section h2 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .ranking-section p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  /* Select Inputs Styling */
+  .form-floating .form-select {
+    height: 58px;
+    border-color: #e0e0e0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .form-floating .form-select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 0.25rem rgba(74, 144, 226, 0.25);
+  }
+  
+  .form-floating label {
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  
+  /* Pagination Styling */
+  .pagination {
+    margin-top: 2rem;
+  }
+  
+  .page-link {
+    color: #4a90e2;
+    border: 1px solid #e0e0e0;
+    padding: 0.75rem 1.25rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .page-link:hover {
+    background-color: #4a90e2;
+    color: white;
+    border-color: #4a90e2;
+  }
+  
+  .page-item.active .page-link {
+    background-color: #4a90e2;
+    border-color: #4a90e2;
+  }
+  
+  .page-item.disabled .page-link {
+    color: #999;
+    pointer-events: none;
+    background-color: #f8f9fa;
+    border-color: #e0e0e0;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .ranking-section h2 {
+      font-size: 2rem;
+    }
+    
+    .form-floating {
+      margin-bottom: 1rem;
+    }
+    
+    .pagination {
+      justify-content: center;
+    }
+    
+    .page-link {
+      padding: 0.5rem 1rem;
+    }
+  }
+  
+  /* Filter Section */
+  .form-floating {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Ranking Row Container */
+  .ranking-row {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  
+  .ranking-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* General Container Spacing */
+  .container.mt-5 {
+    margin-bottom: 5rem;
+  }
+  
+  /* Select Container */
+  .form-select-container {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }

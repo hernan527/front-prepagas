@@ -9,29 +9,22 @@ import { SharedModule } from '../../shared/shared.module';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
 // atoms
-import { FormLeadComponent } from './components/atoms/form-lead/form-lead.component';
-import { FormQuoteComponent } from './components/atoms/form-quote/form-quote.component';
-import { FormQueplanComponent } from './components/atoms/form-queplan/form-queplan.component';
-import { GetQuoteComponent } from './components/atoms/get-quote/get-quote.component';
-import { CotizarFormComponent } from './components/atoms/cotizar-form/cotizar-form.component';
 
-import { MatInputModule } from '@angular/material/input';
+
 import { MatSelectModule } from '@angular/material/select';
-import { MatButtonModule } from '@angular/material/button';
+import {MatAutocompleteModule} from '@angular/material/autocomplete'; 
 
 // pages 
 import { DefaultComponent } from './pages/default/default.component';
 import { ResultsOriginalComponent } from './pages/results/results-original.component';
-import { ResultsComponent } from './pages/results/resultsQP.component';
 
-import { Results1Component } from './pages/results/results.component';
+import { ResultsComponent } from './pages/results/results.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { CompareComponent } from './pages/compare/compare.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { DialogModule } from 'primeng/dialog';
 import { FilterPipe } from './../../../pipes/filter.pipe';
 import { SortPipe } from './../../../pipes/sort.pipe'
-
+import { MaterialModule } from '../../material/material.module';
 
 import { DividerModule } from 'primeng/divider';
 
@@ -56,13 +49,24 @@ import { modules } from './components';
 
 
 import { PdfViewerModule} from 'ng2-pdf-viewer';
-
+import {FormsModule} from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 
-
+import {MatButtonModule} from '@angular/material/button';
+import {
+  MAT_DIALOG_DATA,
+  MatDialog,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogRef,
+  MatDialogTitle,
+} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 import { TabViewModule } from 'primeng/tabview';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
@@ -85,7 +89,6 @@ const publicApi = [
 		FilterPipe,
 		SortPipe,
 		EmpresasComponent,
-		Results1Component,
 		...components
  
 	],
@@ -117,7 +120,9 @@ const publicApi = [
 		MatButtonModule,
 		MatCheckboxModule,
 		MatSliderModule,
-
+		MaterialModule,
+		MatAutocompleteModule,
+		FormsModule,
 		...modules
 	],
 

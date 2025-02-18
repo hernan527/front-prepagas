@@ -5,7 +5,9 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-filters',
 
-  templateUrl: './filters.component.html',
-  styleUrls: ['./filters.component.css']
+  templateUrl: './filtersQP.component.html',
+  styleUrls: ['./filtersQP.component.css']
 })
-export class FiltersComponent {}
+export class FiltersComponent {
+
+}

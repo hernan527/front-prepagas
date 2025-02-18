@@ -23,7 +23,9 @@ export interface DialogData1 {
 
 @Component({
   selector: 'app-product-land',
-  templateUrl: './product-land.component.html',
+
+    templateUrl: './insurance-card.component.html',
+
   styleUrls: ['./product-land.component.scss']
 })
 

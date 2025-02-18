@@ -19,7 +19,7 @@ import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { SaludModule } from './modules/salud/salud.module';
-
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,8 @@ import { SaludModule } from './modules/salud/salud.module';
     MarkdownModule,
     ButtonModule,
     TooltipModule,
-    SaludModule
+    SaludModule,
+    MaterialModule
   ],
   providers: [{
     provide: {

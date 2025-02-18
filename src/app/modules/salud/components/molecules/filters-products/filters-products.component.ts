@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,ChangeDetectorRef, EventEmitter,Output  } from '@angular/core';
+import { Component, OnInit,Input,ChangeDetectorRef, EventEmitter,Output,SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { ProductsService } from '../../../../../services/products.service';
 import {ServcioRetornoPrecioService} from '../../../../../services/servcio-retorno-precio.service';
@@ -86,7 +86,19 @@ export class FiltersProductsComponent implements OnInit  {
 
    
   }
-  
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('ngOnChanges - Cambios detectados:', changes);
+
+    // Aquí puedes iterar sobre los cambios y trabajar con cada propiedad
+    for (const propName in changes) {
+      const change = changes[propName];
+      console.log(`Propiedad: ${propName}`);
+      console.log(`Anterior: ${change.previousValue}`);
+      console.log(`Actual: ${change.currentValue}`);
+      console.log(`Primer cambio: ${change.firstChange}`);
+    }
+  }
+
   ngOnInit(): void {
     this.quote = {
       adultos: 1,
@@ -95,7 +107,13 @@ export class FiltersProductsComponent implements OnInit  {
     }
     console.log('Filtros seleccionados:', this.filtrosSeleccionadosGroup.value);
    
-         
+           console.log('ngOnInit - Valores iniciales:', {
+      isSmallScreen: this.isSmallScreen,
+      sidebarVisible: this.sidebarVisible,
+      anchoSidebar: this.anchoSidebar
+    });
+  
+
   
     this.filtrosSeleccionadosGroup.valueChanges.subscribe(() => {
       console.log('Filtros seleccionados han cambiado:', this.filtrosSeleccionadosGroup.value);

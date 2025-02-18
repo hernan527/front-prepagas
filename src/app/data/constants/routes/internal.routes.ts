@@ -5,7 +5,7 @@ export const ROUTES_PATHS = {
 		REGISTER: `sigup`,
 	},
 	ASESORI: {
-		DEFAULT: ``,
+		DEFAULT: `asesori`,
 		CREDIT: {
 			DEFAULT: `credit`,
 			RESULTS: `results`,
@@ -15,8 +15,8 @@ export const ROUTES_PATHS = {
 			RESULTS: `results`,
 		},
 		SALUD: {
-			DEFAULT: `salud`,
-			RESULTS: `results`,
+			DEFAULT: ``,
+			RESULTS: ``,
 			DETAILS: `details`,
 			COMPARE: `compare`,
 			EMPRESA: `prepaga`,
@@ -42,6 +42,7 @@ export const INTERNAL_PATHS = {
 	/**
 	 * ASESORI
 	 */
+	
 	ASESORI_DEFAULT: `${ROUTES_PATHS.ASESORI.DEFAULT}`,
 	/**
 	 * ASESORI - CREDIT

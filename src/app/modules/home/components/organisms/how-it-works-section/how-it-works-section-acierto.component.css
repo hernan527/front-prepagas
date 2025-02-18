@@ -1,0 +1,110 @@
+/* Add application styles & imports to this file! */
+
+.description {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.description h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.description ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.description li {
+  margin-bottom: 30px;
+}
+
+.description li p {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.description .img-responsive {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.description .img-responsive:hover {
+  transform: translateY(-5px);
+}
+
+.description .first-column {
+  padding-right: 30px;
+}
+
+/* .description .second-column {
+  padding: 30px;
+ background-color: white; 
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+ .description .second-column p {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.description .second-column img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+} */
+
+.green-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.green-btn:hover {
+  background-color: #218838;
+  color: white;
+  text-decoration: none;
+}
+
+.green-btn .glyphicon {
+  margin-left: 8px;
+  font-size: 0.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .description {
+    padding: 40px 0;
+  }
+  
+  .description h2 {
+    font-size: 1.8rem;
+  }
+  
+  .description .first-column {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+  
+  .description .second-column {
+    margin-top: 30px;
+  }
+}

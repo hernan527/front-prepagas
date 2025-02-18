@@ -21,7 +21,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
-
+ import {MatAutocompleteModule} from '@angular/material/autocomplete'; 
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 const MaterialComponents = [
   
@@ -50,7 +50,7 @@ const MaterialComponents = [
     MatDatepickerModule,
     MatNativeDateModule,
     MatRadioModule,
-  
+    MatAutocompleteModule,
     MatButtonToggleModule,
   ],
   exports: [  ]

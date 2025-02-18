@@ -1,27 +1,25 @@
-<app-header></app-header>
+<!-- <app-header></app-header> -->
     
 <main>
-  <div class="banner">
-    <div class="container">
-      <h1 class="banner-title">Seguros de Salud</h1>
-      <h2 class="banner-subtitle">Contrata en línea sin comisión el mejor seguro de salud para ti y tu familia</h2>
+  
       <app-search-form></app-search-form>
-    </div>
-  </div>
+ 
 
   <div class="container">
-    <div class="row mt-4">
+    <div class="row mt-5">
       <div class="col-12 col-lg-3">
         <app-filters></app-filters>
       </div>
       <div class="col-12 col-lg-9">
         <div class="results-header mb-3">
-          <span class="results-count">542 Resultados</span>
+          <app-list-header></app-list-header>
         </div>
         <app-insurance-card></app-insurance-card>
         <app-insurance-card></app-insurance-card>
         <app-insurance-card></app-insurance-card>
       </div>
+      <app-pagination></app-pagination>
     </div>
   </div>
+  <app-why-us></app-why-us>
 </main>

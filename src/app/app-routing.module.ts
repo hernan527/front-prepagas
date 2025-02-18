@@ -6,49 +6,48 @@ import { AuthModule } from './modules/auth/auth.module';
 import { CreditModule } from './modules/credit/credit.module';
 import { HomeModule } from './modules/home/home.module';
 import { InsuranceModule } from './modules/insurance/insurance.module';
-import { SaludModule } from './modules/salud/salud.module'
-
-
+import { SaludModule } from './modules/salud/salud.module';
 
 const routes: Routes = [
   {
     path: EMPTY_STRING,
-		component: SkeletonComponent,
-		children: [
-			{
-				path: INTERNAL_PATHS.ASESORI_DEFAULT,
-				loadChildren: () => import('./modules/home/home.module').then((m): typeof HomeModule => m.HomeModule),
-			},
+    component: SkeletonComponent,
+    children: [
       {
-      path: INTERNAL_PATHS.ASESORI_CREDIT_DEFAULT,
-      loadChildren: () => import('./modules/credit/credit.module').then((m): typeof CreditModule => m.CreditModule),
-    },
-    {
-      path: INTERNAL_PATHS.ASESORI_INSURANCE_DEFAULT,
-      loadChildren: () =>
-        import('./modules/insurance/insurance.module').then((m): typeof InsuranceModule => m.InsuranceModule),
-    },
-    {
-      path: INTERNAL_PATHS.ASESORI_SALUD_DEFAULT,
-      loadChildren: () =>
-        import('./modules/salud/salud.module').then((m): typeof SaludModule => m.SaludModule),
-    },
-    {
-      path: INTERNAL_PATHS.AUTH_DEFAULT,
-      loadChildren: () => import('./modules/auth/auth.module').then((m): typeof AuthModule => m.AuthModule),
-    },
-    { path: '**', redirectTo: EMPTY_STRING, pathMatch: 'full'},
-],
+        path: INTERNAL_PATHS.ASESORI_DEFAULT,
+        loadChildren: () =>
+          import('./modules/home/home.module').then((m): typeof HomeModule => m.HomeModule),
+      },
+      {
+        path: INTERNAL_PATHS.ASESORI_CREDIT_DEFAULT,
+        loadChildren: () =>
+          import('./modules/credit/credit.module').then((m): typeof CreditModule => m.CreditModule),
+      },
+      {
+        path: INTERNAL_PATHS.ASESORI_INSURANCE_DEFAULT,
+        loadChildren: () =>
+          import('./modules/insurance/insurance.module').then((m): typeof InsuranceModule => m.InsuranceModule),
+      },
+      {
+        path: INTERNAL_PATHS.ASESORI_SALUD_DEFAULT,
+        loadChildren: () =>
+          import('./modules/salud/salud.module').then((m): typeof SaludModule => m.SaludModule),
+      },
+      {
+        path: INTERNAL_PATHS.AUTH_DEFAULT,
+        loadChildren: () =>
+          import('./modules/auth/auth.module').then((m): typeof AuthModule => m.AuthModule),
+      },
+      // Redirección por defecto a Salud
+      { path: EMPTY_STRING, redirectTo: INTERNAL_PATHS.ASESORI_SALUD_DEFAULT, pathMatch: 'full' },
+    ],
   },
+  // Ruta comodín
   { path: '**', redirectTo: EMPTY_STRING, pathMatch: 'full' },
+];
 
-]
-  @NgModule({
-    imports: [RouterModule.forRoot(routes, { useHash: true })],
-    exports: [RouterModule],
-  })
-  export class AppRoutingModule {}
-
-
-
-
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}

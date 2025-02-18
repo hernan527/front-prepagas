@@ -14,13 +14,16 @@ import {
     ResultComponent,
     IncrementorComponent,
     InsuranceCardComponent,
-    FiltersComponent
+    FiltersComponent,
+    PaginationComponent
 } from './molecules';
 
 // organisms
 import {
 	HeroSectionComponent,
-    HeaderComponent
+    HeaderComponent,
+    WhyUsComponent,
+    ListHeaderComponent
 } from './organisms';
 
 // templates
@@ -58,7 +61,10 @@ export const components = [
     InsuranceCardComponent,
     FiltersComponent,
     HeaderComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    WhyUsComponent,
+    ListHeaderComponent,
+    PaginationComponent
 ];
 
 
