@@ -2,9 +2,10 @@
 import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'app-incrementor',
-  templateUrl: './incrementor.component.html',
-  styleUrls: ['./incrementor.component.css']
+    selector: 'app-incrementor',
+    templateUrl: './incrementor.component.html',
+    styleUrls: ['./incrementor.component.css'],
+    standalone: true
 })
 export class IncrementorComponent {
   @Input() valor = 18;

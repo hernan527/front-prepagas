@@ -1,5 +1,7 @@
 import { Component, Inject, OnInit, AfterViewInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { DynamicDialogRef, DynamicDialogConfig } from 'primeng/dynamicdialog'; // Agrega DynamicDialogRef y DynamicDialogConfig
+import { NgFor } from '@angular/common';
+import { TabViewModule } from 'primeng/tabview';
 
 
 /**
@@ -7,9 +9,11 @@ import { DynamicDialogRef, DynamicDialogConfig } from 'primeng/dynamicdialog'; /
  */
 
 @Component({
-  selector: 'app-clinicas-list-group-p',
-  templateUrl: './clinicas-list-group-p.component.html',
-  styleUrls: ['./clinicas-list-group.component.css']
+    selector: 'app-clinicas-list-group-p',
+    templateUrl: './clinicas-list-group-p.component.html',
+    styleUrls: ['./clinicas-list-group.component.css'],
+    standalone: true,
+    imports: [TabViewModule, NgFor]
 })
 export class ClinicasListGroupPrimengComponent implements OnInit {
   product: any;

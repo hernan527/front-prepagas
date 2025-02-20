@@ -3,9 +3,10 @@ import { SERVICES_DATA_ITEMS } from './../../../../../data/constants/mock';
 import { Service } from './../../../../../data/interfaces';
 
 @Component({
-	selector: 'app-services-section',
-	templateUrl: './services-section-acierto.component.html',
-	styleUrls: ['./services-section.component.scss'],
+    selector: 'app-services-section',
+    templateUrl: './services-section-acierto.component.html',
+    styleUrls: ['./services-section.component.scss'],
+    standalone: true,
 })
 export class ServicesSectionComponent {
 	// data constants

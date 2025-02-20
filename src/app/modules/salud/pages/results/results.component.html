@@ -24,11 +24,17 @@
 
   <!-- ============== SECTION PAGETOP END// ============== -->
   <!-- ============== SECTION CONTENT ============== -->
+  <app-banner-list></app-banner-list>
+  <section class="container">
   <app-search-form></app-search-form>
-
+</section>
   <section class="container mt-5">
     <app-list-header></app-list-header>
-<!-- <header class="d-flex flex-wrap align-items-center border-bottom mb-4 pb-3 w-100">
+    <div class="d-flex flex-column justify-content-center surface-card p-2 shadow-2 border-round  " style="background-color: rgba(255, 215, 0, 0.6); margin: 0 0 0 0; align-items: center; animation: shake 0.5s ease-in-out;">
+      <div class="text-lg font-medium text-600 mb-2"><strong>Paso 1:</strong> Ingresa tu <strong>edad</strong> para calcular precios exactos y obtener los mejores planes</div>
+      <button pButton pRipple type="button" label="Completar Perfil" class="p-button-raised p-button-danger" (click)="openModa('custom-modal-3')" style="animation: aura 0.5s ease-in-out;"></button>
+    </div>
+<!-- <header class="d-flex flex-wrap align-items-center border-bottom mb-4 pb-3 w-100">s
 
   <div class="d-flex flex-wrap justify-content-between surface-card p-2 shadow-2 border-round w-100" 
        style="background-color: whitesmoke; margin: 0 5px 5px 5px; align-items: center;">
@@ -118,21 +124,21 @@
 
 
   <div class="row">
-  <aside class="col-lg-3 filters-sidebar">
+  <div class="col-lg-3">
     <app-filters-products
       [isSmallScreen]="isSmallScreen"
       [product]="products"
       [sidebarVisible]="sidebarVisible"
       [anchoSidebar]="anchoSidebar"
     ></app-filters-products>
-  </aside>
+  </div>
 
 
 <main class="col-lg-9">
 <ng-container *ngIf="!(loading$ | async); else loadingTpl">
 
 <!-- ========= content items ========= -->
- <div class="container">
+<div class="container">
   
 
 
@@ -142,6 +148,7 @@
 
 <div class="row justify-content-center ">
 <div class="row ">
+
 
   
   
@@ -157,7 +164,6 @@
   
       <div class="items" *ngFor="let product of productosFiltrados | filter: SearchEmpresa:'empresa'  |  sort: [SortbyParam, SortDirection]" >
       <app-product-land *ngIf="view === 'list'" [product]="product"></app-product-land>
-      <!-- <app-product-land [product]="product"></app-product-land> -->
 
       </div>  
     
@@ -215,22 +221,7 @@
   </div>
 </ng-template>
 
-<p-dialog header="Comparador de Planes" [(visible)]="displayDialog" [style]="{ 'width': '100%', 'height': '100%' }">
-  <app-compara-item
-    [productos]="compareProdList()"
-    [clinicasVal]="compareProdClinicas(compareProdList())"
-    [items]="compareProdClinicas(compareProdList())"
-    ></app-compara-item
-  >
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-primary btn-sm mt-2" (click)="onPrint()">
-      Imprimir Listado
-    </button>
-    <button type="button" class="btn btn-outline-primary btn-sm mt-2" (click)="closeDialog()">
-      Cerrar
-    </button>
-  </div>
-</p-dialog>
+<!-- s -->
 
 <!-- <p-sidebar [(visible)]="sidebarVisible" [style]="{ 'width': anchoSidebar }"> -->
   
@@ -267,19 +258,3 @@
           </p-dialog>
       </div>
  -->
- <ol>
-  <li>
-    <mat-form-field>
-      <mat-label>What's your name?</mat-label>
-      <input matInput [(ngModel)]="name" />
-    </mat-form-field>
-  </li>
-  <li>
-    <button mat-raised-button (click)="openDialog()">Pick one</button>
-  </li>
-  @if (animal()) {
-    <li>
-      You chose: <em>{{animal()}}</em>
-    </li>
-  }
-</ol>

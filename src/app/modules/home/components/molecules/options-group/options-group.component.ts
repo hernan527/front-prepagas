@@ -3,6 +3,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, forwardRef, ChangeDetectionStrategy, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { NgFor, NgClass, NgIf } from '@angular/common';
 
 const TYPE_CONTROL_ACCESSOR = {
 	provide: NG_VALUE_ACCESSOR,
@@ -11,11 +12,17 @@ const TYPE_CONTROL_ACCESSOR = {
 };
 
 @Component({
-	selector: 'app-options-group',
-	templateUrl: './options-group.component.html',
-	styleUrls: ['./options-group.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush,
-	providers: [TYPE_CONTROL_ACCESSOR],
+    selector: 'app-options-group',
+    templateUrl: './options-group.component.html',
+    styleUrls: ['./options-group.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [TYPE_CONTROL_ACCESSOR],
+    standalone: true,
+    imports: [
+        NgFor,
+        NgClass,
+        NgIf,
+    ],
 })
 export class OptionsGroupComponent implements ControlValueAccessor {
 	// TODO: improve and handle types and verify eslint warning

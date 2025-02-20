@@ -1,13 +1,17 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalService } from '../../../../../../../_modal';
+import { MatTabsModule } from '@angular/material/tabs';
+import { NgIf, NgFor, KeyValuePipe } from '@angular/common';
 
 
 var  check: any;
 var items:any;
 @Component({
-  selector: 'app-compara-clinicas',
-  templateUrl: './compara-clinicas.component.html',
-  styleUrls: ['./compara-clinicas.component.scss']
+    selector: 'app-compara-clinicas',
+    templateUrl: './compara-clinicas.component.html',
+    styleUrls: ['./compara-clinicas.component.scss'],
+    standalone: true,
+    imports: [NgIf, MatTabsModule, NgFor, KeyValuePipe]
 })
 export class ComparaClinicasComponent implements OnInit {
   @Input() clinicasVal: any;

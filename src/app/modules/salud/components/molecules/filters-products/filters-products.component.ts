@@ -3,11 +3,18 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { ProductsService } from '../../../../../services/products.service';
 import {ServcioRetornoPrecioService} from '../../../../../services/servcio-retorno-precio.service';
 import { Quote } from '../../../../../data/interfaces/interfaces';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { SidebarModule } from 'primeng/sidebar';
+import { NgIf } from '@angular/common';
 
  @Component({
-  selector: 'app-filters-products',
-  templateUrl: './filters-products.component.html',
-  styleUrls: ['./filters-products.component.css']
+    selector: 'app-filters-products',
+    templateUrl: './filtersQP.component.html',
+    styleUrls: ['./filtersQP.component.css'],
+    standalone: true,
+    imports: [NgIf, SidebarModule, MatFormFieldModule, MatCheckboxModule, MatButtonModule]
 })
 export class FiltersProductsComponent implements OnInit  {
    @Input() isSmallScreen = false;

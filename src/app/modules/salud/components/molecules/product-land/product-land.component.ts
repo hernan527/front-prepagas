@@ -22,11 +22,10 @@ export interface DialogData1 {
 
 
 @Component({
-  selector: 'app-product-land',
-
+    selector: 'app-product-land',
     templateUrl: './insurance-card.component.html',
-
-  styleUrls: ['./product-land.component.scss']
+    styleUrls: ['./product-land.component.scss'],
+    standalone: true
 })
 
 

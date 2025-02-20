@@ -11,9 +11,10 @@ import {DialogData1} from '../../../../components/molecules/product-land/product
 
 
 @Component({
-  selector: 'app-clinicas-list',
-  templateUrl: './clinicas-list.component.html',
-  styleUrls: ['./clinicas-list.component.css']
+    selector: 'app-clinicas-list',
+    templateUrl: './clinicas-list.component.html',
+    styleUrls: ['./clinicas-list.component.css'],
+    standalone: true
 })
 export class ClinicasListComponent implements OnInit {
   product: any;

@@ -6,7 +6,6 @@ import { ResultsComponent } from './pages/results/results.component';
 import { DefaultComponent } from './pages/default/default.component';
 
 @NgModule({
-	declarations: [ResultsComponent, DefaultComponent],
-	imports: [SharedModule, InsuranceRoutingModule],
+    imports: [SharedModule, InsuranceRoutingModule, ResultsComponent, DefaultComponent],
 })
 export class InsuranceModule {}

@@ -1,3 +1,5 @@
+<ng-container *ngIf="isSmallScreen; else showAsSidebar">
+    <p-sidebar [(visible)]="sidebarVisible" [style]="{ 'width': anchoSidebar }">
 <div _ngcontent-ng-c1993997668="" _nghost-ng-c3260595440="" class="ng-tns-c2033655494-3">
     <div _ngcontent-ng-c1993997668="" _nghost-ng-c402620268="" class="ng-star-inserted" style="">
     <div _ngcontent-ng-c402620268="" title="Precio" class="card ng-star-inserted" _nghost-ng-c3439799992="">
@@ -725,3 +727,739 @@
     </div>
     
     </div>
+
+</p-sidebar>
+</ng-container>
+
+<!-- VERSION MOBIL  -->
+<ng-template #showAsSidebar>
+
+
+    <div _ngcontent-ng-c1993997668="" _nghost-ng-c3260595440="" class="ng-tns-c2033655494-3">
+    <div _ngcontent-ng-c1993997668="" _nghost-ng-c402620268="" class="ng-star-inserted" style="">
+    <div _ngcontent-ng-c402620268="" title="Precio" class="card ng-star-inserted" _nghost-ng-c3439799992="">
+    <div _ngcontent-ng-c3439799992="" class="card">
+    <div _ngcontent-ng-c3439799992="" class="card-header ng-star-inserted"> Precio 
+    <i _ngcontent-ng-c3439799992="" container="body" class="fal fa-info-circle text-primary ml-1 ng-star-inserted">
+    </i>
+    
+    
+    
+    </div>
+    
+    <div _ngcontent-ng-c3439799992="" class="card-body">
+    
+    
+    <br _ngcontent-ng-c402620268="" class="ng-star-inserted">
+    <div _ngcontent-ng-c402620268="" data-nosnippet="" name="preciosPlanes" _nghost-ng-c557054381="" class="ng-star-inserted">
+    <div _ngcontent-ng-c557054381="" class="custom-slider">
+    <div _ngcontent-ng-c557054381="" class="div ng-star-inserted animate" _nghost-ng-c230493190="" aria-label="div">
+    <span _ngcontent-ng-c230493190="" ngxsliderelement="" class="div-span div-bar-wrapper div-left-out-selection" style="opacity: 1; visibility: hidden; transform: rotate(0deg);">
+    <span _ngcontent-ng-c230493190="" class="div-span div-bar">
+    </span>
+    </span>
+    <span _ngcontent-ng-c230493190="" ngxsliderelement="" class="div-span div-bar-wrapper div-right-out-selection" style="opacity: 1; visibility: hidden; transform: rotate(0deg);">
+    <span _ngcontent-ng-c230493190="" class="div-span div-bar">
+    </span>
+    </span>
+    <span _ngcontent-ng-c230493190="" ngxsliderelement="" class="div-span div-bar-wrapper div-full-bar" style="opacity: 1; visibility: visible; transform: rotate(0deg);">
+    <span _ngcontent-ng-c230493190="" class="div-span div-bar">
+    </span>
+    </span>
+    <span _ngcontent-ng-c230493190="" ngxsliderelement="" class="div-span div-bar-wrapper div-selection-bar div-draggable" style="opacity: 1; visibility: visible; left: 48px; width: 9px; transform: rotate(0deg);">
+    <span _ngcontent-ng-c230493190="" class="div-span div-bar div-selection">
+    </span>
+    </span>
+    <span _ngcontent-ng-c230493190="" ngxsliderhandle="" class="div-span div-pointer div-pointer-min" role="slider" tabindex="0" aria-orientation="horizontal" aria-label="div" aria-labelledby="" aria-valuenow="137157" aria-valuetext="$137.157" aria-valuemin="80000" aria-valuemax="380000" style="opacity: 1; visibility: visible; left: 35px; transform: rotate(0deg);">
+    </span>
+    <span _ngcontent-ng-c230493190="" ngxsliderhandle="" class="div-span div-pointer div-pointer-max" role="slider" tabindex="0" aria-orientation="horizontal" aria-label="div-max" aria-labelledby="" aria-valuenow="151594" aria-valuetext="$151.594" aria-valuemin="80000" aria-valuemax="380000" style="display: inherit; opacity: 1; visibility: visible; left: 44px; transform: rotate(0deg);">
+    </span>
+    <span _ngcontent-ng-c230493190="" ngxsliderlabel="" class="div-span div-bubble div-limit div-floor" style="opacity: 0; visibility: visible; left: 0px; transform: rotate(0deg);">$80.000
+    </span>
+    <span _ngcontent-ng-c230493190="" ngxsliderlabel="" class="div-span div-bubble div-limit div-ceil" style="opacity: 1; visibility: visible; left: 155px; transform: rotate(0deg);">$380.000
+    </span>
+    <span _ngcontent-ng-c230493190="" ngxsliderlabel="" class="div-span div-bubble div-model-value" style="opacity: 0; visibility: visible; left: 15px; transform: rotate(0deg);">$137.157
+    </span>
+    <span _ngcontent-ng-c230493190="" ngxsliderlabel="" class="div-span div-bubble div-model-high" style="opacity: 0; visibility: visible; left: 22px; transform: rotate(0deg);">$151.594
+    </span>
+    <span _ngcontent-ng-c230493190="" ngxsliderlabel="" class="div-span div-bubble div-combined" style="opacity: 1; visibility: visible; left: 0px; transform: rotate(0deg);">$137.157 - $151.594
+    </span>
+    <span _ngcontent-ng-c230493190="" ngxsliderelement="" class="div-ticks" style="opacity: 1; visibility: visible; transform: rotate(0deg);">
+    
+    </span>
+    </div>
+    
+    
+    
+    </div>
+    </div>
+    
+    
+    
+    </div>
+    </div>
+    </div>
+    
+    </div>
+    <div _ngcontent-ng-c1993997668="" _nghost-ng-c753294399="" class="ng-star-inserted" style="">
+    <div _ngcontent-ng-c753294399="" title="Clínicas y Hospitales" class="card" _nghost-ng-c3439799992="">
+    <div _ngcontent-ng-c3439799992="" class="card">
+    <div _ngcontent-ng-c3439799992="" class="card-header ng-star-inserted"> Clínicas y Hospitales 
+    <i _ngcontent-ng-c3439799992="" container="body" class="fal fa-info-circle text-primary ml-1 ng-star-inserted">
+    </i>
+    
+    
+    
+    </div>
+    
+    <div _ngcontent-ng-c3439799992="" class="card-body">
+    
+    <div _ngcontent-ng-c753294399="" name="prestadoresPlanes" _nghost-ng-c2757848846="" class="ng-star-inserted">
+    <mat-form-field _ngcontent-ng-c2757848846="" class="mat-mdc-form-field example-full-width ng-tns-c3736059725-16 mat-mdc-form-field-type-mat-input mat-form-field-appearance-outline mat-primary ng-untouched ng-pristine ng-valid ng-star-inserted" style="">
+    
+    <div class="mat-mdc-text-field-wrapper mdc-text-field ng-tns-c3736059725-16 mdc-text-field--outlined mdc-text-field--no-label">
+    
+    <div class="mat-mdc-form-field-flex ng-tns-c3736059725-16">
+    <div matformfieldnotchedoutline="" class="mdc-notched-outline ng-tns-c3736059725-16 mdc-notched-outline--no-label ng-star-inserted">
+    <div class="mdc-notched-outline__leading">
+    </div>
+    <div class="mdc-notched-outline__notch">
+    
+    
+    
+    </div>
+    <div class="mdc-notched-outline__trailing">
+    </div>
+    </div>
+    
+    
+    
+    <div class="mat-mdc-form-field-infix ng-tns-c3736059725-16">
+    
+    <input _ngcontent-ng-c2757848846="" matinput="" class="mat-mdc-input-element mat-mdc-autocomplete-trigger ng-tns-c3736059725-16 ng-untouched ng-pristine ng-valid mat-mdc-form-field-input-control mdc-text-field__input cdk-text-field-autofill-monitored" aria-label="Prestador" placeholder="Clínica..." id="mat-input-3" aria-invalid="false" aria-required="false" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-haspopup="listbox">
+    
+    <div _ngcontent-ng-c2757848846="" class="mat-mdc-autocomplete ng-tns-c3964489799-17 ng-tns-c3736059725-16 ng-star-inserted">
+    
+    </div>
+    </div>
+    
+    
+    </div>
+    
+    </div>
+    <div class="mat-mdc-form-field-subscript-wrapper mat-mdc-form-field-bottom-align ng-tns-c3736059725-16">
+    <div class="mat-mdc-form-field-hint-wrapper ng-tns-c3736059725-16 ng-trigger ng-trigger-transitionMessages ng-star-inserted" style="opacity: 1; transform: translateY(0%);">
+    
+    <div class="mat-mdc-form-field-hint-spacer ng-tns-c3736059725-16">
+    </div>
+    </div>
+    
+    
+    </div>
+    </mat-form-field>
+    
+    <div _ngcontent-ng-c2757848846="" class="container-filter ng-star-inserted">
+    <mat-checkbox _ngcontent-ng-c2757848846="" class="mat-mdc-checkbox text-filter w-100 mat-accent ng-untouched ng-pristine ng-valid ng-star-inserted mat-mdc-checkbox-checked" id="mat-mdc-checkbox-1">
+    <div mat-internal-form-field="" class="mdc-form-field mat-internal-form-field">
+    <div class="mdc-checkbox">
+    <div class="mat-mdc-checkbox-touch-target">
+    </div>
+    <input type="checkbox" class="mdc-checkbox__native-control mdc-checkbox--selected" id="mat-mdc-checkbox-1-input" tabindex="0">
+    <div class="mdc-checkbox__ripple">
+    </div>
+    <div class="mdc-checkbox__background">
+    <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" class="mdc-checkbox__checkmark">
+    <path fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" class="mdc-checkbox__checkmark-path">
+    </path>
+    </svg>
+    <div class="mdc-checkbox__mixedmark">
+    </div>
+    </div>
+    <div mat-ripple="" class="mat-ripple mat-mdc-checkbox-ripple mat-mdc-focus-indicator">
+    </div>
+    </div>
+    <label class="mdc-label" for="mat-mdc-checkbox-1-input">
+    <span _ngcontent-ng-c2757848846="" qppopover="">Libre elección
+    </span>
+    
+    <span _ngcontent-ng-c2757848846="" class="badge-total ng-star-inserted">49
+    </span>
+    
+    <button _ngcontent-ng-c2757848846="" class="button-filter ng-star-inserted">SOLO
+    </button>
+    
+    
+    
+    </label>
+    </div>
+    </mat-checkbox>
+    
+    
+    
+    </div>
+    
+    
+    <div _ngcontent-ng-c2757848846="" class="container-filter ng-star-inserted">
+    <mat-checkbox _ngcontent-ng-c2757848846="" class="mat-mdc-checkbox text-filter w-100 mat-accent ng-untouched ng-pristine ng-valid ng-star-inserted mat-mdc-checkbox-checked" id="mat-mdc-checkbox-2">
+    <div mat-internal-form-field="" class="mdc-form-field mat-internal-form-field">
+    <div class="mdc-checkbox">
+    <div class="mat-mdc-checkbox-touch-target">
+    </div>
+    <input type="checkbox" class="mdc-checkbox__native-control mdc-checkbox--selected" id="mat-mdc-checkbox-2-input" tabindex="0">
+    <div class="mdc-checkbox__ripple">
+    </div>
+    <div class="mdc-checkbox__background">
+    <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" class="mdc-checkbox__checkmark">
+    <path fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" class="mdc-checkbox__checkmark-path">
+    </path>
+    </svg>
+    <div class="mdc-checkbox__mixedmark">
+    </div>
+    </div>
+    <div mat-ripple="" class="mat-ripple mat-mdc-checkbox-ripple mat-mdc-focus-indicator">
+    </div>
+    </div>
+    <label class="mdc-label" for="mat-mdc-checkbox-2-input">
+    <span _ngcontent-ng-c2757848846="" qppopover="">Preferentes
+    </span>
+    
+    <span _ngcontent-ng-c2757848846="" class="badge-total ng-star-inserted">293
+    </span>
+    
+    <button _ngcontent-ng-c2757848846="" class="button-filter ng-star-inserted">SOLO
+    </button>
+    
+    
+    
+    </label>
+    </div>
+    </mat-checkbox>
+    
+    
+    
+    </div>
+    
+    
+    <div _ngcontent-ng-c2757848846="" class="container-filter ng-star-inserted">
+    <mat-checkbox _ngcontent-ng-c2757848846="" class="mat-mdc-checkbox text-filter w-100 mat-accent ng-untouched ng-pristine ng-valid ng-star-inserted mat-mdc-checkbox-checked" id="mat-mdc-checkbox-3">
+    <div mat-internal-form-field="" class="mdc-form-field mat-internal-form-field">
+    <div class="mdc-checkbox">
+    <div class="mat-mdc-checkbox-touch-target">
+    </div>
+    <input type="checkbox" class="mdc-checkbox__native-control mdc-checkbox--selected" id="mat-mdc-checkbox-3-input" tabindex="0">
+    <div class="mdc-checkbox__ripple">
+    </div>
+    <div class="mdc-checkbox__background">
+    <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" class="mdc-checkbox__checkmark">
+    <path fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" class="mdc-checkbox__checkmark-path">
+    </path>
+    </svg>
+    <div class="mdc-checkbox__mixedmark">
+    </div>
+    </div>
+    <div mat-ripple="" class="mat-ripple mat-mdc-checkbox-ripple mat-mdc-focus-indicator">
+    </div>
+    </div>
+    <label class="mdc-label" for="mat-mdc-checkbox-3-input">
+    <span _ngcontent-ng-c2757848846="" qppopover="">Cerrados
+    </span>
+    
+    <span _ngcontent-ng-c2757848846="" class="badge-total ng-star-inserted">15
+    </span>
+    
+    <button _ngcontent-ng-c2757848846="" class="button-filter ng-star-inserted">SOLO
+    </button>
+    
+    
+    
+    </label>
+    </div>
+    </mat-checkbox>
+    
+    
+    
+    </div>
+    
+    
+    
+    
+    </div>
+    
+    
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    <div _ngcontent-ng-c1993997668="" _nghost-ng-c4207029310="" class="ng-star-inserted" style="">
+    <div _ngcontent-ng-c4207029310="" title="Coberturas" class="card" _nghost-ng-c3439799992="">
+    <div _ngcontent-ng-c3439799992="" class="card">
+    <div _ngcontent-ng-c3439799992="" class="card-header ng-star-inserted"> Coberturas 
+    
+    
+    </div>
+    
+    <div _ngcontent-ng-c3439799992="" class="card-body">
+    
+    <div _ngcontent-ng-c4207029310="" class="example-button-container ng-star-inserted">
+    <h6 _ngcontent-ng-c4207029310="" class="mb-2">Hospitalario
+    </h6>
+    <div _ngcontent-ng-c4207029310="" class="d-flex justify-content-between discount-tag">
+    <button _ngcontent-ng-c4207029310="" mat-mini-fab="" container="body" class="mat-mini-circle mdc-fab mdc-fab--mini mat-mdc-mini-fab mat-accent mat-mdc-button-base ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple">
+    <span class="mat-mdc-button-persistent-ripple mdc-fab__ripple">
+    </span>
+    <span class="mdc-button__label">
+    <span _ngcontent-ng-c4207029310="">+60%
+    </span>
+    </span>
+    <span class="mat-mdc-focus-indicator">
+    </span>
+    <span class="mat-mdc-button-touch-target">
+    </span>
+    </button>
+    
+    <button _ngcontent-ng-c4207029310="" mat-mini-fab="" container="body" class="mat-mini-circle mdc-fab mdc-fab--mini mat-mdc-mini-fab mat-accent mat-mdc-button-base ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple">
+    <span class="mat-mdc-button-persistent-ripple mdc-fab__ripple">
+    </span>
+    <span class="mdc-button__label">
+    <span _ngcontent-ng-c4207029310="">+70%
+    </span>
+    </span>
+    <span class="mat-mdc-focus-indicator">
+    </span>
+    <span class="mat-mdc-button-touch-target">
+    </span>
+    </button>
+    
+    <button _ngcontent-ng-c4207029310="" mat-mini-fab="" container="body" class="mat-mini-circle mdc-fab mdc-fab--mini mat-mdc-mini-fab mat-accent mat-mdc-button-base ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple">
+    <span class="mat-mdc-button-persistent-ripple mdc-fab__ripple">
+    </span>
+    <span class="mdc-button__label">
+    <span _ngcontent-ng-c4207029310="">+80%
+    </span>
+    </span>
+    <span class="mat-mdc-focus-indicator">
+    </span>
+    <span class="mat-mdc-button-touch-target">
+    </span>
+    </button>
+    
+    <button _ngcontent-ng-c4207029310="" mat-mini-fab="" container="body" class="mat-mini-circle mdc-fab mdc-fab--mini mat-mdc-mini-fab mat-accent mat-mdc-button-base ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple">
+    <span class="mat-mdc-button-persistent-ripple mdc-fab__ripple">
+    </span>
+    <span class="mdc-button__label">
+    <span _ngcontent-ng-c4207029310="">+90%
+    </span>
+    </span>
+    <span class="mat-mdc-focus-indicator">
+    </span>
+    <span class="mat-mdc-button-touch-target">
+    </span>
+    </button>
+    
+    <button _ngcontent-ng-c4207029310="" mat-mini-fab="" container="body" class="mat-mini-circle mdc-fab mdc-fab--mini mat-mdc-mini-fab mat-accent mat-mdc-button-base ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple">
+    <span class="mat-mdc-button-persistent-ripple mdc-fab__ripple">
+    </span>
+    <span class="mdc-button__label">
+    <span _ngcontent-ng-c4207029310="">+100%
+    </span>
+    </span>
+    <span class="mat-mdc-focus-indicator">
+    </span>
+    <span class="mat-mdc-button-touch-target">
+    </span>
+    </button>
+    
+    
+    </div>
+    </div>
+    <div _ngcontent-ng-c4207029310="" class="example-button-container ng-star-inserted">
+    <h6 _ngcontent-ng-c4207029310="" class="mb-2 mt-4">Ambulatorio
+    </h6>
+    <div _ngcontent-ng-c4207029310="" class="d-flex justify-content-between discount-tag">
+    <button _ngcontent-ng-c4207029310="" mat-mini-fab="" container="body" class="mat-mini-circle mdc-fab mdc-fab--mini mat-mdc-mini-fab mat-accent mat-mdc-button-base ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple">
+    <span class="mat-mdc-button-persistent-ripple mdc-fab__ripple">
+    </span>
+    <span class="mdc-button__label">
+    <span _ngcontent-ng-c4207029310="">+60%
+    </span>
+    </span>
+    <span class="mat-mdc-focus-indicator">
+    </span>
+    <span class="mat-mdc-button-touch-target">
+    </span>
+    </button>
+    
+    <button _ngcontent-ng-c4207029310="" mat-mini-fab="" container="body" class="mat-mini-circle mdc-fab mdc-fab--mini mat-mdc-mini-fab mat-accent mat-mdc-button-base ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple">
+    <span class="mat-mdc-button-persistent-ripple mdc-fab__ripple">
+    </span>
+    <span class="mdc-button__label">
+    <span _ngcontent-ng-c4207029310="">+70%
+    </span>
+    </span>
+    <span class="mat-mdc-focus-indicator">
+    </span>
+    <span class="mat-mdc-button-touch-target">
+    </span>
+    </button>
+    
+    <button _ngcontent-ng-c4207029310="" mat-mini-fab="" container="body" class="mat-mini-circle mdc-fab mdc-fab--mini mat-mdc-mini-fab mat-accent mat-mdc-button-base ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple">
+    <span class="mat-mdc-button-persistent-ripple mdc-fab__ripple">
+    </span>
+    <span class="mdc-button__label">
+    <span _ngcontent-ng-c4207029310="">+80%
+    </span>
+    </span>
+    <span class="mat-mdc-focus-indicator">
+    </span>
+    <span class="mat-mdc-button-touch-target">
+    </span>
+    </button>
+    
+    <button _ngcontent-ng-c4207029310="" mat-mini-fab="" container="body" class="mat-mini-circle mdc-fab mdc-fab--mini mat-mdc-mini-fab mat-accent mat-mdc-button-base ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple">
+    <span class="mat-mdc-button-persistent-ripple mdc-fab__ripple">
+    </span>
+    <span class="mdc-button__label">
+    <span _ngcontent-ng-c4207029310="">+90%
+    </span>
+    </span>
+    <span class="mat-mdc-focus-indicator">
+    </span>
+    <span class="mat-mdc-button-touch-target">
+    </span>
+    </button>
+    
+    <button _ngcontent-ng-c4207029310="" mat-mini-fab="" container="body" class="mat-mini-circle mdc-fab mdc-fab--mini mat-mdc-mini-fab disabled mat-accent mat-mdc-button-base ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple">
+    <span class="mat-mdc-button-persistent-ripple mdc-fab__ripple">
+    </span>
+    <span class="mdc-button__label">
+    <span _ngcontent-ng-c4207029310="">+100%
+    </span>
+    </span>
+    <span class="mat-mdc-focus-indicator">
+    </span>
+    <span class="mat-mdc-button-touch-target">
+    </span>
+    </button>
+    
+    
+    </div>
+    </div>
+    
+    
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <div _ngcontent-ng-c1993997668="" title="Isapres" class="card ng-star-inserted" _nghost-ng-c3439799992="" style="">
+    <div _ngcontent-ng-c3439799992="" class="card">
+    <div _ngcontent-ng-c3439799992="" class="card-header ng-star-inserted"> Isapres 
+    <i _ngcontent-ng-c3439799992="" container="body" class="fal fa-info-circle text-primary ml-1 ng-star-inserted">
+    </i>
+    
+    
+    
+    </div>
+    
+    <div _ngcontent-ng-c3439799992="" class="card-body">
+    
+    <div _ngcontent-ng-c1993997668="" name="isapres" _nghost-ng-c2757848846="" class="ng-star-inserted" style="">
+    
+    <div _ngcontent-ng-c2757848846="" class="container-filter ng-star-inserted">
+    
+    <mat-checkbox _ngcontent-ng-c2757848846="" class="mat-mdc-checkbox text-filter w-100 mat-accent ng-untouched ng-pristine ng-valid ng-star-inserted mat-mdc-checkbox-checked" id="mat-mdc-checkbox-4">
+    <div mat-internal-form-field="" class="mdc-form-field mat-internal-form-field">
+    <div class="mdc-checkbox">
+    <div class="mat-mdc-checkbox-touch-target">
+    </div>
+    <input type="checkbox" class="mdc-checkbox__native-control mdc-checkbox--selected" id="mat-mdc-checkbox-4-input" tabindex="0">
+    <div class="mdc-checkbox__ripple">
+    </div>
+    <div class="mdc-checkbox__background">
+    <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" class="mdc-checkbox__checkmark">
+    <path fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" class="mdc-checkbox__checkmark-path">
+    </path>
+    </svg>
+    <div class="mdc-checkbox__mixedmark">
+    </div>
+    </div>
+    <div mat-ripple="" class="mat-ripple mat-mdc-checkbox-ripple mat-mdc-focus-indicator">
+    </div>
+    </div>
+    <label class="mdc-label" for="mat-mdc-checkbox-4-input"> Banmédica 
+    <span _ngcontent-ng-c2757848846="" class="badge-total ng-star-inserted"> 61 
+    </span>
+    
+    <button _ngcontent-ng-c2757848846="" class="button-filter ng-star-inserted">SOLO
+    </button>
+    
+    
+    
+    </label>
+    </div>
+    </mat-checkbox>
+    
+    
+    </div>
+    
+    
+    <div _ngcontent-ng-c2757848846="" class="container-filter ng-star-inserted">
+    
+    <mat-checkbox _ngcontent-ng-c2757848846="" class="mat-mdc-checkbox text-filter w-100 mat-accent ng-untouched ng-pristine ng-valid ng-star-inserted mat-mdc-checkbox-checked" id="mat-mdc-checkbox-5">
+    <div mat-internal-form-field="" class="mdc-form-field mat-internal-form-field">
+    <div class="mdc-checkbox">
+    <div class="mat-mdc-checkbox-touch-target">
+    </div>
+    <input type="checkbox" class="mdc-checkbox__native-control mdc-checkbox--selected" id="mat-mdc-checkbox-5-input" tabindex="0">
+    <div class="mdc-checkbox__ripple">
+    </div>
+    <div class="mdc-checkbox__background">
+    <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" class="mdc-checkbox__checkmark">
+    <path fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" class="mdc-checkbox__checkmark-path">
+    </path>
+    </svg>
+    <div class="mdc-checkbox__mixedmark">
+    </div>
+    </div>
+    <div mat-ripple="" class="mat-ripple mat-mdc-checkbox-ripple mat-mdc-focus-indicator">
+    </div>
+    </div>
+    <label class="mdc-label" for="mat-mdc-checkbox-5-input"> Colmena Golden Cross 
+    <span _ngcontent-ng-c2757848846="" class="badge-total ng-star-inserted"> 56 
+    </span>
+    
+    <button _ngcontent-ng-c2757848846="" class="button-filter ng-star-inserted">SOLO
+    </button>
+    
+    
+    
+    </label>
+    </div>
+    </mat-checkbox>
+    
+    
+    </div>
+    
+    
+    <div _ngcontent-ng-c2757848846="" class="container-filter ng-star-inserted">
+    
+    <mat-checkbox _ngcontent-ng-c2757848846="" class="mat-mdc-checkbox text-filter w-100 mat-accent ng-untouched ng-pristine ng-valid ng-star-inserted mat-mdc-checkbox-checked" id="mat-mdc-checkbox-6">
+    <div mat-internal-form-field="" class="mdc-form-field mat-internal-form-field">
+    <div class="mdc-checkbox">
+    <div class="mat-mdc-checkbox-touch-target">
+    </div>
+    <input type="checkbox" class="mdc-checkbox__native-control mdc-checkbox--selected" id="mat-mdc-checkbox-6-input" tabindex="0">
+    <div class="mdc-checkbox__ripple">
+    </div>
+    <div class="mdc-checkbox__background">
+    <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" class="mdc-checkbox__checkmark">
+    <path fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" class="mdc-checkbox__checkmark-path">
+    </path>
+    </svg>
+    <div class="mdc-checkbox__mixedmark">
+    </div>
+    </div>
+    <div mat-ripple="" class="mat-ripple mat-mdc-checkbox-ripple mat-mdc-focus-indicator">
+    </div>
+    </div>
+    <label class="mdc-label" for="mat-mdc-checkbox-6-input"> Consalud 
+    <span _ngcontent-ng-c2757848846="" class="badge-total ng-star-inserted"> 107 
+    </span>
+    
+    <button _ngcontent-ng-c2757848846="" class="button-filter ng-star-inserted">SOLO
+    </button>
+    
+    
+    
+    </label>
+    </div>
+    </mat-checkbox>
+    
+    
+    </div>
+    
+    
+    <div _ngcontent-ng-c2757848846="" class="container-filter ng-star-inserted">
+    
+    <mat-checkbox _ngcontent-ng-c2757848846="" class="mat-mdc-checkbox text-filter w-100 mat-accent ng-untouched ng-pristine ng-valid ng-star-inserted mat-mdc-checkbox-checked" id="mat-mdc-checkbox-7">
+    <div mat-internal-form-field="" class="mdc-form-field mat-internal-form-field">
+    <div class="mdc-checkbox">
+    <div class="mat-mdc-checkbox-touch-target">
+    </div>
+    <input type="checkbox" class="mdc-checkbox__native-control mdc-checkbox--selected" id="mat-mdc-checkbox-7-input" tabindex="0">
+    <div class="mdc-checkbox__ripple">
+    </div>
+    <div class="mdc-checkbox__background">
+    <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" class="mdc-checkbox__checkmark">
+    <path fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" class="mdc-checkbox__checkmark-path">
+    </path>
+    </svg>
+    <div class="mdc-checkbox__mixedmark">
+    </div>
+    </div>
+    <div mat-ripple="" class="mat-ripple mat-mdc-checkbox-ripple mat-mdc-focus-indicator">
+    </div>
+    </div>
+    <label class="mdc-label" for="mat-mdc-checkbox-7-input"> CruzBlanca 
+    <span _ngcontent-ng-c2757848846="" class="badge-total ng-star-inserted"> 0 
+    </span>
+    
+    <button _ngcontent-ng-c2757848846="" class="button-filter ng-star-inserted">SOLO
+    </button>
+    
+    
+    
+    </label>
+    </div>
+    </mat-checkbox>
+    
+    
+    </div>
+    
+    
+    <div _ngcontent-ng-c2757848846="" class="container-filter ng-star-inserted">
+    
+    <mat-checkbox _ngcontent-ng-c2757848846="" class="mat-mdc-checkbox text-filter w-100 mat-accent ng-untouched ng-pristine ng-valid ng-star-inserted mat-mdc-checkbox-checked" id="mat-mdc-checkbox-8">
+    <div mat-internal-form-field="" class="mdc-form-field mat-internal-form-field">
+    <div class="mdc-checkbox">
+    <div class="mat-mdc-checkbox-touch-target">
+    </div>
+    <input type="checkbox" class="mdc-checkbox__native-control mdc-checkbox--selected" id="mat-mdc-checkbox-8-input" tabindex="0">
+    <div class="mdc-checkbox__ripple">
+    </div>
+    <div class="mdc-checkbox__background">
+    <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" class="mdc-checkbox__checkmark">
+    <path fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" class="mdc-checkbox__checkmark-path">
+    </path>
+    </svg>
+    <div class="mdc-checkbox__mixedmark">
+    </div>
+    </div>
+    <div mat-ripple="" class="mat-ripple mat-mdc-checkbox-ripple mat-mdc-focus-indicator">
+    </div>
+    </div>
+    <label class="mdc-label" for="mat-mdc-checkbox-8-input"> Esencial 
+    <span _ngcontent-ng-c2757848846="" class="badge-total ng-star-inserted"> 8 
+    </span>
+    
+    <button _ngcontent-ng-c2757848846="" class="button-filter ng-star-inserted">SOLO
+    </button>
+    
+    
+    
+    </label>
+    </div>
+    </mat-checkbox>
+    
+    
+    </div>
+    
+    
+    <div _ngcontent-ng-c2757848846="" class="container-filter ng-star-inserted">
+    
+    <mat-checkbox _ngcontent-ng-c2757848846="" class="mat-mdc-checkbox text-filter w-100 mat-accent ng-untouched ng-pristine ng-valid ng-star-inserted mat-mdc-checkbox-checked" id="mat-mdc-checkbox-9">
+    <div mat-internal-form-field="" class="mdc-form-field mat-internal-form-field">
+    <div class="mdc-checkbox">
+    <div class="mat-mdc-checkbox-touch-target">
+    </div>
+    <input type="checkbox" class="mdc-checkbox__native-control mdc-checkbox--selected" id="mat-mdc-checkbox-9-input" tabindex="0">
+    <div class="mdc-checkbox__ripple">
+    </div>
+    <div class="mdc-checkbox__background">
+    <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" class="mdc-checkbox__checkmark">
+    <path fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" class="mdc-checkbox__checkmark-path">
+    </path>
+    </svg>
+    <div class="mdc-checkbox__mixedmark">
+    </div>
+    </div>
+    <div mat-ripple="" class="mat-ripple mat-mdc-checkbox-ripple mat-mdc-focus-indicator">
+    </div>
+    </div>
+    <label class="mdc-label" for="mat-mdc-checkbox-9-input"> Nueva Masvida 
+    <span _ngcontent-ng-c2757848846="" class="badge-total ng-star-inserted"> 97 
+    </span>
+    
+    <button _ngcontent-ng-c2757848846="" class="button-filter ng-star-inserted">SOLO
+    </button>
+    
+    
+    
+    </label>
+    </div>
+    </mat-checkbox>
+    
+    
+    </div>
+    
+    
+    <div _ngcontent-ng-c2757848846="" class="container-filter ng-star-inserted">
+    
+    <mat-checkbox _ngcontent-ng-c2757848846="" class="mat-mdc-checkbox text-filter w-100 mat-accent ng-untouched ng-pristine ng-valid ng-star-inserted mat-mdc-checkbox-checked" id="mat-mdc-checkbox-10">
+    <div mat-internal-form-field="" class="mdc-form-field mat-internal-form-field">
+    <div class="mdc-checkbox">
+    <div class="mat-mdc-checkbox-touch-target">
+    </div>
+    <input type="checkbox" class="mdc-checkbox__native-control mdc-checkbox--selected" id="mat-mdc-checkbox-10-input" tabindex="0">
+    <div class="mdc-checkbox__ripple">
+    </div>
+    <div class="mdc-checkbox__background">
+    <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" class="mdc-checkbox__checkmark">
+    <path fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" class="mdc-checkbox__checkmark-path">
+    </path>
+    </svg>
+    <div class="mdc-checkbox__mixedmark">
+    </div>
+    </div>
+    <div mat-ripple="" class="mat-ripple mat-mdc-checkbox-ripple mat-mdc-focus-indicator">
+    </div>
+    </div>
+    <label class="mdc-label" for="mat-mdc-checkbox-10-input"> Vida Tres 
+    <span _ngcontent-ng-c2757848846="" class="badge-total ng-star-inserted"> 28 
+    </span>
+    
+    <button _ngcontent-ng-c2757848846="" class="button-filter ng-star-inserted">SOLO
+    </button>
+    
+    
+    
+    </label>
+    </div>
+    </mat-checkbox>
+    
+    
+    </div>
+    
+    
+    
+    
+    </div>
+    
+    </div>
+    </div>
+    </div>
+    
+    
+    <div _ngcontent-ng-c1993997668="" title="Excedentes" icon="fal fa-info-circle text-primary ml-1" class="card ng-star-inserted" _nghost-ng-c3439799992="" style="">
+    <div _ngcontent-ng-c3439799992="" class="card">
+    <div _ngcontent-ng-c3439799992="" class="card-header ng-star-inserted"> Excedentes 
+    
+    <i _ngcontent-ng-c3439799992="" class="fa-info-circle fal ml-1 text-primary ng-star-inserted">
+    </i>
+    
+    </div>
+    
+    <div _ngcontent-ng-c3439799992="" class="card-body">
+    
+    <div _ngcontent-ng-c1993997668="" role="alert" type="light" class="alert show p-1 maternidad alert-light fade ng-star-inserted"> Desde Agosto de 2024, ya no se permite generar "excedentes". Es decir, se debe pactar un precio con la Isapre por al menos el 7% de tu cotización de salud. 
+    
+    </div>
+    
+    </div>
+    </div>
+    </div>
+    
+    </div>
+</ng-template>

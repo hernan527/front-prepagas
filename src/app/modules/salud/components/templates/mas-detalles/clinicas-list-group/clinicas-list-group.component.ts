@@ -3,6 +3,11 @@ import {MatDialogModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angula
 // import {DialogData2} from './../../../molecules/product-card/product-card.component';
 import {DialogData1} from './../../../molecules/product-land/product-land.component';
 import {DialogData2} from './../../../molecules/product-card/product-card.component';
+import { SortPipe } from '../../../../../../../pipes/sort.pipe';
+import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
+import { NgFor } from '@angular/common';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 
@@ -11,9 +16,11 @@ import {DialogData2} from './../../../molecules/product-card/product-card.compon
  */
 
 @Component({
-  selector: 'app-clinicas-list-group',
-  templateUrl: './clinicas-list-group.component.html',
-  styleUrls: ['./clinicas-list-group.component.css']
+    selector: 'app-clinicas-list-group',
+    templateUrl: './clinicas-list-group.component.html',
+    styleUrls: ['./clinicas-list-group.component.css'],
+    standalone: true,
+    imports: [MatTabsModule, NgFor, FormsModule, InputTextModule, SortPipe]
 })
 export class ClinicasListGroupComponent implements OnInit {
   selectedClinicas: any;

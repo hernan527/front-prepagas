@@ -11,11 +11,11 @@ interface USERS {
 
 
 @Component({
-  selector: 'app-clinicas-list-p',
-  // templateUrl: './clinicas-list-p.component.html',
-  template: '',
-
-  styleUrls: ['./clinicas-list.component.css']
+    selector: 'app-clinicas-list-p',
+    // templateUrl: './clinicas-list-p.component.html',
+    template: '',
+    styleUrls: ['./clinicas-list.component.css'],
+    standalone: true
 })
 export class ClinicasListPrimengComponent implements OnInit {
 

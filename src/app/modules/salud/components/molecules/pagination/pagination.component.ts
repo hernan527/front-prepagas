@@ -5,9 +5,10 @@ import {ServcioRetornoPrecioService} from '../../../../../services/servcio-retor
 import { Quote } from '../../../../../data/interfaces/interfaces';
 
  @Component({
-  selector: 'app-pagination',
-  templateUrl: './pagination.component.html',
-  styleUrls: ['./pagination.component.css']
+    selector: 'app-pagination',
+    templateUrl: './pagination.component.html',
+    styleUrls: ['./pagination.component.css'],
+    standalone: true
 })
 export class PaginationComponent implements OnInit  {
 

@@ -2,9 +2,10 @@ import { Component, Input } from '@angular/core';
 import { Ranking } from './../../../../../data/interfaces';
 
 @Component({
-	selector: 'app-ranking-row',
-	templateUrl: './ranking-row.component.html',
-	styleUrls: ['./ranking-row.component.scss'],
+    selector: 'app-ranking-row',
+    templateUrl: './ranking-row.component.html',
+    styleUrls: ['./ranking-row.component.scss'],
+    standalone: true,
 })
 export class RankingRowComponent {
 	@Input() row: Ranking = {

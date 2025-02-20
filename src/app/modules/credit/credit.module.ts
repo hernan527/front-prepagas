@@ -7,7 +7,6 @@ import { DefaultComponent } from './pages/default/default.component';
 import { components } from './components';
 
 @NgModule({
-	declarations: [ResultsComponent, DefaultComponent, ...components],
-	imports: [SharedModule, CreditRoutingModule],
+    imports: [SharedModule, CreditRoutingModule, ResultsComponent, DefaultComponent, ...components],
 })
 export class CreditModule {}

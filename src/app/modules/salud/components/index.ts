@@ -4,7 +4,11 @@ import {
     FormQueplanComponent,
     FormLeadComponent,
     FormQuoteComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    FormBannerComponent,
+    // FormMaterialComponent,
+    // AgregarDialog
+    
 } from './atoms';
 // molecules
 import { 
@@ -23,7 +27,8 @@ import {
 	HeroSectionComponent,
     HeaderComponent,
     WhyUsComponent,
-    ListHeaderComponent
+    ListHeaderComponent,
+    BannerListComponent
 } from './organisms';
 
 // templates
@@ -64,7 +69,11 @@ export const components = [
     SearchFormComponent,
     WhyUsComponent,
     ListHeaderComponent,
-    PaginationComponent
+    PaginationComponent,
+    BannerListComponent,
+    FormBannerComponent,
+    // FormMaterialComponent,
+    // AgregarDialog
 ];
 
 

@@ -1,17 +1,20 @@
 import { Options } from '@angular-slider/ngx-slider';
 import { Router } from '@angular/router';
 import { Component, OnInit, Input, ElementRef, ViewChild  } from '@angular/core';
-import {FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ServcioRetornoPrecioService} from '../../../../../services/servcio-retorno-precio.service';
 import { CoeficientesService } from '../../../../../services/coeficientes.service'; // Asegúrate de importar el servicio
+import { NgIf } from '@angular/common';
 
 
 
 
 @Component({
-  selector: 'app-form-quote',
-  templateUrl: './form-quote.component.html',
-  styleUrls: ['./form-quote.component.css']
+    selector: 'app-form-quote',
+    templateUrl: './form-quote.component.html',
+    styleUrls: ['./form-quote.component.css'],
+    standalone: true,
+    imports: [NgIf, FormsModule, ReactiveFormsModule]
 })
 export class FormQuoteComponent {
   @ViewChild('campoNombre') campoNombre: ElementRef;

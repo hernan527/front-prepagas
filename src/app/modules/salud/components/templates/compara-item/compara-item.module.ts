@@ -15,19 +15,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [
-        ComparaItemComponent,
-        ComparaAttributesComponent
-
-    ],
     imports: [
         CommonModule,
         RouterModule,
-        ComparaClinicasModule
-
+        ComparaClinicasModule,
+        ComparaItemComponent,
+        ComparaAttributesComponent
     ],
     exports: [ComparaItemComponent],
-
 })
 export class ComparaItemModule {
     

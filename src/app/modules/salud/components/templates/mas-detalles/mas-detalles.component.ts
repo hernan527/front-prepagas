@@ -1,9 +1,12 @@
 import { Component, Inject, OnInit, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, OnDestroy } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { ActivatedRoute, Router, RouterLinkActive, Routes } from '@angular/router';
 
 import {DialogData1} from '../../../components/molecules/product-land/product-land.component';
 import {DialogData2} from '../../../components/molecules/product-card/product-card.component';
+import { MatButtonModule } from '@angular/material/button';
+import { ClinicasListGroupComponent } from './clinicas-list-group/clinicas-list-group.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 
@@ -11,10 +14,16 @@ import {DialogData2} from '../../../components/molecules/product-card/product-ca
 
 
 @Component({
-  selector: 'app-mas-detalles',
-  templateUrl: './mas-detalles.component.html',
-  styleUrls: ['./mas-detalles.component.css'],
-  
+    selector: 'app-mas-detalles',
+    templateUrl: './mas-detalles.component.html',
+    styleUrls: ['./mas-detalles.component.css'],
+    standalone: true,
+    imports: [
+        MatDialogModule,
+        MatTabsModule,
+        ClinicasListGroupComponent,
+        MatButtonModule,
+    ],
 })
 export class MasDetallesComponent implements OnInit, OnDestroy {
   selectedIndex;

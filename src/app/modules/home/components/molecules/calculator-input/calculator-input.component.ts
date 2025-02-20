@@ -3,6 +3,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ChangeDetectionStrategy, Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 const TYPE_CONTROL_ACCESSOR = {
 	provide: NG_VALUE_ACCESSOR,
@@ -11,11 +12,13 @@ const TYPE_CONTROL_ACCESSOR = {
 };
 
 @Component({
-	selector: 'app-calculator-input',
-	templateUrl: './calculator-input.component.html',
-	styleUrls: ['./calculator-input.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush,
-	providers: [TYPE_CONTROL_ACCESSOR],
+    selector: 'app-calculator-input',
+    templateUrl: './calculator-input.component.html',
+    styleUrls: ['./calculator-input.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [TYPE_CONTROL_ACCESSOR],
+    standalone: true,
+    imports: [NgIf],
 })
 export class CalculatorInputComponent implements ControlValueAccessor {
 	// input

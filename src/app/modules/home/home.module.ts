@@ -24,10 +24,6 @@ import {components} from "./components";
 
 
 @NgModule({
-    declarations: [
-        HomeComponent,
-        ...components,
-    ],
     imports: [
         CommonModule,
         HomeRoutingModule,
@@ -39,6 +35,8 @@ import {components} from "./components";
         MatRadioModule,
         MatCheckboxModule,
         MatRadioModule,
+        HomeComponent,
+        ...components,
     ]
 })
 export class HomeModule {}

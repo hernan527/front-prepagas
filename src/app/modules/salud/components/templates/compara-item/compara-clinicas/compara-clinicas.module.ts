@@ -9,24 +9,21 @@ import { ComparaClinicasComponent } from './compara-clinicas/compara-clinicas.co
 import {RouterLink, RouterModule} from "@angular/router";
 
 @NgModule({
-  imports: [
-  MatCardModule,
-  MatListModule,
-  // FlexModule,
-  CommonModule,
-  RouterLink,
-  RouterModule,
-  MatTabsModule
-],
-  declarations: [
-    ComparaPorRegionComponent,
-    ComparaClinicasComponent
-  
-  ],
-  providers: [],
-  exports: [
-    ComparaClinicasComponent,ComparaPorRegionComponent
-  ]
+    imports: [
+        MatCardModule,
+        MatListModule,
+        // FlexModule,
+        CommonModule,
+        RouterLink,
+        RouterModule,
+        MatTabsModule,
+        ComparaPorRegionComponent,
+        ComparaClinicasComponent
+    ],
+    providers: [],
+    exports: [
+        ComparaClinicasComponent, ComparaPorRegionComponent
+    ]
 })
 export class ComparaClinicasModule {
 }

@@ -6,7 +6,8 @@ import { ModalService } from './modal.service';
     selector: 'jw-modal',
     templateUrl: 'modal.component.html',
     styleUrls: ['modal.component.less'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true
 })
 export class ModalComponent implements OnInit, OnDestroy {
     @Input() id: string;

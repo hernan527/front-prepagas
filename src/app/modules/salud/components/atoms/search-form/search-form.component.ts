@@ -5,11 +5,15 @@ import { Component, OnInit, Input, ElementRef, Renderer2, ViewChild, Inject,Host
 import {FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {ServcioRetornoPrecioService} from '../../../../../services/servcio-retorno-precio.service';
 import { filter } from 'rxjs/operators';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { FormBannerComponent } from '../form-banner/form-banner.component';
 
 @Component({
-  selector: 'app-search-form',
-  templateUrl: './search-form.component.html',
-  styleUrls: ['./search-form.component.css']
+    selector: 'app-search-form',
+    templateUrl: './search-form.component.html',
+    styleUrls: ['./search-form.component.css'],
+    standalone: true,
+    imports: [FormBannerComponent]
 })
 export class  SearchFormComponent  {
 

@@ -7,11 +7,26 @@ import { Router } from '@angular/router';
 import { Item, Option } from './../../../data/interfaces';
 import { INTERNAL_ROUTES } from './../../../data/constants/routes';
 import { CREDITS_DATA_ITEMS, INSURANCE_DATA_ITEMS, OPTIONS_DATA_ITEMS } from './../../../data/constants/mock';
+import { PreFooterSectionComponent } from '../components/organisms/pre-footer-section/pre-footer-section.component';
+import { BenefitsSectionComponent } from '../components/organisms/benefits-section/benefits-section.component';
+import { ServicesSectionComponent } from '../components/organisms/services-section/services-section.component';
+import { RankingSectionComponent } from '../components/organisms/ranking-section/ranking-section.component';
+import { HowItWorksSectionComponent } from '../components/organisms/how-it-works-section/how-it-works-section.component';
+import { HeroSectionComponent } from '../components/organisms/hero-section/hero-section.component';
 
 @Component({
-	selector: 'app-home',
-	templateUrl: './home.component-1.html',
-	styleUrls: ['./home.component.scss'],
+    selector: 'app-home',
+    templateUrl: './home.component-1.html',
+    styleUrls: ['./home.component.scss'],
+    standalone: true,
+    imports: [
+        HeroSectionComponent,
+        HowItWorksSectionComponent,
+        RankingSectionComponent,
+        ServicesSectionComponent,
+        BenefitsSectionComponent,
+        PreFooterSectionComponent,
+    ],
 })
 export class HomeComponent {
 	// forms

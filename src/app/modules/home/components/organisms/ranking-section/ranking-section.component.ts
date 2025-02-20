@@ -4,9 +4,10 @@ import { Ranking, SelectOption } from './../../../../../data/interfaces';
 import { createSlug } from './../../../../../shared/utils';
 
 @Component({
-	selector: 'app-ranking-section',
-	templateUrl: './rankingQP-section.component.html',
-	styleUrls: ['./rankingQP-section.component.css'],
+    selector: 'app-ranking-section',
+    templateUrl: './rankingQP-section.component.html',
+    styleUrls: ['./rankingQP-section.component.css'],
+    standalone: true,
 })
 export class RankingSectionComponent implements OnInit {
 	@Output() selectionChange = new EventEmitter<string>();

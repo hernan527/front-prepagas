@@ -1,12 +1,13 @@
 import { Component,ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
-	selector: 'app-header',
-	templateUrl: './header.component.html',
-	styleUrls: ['./headerQP.component.css'],
-	
+    selector: 'app-header',
+    templateUrl: './headerQP.component.html',
+    styleUrls: ['./headerQP.component.css'],
+    standalone: true,
+    imports: [RouterLink],
 })
 export class HeaderComponent {
 

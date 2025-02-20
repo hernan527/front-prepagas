@@ -8,8 +8,8 @@ describe('FormQueplanComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormQueplanComponent ]
-    })
+    imports: [FormQueplanComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(FormQueplanComponent);

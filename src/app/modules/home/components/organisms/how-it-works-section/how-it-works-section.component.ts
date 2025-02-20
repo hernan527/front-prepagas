@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { STEPS_DATA_ITEMS } from './../../../../../data/constants/mock';
 
 @Component({
-	selector: 'app-how-it-works-section',
-	templateUrl: './how-it-works-section-acierto.component.html',
-	styleUrls: ['./how-it-works-section-acierto.component.css'],
+    selector: 'app-how-it-works-section',
+    templateUrl: './how-it-works-section-acierto.component.html',
+    styleUrls: ['./how-it-works-section-acierto.component.css'],
+    standalone: true,
 })
 export class HowItWorksSectionComponent {
 	// data constants

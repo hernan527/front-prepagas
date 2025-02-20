@@ -1,17 +1,58 @@
 import { Options } from '@angular-slider/ngx-slider';
-import { Component, OnInit, Input } from '@angular/core';
-import {FormGroup, FormBuilder } from '@angular/forms';
+import { AsyncPipe, JsonPipe, NgIf } from '@angular/common';
 
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  OnDestroy,
+  booleanAttribute,
+  computed,
+  effect,
+  forwardRef,
+  inject,
+  Input,
+  signal,
+  untracked,
+  OnInit
+} from '@angular/core';
+import {
+  AbstractControl,
+  ControlValueAccessor,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  FormsModule,
+  NgControl,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import {ServcioRetornoPrecioService} from '../../../../../services/servcio-retorno-precio.service';
 import { CoeficientesService } from '../../../../../services/coeficientes.service'; // Asegúrate de importar el servicio
 
-
-
+import {
+  MAT_FORM_FIELD,
+  MatFormFieldControl,
+  MatFormFieldModule,
+} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
+import { MatInputModule } from '@angular/material/input';
 
   @Component({
     selector: 'app-cotizar-form',
     templateUrl: './cotizar-form.component.html',
-    styleUrls: ['./cotizar-form.component.scss']
+    styleUrls: ['./cotizar-form.component.scss'],
+    standalone: true,
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        NgIf,
+        MatFormFieldModule,
+        MatInputModule,
+        MatIconModule,
+        RouterLink,
+    ],
 })
 export class CotizarFormComponent implements OnInit {
    

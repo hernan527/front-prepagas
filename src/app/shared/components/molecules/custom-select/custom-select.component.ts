@@ -1,11 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, Input } from '@angular/core';
 import { createSlug } from '../../../utils';
+import { FormsModule } from '@angular/forms';
+import { NgFor } from '@angular/common';
 
 @Component({
-	selector: 'app-custom-select',
-	templateUrl: './custom-select.component.html',
-	styleUrls: ['./custom-select.component.scss'],
+    selector: 'app-custom-select',
+    templateUrl: './custom-select.component.html',
+    styleUrls: ['./custom-select.component.scss'],
+    standalone: true,
+    imports: [NgFor, FormsModule],
 })
 export class CustomSelectComponent {
 	// input

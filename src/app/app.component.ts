@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {MatSidenav, MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
-// import { PrimeNGConfig } from 'primeng/api';
 
 
 @Component({
@@ -16,7 +15,6 @@ import {MatButtonModule} from '@angular/material/button';
 export class AppComponent implements OnInit, OnDestroy {
   title: any;
   constructor(
-    // private config: PrimeNGConfig
     ) { }
   ngOnDestroy(): void {
     throw new Error('Method not implemented.');

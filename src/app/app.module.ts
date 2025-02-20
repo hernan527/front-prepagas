@@ -6,7 +6,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageLoaderComponent } from './page-loader/page-loader.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule} from '@angular/common/http';
 import {MarkdownModule} from 'ngx-markdown';
 import {environment} from '../environments/environment';
@@ -22,44 +21,40 @@ import { SaludModule } from './modules/salud/salud.module';
 import { MaterialModule } from './material/material.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PageLoaderComponent,
-    SkeletonComponent,
-    FooterComponent,
-    HeaderComponent
-                // LoadingButtonComponent,
-  ],
-  imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule,
-    FormsModule,
-    SharedModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    CommonModule,
-    MarkdownModule,
-    ButtonModule,
-    TooltipModule,
-    SaludModule,
-    MaterialModule
-  ],
-  providers: [{
-    provide: {
-      STEPPER_GLOBAL_OPTIONS
-    },
-    
-    useValue: {
-      baseUrl: 'https://jsonplaceholder.typicode.com',
-      displayDefaultIndicatorType: false
-    },
-  }],
-  schemas: [
-    NO_ERRORS_SCHEMA
-  ],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        SharedModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        CommonModule,
+        MarkdownModule,
+        ButtonModule,
+        TooltipModule,
+        SaludModule,
+        MaterialModule,
+        PageLoaderComponent,
+        SkeletonComponent,
+        FooterComponent,
+        HeaderComponent
+        // LoadingButtonComponent,
+    ],
+    providers: [{
+            provide: {
+                STEPPER_GLOBAL_OPTIONS
+            },
+            useValue: {
+                baseUrl: 'https://jsonplaceholder.typicode.com',
+                displayDefaultIndicatorType: false
+            },
+        }],
+    schemas: [
+        NO_ERRORS_SCHEMA
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
 

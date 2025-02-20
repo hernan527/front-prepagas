@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 interface Insurance {
@@ -10,9 +11,11 @@ interface Insurance {
 }
 
 @Component({
-  selector: 'app-insurance-card',
-  templateUrl: './insurance-card.component.html',
-  styleUrls: ['./insurance-card.component.css']
+    selector: 'app-insurance-card',
+    templateUrl: './insurance-card.component.html',
+    styleUrls: ['./insurance-card.component.css'],
+    standalone: true,
+    imports: [MatCheckboxModule]
 })
 export class InsuranceCardComponent {
   insurance: Insurance = {

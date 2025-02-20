@@ -3,6 +3,7 @@ import { ModalService } from '../../../../../_modal';
 import { productsDB } from '../../../../../data/constants/mock/products';
 import { MasDetallesComponent } from '../../templates/mas-detalles/mas-detalles.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { NgClass, NgStyle } from '@angular/common';
 
 
 export interface DialogData2 {
@@ -20,9 +21,11 @@ export interface DialogData2 {
 }
 
 @Component({
-  selector: 'app-product-card',
-  templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.scss']
+    selector: 'app-product-card',
+    templateUrl: './product-card.component.html',
+    styleUrls: ['./product-card.component.scss'],
+    standalone: true,
+    imports: [NgClass, NgStyle]
 })
 
   

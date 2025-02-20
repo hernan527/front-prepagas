@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-empresas',
-  templateUrl: './empresas.component.html',
-  styleUrls: ['./empresas.component.css']
+    selector: 'app-empresas',
+    templateUrl: './empresas.component.html',
+    styleUrls: ['./empresas.component.css'],
+    standalone: true
 })
 export class EmpresasComponent implements OnInit {
 

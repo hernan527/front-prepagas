@@ -1,9 +1,17 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { NgFor, NgClass } from '@angular/common';
 
 @Component({
-	selector: 'app-hero-section',
-	templateUrl: './hero.component.html',
-	styleUrls: ['./hero.componet.css'],
+    selector: 'app-hero-section',
+    templateUrl: './hero.component.html',
+    styleUrls: ['./hero.componet.css'],
+    standalone: true,
+    imports: [
+        NgFor,
+        RouterLink,
+        NgClass,
+    ],
 })
 export class HeroSectionComponent {
 INTERNAL_ROUTES: any;

@@ -8,8 +8,8 @@ describe('UserFeedbakSectionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserFeedbakSectionComponent ]
-    })
+    imports: [UserFeedbakSectionComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(UserFeedbakSectionComponent);

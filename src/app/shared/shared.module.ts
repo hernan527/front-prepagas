@@ -48,11 +48,9 @@ const commonModules = [
 ]
 
 @NgModule({
-  declarations: [...components.components],
-
-  imports: [CommonModule, RouterModule, ...commonModules],
-  exports: [
-    ...commonModules, ...components.components
-  ]
+    imports: [CommonModule, RouterModule, ...commonModules, ...components.components],
+    exports: [
+        ...commonModules, ...components.components
+    ]
 })
 export class SharedModule {}

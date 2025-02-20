@@ -3,9 +3,10 @@ import { BENEFITS_DATA_ITEMS } from './../../../../../data/constants/mock';
 import { Benefit } from './../../../../../data/interfaces';
 
 @Component({
-	selector: 'app-benefits-section',
-	templateUrl: './benefits-section-acierto.component.html',
-	styleUrls: ['./benefits-section.component.scss'],
+    selector: 'app-benefits-section',
+    templateUrl: './benefits-section-acierto.component.html',
+    styleUrls: ['./benefits-section.component.scss'],
+    standalone: true,
 })
 export class BenefitsSectionComponent {
 	// data constants

@@ -3,6 +3,7 @@ import { ModalService } from '../../../../../_modal';
 import { productsDB } from '../../../../../data/constants/mock/products';
 import { MasDetallesComponent } from '../../templates/mas-detalles/mas-detalles.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { RouterLink } from '@angular/router';
 
 
 // export interface DialogData2 {
@@ -20,9 +21,11 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 // }
 
 @Component({
-	selector: 'app-result',
-	templateUrl: './result.component.html',
-	styleUrls: ['./result.component.scss'],
+    selector: 'app-result',
+    templateUrl: './result.component.html',
+    styleUrls: ['./result.component.scss'],
+    standalone: true,
+    imports: [RouterLink],
 })
 export class ResultComponent {
 	@Input() product: any;

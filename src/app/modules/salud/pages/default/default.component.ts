@@ -1,10 +1,13 @@
 import { Component, HostListener } from '@angular/core';
 import {CotizacionService} from './../../../../services/cotizacion.service';
+import { FormQueplanComponent } from '../../components/atoms/form-queplan/form-queplan.component';
 
 @Component({
-	selector: 'app-default',
-	templateUrl: './default.component.html',
-	styleUrls: ['./default.component.scss'],
+    selector: 'app-default',
+    templateUrl: './default.component.html',
+    styleUrls: ['./default.component.scss'],
+    standalone: true,
+    imports: [FormQueplanComponent],
 })
 export class DefaultComponent {
 	@HostListener('window:beforeunload', ['$event'])

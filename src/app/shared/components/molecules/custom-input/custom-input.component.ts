@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { ChangeDetectionStrategy, Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, FormControl, FormGroup, NG_VALIDATORS, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { NgClass, NgIf } from '@angular/common';
 
 type InputType = 'text' | 'number' | 'email';
 
@@ -18,11 +19,13 @@ const TYPE_CONTROL_VALIDATOR = {
 };
 
 @Component({
-	selector: 'app-custom-input',
-	templateUrl: './custom-input.component.html',
-	styleUrls: ['./custom-input.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush,
-	providers: [TYPE_CONTROL_ACCESSOR],
+    selector: 'app-custom-input',
+    templateUrl: './custom-input.component.html',
+    styleUrls: ['./custom-input.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [TYPE_CONTROL_ACCESSOR],
+    standalone: true,
+    imports: [NgClass, NgIf],
 })
 export class CustomInputComponent implements ControlValueAccessor {
 	// input

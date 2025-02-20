@@ -1,11 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ServcioRetornoPrecioService} from '../../../../../services/servcio-retorno-precio.service';
 
 @Component({
-  selector: 'app-form-lead',
-  templateUrl: './form-lead.component.html',
-  styleUrls: ['./form-lead.component.css']
+    selector: 'app-form-lead',
+    templateUrl: './form-lead.component.html',
+    styleUrls: ['./form-lead.component.css'],
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule]
 })
 export class FormLeadComponent {
 

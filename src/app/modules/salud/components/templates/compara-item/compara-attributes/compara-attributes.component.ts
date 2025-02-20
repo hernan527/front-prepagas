@@ -1,9 +1,12 @@
 import { Component, Input } from '@angular/core';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-compara-attributes',
-  templateUrl: './compara-attributes.component.html',
-  styleUrls: ['./compara-attributes.component.css']
+    selector: 'app-compara-attributes',
+    templateUrl: './compara-attributes.component.html',
+    styleUrls: ['./compara-attributes.component.css'],
+    standalone: true,
+    imports: [NgFor]
 })
 export class ComparaAttributesComponent {
   @Input() productos: any[];
