@@ -32,19 +32,9 @@ import {
 } from './organisms';
 
 // templates
-import {
-	ComparaItemModule,
-    MasDetallesComponent,
-    ClinicasListComponent,
-    ClinicasListPrimengComponent,
-    ClinicasListGroupComponent,
-    ClinicasListGroupPrimengComponent,
-    PdfViewerComponent
-} from './templates';
+import { MasDetallesComponent, ClinicasListComponent, ClinicasListPrimengComponent, ClinicasListGroupComponent, ClinicasListGroupPrimengComponent, PdfViewerComponent } from './templates';
 
-export const modules = [
-    ComparaItemModule
-]
+export const modules = []
 
 export const components = [
 	CotizarFormComponent,

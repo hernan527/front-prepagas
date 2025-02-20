@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { SaludRoutingModule } from './salud-routing.module';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { RouterModule } from '@angular/router';
-import { ModalModule } from './../../_modal'
+
 // import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { SharedModule } from '../../shared/shared.module';
@@ -23,7 +23,7 @@ import { CompareComponent } from './pages/compare/compare.component';
 // import { DialogModule } from 'primeng/dialog';
 import { FilterPipe } from './../../../pipes/filter.pipe';
 import { SortPipe } from './../../../pipes/sort.pipe'
-import { MaterialModule } from '../../material/material.module';
+
 import {Dialog, DialogRef, DIALOG_DATA,DialogModule} from '@angular/cdk/dialog';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DividerModule } from 'primeng/divider';
@@ -76,45 +76,43 @@ const publicApi = [
         publicApi
     ],
     imports: [
-        SharedModule,
-        SaludRoutingModule,
-        DividerModule,
-        ReactiveFormsModule,
-        PdfViewerModule,
-        // NgxSkeletonLoaderModule,
-        ReactiveFormsModule,
-        ScrollingModule,
-        NgSelectModule,
-        ModalModule,
-        MatFormFieldModule,
-        DialogModule,
-        MatIconModule,
-        MatDialogModule,
-        MatListModule,
-        MatTabsModule,
-        TabViewModule,
-        ButtonModule,
-        TableModule,
-        MatInputModule,
-        MatSelectModule,
-        MatButtonModule,
-        MatCheckboxModule,
-        MatSliderModule,
-        MaterialModule,
-        MatAutocompleteModule,
-        FormsModule,
-        ...modules,
-        publicApi,
-        DefaultComponent,
-        DetailsComponent,
-        ResultsComponent,
-        ResultsOriginalComponent,
-        CompareComponent,
-        FilterPipe,
-        SortPipe,
-        EmpresasComponent,
-        ...components
-    ],
+    SharedModule,
+    SaludRoutingModule,
+    DividerModule,
+    ReactiveFormsModule,
+    PdfViewerModule,
+    // NgxSkeletonLoaderModule,
+    ReactiveFormsModule,
+    ScrollingModule,
+    NgSelectModule,
+    MatFormFieldModule,
+    DialogModule,
+    MatIconModule,
+    MatDialogModule,
+    MatListModule,
+    MatTabsModule,
+    TabViewModule,
+    ButtonModule,
+    TableModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatSliderModule,
+    MatAutocompleteModule,
+    FormsModule,
+    ...modules,
+    publicApi,
+    DefaultComponent,
+    DetailsComponent,
+    ResultsComponent,
+    ResultsOriginalComponent,
+    CompareComponent,
+    FilterPipe,
+    SortPipe,
+    EmpresasComponent,
+    ...components
+],
     providers: [
         DialogService,
         ProductsService

@@ -1,5 +1,5 @@
 // export { MasDetallesModule } from './mas-detalles/mas-detalles.module';
-export * from './compara-item/compara-item.module';
+
 export * from './mas-detalles/mas-detalles.component';
 export * from './mas-detalles/clinicas-list/clinicas-list.component';
 export * from './mas-detalles/clinicas-list/clinicas-list-p.component';

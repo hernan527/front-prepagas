@@ -20,31 +20,30 @@ import { PanelModule } from 'primeng/panel';
 import { TooltipModule } from 'primeng/tooltip';
 import {SliderModule} from 'primeng/slider';
 import { DividerModule } from 'primeng/divider';
-import { MaterialModule } from '../material/material.module';
+
 import { SkeletonModule } from 'primeng/skeleton';
 
 const commonModules = [
-  HttpClientModule,
-  FormsModule,
-  CommonModule,
-  MultiSelectModule,
-  ChipModule,
-  CardModule,
-  RatingModule,
-  NgSelectModule,
-  ButtonModule,
-  RippleModule,
-  SplitButtonModule,
-  ToggleButtonModule,
-  PaginatorModule,
-  SidebarModule,
-  InputTextModule,
-  PanelModule,
-  TooltipModule,
-  SliderModule,
-  DividerModule,
-  MaterialModule,
-  SkeletonModule
+    HttpClientModule,
+    FormsModule,
+    CommonModule,
+    MultiSelectModule,
+    ChipModule,
+    CardModule,
+    RatingModule,
+    NgSelectModule,
+    ButtonModule,
+    RippleModule,
+    SplitButtonModule,
+    ToggleButtonModule,
+    PaginatorModule,
+    SidebarModule,
+    InputTextModule,
+    PanelModule,
+    TooltipModule,
+    SliderModule,
+    DividerModule,
+    SkeletonModule
 ]
 
 @NgModule({

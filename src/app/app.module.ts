@@ -18,30 +18,29 @@ import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { SaludModule } from './modules/salud/salud.module';
-import { MaterialModule } from './material/material.module';
+
 
 @NgModule({
     declarations: [AppComponent],
     imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        SharedModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-        CommonModule,
-        MarkdownModule,
-        ButtonModule,
-        TooltipModule,
-        SaludModule,
-        MaterialModule,
-        PageLoaderComponent,
-        SkeletonComponent,
-        FooterComponent,
-        HeaderComponent
-        // LoadingButtonComponent,
-    ],
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    SharedModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    CommonModule,
+    MarkdownModule,
+    ButtonModule,
+    TooltipModule,
+    SaludModule,
+    PageLoaderComponent,
+    SkeletonComponent,
+    FooterComponent,
+    HeaderComponent
+    // LoadingButtonComponent,
+],
     providers: [{
             provide: {
                 STEPPER_GLOBAL_OPTIONS
