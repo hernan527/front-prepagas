@@ -15,7 +15,7 @@ export const ROUTES_PATHS = {
 			RESULTS: `results`,
 		},
 		SALUD: {
-			DEFAULT: ``,
+			DEFAULT: `form`,
 			RESULTS: ``,
 			DETAILS: `details`,
 			COMPARE: `compare`,
