@@ -3464,8 +3464,8 @@ ngb-alert {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .mat-mdc-checkbox .mdc-checkbox__background {
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
+  -webkit-print-print-color-adjust: exact;;
+  print-color-adjust: exact;;
 }
 .mat-mdc-checkbox._mat-animation-noopable *,
 .mat-mdc-checkbox._mat-animation-noopable *::before {
