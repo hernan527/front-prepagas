@@ -7,8 +7,6 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install the latest npm globally
-RUN npm install npm@latest -g
 
 # Install project dependencies
 RUN npm ci --force
