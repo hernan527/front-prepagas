@@ -283,13 +283,17 @@ interface SearchResult {
       }
    
       activarFuncionEnComponenteB() {
+        console.log('product-service 287');
+
         this.eventoFiltering.next();
       }
       applyFiltersDespuesDeOnItemSelect() {
+        console.log('product-service 289');
         this.eventoFilterClinicas.next();
       }
 
       setProductosFiltrados(productos: any[]): void {
+        console.log('product-service 293');
         this.productosFiltradosSubject.next(productos);
       }
   // private _search(): Observable<SearchResult> {

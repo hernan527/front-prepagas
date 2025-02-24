@@ -8,8 +8,7 @@ import { NgFor } from '@angular/common';
     selector: 'app-results',
     templateUrl: './results.component.html',
     styleUrls: ['./results.component.scss'],
-    standalone: true,
-    imports: [NgFor, ResultComponent],
+    imports: [NgFor, ResultComponent]
 })
 export class ResultsComponent {
 	// data constants

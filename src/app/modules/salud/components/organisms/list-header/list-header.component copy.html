@@ -1,0 +1,84 @@
+<div _ngcontent-ng-c1250167330="">
+
+  <!---->
+  <div class="ng-star-inserted form-sticky">
+     <div class="overlay ng-star-inserted show"></div>
+     <div popovertitle="¡Personaliza tu búsqueda!" container="body" placement="bottom" class="form-content p-3 ng-star-inserted form-warning" aria-describedby="ngb-popover-43">
+        <!---->
+        <div class="d-flex flex-wrap justify-content-between surface-card p-2 shadow-2 border-round" style="background-color: whitesmoke; margin: 0 5px 5px 5px; align-items: center;">
+         <div class="d-flex flex-wrap">
+           <p-multiSelect
+           class="custom-ms"
+           [options]="dropdownClinica"
+           display="chip" 
+           [filter]="true"
+           defaultLabel="Busca por nombre"
+           [selectedItemsLabel]="'Selected Clinicas'"
+           optionLabel="nombre"
+           (onChange)="onItemSelect($event)">
+             <!-- Plantilla para elementos seleccionados -->
+             <ng-template let-option pTemplate="selectedItems">
+               <div class="selected-chips">
+                 <div *ngFor="let item of selectedClinica" >
+                   <strong class="p-chip p-highlight">{{ item.nombre }} <i class="pi pi-times-circle" (click)="removeSelection(item)"></i></strong>
+                   <!-- Icono de cruz (x) -->
+                 </div>
+               </div>
+               <div class="no-selected-items" *ngIf="!selectedClinica || selectedClinica.length === 0">Selecciona Clínicas</div>
+             </ng-template>
+         
+             <!-- Plantilla para elementos en la lista -->
+             <ng-template let-option pTemplate="item">
+               <div class="item">
+                 {{ option.entity }}
+               </div>
+             </ng-template>
+           </p-multiSelect>
+        
+         </div>
+         <!-- <select class="form-select d-inline-block w-auto me-1">
+           <option value="0">Best match</option>
+           <option value="1">Recommended</option>
+           <option value="2">High rated</option>
+           <option value="3">Randomly</option>
+         </select> -->
+         <div class="d-flex">
+           <select class="form-select d-inline-block w-auto me-1" [formControl]="empresa" (change)="onEmpresaFilter()">
+             <option>Empresa</option>
+             <option>SanCor Salud</option>
+             <option>OMINT</option>
+             <option>Galeno</option>
+             <option>Avalian</option>
+             <option>Swiss Medical</option>
+             <option>Premedic</option>
+             <option>Medife</option>
+           </select>
+           <label class="ms-2">Ordenar por</label>
+
+           
+           <select class="form-select d-inline-block w-auto me-1" [formControl]="SortbyParamControl" (click)="onSortDirection()">
+             <option value="empresa">Empresa</option>
+             <option value="precio">Precio</option>
+             <option value="name">Nombre</option>
+             <option value="rating">Rating</option>
+           </select>
+           <button type="button" (click)="onSortDirection()">
+             <i *ngIf="SortDirection === 'asc'" class="fas fa-sort-alpha-down-alt fa-2x" style="size: 19px;"></i>
+             <i *ngIf="SortDirection === 'desc'" class="fas fa-sort-alpha-up-alt  fa-2x"></i>
+           </button>
+         </div>
+         <div class="btn-group" id="view">
+           <button [class.text-primary]="view === 'list'" (click)="view = 'list';"  type="button"  class="btn btn-secondary custom-hidden-button" data-bs-toggle="tooltip" title="List view"> 
+             <i class="fa fa-bars"></i>
+           </button>
+           <button [class.text-primary]="view === 'grid'" (click)="view = 'grid';" type="button"  type="button" class="btn btn-secondary custom-hidden-button" data-bs-toggle="tooltip" title="Grid view"> 
+             <i class="fa fa-th"></i>
+           </button>
+           </div>
+       </div>
+     </div>
+     </div>
+     <!----><!----><!---->
+  </div>
+  <!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+

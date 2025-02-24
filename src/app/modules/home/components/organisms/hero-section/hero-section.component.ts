@@ -6,12 +6,11 @@ import { NgFor, NgClass } from '@angular/common';
     selector: 'app-hero-section',
     templateUrl: './hero.component.html',
     styleUrls: ['./hero.componet.css'],
-    standalone: true,
     imports: [
         NgFor,
         RouterLink,
         NgClass,
-    ],
+    ]
 })
 export class HeroSectionComponent {
 INTERNAL_ROUTES: any;

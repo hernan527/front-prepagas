@@ -17,13 +17,12 @@ import { MatTabsModule } from '@angular/material/tabs';
     selector: 'app-mas-detalles',
     templateUrl: './mas-detalles.component.html',
     styleUrls: ['./mas-detalles.component.css'],
-    standalone: true,
     imports: [
         MatDialogModule,
         MatTabsModule,
         ClinicasListGroupComponent,
         MatButtonModule,
-    ],
+    ]
 })
 export class MasDetallesComponent implements OnInit, OnDestroy {
   selectedIndex;

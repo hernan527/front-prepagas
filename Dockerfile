@@ -1,8 +1,8 @@
-FROM node:18.13.0-alpine as build
+FROM node:18.20.7-alpine3.21 as build
 WORKDIR /app
 # Install dependencies and build the project.
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --force
 COPY . .
 RUN npm run build
 

@@ -43,7 +43,6 @@ import { MatInputModule } from '@angular/material/input';
     selector: 'app-cotizar-form',
     templateUrl: './cotizar-form.component.html',
     styleUrls: ['./cotizar-form.component.scss'],
-    standalone: true,
     imports: [
         FormsModule,
         ReactiveFormsModule,
@@ -52,7 +51,7 @@ import { MatInputModule } from '@angular/material/input';
         MatInputModule,
         MatIconModule,
         RouterLink,
-    ],
+    ]
 })
 export class CotizarFormComponent implements OnInit {
    

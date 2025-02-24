@@ -7,8 +7,7 @@ import { RouterLink } from '@angular/router';
     selector: 'app-result',
     templateUrl: './result.component.html',
     styleUrls: ['./result.component.scss'],
-    standalone: true,
-    imports: [RouterLink, CurrencyPipe],
+    imports: [RouterLink, CurrencyPipe]
 })
 export class ResultComponent {
 	@Input() credit!: Credit;

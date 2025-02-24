@@ -53,11 +53,14 @@ propKey: string = '';
     
   }
   ngOnInit() {
+    console.log('this.clinicasVal :');
 
     console.log(this.clinicasVal);
+    console.log('this.productos :');
 
     console.log(this.productos);
-    
+    console.log('this.items :');
+
     console.log(this.items);
   }
 

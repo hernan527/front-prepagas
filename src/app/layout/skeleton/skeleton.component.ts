@@ -7,11 +7,10 @@ import { HeaderComponent } from '../header/header.component';
     selector: 'app-skeleton',
     templateUrl: './skeleton.component.html',
     styleUrls: ['./skeleton.component.scss'],
-    standalone: true,
     imports: [
         HeaderComponent,
         RouterOutlet,
         FooterComponent,
-    ],
+    ]
 })
 export class SkeletonComponent {}

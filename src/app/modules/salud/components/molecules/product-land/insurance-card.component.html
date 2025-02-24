@@ -20,7 +20,7 @@
     </div>
   </div> -->
 
-  <div _ngcontent-ng-c1132987951="" headercolor="#4ab8e6" class="card card-insurance list ng-star-inserted" _nghost-ng-c4193683943="" style="">
+  <div _ngcontent-ng-c1132987951="" headercolor="#4ab8e6" class="card card-insurance list ng-star-inserted" _nghost-ng-c4193683943="" div>
     <article _ngcontent-ng-c4193683943="" intersectionobserver="" class="card--qp4b73876finsurance-container ng-star-inserted">
        <div _ngcontent-ng-c4193683943="" class="container">
        </div>
@@ -31,9 +31,9 @@
                    <div _ngcontent-ng-c4193683943="" class="col-4 px-0 position-inherit pt-3">
                       <div _ngcontent-ng-c4193683943="" class="image-company mb-2">
                          <div _ngcontent-ng-c4193683943="" animated="false">
-                            <picture title="Nueva Masvida - Comparador Planes de Isapres" class="ng-star-inserted">
+                            <picture title="" class="ng-star-inserted">
              
-                               <img alt="Logo de la aseguradora Nueva Masvida - Comparador Planes de Isapres" title="Nueva Masvida - Comparador Planes de Isapres" class="fade-in ng-star-inserted" width="130" height="32" loading="eager" fetchpriority="high" ng-img="true" [src]="product.images[0].url" [alt]="product.name">
+                               <img alt="" title="" class="fade-in ng-star-inserted" width="130" height="32" loading="eager" fetchpriority="high" ng-img="true" [src]="product.images[0].url" [alt]="product.name">
                             </picture>
                          </div>
                       </div>
@@ -49,42 +49,23 @@
                                <div _ngcontent-ng-c4193683943="" class="d-flex align-items-end flex-wrap justify-content-end">
                                   <div _ngcontent-ng-c4193683943="" class="d-flex feature-options ng-star-inserted">
                                   </div>
-                                 <!--  <div _ngcontent-ng-c4193683943="" class="ng-star-inserted">
-                                     <div _ngcontent-ng-c4193683943="" class="d-flex justify-content-center ng-star-inserted">
-                                        <div _ngcontent-ng-c4193683943="" class="ng-star-inserted">
-                                           <mat-checkbox _ngcontent-ng-c4193683943="" class="mat-mdc-checkbox pr-0 mat-accent ng-untouched ng-pristine ng-valid" id="mat-mdc-checkbox-11">
-                                              <div mat-internal-form-field="" class="mdc-form-field mat-internal-form-field">
-                                                 <div class="mdc-checkbox">
-                                                    <div class="mat-mdc-checkbox-touch-target"></div>
-                                                    <input type="checkbox" class="mdc-checkbox__native-control" id="mat-mdc-checkbox-11-input" tabindex="0">
-                                                    <div class="mdc-checkbox__ripple"></div>
-                                                    <div class="mdc-checkbox__background">
-                                                       <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" class="mdc-checkbox__checkmark">
-                                                          <path fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" class="mdc-checkbox__checkmark-path"></path>
-                                                       </svg>
-                                                       <div class="mdc-checkbox__mixedmark"></div>
-                                                    </div>
-                                                    <div mat-ripple="" class="mat-ripple mat-mdc-checkbox-ripple mat-mdc-focus-indicator"></div>
-                                                 </div>
-                                                 <label class="mdc-label" for="mat-mdc-checkbox-11-input">
-                                                 <span _ngcontent-ng-c4193683943="" container="body" popovertitle="" triggers="mouseenter:mouseleave"> Comparar 
-                                                 </span>
-                                                 </label>
-                                              </div>
-                                           </mat-checkbox>
-                                        </div>
-                                     </div>
-                                  </div> -->
+                                  <section class="example-section" >
+                                    <button (click)='toggleCompare();' class="btn btn-outline-primary btn-sm mt-2" type="button">
+                                       {{product.compare ? "Remover" : "Comparar"}}
+                                     </button>
+            
+                                   </section>
+                                 
                                </div>
                             </div>
-                   <!--          <div _ngcontent-ng-c4193683943="" class="score-insurance py-1 d-flex flex-column ng-star-inserted">
+                            <div _ngcontent-ng-c4193683943="" class="score-insurance py-1 d-flex flex-column ng-star-inserted">
                                <div _ngcontent-ng-c1132987951="" class="ng-star-inserted">
                                   <p _ngcontent-ng-c1132987951="" container="body" class="help mb-0"> Puntaje: 
                                      <span _ngcontent-ng-c1132987951="" class="nota-insurance" style="background-color: rgb(43, 173, 89);"> 6,5 
                                      </span>  de 6,5 
                                   </p>
                                </div>
-                            </div> -->
+                            </div>
                          </div>
                       </div>
                    </div>
@@ -126,8 +107,10 @@
                                </span>
                             </div>
                          </div>
+                         <ng-template #popTemplate>Here we go: <div [innerHtml]="html"></div></ng-template>
+
                          <div _ngcontent-ng-c1132987951="" class="px-1 col-md-4 ng-star-inserted">
-                            <div _ngcontent-ng-c1132987951="" class="d-flex flex-column card-items mb-2">
+                            <div _ngcontent-ng-c1132987951="" class="d-flex flex-column card-items mb-2  bs-popover" [popover]="popTemplate" popoverTitle="Dynamic html inside" [triggers]="triggerEvent">
                                <span _ngcontent-ng-c1132987951="" container="body" class="item-title">
                                <i _ngcontent-ng-c1132987951="" class="fal icon mr-1 fa-user-md" style="--fa-secondary-opacity: 0.6;">
                                </i> Ambulatoria 
@@ -186,15 +169,15 @@
              </div>
              <div _ngcontent-ng-c4193683943="">
                 <div _ngcontent-ng-c4193683943="" class="button-insurance ng-star-inserted">
-                   <a _ngcontent-ng-c4193683943="" href="/Isapre/Nueva-Mas-Vida/Planes/PPS24370/solicitar">
-                   <span _ngcontent-ng-c4193683943="">Solicitar
+                   <a _ngcontent-ng-c4193683943="" href="">
+                   <span >Solicitar
                    </span>
                    </a>
                 </div>
-              <!--   <div _ngcontent-ng-c4193683943="" class="view-detail text-center ng-star-inserted">
-                   <a _ngcontent-ng-c4193683943="" href="/Isapre/Nueva-Mas-Vida/Planes/PPS24370">Ver Detalle
+                <div _ngcontent-ng-c4193683943="" class="view-detail text-center ng-star-inserted">
+                   <a _ngcontent-ng-c4193683943="" (click)="openDialog(product)">Ver Detalle
                    </a>
-                </div> -->
+                </div>
              </div>
           </div>
        </div>

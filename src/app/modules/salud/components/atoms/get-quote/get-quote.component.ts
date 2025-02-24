@@ -11,11 +11,10 @@ import { CoeficientesService } from '../../../../../services/coeficientes.servic
 
 
 @Component({
-  selector: 'app-get-quote',
-  standalone: true,
-  imports: [CommonModule,ButtonModule,RippleModule,DialogModule,SplitButtonModule],
-  templateUrl: './get-quote.component.html',
-  styleUrls: ['./get-quote.component.css']
+    selector: 'app-get-quote',
+    imports: [CommonModule, ButtonModule, RippleModule, DialogModule, SplitButtonModule],
+    templateUrl: './get-quote.component.html',
+    styleUrls: ['./get-quote.component.css']
 })
 export class GetQuoteComponent implements OnInit {
   checkedmon: boolean;

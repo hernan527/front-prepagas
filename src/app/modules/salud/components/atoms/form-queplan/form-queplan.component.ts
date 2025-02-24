@@ -11,7 +11,6 @@ import { filter } from 'rxjs/operators';
     selector: 'app-form-queplan',
     templateUrl: './form-queplan.component.html',
     styleUrls: ['./form-queplan.component.css'],
-    standalone: true,
     imports: [NgIf, FormsModule]
 })
 export class FormQueplanComponent {

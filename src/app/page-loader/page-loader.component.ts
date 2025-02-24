@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { takeWhile } from 'rxjs/operators';
 import { PageLoaderService } from '../services/page-loader.service';
 import { NgIf } from '@angular/common';
@@ -8,10 +8,10 @@ import { NgIf } from '@angular/common';
     selector: 'app-page-loader',
     templateUrl: './page-loader.component.html',
     styleUrls: ['./page-loader.component.css'],
-    standalone: true,
     imports: [NgIf]
 })
 export class PageLoaderComponent implements OnInit {
+  @Input() center: boolean = false; // Ensure center is an @Input property
 
   constructor(
     private pageLoaderService: PageLoaderService

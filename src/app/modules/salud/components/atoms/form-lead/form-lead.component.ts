@@ -6,7 +6,6 @@ import {ServcioRetornoPrecioService} from '../../../../../services/servcio-retor
     selector: 'app-form-lead',
     templateUrl: './form-lead.component.html',
     styleUrls: ['./form-lead.component.css'],
-    standalone: true,
     imports: [FormsModule, ReactiveFormsModule]
 })
 export class FormLeadComponent {

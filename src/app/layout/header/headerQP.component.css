@@ -11,13 +11,7 @@
     margin: 0 auto;
     padding: 0 1rem;
   }
-  
-  .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 4rem;
-  }
+y
   
   .logo {
     flex-shrink: 0;
@@ -34,10 +28,33 @@
   }
   
   @media (min-width: 768px) {
-    .nav-menu {
-      display: flex;
+
+  }
+  .app-carrito-compara {
+    flex-grow: 0;   /* Evita que el componente se expanda y agrande el contenedor */
+    margin: 0 15px; /* Ajusta el espacio alrededor del componente */
+    max-width: 50%; /* Establece un tamaño máximo de ancho (ajústalo según tus necesidades) */
+    max-height: 90%; /* Establece un tamaño máximo de altura (ajústalo según tus necesidades) */
+    overflow: hidden; /* Esto asegura que el contenido que sobrepase el tamaño máximo sea ocultado */
+  }
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    max-width: 100%; /* Asegura que el contenedor no se agrande más allá de su límite */
+  }
+
+    @media (max-width: 768px) {
+
+    .app-carrito-compara {
+      margin: 0 10px; /* Reduce el espacio en pantallas pequeñas */
+    }
+    .logo-image {
+      height: 1.5rem; /* Ajusta el tamaño del logo si es necesario */
     }
   }
+  
   
   .nav-item {
     position: relative;

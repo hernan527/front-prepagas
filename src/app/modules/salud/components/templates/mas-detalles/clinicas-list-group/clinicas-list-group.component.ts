@@ -19,7 +19,6 @@ import { MatTabsModule } from '@angular/material/tabs';
     selector: 'app-clinicas-list-group',
     templateUrl: './clinicas-list-group.component.html',
     styleUrls: ['./clinicas-list-group.component.css'],
-    standalone: true,
     imports: [MatTabsModule, NgFor, FormsModule, InputTextModule, SortPipe]
 })
 export class ClinicasListGroupComponent implements OnInit {

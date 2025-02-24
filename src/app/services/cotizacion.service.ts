@@ -28,14 +28,16 @@ export class CotizacionService {
     // Send POST request and handle response
     this.precios = this.http.post<any>(url, formCotizar).pipe(
       tap(response => {
-        console.log('Respuesta recibida:', response);
+        console.log('Respuesta recibida:');
+        console.log(response);
+
       }),
       catchError(error => {
         console.error('Error al obtener precios:', error);
         throw error; // Rethrow the error so the caller can handle it
       })
     );
-  
+
     // Return the observable so the caller can subscribe to it
     return this.precios; // Return the observable directly
   }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageLoaderComponent } from './page-loader.component';
+import { ListViewComponent } from './list-view.component';
 
-describe('PageLoaderComponent', () => {
-  let component: PageLoaderComponent;
-  let fixture: ComponentFixture<PageLoaderComponent>;
+describe('ListViewComponent', () => {
+  let component: ListViewComponent;
+  let fixture: ComponentFixture<ListViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [PageLoaderComponent]
-})
+      imports: [ListViewComponent]
+    })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PageLoaderComponent);
+    fixture = TestBed.createComponent(ListViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

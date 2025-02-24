@@ -27,7 +27,7 @@ import {
 	HeroSectionComponent,
     HeaderComponent,
     WhyUsComponent,
-    ListHeaderComponent,
+    ListViewComponent,
     BannerListComponent
 } from './organisms';
 
@@ -58,10 +58,10 @@ export const components = [
     HeaderComponent,
     SearchFormComponent,
     WhyUsComponent,
-    ListHeaderComponent,
     PaginationComponent,
     BannerListComponent,
     FormBannerComponent,
+    ListViewComponent
     // FormMaterialComponent,
     // AgregarDialog
 ];

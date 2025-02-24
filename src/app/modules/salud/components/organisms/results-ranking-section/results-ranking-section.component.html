@@ -1,0 +1,71 @@
+<section class="container mt-5">
+	<!-- <div class="row"> -->
+		<!-- <div class="col-12 col-lg-4">
+			<h2>Ranking Asesori</h2>
+			<p class="py-2">
+				Te enseñamos una calificación de Asesori hacia las instituciones financieras en base a su tasa de interés,
+				Cantidad de trámites y tiempo en aprobación de tu solicitud
+			</p>
+		</div> -->
+		<div class="col-12 col-lg-12">
+			<div class="row pb-4 g-3 justify-content-center justify-content-md-end">
+				<div class="col-10 col-md-4">
+					<div class="form-floating">
+						<select class="form-select" [(ngModel)]="SearchEmpresa" (ngModelChange)="applyFilter()">
+							<option>Empresa</option>
+							<option>SanCor Salud</option>
+							<option>OMINT</option>
+							<option>Galeno</option>
+							<option>Avalian</option>
+							<option>Swiss Medical</option>
+							<option>Premedic</option>
+							<option>Medife</option>
+						</select>
+						<label [for]="key" class="text-uppercase">FIltrar por</label>
+					</div>
+				</div>
+				<div class="col-10 col-md-4">
+					<div class="form-floating">
+						<select class="form-select" [(ngModel)]="SortbyParam">
+							<option value="empresa">Empresa</option>
+							<option value="rating">Rating</option>
+						</select>
+						<label [for]="key" class="text-uppercase">Ordenar Por</label>
+					</div>
+					<!-- <app-custom-select label="Ordenar por" [options]="orderWays" (ngModelChange)="onSortByChange($event)"></app-custom-select>			 -->
+				</div>
+			</div>
+			<!-- Lista de elementos a mostrar en la página actual -->
+
+			<div class="col-span-6 md:col-span-12 xl:col-span-12">
+				<div
+					*ngFor="let row of getPagedData()"
+				>
+					<app-results-ranking-row [row]="row"></app-results-ranking-row>
+				</div>
+			</div>
+
+			<!-- Paginación -->
+			<nav class="pt-4" aria-label="Page navigation">
+				<ul class="pagination justify-content-end">
+					<li class="page-item" [class.disabled]="currentPage === 1">
+						<a class="page-link fw-bolder text-uppercase" (click)="prevPage()" aria-disabled="currentPage === 1"
+							>Anterior</a
+						>
+					</li>
+					<li class="page-item" [class.active]="page === currentPage" *ngFor="let page of getPaginationArray()">
+						<a class="page-link" (click)="goToPage(page)">{{ page }}</a>
+					</li>
+					<li class="page-item" [class.disabled]="currentPage === getTotalPages()">
+						<a
+							class="page-link fw-bolder text-uppercase"
+							(click)="nextPage()"
+							aria-disabled="currentPage === getTotalPages()"
+							>Siguiente</a
+						>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	<!-- </div> -->
+</section>

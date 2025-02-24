@@ -99,12 +99,15 @@
 						<!-- <div class="form-text text-extra-small fw-bolder text-uppercase">Aporte Obra Social</div> -->
 						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.aporteOS }}</h5>
 					</div>
-					<div class="col-6 col-md-3">
-						<span container="body" class="form-text text-extra-small fw-bolder" style="font-size:9px">
-							<i class="fal icon mr-1 fa-user-md" [ngStyle]="iconStyles"></i> Ambulatoria </span>
-						<!-- <div class="form-text text-extra-small fw-bolder text-uppercase">monto de crédito</div> -->
-						<h5 class="text-muted mb-0" style="font-size:9px">{{ product.aporteOS }}</h5>
-					</div>
+					<div class="col-6 col-md-3" 
+					>
+					<ng-template #popTemplate>Here we go: <div [innerHtml]="html"></div></ng-template>
+				   <span container="body" class="form-text text-extra-small fw-bolder bs-popover" style="font-size:9px" [popover]="popTemplate" popoverTitle="Dynamic html inside" [triggers]="triggerEvent">
+					   <i class="fal icon mr-1 fa-user-md" [ngStyle]="iconStyles" ></i> Ambulatoria 
+				   </span>
+				   <h5 class="text-muted mb-0" style="font-size:9px">{{ product.aporteOS }}</h5>
+			   
+			  </div>
 					<div class="col-6 col-md-3">
 						<span container="body" class="form-text text-extra-small fw-bolder" style="font-size:9px">
 							<i class="fal icon mr-1 fa-heart-rate" [ngStyle]="iconStyles"></i> Urgencia </span>
@@ -154,12 +157,11 @@
          <div _ngcontent-ng-c4193683943="" _nghost-ng-c1382562721="" class="ng-star-inserted">
              </div>
 		<div _ngcontent-ng-c4193683943=""  class="form-text text-white text-extra-small fw-bolder text-uppercase pb-3">mensual</div>
-<!-- 		<button (click)="openDialog(product)" class="btn btn-outline-primary btn-sm mt-2" type="button">Detalles</button>
+		<button (click)="openDialog(product)" class="btn btn-outline-primary btn-sm mt-2" type="button">Detalles</button>
 		<button (click)='toggleCompare()' class="btn btn-outline-primary btn-sm mt-2" type="button"> {{product.compare ? "Remover" : "Comparar"}}
-		</button> -->
+		</button>
 		<div _ngcontent-ng-c4193683943="">
                 <div _ngcontent-ng-c4193683943="" class="button-insurance ng-star-inserted">
-                   <a _ngcontent-ng-c4193683943="" href="/Isapre/Nueva-Mas-Vida/Planes/PPS24370/solicitar">
                    <span _ngcontent-ng-c4193683943="">Solicitar
                    </span>
                    </a>

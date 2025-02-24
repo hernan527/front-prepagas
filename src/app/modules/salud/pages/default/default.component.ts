@@ -6,8 +6,7 @@ import { FormQueplanComponent } from '../../components/atoms/form-queplan/form-q
     selector: 'app-default',
     templateUrl: './default.component.html',
     styleUrls: ['./default.component.scss'],
-    standalone: true,
-    imports: [FormQueplanComponent],
+    imports: [FormQueplanComponent]
 })
 export class DefaultComponent {
 	@HostListener('window:beforeunload', ['$event'])

@@ -12,7 +12,6 @@ import { FormBannerComponent } from '../form-banner/form-banner.component';
     selector: 'app-search-form',
     templateUrl: './search-form.component.html',
     styleUrls: ['./search-form.component.css'],
-    standalone: true,
     imports: [FormBannerComponent]
 })
 export class  SearchFormComponent  {

@@ -24,11 +24,9 @@
       <!-- Agregar el listado de selecciones de filtros aquí -->
       <div class="selected-filters">
         <ng-container *ngFor="let key of filterKeys">
-          <div class="filter-chip" *ngIf="filtrosSeleccionadosGroup.get(key)?.value">
+          <div class="chip" *ngIf="filtrosSeleccionadosGroup.get(key)?.value" class="closebtn" onclick="eliminarFiltro(key)" >
             {{ key }}
-            <button (click)="eliminarFiltro(key)">
-              <i class="pi pi-times"></i>
-            </button>
+
           </div>
         </ng-container>
       </div>

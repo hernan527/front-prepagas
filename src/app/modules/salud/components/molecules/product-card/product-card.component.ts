@@ -3,8 +3,9 @@ import { ModalService } from '../../../../../_modal';
 import { productsDB } from '../../../../../data/constants/mock/products';
 import { MasDetallesComponent } from '../../templates/mas-detalles/mas-detalles.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { NgClass, NgStyle } from '@angular/common';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {ServicioDeCompararService} from '../../../../../services/servicio-de-comparar.service';
+import { CommonModule } from '@angular/common';  // <-- Importa CommonModule
 
 export interface DialogData2 {
   name: string;
@@ -22,16 +23,17 @@ export interface DialogData2 {
 
 @Component({
     selector: 'app-product-card',
-    templateUrl: './product-card.component.html',
+    templateUrl: './product-cardQP.component.html',
     styleUrls: ['./product-card.component.scss'],
-    standalone: true,
-    imports: [NgClass, NgStyle]
+    imports: [MatCheckboxModule,CommonModule]
 })
 
   
 
 export class ProductCardComponent implements OnInit{
   @Input() product: any;
+  @Input() compareList: any;
+
   bodyText: string;
   name: string;
   price: Number;
@@ -45,13 +47,15 @@ export class ProductCardComponent implements OnInit{
   searchKey:string ="";
 
   dialogRef: MatDialogRef<MasDetallesComponent>;
-  public comparar:any;
+  public comparar:any = 'Comparar';
   public productList : any ;
   public filterCategory : any
   public iconStyles = { '--fa-secondary-opacity': 0.6 };
 
   constructor(
     public dialog: MatDialog,
+    private servicioComparar: ServicioDeCompararService,
+    
     ) { 
 
   }
@@ -60,12 +64,15 @@ export class ProductCardComponent implements OnInit{
    //https://bit.ly/Replacement_ElementRef
    toggleCompare() {
     this.product.compare = !this.product.compare;
+this.agregarcomparar()
 }
   
-// agregarcomparar(){
-//   console.log(this.comparar)
-//   this.ServicioComparar.servicioComparar.emit({data:this.comparar});
-//   }
+agregarcomparar(){
+  console.log('product-card 71 this.comparar')
+  console.log(this.comparar)
+  this.servicioComparar.servicioComparar.emit({data:this.comparar});
+  console.log(this.compareList)
+  }
 
   ngOnInit(): void {
     

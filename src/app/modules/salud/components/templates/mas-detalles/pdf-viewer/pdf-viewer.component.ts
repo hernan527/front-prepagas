@@ -18,8 +18,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
   style="width: 100%; height: 100%"
   ></pdf-viewer>
   `,
-    standalone: true,
-    imports: [PdfViewerModule],
+    imports: [PdfViewerModule]
 })
 export class PdfViewerComponent implements OnInit {
   public pdfSrc : string;

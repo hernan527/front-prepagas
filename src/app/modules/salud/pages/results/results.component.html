@@ -1,39 +1,25 @@
  <!-- ============== SECTION PAGETOP ============== -->
  
 
-<!-- <app-hero-section>
+<!-- <app-hero-section></app-hero-section> -->
 
-  <section class="bg-primary py-5" id="hero">
-    <div class="container">
-      <div *ngFor="let product of compareProdList()" class="rectangulo"> 
-        <span class="close-icon" (click)="toggleCompare(product)" style="position: absolute; top: 5px; right: 5px; font-size: 20px; color: #030303; background-color: #ffffff; border-radius: 50%; width: 20px; height: 20px; text-align: center; line-height: 20px;">x</span>
-        <img [src]="product.images[0].url">
-        <br>
-        <h3>{{product?.name}}</h3>
-      </div>
-    </div>
-    
-    <ng-container *ngIf='compareProdList().length >= 2' class="center-button container">
-      <button pButton pRipple type="button" label="Comparalos" class="p-button-raised p-button-danger" (click)="displayDialog = true" style="margin: 0 auto;">Comparalos</button>
-    </ng-container>
-    
-  </section>
-  
-
-</app-hero-section> -->
 
   <!-- ============== SECTION PAGETOP END// ============== -->
   <!-- ============== SECTION CONTENT ============== -->
   <app-banner-list></app-banner-list>
-  <section class="container">
-  <app-search-form></app-search-form>
-</section>
-  <section class="container mt-5">
-    <app-list-header></app-list-header>
-    <div class="d-flex flex-column justify-content-center surface-card p-2 shadow-2 border-round  " style="background-color: rgba(255, 215, 0, 0.6); margin: 0 0 0 0; align-items: center; animation: shake 0.5s ease-in-out;">
+ 
+ 
+  <section  class="container">
+    <app-search-form></app-search-form>
+    <app-list-view
+    (messageEvent)="receiveMessage($event)"
+    [productosFiltrados]="productosFiltrados"
+    [products]="products"
+    ></app-list-view>
+        <!-- <div class="d-flex flex-column justify-content-center surface-card p-2 shadow-2 border-round hidden " style="background-color: rgba(255, 215, 0, 0.6); margin: 0 0 0 0; align-items: center; animation: shake 0.5s ease-in-out;">
       <div class="text-lg font-medium text-600 mb-2"><strong>Paso 1:</strong> Ingresa tu <strong>edad</strong> para calcular precios exactos y obtener los mejores planes</div>
       <button pButton pRipple type="button" label="Completar Perfil" class="p-button-raised p-button-danger" (click)="openModa('custom-modal-3')" style="animation: aura 0.5s ease-in-out;"></button>
-    </div>
+    </div> -->
 <!-- <header class="d-flex flex-wrap align-items-center border-bottom mb-4 pb-3 w-100">s
 
   <div class="d-flex flex-wrap justify-content-between surface-card p-2 shadow-2 border-round w-100" 
@@ -130,6 +116,7 @@
       [product]="products"
       [sidebarVisible]="sidebarVisible"
       [anchoSidebar]="anchoSidebar"
+      [productosFiltrados]="productosFiltrados"
     ></app-filters-products>
   </div>
 
@@ -138,12 +125,6 @@
 <ng-container *ngIf="!(loading$ | async); else loadingTpl">
 
 <!-- ========= content items ========= -->
-<div class="container">
-  
-
-
-</div>
-
 
 
 <div class="row justify-content-center ">
@@ -154,19 +135,27 @@
   
     <ng-container *ngIf="isLoaded">
       
-        <!-- <div *ngFor="let product of productosFiltrados | filter: SearchEmpresa:'empresa'  |  sort: [SortbyParam, SortDirection]" class="d-flex flex-column justify-content-center col-lg-4 col-md-6 col-sm-6 ">
+        <div class="items"  *ngFor="let product of getPagedData() | filter: SearchEmpresa:'empresa'  |  sort: [SortbyParam, SortDirection]" class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-6 ">
          
-          <app-product-card *ngIf="view === 'grid'" [product]="product"></app-product-card>
+          <app-product-card
+          *ngIf="view === 'grid'"
+          [product]="product"
+          [compareList]="compareList"
+          ></app-product-card>
         </div>
-       -->
+      
       
 
   
-      <div class="items" *ngFor="let product of productosFiltrados | filter: SearchEmpresa:'empresa'  |  sort: [SortbyParam, SortDirection]" >
-      <app-product-land *ngIf="view === 'list'" [product]="product"></app-product-land>
+      <div class="items" *ngFor="let product of getPagedData() | filter: SearchEmpresa:'empresa'  |  sort: [SortbyParam, SortDirection]" >
+      <app-product-land 
+      *ngIf="view === 'list'" 
+      [product]="product"
+      [compareList]="compareList"
+      ></app-product-land>
 
       </div>  
-    
+		
     </ng-container>
 
     <div *ngFor="let product of products"  class="col-lg-4 col-md-6 col-sm-6 ">
@@ -187,24 +176,40 @@
       </div>          </div>
   </div>  
 
-    <footer class="d-flex mt-4">
-            
-   
-      </footer>
-
+    
  
  
 
   </div>
-<hr>
+
   <div >
  
-    <!-- <ngx-skeleton-loader *ngIf="!isLoaded" count="9" appearance="circle" [theme]="{'border-radius': '5px',height: '280px',width: 'calc(33% - 10px)'}"></ngx-skeleton-loader> -->
-  </div>
-
-  
 
 
+			<!-- Paginación -->
+			<nav class="pt-4" aria-label="Page navigation">
+				<ul class="pagination justify-content-center">
+					<li class="page-item" [class.disabled]="currentPage === 1">
+						<a class="page-link fw-bolder text-uppercase" (click)="prevPage()" aria-disabled="currentPage === 1"
+							>Anterior</a
+						>
+					</li>
+					<li class="page-item" [class.active]="page === currentPage" *ngFor="let page of getPaginationArray()">
+						<a class="page-link" (click)="goToPage(page)">{{ page }}</a>
+					</li>
+					<li class="page-item" [class.disabled]="currentPage === getTotalPages()">
+						<a
+							class="page-link fw-bolder text-uppercase"
+							(click)="nextPage()"
+							aria-disabled="currentPage === getTotalPages()"
+							>Siguiente</a
+						>
+					</li>
+				</ul>
+			</nav>
+
+    </div>
+    <!-- <hr> -->
   </ng-container>
     </main>
     </div> 
@@ -258,3 +263,16 @@
           </p-dialog>
       </div>
  -->
+
+<ng-container *ngIf='compareProdList().length >= 1 show' >  
+
+  <div id="mybutton" >
+
+    <button class="feedback" mat-raised-button color="primary"
+    matBadge matBadgePosition="after" matBadgeColor="accent" >
+    <app-carrito-compara ></app-carrito-compara>   <span class="close" (click)="vaciarCompareProdList()" style="position: absolute; top: 5px; right: 5px; font-size: 20px; ">x</span>
+
+  </button>
+
+    </div>
+  </ng-container>

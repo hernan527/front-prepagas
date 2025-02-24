@@ -1,11 +1,15 @@
-import { Component, Input, OnInit,ChangeDetectionStrategy, ViewChild,  ElementRef  } from '@angular/core';
+import { Directive, Component,Inject, Input, OnInit,ChangeDetectorRef ,ChangeDetectionStrategy, ViewChild,  ElementRef  } from '@angular/core';
 import { ModalService } from '../../../../../_modal';
 import { MasDetallesComponent } from '../../templates/mas-detalles/mas-detalles.component';
-import {MatDialogModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog, MatDialogModule,MatDialogRef,MatDialogTitle,MAT_DIALOG_DATA,MatDialogContent,} from '@angular/material/dialog';
 import {ServicioDeCompararService} from '../../../../../services/servicio-de-comparar.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-
-
+import {MatButtonModule} from '@angular/material/button';
+import { CommonModule } from '@angular/common';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { PopoverModule } from 'ngx-bootstrap/popover';
+import { DeviceDetectorService } from 'ngx-device-detector';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 export interface DialogData1 {
   name: string;
   price: Number;
@@ -20,18 +24,25 @@ export interface DialogData1 {
   folleto:any;
 }
 
+export interface DialogData3 {
+  animal: string;
+
+}
+
 
 @Component({
     selector: 'app-product-land',
     templateUrl: './insurance-card.component.html',
     styleUrls: ['./product-land.component.scss'],
-    standalone: true
+    standalone: true,
+    imports: [MatCheckboxModule,PopoverModule,MatButtonModule,MatDialogModule,CommonModule,MatTooltipModule]
 })
 
 
 
 export class ProductLandComponent implements OnInit{
   @Input() product: any;
+  @Input() compareList: any;
   bodyText: string;
   name: string;
   price: Number;
@@ -47,34 +58,43 @@ export class ProductLandComponent implements OnInit{
   searchKey:string ="";
   isLargeScreen: boolean;
   dialogRef: MatDialogRef<MasDetallesComponent>;
+  closeTimeout: any;
+
   public comparar:any = 'Comparar';
   public productList : any ;
   public filterCategory : any
   public iconStyles = { '--fa-secondary-opacity': 0.6 };
-
-
+  html = `<span class="btn btn-danger">Never trust not sanitized HTML!!!</span>`;
+  public triggerEvent: string = 'mouseenter:mouseleave'; // Default trigger for desktop
   constructor(
-    private modalService: ModalService,
     public dialog: MatDialog,
     private servicioComparar: ServicioDeCompararService,
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
+    private cdr: ChangeDetectorRef,
+    private deviceService: DeviceDetectorService
     ) { 
       this.isLargeScreen = breakpointObserver.isMatched(Breakpoints.Large);
   }
 
-  
+
   // @ViewChild("compararButon") compararButon: ElementRef;
    //https://bit.ly/Replacement_ElementRef
    toggleCompare() {
+    console.log('product-land 83 this.product')
   console.log(this.product)
-    this.product.compare = !this.product.compare;
+    this.product.compare = !this.product.compare;;
+    console.log('product.land 85 this.compareList')
+    console.log(this.compareList)
+    
     // this.compararButon.nativeElement.innerHTML = "REMOVER";
   //   if(this.product.compare)  
   //   this.comparar  = "Remover";
   // else
   //   this.comparar = "Comparar";
 }
-  
+
+
+
 agregarcomparar(){
   console.log(this.comparar)
   this.servicioComparar.servicioComparar.emit({data:this.comparar});
@@ -86,7 +106,7 @@ agregarcomparar(){
       this.isLargeScreen = result.matches;
     });
   console.log(this.product)
-    
+  this.setPopoverTrigger();
   }
 
   openDialog(
@@ -130,5 +150,18 @@ agregarcomparar(){
     }
   
   
+setPopoverTrigger(): void {
+  const isMobile = this.deviceService.isMobile();
+  if (isMobile) {
+    this.triggerEvent = 'click';  // Change to click trigger on mobile
+  } else {
+    this.triggerEvent = 'mouseenter:mouseleave';  // Default hover trigger on desktop
+  }
+}
 
 }
+
+
+
+
+

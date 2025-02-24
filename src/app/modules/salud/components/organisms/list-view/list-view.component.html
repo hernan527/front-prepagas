@@ -1,0 +1,57 @@
+<div _ngcontent-ng-c1250167330="" _nghost-ng-c1654105987="" class="ng-star-inserted">
+    <div  class="row align-items-center justify-content-end mw-100 mx-auto ng-star-inserted" style="display: contents;">
+        <div  class="d-flex justify-content-between w-100 align-items-center header-up-small">
+            <div  _nghost-ng-c1918804869="">
+                <div _ngcontent-ng-c1918804869="" class="d-flex align-items-center count">
+                    <kbd _ngcontent-ng-c1918804869="" class="py-1 px-2" style="background-color: rgb(64, 180, 229);">{{cadena}}</kbd>
+                    <div _ngcontent-ng-c1918804869="" class="ml-2">
+                        <span _ngcontent-ng-c1918804869="" qptranslate="compare.header.results" class="mb-0" style="color: rgb(64, 180, 229);">Resultados</span>
+                        <div _ngcontent-ng-c1918804869="" class="ng-star-inserted"></div>
+                    </div>
+                </div>
+            </div>
+            <div  class="d-flex align-items-center">
+                <div  class="header d-flex pl-2 ng-star-inserted"></div>
+                <div  class="header d-flex mr-3 pl-2 ng-star-inserted"></div>
+                <button _ngcontent-ng-c1993997668="" class="nota btn d-none d-md-block mr-2 ng-star-inserted">¿Qué es el Puntaje?</button>
+                <div  class="header d-flex pl-2 ng-star-inserted">
+                    <mat-form-field appearance="outline" class="mat-mdc-form-field height-45  mat-mdc-form-field-type-mat-select mat-form-field-appearance-outline mat-form-field-hide-placeholder mat-primary ng-star-inserted">
+                        <mat-label>Ordenar por</mat-label>
+                        <mat-select>
+                            <mat-option value="option">Precio menor a mayor</mat-option>
+                            <mat-option value="option1">Precio mayor a menor</mat-option>
+                            <mat-option value="option2">Puntaje</mat-option>
+                                          </mat-select>
+                        <mat-hint align="end"></mat-hint>
+                      </mat-form-field>
+            
+                </div>
+
+
+                <div  class="header d-flex ml-3 pl-2 ng-star-inserted">
+        
+                        <mat-button-toggle-group class="mat-button-toggle-group mat-button-toggle-group-appearance-standard ng-star-inserted" id="view"  aria-disabled="false">
+                            <div value="grid" class="mat-button-toggle mat-button-toggle-appearance-standard" id="mat-button-toggle-1">
+                            <button [class.text-primary]="view === 'list'" (click)="view = 'list';sendMessage('list')" type="button" class="mat-button-toggle-button mat-focus-indicator" id="mat-button-toggle-1-button" tabindex="0" aria-pressed="true" name="mat-button-toggle-group-0" aria-label="List"> 
+                                <span class="mat-button-toggle-label-content">
+                                    <mat-icon  role="img" class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">view_list</mat-icon>
+                                </span>                            
+                            </button>
+                            <span class="mat-button-toggle-focus-overlay"></span><span matripple="" class="mat-ripple mat-button-toggle-ripple"></span>
+                        </div>
+                    <div value="grid" class="mat-button-toggle mat-button-toggle-appearance-standard" id="mat-button-toggle-2">
+                            <button [class.text-primary]="view === 'grid'" (click)="view = 'grid';sendMessage('grid')" type="button" class="mat-button-toggle-button mat-focus-indicator" (click)="view = 'grid';"  id="mat-button-toggle-2-button" tabindex="0" aria-pressed="false" name="mat-button-toggle-group-0" aria-label="Grid"> 
+                                <span class="mat-button-toggle-label-content">
+                                    <mat-icon  role="img" class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">view_module</mat-icon>
+                                </span>                            
+                            </button>
+                            <span class="mat-button-toggle-focus-overlay"></span><span matripple="" class="mat-ripple mat-button-toggle-ripple"></span>
+                        </div>
+                            </mat-button-toggle-group>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    <div  class="mb-3 d-flex justify-content-end"></div>
+</div>

@@ -13,7 +13,6 @@ import { NgIf } from '@angular/common';
     selector: 'app-form-quote',
     templateUrl: './form-quote.component.html',
     styleUrls: ['./form-quote.component.css'],
-    standalone: true,
     imports: [NgIf, FormsModule, ReactiveFormsModule]
 })
 export class FormQuoteComponent {

@@ -18,7 +18,6 @@ import { HeroSectionComponent } from '../components/organisms/hero-section/hero-
     selector: 'app-home',
     templateUrl: './home.component-1.html',
     styleUrls: ['./home.component.scss'],
-    standalone: true,
     imports: [
         HeroSectionComponent,
         HowItWorksSectionComponent,
@@ -26,7 +25,7 @@ import { HeroSectionComponent } from '../components/organisms/hero-section/hero-
         ServicesSectionComponent,
         BenefitsSectionComponent,
         PreFooterSectionComponent,
-    ],
+    ]
 })
 export class HomeComponent {
 	// forms
