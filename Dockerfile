@@ -26,11 +26,12 @@ WORKDIR /usr/share/nginx/html
 # Remove default Nginx static assets
 RUN rm -rf /usr/share/nginx/html/*
 
+COPY config/default.conf /etc/nginx/conf.d/default.conf
+
 # Copy the Angular app's build artifacts from the first stage
 COPY --from=node /app/dist/angular-coamparar /usr/share/nginx/html
 
 # Change ownership of the files
-RUN chown nginx:nginx /usr/share/nginx/html/*
-
+RUN chown -R nginx:nginx /usr/share/nginx/html
 # Start Nginx
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
