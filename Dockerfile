@@ -9,9 +9,8 @@ RUN npm run build
 ### Stage 2
 FROM nginx:alpine
 # Copy the Angular app's build artifacts from the specified output path
-ADD  ./config/default.conf /etc/nginx/config.d/default.conf
-
-COPY --from=build /app/dist /var/www/app/
+COPY  ./config/default.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/dist/angular-coamparar /usr/share/nginx/html
 EXPOSE 80
 # Run the web service on container startup.
 CMD ["nginx", "-g", "daemon off;"]

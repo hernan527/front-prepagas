@@ -138,18 +138,22 @@
         <div class="items"  *ngFor="let product of getPagedData() | filter: SearchEmpresa:'empresa'  |  sort: [SortbyParam, SortDirection]" class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-6 ">
          
           <app-product-card
-          *ngIf="view === 'grid'"
+          *ngIf="view === 'grid' || isSmallScreen"
           [product]="product"
-          [compareList]="compareList"
-          ></app-product-card>
-        </div>
+          [compareList]="compareList">
+        </app-product-card>
+      </div>
+      
+       
       
       
 
   
       <div class="items" *ngFor="let product of getPagedData() | filter: SearchEmpresa:'empresa'  |  sort: [SortbyParam, SortDirection]" >
       <app-product-land 
-      *ngIf="view === 'list'" 
+      *ngIf="view === 'list' && !isSmallScreen"
+      [product]="product"
+      [compareList]="compareList">
       [product]="product"
       [compareList]="compareList"
       ></app-product-land>
