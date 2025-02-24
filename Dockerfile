@@ -1,4 +1,4 @@
-FROM node:18.20.7-alpine3.21
+FROM node:18.20.1-alpine AS build
 WORKDIR /app
 # Install dependencies and build the project.
 COPY package*.json ./
