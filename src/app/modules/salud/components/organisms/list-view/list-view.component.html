@@ -1,15 +1,51 @@
-<div _ngcontent-ng-c1250167330="" _nghost-ng-c1654105987="" class="ng-star-inserted">
+
+   
+<div _ngcontent-ng-c1250167330="" _nghost-ng-c1654105987="" class="p-3 ng-star-inserted">
     <div  class="row align-items-center justify-content-end mw-100 mx-auto ng-star-inserted" style="display: contents;">
         <div  class="d-flex justify-content-between w-100 align-items-center header-up-small">
             <div  _nghost-ng-c1918804869="">
-                <div _ngcontent-ng-c1918804869="" class="d-flex align-items-center count">
-                    <kbd _ngcontent-ng-c1918804869="" class="py-1 px-2" style="background-color: rgb(64, 180, 229);">{{cadena}}</kbd>
-                    <div _ngcontent-ng-c1918804869="" class="ml-2">
-                        <span _ngcontent-ng-c1918804869="" qptranslate="compare.header.results" class="mb-0" style="color: rgb(64, 180, 229);">Resultados</span>
-                        <div _ngcontent-ng-c1918804869="" class="ng-star-inserted"></div>
+                <div  class="d-flex align-items-center count">
+                    <kbd  class="py-1 px-2" style="background-color: rgb(64, 180, 229);">{{cadena}}</kbd>
+                    <div  class="ml-2">
+                        <span  qptranslate="compare.header.results" class="mb-0" style="color: rgb(64, 180, 229);">Resultados</span>
+                        <div  class="ng-star-inserted"></div>
                     </div>
                 </div>
             </div>
+            <div class="d-flex flex-wrap flex-grow-1" style="min-width: 300px;">
+                <p-multiSelect
+                >
+                  
+                  <ng-template let-option pTemplate="selectedItems">
+                    <div class="selected-chips">
+                      <div *ngFor="let item of selectedClinica" >
+                        <strong class="p-chip p-highlight">
+                          {{ item.nombre }} 
+                          <i class="pi pi-times-circle"xs></i>
+                        </strong>
+                      </div>
+                    </div>
+                    <div class="no-selected-items" *ngIf="!selectedClinica || selectedClinica.length === 0">Selecciona Clínicas</div>
+                  </ng-template>
+                <div class="d-flex align-items-center me-2 flex-grow-1" style="min-width: 200px;">
+                  <label class="me-2">Ordenar por</label>
+                  <select class="form-select w-100" (click)="onSortDirection()">
+                    <option value="empresa">Empresa</option>
+                    <option value="precio">Precio</option>
+                    <option value="name">Nombre</option>
+                    <option value="rating">Rating</option>
+                  </select>
+                </div>
+          
+          
+                  <ng-template let-option pTemplate="item">
+                    <div class="item">
+                      {{ option.entity }}
+                    </div>
+                  </ng-template>
+                </p-multiSelect>
+              </div>
+          
             <div  class="d-flex align-items-center">
                 <div  class="header d-flex pl-2 ng-star-inserted"></div>
                 <div  class="header d-flex mr-3 pl-2 ng-star-inserted"></div>
@@ -28,7 +64,7 @@
                 </div>
 
 
-                <div  class="header d-flex ml-3 pl-2 ng-star-inserted">
+                <div   *ngIf="!isSmallScreen" class="header d-flex ml-3 pl-2 ng-star-inserted">
         
                         <mat-button-toggle-group class="mat-button-toggle-group mat-button-toggle-group-appearance-standard ng-star-inserted" id="view"  aria-disabled="false">
                             <div value="grid" class="mat-button-toggle mat-button-toggle-appearance-standard" id="mat-button-toggle-1">

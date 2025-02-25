@@ -7,7 +7,7 @@ import { SERVER_URL } from './../constants';
 import { HttpClient } from '@angular/common/http';
 import * as clinicas from './../data/constants/mock/clinicas.json';
 import * as planes from './../../../public/products.json';
-import { ItemsService } from './../shared/item/items.service';
+import { ItemsService } from './items.service';
 import { FormData } from './../data/interfaces/interfaces';
 import { Planes } from './../data/interfaces/planes';
 import {CotizacionService} from './cotizacion.service';

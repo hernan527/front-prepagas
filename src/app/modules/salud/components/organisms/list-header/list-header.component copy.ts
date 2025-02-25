@@ -5,7 +5,7 @@ import { SelectItem } from 'primeng/api';
 import { FormControl, ReactiveFormsModule,FormGroup,FormBuilder } from '@angular/forms';
 import { ProductsService } from '../../../../../services/products.service';
 import * as planes from "../../../../../../../public/products.json";
-import { ItemsService } from '../../../../../shared/item/items.service';
+import { ItemsService } from '../../../../../services/items.service';
 
 declare var addProp:any;
 declare var desectItem:any;

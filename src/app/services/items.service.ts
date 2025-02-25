@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { ItemRestApiService } from './item-rest-api.service';
-import { Item } from './item';
-import { ItemAttribute } from './item-attribute';
-import { Result } from './result';
-import { ItemVsItem } from './item-vs-item';
+import { ItemRestApiService } from '../shared/item/item-rest-api.service';
+import { Item } from '../shared/item/item';
+import { ItemAttribute } from '../shared/item/item-attribute';
+import { Result } from '../shared/item/result';
+import { ItemVsItem } from '../shared/item/item-vs-item';
 
 @Injectable({
   providedIn: 'root'

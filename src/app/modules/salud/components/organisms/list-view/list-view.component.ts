@@ -2,13 +2,15 @@ import { Component, Output, EventEmitter, Input,OnInit, OnChanges, SimpleChanges
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSelectModule} from '@angular/material/select';
-import { NgIf } from '@angular/common';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { NgIf,NgFor } from '@angular/common';
+
 @Component({
     selector: 'app-list-view',
     templateUrl: './list-view.component.html',
     styleUrl: './list-view.component.css',
     standalone: true,
-    imports: [MatIconModule,MatButtonToggleModule,MatSelectModule] // <--- Add MatButtonModule here    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [MatIconModule,MatButtonToggleModule,MatSelectModule,NgIf,NgFor,MultiSelectModule] // <--- Add MatButtonModule here    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListViewComponent implements OnInit, OnChanges {
     view: string = "list";
@@ -16,6 +18,9 @@ export class ListViewComponent implements OnInit, OnChanges {
     layout: string = 'list';
     @Input() productosFiltrados: any;
     @Input() products: any;
+    @Input() isSmallScreen = false;
+    selectedClinica: any[] = [];
+
     SortDirection = "asc";
     cadena: any
   definirLength(){
@@ -25,6 +30,11 @@ this.cadena = this.productosFiltrados.length
   this.cadena = this.products.length
 }
   }
+
+  
+    constructor(
+    ) {}
+
 
   ngOnInit(): void {
     this.definirLength()

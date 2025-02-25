@@ -7,14 +7,15 @@ import {ServcioRetornoPrecioService} from '../../../../../services/servcio-retor
 import { filter } from 'rxjs/operators';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { FormBannerComponent } from '../form-banner/form-banner.component';
-
+import { CommonModule } from '@angular/common';
 @Component({
     selector: 'app-search-form',
     templateUrl: './search-form.component.html',
     styleUrls: ['./search-form.component.css'],
-    imports: [FormBannerComponent]
+    imports: [FormBannerComponent,CommonModule]
 })
 export class  SearchFormComponent  {
+  @Input() isSmallScreen = false;
 
   @ViewChild('campoNombre') campoNombre: ElementRef;
 

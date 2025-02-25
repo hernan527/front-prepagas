@@ -12,7 +12,9 @@ import {
   NgZone,
   Inject,
   AfterViewInit,
-  AfterContentChecked
+  AfterContentChecked,
+  SimpleChanges,
+  OnChanges
 } from "@angular/core";
 import { Observable, forkJoin } from "rxjs";
 import { map, pairwise, filter, throttleTime } from "rxjs/operators";
@@ -25,9 +27,11 @@ import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
 import * as clinicas from "../../../../data/constants/mock/clinicas.json";
 import { HttpClient } from "@angular/common/http";
 import { SERVER_URL } from "../../../../constants";
-import { ItemsService } from "../../../../shared/item/items.service";
+import { ItemsService } from "../../../../services/items.service";
 import { SelectItem } from "primeng/api"; // Import SelectItem from PrimeNG
 import { Empresa } from "../../../../data/interfaces/empresas";
+import { MultiSelectModule } from 'primeng/multiselect';
+import { CommonModule } from "@angular/common";
 import {
   trigger,
   state,
@@ -71,7 +75,11 @@ import { ComparaItemComponent } from './../../components/templates/compara-item/
 import { DialogModule } from 'primeng/dialog';
 import { ComparaAttributesComponent } from "./../../components/templates/compara-item/compara-attributes/compara-attributes.component";
 import { CarritoComparaComponent } from "./../../components/molecules/carrito-compara/carrito-compara.component";
-import {MatBadgeModule} from '@angular/material/badge'; 
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatSelectModule} from '@angular/material/select';
+
 declare var addProp: any;
 declare var desectItem: any;
 declare var showandHide: any;
@@ -100,7 +108,6 @@ interface ResponseData {
         AsyncPipe,
         FilterPipe,
         SortPipe,
-        ListViewComponent,
         ProductCardComponent,
         MatPaginatorModule,
         // JsonPipe,
@@ -114,10 +121,16 @@ interface ResponseData {
         DialogModule,
         // ComparaAttributesComponent,
         CarritoComparaComponent,
-        MatBadgeModule
+        MatBadgeModule,
+        MultiSelectModule,
+        ReactiveFormsModule,
+        MatIconModule,
+        MatButtonToggleModule,
+        MatSelectModule,
+        CommonModule
     ]
 })
-export class ResultsComponent implements OnInit {
+export class ResultsComponent implements OnInit, OnChanges {
   @ViewChild(ListViewComponent) list: any;
   view: string = "list";
  
@@ -197,7 +210,15 @@ export class ResultsComponent implements OnInit {
   // data constants
   public credits: Credit[] = CREDIT_DATA_ITEMS;
   listaComparar = this.compareProdList()
-  
+  cadena: any
+  definirLength(){
+if(this.productosFiltrados){
+this.cadena = this.productosFiltrados.length
+} else {
+  this.cadena = this.products.length
+}
+return this.cadena
+  }
   // trackBy functions
   trackByCredits = (_: number, item: Credit): number => item.id;
 
@@ -219,10 +240,25 @@ export class ResultsComponent implements OnInit {
   ) // @Inject(MAT_DIALOG_DATA) public data: DialogData
   {
     this.formDataInicial = this.crearFormularioInicial();
+    this.buildForm();
   }
   ngAfterContentChecked(): void {
     this.cdr.detectChanges();
- }  s
+ }  
+     // Ejemplo de cómo acceder al formulario desde otro componente
+  
+     SortbyParamControl = new FormControl(this.SortbyParam);
+     public productosActualizados:Array<any> = []
+     private buildForm(){
+ 
+       this.formFilter =this.formBuilder.group({
+         buscaClinica: [''],
+         empresa_prepaga: ['0'],
+         selectedRating:0,
+       });
+     }
+    
+ 
   private crearFormularioInicial(): FormGroup {
     return this.formBuilder.group({
       grupo: 2,
@@ -248,16 +284,6 @@ export class ResultsComponent implements OnInit {
         phone: "",
         region: "AMBA",
       }),
-    });
-  }
-
-  SortbyParamControl = new FormControl(this.SortbyParam);
-  public productosActualizados: Array<any> = [];
-  private buildForm() {
-    this.formFilter = this.formBuilder.group({
-      buscaClinica: [""],
-      empresa_prepaga: ["0"],
-      selectedRating: 0,
     });
   }
 
@@ -457,30 +483,7 @@ actualizarLista() {
   tempArrayShow: any = [];
   tempArrayHide: any = [];
 
-  addClinicas() {
-    //  // // console.log(this.products)
-    //  // // console.log(this.clinicas)
-
-    let products = this.products;
-
-    for (let i = 0; i < products.length; i++) {
-      // // console.log(this.products[i].id)
-      let clinicPlan = [];
-
-      for (let x in this.clinicas) {
-        var incluyeid = this.clinicas[x].cartillas.includes(
-          this.products[i].item_id
-        );
-
-        if (incluyeid == true) {
-          clinicPlan.push(this.clinicas[x]);
-        }
-        this.products[i].clinicas = clinicPlan;
-      }
-    }
-
-    this.itemsService.setItems(this.products);
-  }
+  
 
   showButton() {
     const container = document.querySelector(".center-button");
@@ -722,25 +725,7 @@ actualizarLista() {
     this.cartService.addtoCart(item);
   }
 
-  filterRating(rating: number) {
-    this.productsService.setFilter({
-      id: "rating",
-      name: `${rating} rating`,
-      value: rating,
-      predicate: (entity) => entity.rating === rating,
-    });
-  }
 
-  // filterClinicas( rating: number ) {
-
-  //   this.productsService.setFilter({
-  //     id: 'rating',
-  //     name: `${rating} rating`,
-  //     value: rating,
-  //     predicate: entity => entity.rating === rating
-  //   });
-
-  // }
 
   showComparionSidebar(){
     if(this.compareLength >=1 ){
@@ -749,6 +734,11 @@ actualizarLista() {
 
 
     } 
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['productosFiltrados'] || changes['products']) {
+      this.definirLength();
+    }
   }
   async ngOnInit(): Promise<void> {
     this.isLoaded = false;
@@ -769,7 +759,20 @@ actualizarLista() {
     //        consoale.log('anchoSidebar  :',this.anchoSidebar);
     //        // console.log('isSmallScreen  :',this.isSmallScreen);
 
-    // Comprobar si hay datos en caché
+
+ 
+    this.definirLength()
+
+
+ 
+ 
+
+
+
+
+
+
+    // Comprobar si hay datos en caché dentro de ngOnInit
     let cachedProducts: any[] | null = null;
     await caches.open("products").then((cache) => {
       cache.match("productos").then((response) => {
@@ -991,9 +994,7 @@ actualizarLista() {
 
   productArray: any = [];
   arrays: any = [];
-  getProductos() {
-    this.products = this.api.getProduct();
-  }
+
   // getProduct(){
   //   this.arrays = this.api.productService();
   // }
@@ -1101,6 +1102,7 @@ actualizarLista() {
 
     this.onItemSelect(this.selectedClinica);
     // this.productoService.activarFuncionEnComponenteB();
+    
   }
 
   load(index: number) {
@@ -1123,7 +1125,7 @@ actualizarLista() {
   }
   filterProductsByRating(selectedRating: number) {
     // Filtra los productos según la calificación seleccionada
-    this.filteredProducts = this.products.filter((product) => {
+    this.filteredProducts = this.products.filter((product: { rating: number; }) => {
       return product.rating >= selectedRating;
     });
   }
