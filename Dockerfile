@@ -7,13 +7,13 @@ WORKDIR /app
 # Install pnpm globally
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
-# Copy package.json and pnpm-lock.yaml
+# Copy package.json and pnpm-lock.yaml (DO NOT COPY OTHER FILES YET)
 COPY package.json pnpm-lock.yaml ./
 
 # Install project dependencies
-RUN pnpm i
+RUN pnpm install --frozen-lockfile
 
-# Copy the rest of the application code
+# Now copy the rest of the application code
 COPY . .
 
 # Build the Angular application
@@ -28,6 +28,7 @@ WORKDIR /usr/share/nginx/html
 # Remove default Nginx static assets
 RUN rm -rf /usr/share/nginx/html/*
 
+# Copy the Nginx configuration file
 COPY config/default.conf /etc/nginx/conf.d/default.conf
 
 # Copy the Angular app's build artifacts from the first stage
@@ -35,5 +36,6 @@ COPY --from=node /app/dist/angular-coamparar /usr/share/nginx/html
 
 # Change ownership of the files
 RUN chown -R nginx:nginx /usr/share/nginx/html
+
 # Start Nginx
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
