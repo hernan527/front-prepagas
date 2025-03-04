@@ -210,18 +210,18 @@
   }
   
   .menos{
-    background-image:url(../../../../../assets/css/imagens/173198465710851448.png)
+    background-image:url(../../../../../../assets/css/imagens/173198465710851448.png)
   }
   
   .mas{
-    background-image:url(../../../../../assets/css/imagens/1731984657108514481.png)
+    background-image:url(../../../../../../assets/css/imagens/1731984657108514481.png)
   }
   .unomenos{
-    background-image:url(../../../../../assets/css/imagens/menos.png)
+    background-image:url(../../../../../../assets/css/imagens/menos.png)
   }
   
   .unomas{
-    background-image:url(../../../../../assets/css/imagens/mas.png)
+    background-image:url(../../../../../../assets/css/imagens/mas.png)
   }
   .flex-contenedor{
     /* border: 1px solid black; */
@@ -691,7 +691,7 @@
     -moz-appearance:none;
     appearance:none;
     padding:15px 30px 15px 15px;
-    background-image:url(../../../../../assets/css/images/sprite.svg#theme--select-arrow);
+    background-image:url(../../../../../../assets/css/images/sprite.svg#theme--select-arrow);
     background-repeat:no-repeat,repeat;
     background-position:right .7em top 50%,0 0;
     background-size:1em 1em,100%
@@ -960,7 +960,7 @@
     position:absolute;
     right:0;
     bottom:120px;
-    background:url(../../../../../assets/style/images/form/background.png);
+    background:url(../../../../../../assets/style/images/form/background.png);
     background-repeat:no-repeat;
     background-size:cover;
     width:137px;
