@@ -11,7 +11,7 @@ RUN corepack enable && corepack prepare pnpm@latest --activate
 COPY package.json pnpm-lock.yaml ./
 
 # Install project dependencies
-RUN pnpm install --frozen-lockfile
+RUN pnpm ci --force
 
 # Copy the rest of the application code
 COPY . .
@@ -28,7 +28,6 @@ WORKDIR /usr/share/nginx/html
 # Remove default Nginx static assets
 RUN rm -rf /usr/share/nginx/html/*
 
-# Copy the Nginx configuration file
 COPY config/default.conf /etc/nginx/conf.d/default.conf
 
 # Copy the Angular app's build artifacts from the first stage
@@ -36,6 +35,5 @@ COPY --from=node /app/dist/angular-coamparar /usr/share/nginx/html
 
 # Change ownership of the files
 RUN chown -R nginx:nginx /usr/share/nginx/html
-
 # Start Nginx
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
