@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,ChangeDetectorRef,ChangeDetectionStrategy, EventEmitter,Output,SimpleChanges } from '@angular/core';
+import { Component, OnInit,Input,ChangeDetectorRef,ChangeDetectionStrategy, EventEmitter,Output,SimpleChanges,CUSTOM_ELEMENTS_SCHEMA, numberAttribute } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl,FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductsService } from '../../../../../services/products.service';
 import {ServcioRetornoPrecioService} from '../../../../../services/servcio-retorno-precio.service';
@@ -11,13 +11,14 @@ import { NgIf,NgFor } from '@angular/common';
 import { SliderModule } from 'primeng/slider'; 
 import { RatingModule } from 'primeng/rating';
 import {MatChipsModule} from '@angular/material/chips';
-
+import { NgxSliderModule, Options } from '@angular-slider/ngx-slider';
 @Component({
     selector: 'app-filters-products',
     templateUrl: './filters-products.component.html',
-    styleUrls: ['./filters-products.component.css'],
-    imports: [MatChipsModule,NgIf, NgFor, SidebarModule, MatFormFieldModule, MatCheckboxModule, MatButtonModule,SliderModule,RatingModule,FormsModule, ReactiveFormsModule],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    styleUrls: ['./filters-products.component.css','./filters-products.component.scss'],
+    imports: [MatChipsModule,NgIf, NgFor, SidebarModule, MatFormFieldModule, MatCheckboxModule, MatButtonModule,SliderModule,RatingModule,FormsModule, ReactiveFormsModule, NgxSliderModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
   })
 export class FiltersProductsComponent implements OnInit  {
    @Input() isSmallScreen = false;
@@ -32,7 +33,7 @@ export class FiltersProductsComponent implements OnInit  {
   formFilter: FormGroup;
   multiDefaultOption: any[] = []; 
   tooltipContent: string = 'Your tooltip content here';
-  rangeValues: FormControl = new FormControl(''); 
+  rangeValues: FormControl = new FormControl('');
   slide3Values: FormControl = new FormControl(''); 
   slide4Values: FormControl = new FormControl(''); 
   valueSlide3: FormControl = new FormControl(''); 
@@ -54,15 +55,36 @@ export class FiltersProductsComponent implements OnInit  {
   Sin_Copagos = this.checkboxOptions['Sin_Copagos'].value;
  
 
-  val: number; // Variable para el valor mínimo del rango de precios
-  val2: number; // Variable para el valor máximo del rango de precios
+  // Inicializa las propiedades con valores predeterminados
+  precioMinimo: number = 0;
+  precioMaximo: number = 0;
+  precioMinimoTodos: number = 0;
+  precioMaximoTodos: number = 0;
+  step=10
+  showTicks=true
+  showTicksValues=true
+  tickStep=10
+  vertical=false
+
   val3: number;
   val4: number;
   filterKeys: string[]; // Agrega esta variable para almacenar las claves de los filtros
   priceRange: FormControl = new FormControl('');  
   quote: Quote;
-  element =  document.getElementById("is3dCheckBox"); 
+  element =  document.getElementById("is3dCheckBox");
+  
+  isLoading = true;  // Flag to track loading state
 
+  value: number;
+  highValue: number;
+  options: Options = {
+  floor: 0,
+  ceil: 0,
+  showSelectionBar: true,
+  hideLimitLabels: true,  // Oculta los valores en los extremos
+  hidePointerLabels: true // Oculta el tooltip del valor actual
+ 
+};
   constructor(
     private formBuilder: FormBuilder,
     private filterManagerService: ProductsService,
@@ -120,21 +142,41 @@ export class FiltersProductsComponent implements OnInit  {
     }
     // console.log('filters-product 118 Filtros seleccionados:', this.filtrosSeleccionadosGroup.value);
    
-           console.log('filters-product 120 ngOnInit - Valores iniciales:', {
-      isSmallScreen: this.isSmallScreen,
-      sidebarVisible: this.sidebarVisible,
-      anchoSidebar: this.anchoSidebar
-    });
+           // console.log('filters-product 120 ngOnInit - Valores iniciales:', {isSmallScreen: this.isSmallScreen,sidebarVisible: this.sidebarVisible,anchoSidebar: this.anchoSidebar});
   
+           this.options = {
+            floor: 0,
+            ceil: 0     
+          };
 
-  
+
     this.filtrosSeleccionadosGroup.valueChanges.subscribe(() => {
       // console.log('filters-product 129 Filtros seleccionados han cambiado:', this.filtrosSeleccionadosGroup.value);
-// 
       this.applyFilters(this.filtrosSeleccionadosGroup);
-// 
     });
-  
+  // Listen for form control changes
+this.rangeValues.valueChanges.subscribe((newValues) => {
+  // Verificar si newValues es un array y sus elementos son números válidos
+  if (Array.isArray(newValues) && newValues.length === 2) {
+    const lowValue = Number(newValues[0]);
+    const highValue = Number(newValues[1]);
+
+    // Si lowValue o highValue son NaN, reemplazarlos con valores predeterminados
+    const validLowValue = isNaN(lowValue) ? this.value : lowValue;
+    const validHighValue = isNaN(highValue) ? this.highValue : highValue;
+
+    console.log('FormControl value changed:', newValues);
+    console.log('Final values -> lowValue:', validLowValue, ', highValue:', validHighValue);
+
+    // Actualizar el FormControl solo si los valores son válidos
+    this.filtrosSeleccionadosGroup.get('priceRange')?.setValue([validLowValue, validHighValue], { emitEvent: false });
+
+    // Aplicar los filtros con los valores corregidos
+    this.applyFilters(this.filtrosSeleccionadosGroup);
+  } else {
+    console.error('Invalid format for newValues:', newValues);
+  }
+});
     this.retornarService.disparadorDePrecio.subscribe(data => {
       // console.log('filters-product 136 Recibiendo data en product.list.component.ts...', data);
       if (data.edad_2 > 0 ) {
@@ -172,25 +214,49 @@ export class FiltersProductsComponent implements OnInit  {
       });
 
     });
-    
-      this.rangeValues.valueChanges.subscribe((newValues) => {
-        // console.log('filters-product 174 Valor mínimo del rango de precios:', newValues[0]);
-        // console.log('filters-product 175  Valor máximo del rango de precios:', newValues[1]);
-        // Registra los cambios en el formulario
-        this.filtrosSeleccionadosGroup.get('priceRange')?.setValue(newValues);
-        // Envía el formulario actualizado al servicio
-        // this.filterManagerService.setFilterForm(this.filtrosSeleccionadosGroup.value);
-        // this.filterManagerService.applyFiltersDespuesDeOnItemSelect();
-         
-      
-        this.filtrosSeleccionadosGroup.valueChanges.subscribe(() => {
-          // console.log('filters-product 184 Filtros seleccionados han cambiado:', this.filtrosSeleccionadosGroup.value);
-    // 
-          this.applyFilters(this.filtrosSeleccionadosGroup);
-    // 
-        });
 
-      });
+    this.filterManagerService.productosFiltrados$.subscribe((productos) => {
+   
+      this.productosFiltrados = productos;
+
+    const rangoPrecios = this.obtenerRangoDePrecios(productos);
+  
+    this.precioMinimo = rangoPrecios.min;
+    this.precioMaximo = rangoPrecios.max;
+    const rangoPreciosTodos = this.obtenerRangoDePrecios(this.product);
+
+    // Ensure values are valid numbers
+if(!this.highValue){
+    this.options = {
+      floor: rangoPreciosTodos.min,
+      ceil: rangoPreciosTodos.max     
+    };
+}
+    // Set options dynamically
+   
+    console.log('this.options.flor :',this.options.floor);
+            console.log('this.options.ceil :',this.options.ceil);
+
+       this.value = this.precioMinimo; 
+       this.highValue = this.precioMaximo;
+               console.log('this.value :',this.value);
+            console.log('this.highValue :',this.highValue);
+            this.precioMinimoTodos = this.precioMinimo;
+            this.precioMaximoTodos = this.precioMinimo;    
+    // Update rangeValues form control with the new values
+
+    console.log('Setting rangeValues:', [this.value, this.highValue]);
+
+
+
+
+    this.rangeValues.setValue([this.value, this.highValue]);
+    console.log('this.rangeValues.value :',this.rangeValues.value)
+  
+  });
+
+
+ 
        this.slide3Values.valueChanges.subscribe((newValues) => {
         // console.log('filters-product 192 Valor mínimo de valueSlide3:', newValues);
         // Registra los cambios en el formulario
@@ -200,12 +266,7 @@ export class FiltersProductsComponent implements OnInit  {
         this.filterManagerService.applyFiltersDespuesDeOnItemSelect();
          
       
-        this.filtrosSeleccionadosGroup.valueChanges.subscribe(() => {
-          // console.log('filters-product 201 Filtros seleccionados han cambiado:', this.filtrosSeleccionadosGroup.value);
-    // 
-          this.applyFilters(this.filtrosSeleccionadosGroup);
-    // 
-        });
+   
 
       });
 
@@ -252,23 +313,9 @@ export class FiltersProductsComponent implements OnInit  {
       });
 
 
-      this.filterManagerService.productosFiltrados$.subscribe((productos) => {
-        // console.log('filters-product 253 this.productosFiltrados   filters-products 253:',this.productosFiltrados)
 
-        this.productosFiltrados = productos;
-        // console.log('filters-product 256' )
-        // console.log(productos)
-        // Calcula el nuevo rango de precios
-  // const rangoPrecios = this.obtenerRangoDePrecios(productos);
-  // console.log('filters-product 259 this.obtenerRangoDePrecios(productos) filters-products 259')
-// console.log(this.obtenerRangoDePrecios(productos))
-  // Actualiza los valores de this.val y this.val2
-  // this.val = rangoPrecios.min;
-  // this.val2 = rangoPrecios.max;
-
-  // Realiza cualquier otra acción que necesites con los datos actualizados.
-      });
-
+      
+      
 
 
           Object.keys(this.checkboxOptions).forEach((key) => {
@@ -289,7 +336,8 @@ export class FiltersProductsComponent implements OnInit  {
           
      // Verificar si hay productos filtrados
 
- 
+
+
 
   
     
@@ -312,11 +360,21 @@ export class FiltersProductsComponent implements OnInit  {
     // Por ejemplo, puedes enviar una solicitud de filtro a tu API o actualizar la lista de productos
   }
   onRangeChange(event: any) {
-    // Los valores del rango de precios han cambiado, actualiza los valores y muestra en la consola
-    this.val = event.values[0];
-    this.val2 = event.values[1];
-    // console.log('filters-product 311 Valor seleccionado para el precio: ', this.val, 'y', this.val2);
+    console.log('Event values before setting range:', event.values);
+  
+    // Ensure that both values are valid numbers
+    const lowValue = Number(event.values[0]);
+    const highValue = Number(event.values[1]);
+  
+    if (!isNaN(lowValue) && !isNaN(highValue)) {
+      console.log('Range updated:', event.values);
+      this.filtrosSeleccionadosGroup.get('priceRange')?.setValue(event.values, { emitEvent: false });
+      this.applyFilters(this.filtrosSeleccionadosGroup);
+    } else {
+      console.error('Invalid range values:', event.values);
+    }
   }
+  
   onSlide3Change(event: any) {
 
     this.val3 = event.value;
@@ -388,6 +446,7 @@ export class FiltersProductsComponent implements OnInit  {
   this.filterManagerService.filterProducts(form,this.productosFiltrados);
     
  }
+
  
 
   applyFilters(form: FormGroup): void {
@@ -401,21 +460,20 @@ export class FiltersProductsComponent implements OnInit  {
   actualizarProductos(nuevosProductos: any): void {
     this.filterManagerService.setProductosFiltrados(nuevosProductos);
   }
-  private obtenerRangoDePrecios(productos: any[]): { min: number, max: number } {
-    // console.log('filters-product 396 productos')
-    // console.log(productos)
-    // console.log('filters-product 396 productos.length')
-    // console.log(productos.length)
 
+
+
+
+
+  private obtenerRangoDePrecios(productos: any[]): { min: number, max: number } {
     if (productos.length === 0) {
       return { min: 0, max: 0 };
     }
-  
-    // Ajusta la propiedad "precio" para obtener los valores de precio
+
     const precios = productos.map(producto => producto.precio);
-    const precioMinimo = Math.min(...precios);
-    const precioMaximo = Math.max(...precios);
-  
-    return { min: precioMinimo, max: precioMaximo };
+    return { min: Math.min(...precios), max: Math.max(...precios) };
   }
+    // Encontrar el precio mínimo y máximo
+
+
 }

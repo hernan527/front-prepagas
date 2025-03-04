@@ -13,7 +13,7 @@
        <div class="card-header">
         <div class="d-flex mb-3">
           <div class="flex-grow-1">
-            <i class="pi pi-filter icon-small"><span class="fs-16">Filtros</span></i>
+            <i class="pi pi-filter icon-small"><span class="fs-16">FiltrosSmall</span></i>
           </div>
           <div class="flex-shrink-0">
             <a href="javascript:void(0);" class="text-decoration-underline" (click)="limpiarTodo()">Limpiar todo</a>
@@ -60,27 +60,14 @@
           </header>
           <div class="collapse show" id="collapse_aside2">
             <div class="card-body">
-              <p-slider [formControl]="rangeValues" [range]="true" (onChange)="onRangeChange($event)"></p-slider>              <div class="row mb-3">
-                <p>Rango de precios seleccionado: <span>{{ val }}</span>  y 
-                  <span>{{ val2 }}</span>
-                  </p>
-              </div>
-              
-<div class="row mb-3">
-</div>
-         <div class="row mb-3">
-              <div class="col-6">
-              <label for="min" class="form-label">Min</label>
-              <input class="form-control" id="min" placeholder="{{ val }}" type="number">
-              </div>
+              <ngx-slider 
+              [(value)]="value"
+              [(highValue)]="highValue"  
+              [options]="options" 
+             >
+            </ngx-slider>
             
-              
-              <div class="col-6">
-              <label for="max" class="form-label">Max</label>
-              <input class="form-control" id="max" placeholder="{{ val2 }}" type="number">
-              </div>
-            </div>
-            <button class="btn btn-light w-100" type="button" (click)="aplicarFiltro()">Aplicar</button>  
+  
                     </div> 
           </div>
           </article> 
@@ -252,27 +239,15 @@
           </header>
           <div class="collapse show" id="collapse_aside2">
             <div class="card-body">
-              <p-slider [formControl]="rangeValues" [range]="true" (onChange)="onRangeChange($event)"></p-slider>              <div class="row mb-3">
-                <p>Rango de precios seleccionado: <span>{{ val }}</span>  y 
-                  <span>{{ val2 }}</span>
-                  </p>
-              </div>
+              <ngx-slider
+              [options]="options"
+              [formControl]="rangeValues"
+              (userChangeEnd)="onRangeChange({ values: rangeValues.value })"
+              [showTooltip]="false"
+              >
+            </ngx-slider>
               
-<div class="row mb-3">
-</div>
-         <div class="row mb-3">
-              <div class="col-6">
-              <label for="min" class="form-label">Min</label>
-              <input class="form-control" id="min" placeholder="{{ val }}" type="number">
-              </div>
-            
-              
-              <div class="col-6">
-              <label for="max" class="form-label">Max</label>
-              <input class="form-control" id="max" placeholder="{{ val2 }}" type="number">
-              </div>
-            </div>
-            <button class="btn btn-light w-100" type="button" (click)="aplicarFiltro()">Aplicar</button>  
+
                     </div> 
           </div>
           </article> 

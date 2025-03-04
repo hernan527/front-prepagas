@@ -22,14 +22,14 @@ export class CotizacionService {
    }
    getPrecios(formCotizar: any) {
     const url = `${this.url}/cotizacion`;
-    console.log('En el servicio', url);
-    console.log('Form Cotizar:', formCotizar);
+    // console.log('En el servicio', url);
+    // console.log('Form Cotizar:', formCotizar);
   
     // Send POST request and handle response
     this.precios = this.http.post<any>(url, formCotizar).pipe(
       tap(response => {
-        console.log('Respuesta recibida:');
-        console.log(response);
+        // console.log('Respuesta recibida:');
+        // console.log(response);
 
       }),
       catchError(error => {

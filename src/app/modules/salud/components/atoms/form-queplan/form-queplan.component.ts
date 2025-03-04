@@ -646,7 +646,16 @@ cambiarEdadTitular(nuevaEdad: number) {
   private intervalTitularId: any;
   private intervalConyugeId: any;
   private intervalHijosId: any;
-
+  private intervalHijos1Id: any;
+  private intervalHijos2Id: any;
+  private intervalHijos3Id: any;
+  private intervalHijos4Id: any;
+  private intervalHijos5Id: any;
+ 
+     // Variable para mostrar el número en el header
+     mostrarNumero: boolean = false;
+     mostrarImagen: boolean = true; // Controla si mostrar la imagen o el número
+     mostrarEdad: number
   private timeoutId: any;
   @HostListener('mousedown', ['$event'])
 

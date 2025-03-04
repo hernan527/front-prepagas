@@ -162,7 +162,7 @@
             </button>
             <!---->
          </div>
-         <!----><label _ngcontent-ng-c1485135320="" class="col-12 col-lg-3 ng-tns-c1485135320-5"><button _ngcontent-ng-c1485135320="" type="submit" ngbautofocus="" class="button w-100 ng-tns-c1485135320-5"x style="background: #2b35ea;"><span _ngcontent-ng-c1485135320="" class="submit ng-tns-c1485135320-5">Calcular precios</span><span _ngcontent-ng-c1485135320="" class="btn-loading ng-tns-c1485135320-5"><i _ngcontent-ng-c1485135320="" class="fa fa-sync ng-tns-c1485135320-5"></i></span><span _ngcontent-ng-c1485135320="" class="check ng-tns-c1485135320-5"><i _ngcontent-ng-c1485135320="" class="fa fa-check ng-tns-c1485135320-5"></i></span></button></label>
+         <!----><label _ngcontent-ng-c1485135320="" class="col-12 col-lg-3 ng-tns-c1485135320-5"><button _ngcontent-ng-c1485135320="" type="submit" (click)="showFormDialog()" ngbautofocus="" class="button w-100 ng-tns-c1485135320-5"x style="background: #2b35ea;"><span _ngcontent-ng-c1485135320="" class="submit ng-tns-c1485135320-5">Calcular precios</span><span _ngcontent-ng-c1485135320="" class="btn-loading ng-tns-c1485135320-5"><i _ngcontent-ng-c1485135320="" class="fa fa-sync ng-tns-c1485135320-5"></i></span><span _ngcontent-ng-c1485135320="" class="check ng-tns-c1485135320-5"><i _ngcontent-ng-c1485135320="" class="fa fa-check ng-tns-c1485135320-5"></i></span></button></label>
       </div>
    </form>
    <div _ngcontent-ng-c1485135320="" class="mt-3 ml-2 form-resume ng-tns-c1485135320-5 d-none ng-star-inserted">
@@ -170,3 +170,10 @@
    </div>
    <!----><!----><!----><!----><!----><!----><!----><!---->
 </div>
+<p-dialog header="Header" [(visible)]="visible"  id="form">
+   <div class="flex py-2 justify-content-center">
+     <body class="theme">
+       <app-formulario class="theme"></app-formulario>
+     </body>
+   </div>
+ </p-dialog>

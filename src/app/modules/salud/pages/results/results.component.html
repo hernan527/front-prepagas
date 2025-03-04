@@ -1,341 +1,230 @@
- <!-- ============== SECTION PAGETOP ============== -->
- 
-
+<!-- ============== SECTION PAGETOP ============== -->
 <!-- <app-hero-section></app-hero-section> -->
-
-
-  <!-- ============== SECTION PAGETOP END// ============== -->
-  <!-- ============== SECTION CONTENT ============== -->
-  <app-banner-list></app-banner-list>
- 
- 
-  <section  class="container">
-    <app-search-form
-    [isSmallScreen]="isSmallScreen"
-
-    ></app-search-form>
-
-        <div *ngIf="isSmallScreen" class="d-flex flex-column justify-content-center surface-card p-2 shadow-2 border-round hidden form-sticky" style="background-color: rgba(255, 215, 0, 0.6); margin: 0 0 0 0; align-items: center; animation: shake 0.5s ease-in-out;">
-      <div class="text-lg font-medium text-600 mb-2"><strong>Paso 1:</strong> Ingresa tu <strong>edad</strong> para calcular precios exactos y obtener los mejores planes</div>
+<!-- ============== SECTION PAGETOP END// ============== -->
+<!-- ============== SECTION CONTENT ============== -->
+<app-banner-list></app-banner-list>
+<app-search-form
+   [isSmallScreen]="isSmallScreen"
+   ></app-search-form>
+<section  class="container-compare">
+   <!-- <div *ngIf="isSmallScreen" class="d-flex flex-column justify-content-center surface-card p-2 shadow-2 border-round hidden form-sticky" style="background-color: rgba(255, 215, 0, 0.6); margin: 0 0 0 0; align-items: center; animation: shake 0.5s ease-in-out;">
+      <div class="ztext-lg font-medium text-600 mb-2"><strong>Paso 1:</strong> Ingresa tu <strong>edad</strong> para calcular precios exactos y obtener los mejores planes</div>
       <button pButton pRipple type="button" label="Completar Perfil" class="p-button-raised p-button-danger" (click)="openModa('custom-modal-3')" style="animation: aura 0.5s ease-in-out;"></button>
-    </div> 
-   
-<div _ngcontent-ng-c1250167330="" _nghost-ng-c1654105987="" class="p-3 ng-star-inserted">
-  <div  class="row align-items-center justify-content-end mw-100 mx-auto ng-star-inserted" style="display: contents;">
-      <div  class="d-flex justify-content-between w-100 align-items-center header-up-small">
-          <div  _nghost-ng-c1918804869="">
-              <div  class="d-flex align-items-center count">
-                  <kbd  class="py-1 px-2" style="background-color: rgb(64, 180, 229);">{{definirLength()}}</kbd>
-                  <div  class="ml-2">
-                      <span  qptranslate="compare.header.results" class="mb-0" style="color: rgb(64, 180, 229);">Resultados</span>
-                      <div  class="ng-star-inserted"></div>
+      </div>  -->
+   <div class="content">
+      <header class="d-flex flex-wrap align-items-center border-bottom mb-4 pb-3 w-100">
+         <div _ngcontent-ng-c1250167330="" _nghost-ng-c1654105987="" class="d-flex align-items-center justify-content-between w-100 flex-nowrap">
+            <div class="d-flex align-items-center count">
+               <kbd class="py-1 px-2" style="background-color: rgb(64, 180, 229);">{{definirLength()}}</kbd>
+               <div class="ml-2">
+                  <span qptranslate="compare.header.results" class="mb-0" style="color: rgb(64, 180, 229);">Resultados</span>
+               </div>
+            </div>
+            <div class="d-flex align-items-center ml-auto">
+               <button _ngcontent-ng-c1993997668="" class="nota btn d-none d-md-block mr-2">¿Qué es el Puntaje?</button>
+               <div   class="header d-flex ml-3 pl-2 ng-star-inserted">
+                  <div class="d-flex flex-wrap justify-content-between surface-card p-2 shadow-2 border-round w-100" 
+                     style="background-color: whitesmoke; margin: 0 5px 5px 5px; align-items: center;">
+                     <div class="d-flex flex-wrap align-items-center w-100 mt-3 mt-md-0">
+                        <div class="d-flex flex-wrap">
+                           <div class="d-flex align-items-center me-2 flex-grow-1" style="min-width: 200px;">
+                              <label class="me-2">Ordenar por</label>
+                              <select class="form-select w-100" [formControl]="SortbyParamControl" (click)="onSortDirection()">
+                              <option value="empresa">Empresa</option>
+                              <option value="precio">Precio</option>
+                              <option value="name">Nombre</option>
+                              <option value="rating">Rating</option>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                     <div> </div>
                   </div>
-              </div>
-          </div>
-         
-          <div  class="d-flex align-items-center">
-              <div  class="header d-flex pl-2 ng-star-inserted"></div>
-              <div  class="header d-flex mr-3 pl-2 ng-star-inserted"></div>
-              <button _ngcontent-ng-c1993997668="" class="nota btn d-none d-md-block mr-2 ng-star-inserted">¿Qué es el Puntaje?</button>
-              <div  class="header d-flex pl-2 ng-star-inserted">
-                  <!-- <mat-form-field appearance="outline" class="mat-mdc-form-field height-45  mat-mdc-form-field-type-mat-select mat-form-field-appearance-outline mat-form-field-hide-placeholder mat-primary ng-star-inserted">
-                      <mat-label>Ordenar por</mat-label>
-                      <mat-select>
-                          <mat-option value="option">Precio menor a mayor</mat-option>
-                          <mat-option value="option1">Precio mayor a menor</mat-option>
-                          <mat-option value="option2">Puntaje</mat-option>
-                                        </mat-select>
-                      <mat-hint align="end"></mat-hint>
-                    </mat-form-field> -->
-          
-              </div>
-
-
-              <div   *ngIf="!isSmallScreen" class="header d-flex ml-3 pl-2 ng-star-inserted">
-      
-                      <mat-button-toggle-group class="mat-button-toggle-group mat-button-toggle-group-appearance-standard ng-star-inserted" id="view"  aria-disabled="false">
-                          <div value="grid" class="mat-button-toggle mat-button-toggle-appearance-standard" id="mat-button-toggle-1">
-                          <button [class.text-primary]="view === 'list'" (click)="view = 'list';sendMessage('list')" type="button" class="mat-button-toggle-button mat-focus-indicator" id="mat-button-toggle-1-button" tabindex="0" aria-pressed="true" name="mat-button-toggle-group-0" aria-label="List"> 
-                              <span class="mat-button-toggle-label-content">
-                                  <mat-icon  role="img" class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">view_list</mat-icon>
-                              </span>                            
-                          </button>
-                          <span class="mat-button-toggle-focus-overlay"></span><span matripple="" class="mat-ripple mat-button-toggle-ripple"></span>
-                      </div>
-                  <div value="grid" class="mat-button-toggle mat-button-toggle-appearance-standard" id="mat-button-toggle-2">
-                          <button [class.text-primary]="view === 'grid'" (click)="view = 'grid';sendMessage('grid')" type="button" class="mat-button-toggle-button mat-focus-indicator" (click)="view = 'grid';"  id="mat-button-toggle-2-button" tabindex="0" aria-pressed="false" name="mat-button-toggle-group-0" aria-label="Grid"> 
-                              <span class="mat-button-toggle-label-content">
-                                  <mat-icon  role="img" class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">view_module</mat-icon>
-                              </span>                            
-                          </button>
-                          <span class="mat-button-toggle-focus-overlay"></span><span matripple="" class="mat-ripple mat-button-toggle-ripple"></span>
-                      </div>
-                          </mat-button-toggle-group>
-                
-              </div>
-          </div>
-      </div>
-  </div>
-  <div  class="mb-3 d-flex justify-content-end"></div>
-</div>
-
-<header class="d-flex flex-wrap align-items-center border-bottom mb-4 pb-3 w-100">
-
-  <div class="d-flex flex-wrap justify-content-between surface-card p-2 shadow-2 border-round w-100" 
-       style="background-color: whitesmoke; margin: 0 5px 5px 5px; align-items: center;">
-       <div class="d-flex flex-wrap align-items-center w-100 mt-3 mt-md-0">
-       <div class="d-flex flex-wrap flex-grow-1" style="min-width: 300px;">
-        <p-multiSelect
-          [styleClass]="'custom-ms w-100'"
-          class="custom-ms w-100"
-          [options]="dropdownClinica"
-          display="chip" 
-          [filter]="true"
-          defaultLabel="Busca por nombre"
-          [selectedItemsLabel]="'Selected Clinicas'"
-          [(ngModel)]="selectedClinica"
-          optionLabel="nombre"
-          (onChange)="onItemSelect($event)">
-          
-          <ng-template let-option pTemplate="selectedItems">
-            <div class="selected-chips">
-              <div *ngFor="let item of selectedClinica" >
-                <strong class="p-chip p-highlight">
-                  {{ item.nombre }} 
-                  <i class="pi pi-times-circle" (click)="removeSelection(item)"></i>
-                </strong>
-              </div>
+                  <button type="button" (click)="onSortDirection()" class="btn btn-light">
+                  <i *ngIf="SortDirection === 'asc'" class="fas fa-sort-alpha-down-alt fa-lg"></i>
+                  <i *ngIf="SortDirection === 'desc'" class="fas fa-sort-alpha-up-alt fa-lg"></i>
+                  </button>
+               </div>
+               <mat-button-toggle-group  *ngIf="!isSmallScreen" class="mat-button-toggle-group mat-button-toggle-group-appearance-standard">
+                  <div value="list" class="mat-button-toggle mat-button-toggle-appearance-standard">
+                     <button [class.text-primary]="view === 'list'" (click)="view = 'list';sendMessage('list')" type="button" class="mat-button-toggle-button mat-focus-indicator">
+                     <span class="mat-button-toggle-label-content">
+                        <mat-icon role="img" class="mat-icon notranslate material-icons">view_list</mat-icon>
+                     </span>
+                     </button>
+                  </div>
+                  <div value="grid" class="mat-button-toggle mat-button-toggle-appearance-standard">
+                     <button [class.text-primary]="view === 'grid'" (click)="view = 'grid';sendMessage('grid')" type="button" class="mat-button-toggle-button mat-focus-indicator">
+                     <span class="mat-button-toggle-label-content">
+                        <mat-icon role="img" class="mat-icon notranslate material-icons">view_module</mat-icon>
+                     </span>
+                     </button>
+                  </div>
+               </mat-button-toggle-group>
             </div>
-            <div class="no-selected-items" *ngIf="!selectedClinica || selectedClinica.length === 0">Selecciona Clínicas</div>
-          </ng-template>
-        <div class="d-flex align-items-center me-2 flex-grow-1" style="min-width: 200px;">
-          <label class="me-2">Ordenar por</label>
-          <select class="form-select w-100" [formControl]="SortbyParamControl" (click)="onSortDirection()">
-            <option value="empresa">Empresa</option>
-            <option value="precio">Precio</option>
-            <option value="name">Nombre</option>
-            <option value="rating">Rating</option>
-          </select>
-        </div>
-  
-  
-          <ng-template let-option pTemplate="item">
-            <div class="item">
-              {{ option.entity }}
-            </div>
-          </ng-template>
-        </p-multiSelect>
-      </div>
-    
-
-
-      
-      <div class="me-2 flex-grow-1" style="min-width: 200px;">
-        <select class="form-select w-100 " [formControl]="empresa" (change)="onEmpresaFilter()">
-          <option>Empresa</option>
-          <option>SanCor Salud</option>
-          <option>OMINT</option>
-          <option>Galeno</option>
-          <option>Avalian</option>
-          <option>Swiss Medical</option>
-          <option>Premedic</option>
-          <option>Medife</option>
-        </select>
-      </div>
-      
-      <div>
-        <button type="button" (click)="onSortDirection()" class="btn btn-light">
-          <i *ngIf="SortDirection === 'asc'" class="fas fa-sort-alpha-down-alt fa-lg"></i>
-          <i *ngIf="SortDirection === 'desc'" class="fas fa-sort-alpha-up-alt fa-lg"></i>
-        </button>
-      </div>
-
-    </div>
-  </div>
-</header> 
-
-
- 
-
-    <div class="main-content ">
-
-
-<!-- <aside class="col-lg-3 ">
- <app-filters-products  [product]="products" ></app-filters-products>
-</aside> -->
-<!-- <div class="collapse content d-none" *ngIf="!sidebarVisible">
-  
-  <app-filters-products [product]="products"  [productosFiltrados]="productosFiltrados"></app-filters-products>
-</div> -->
+         </div>
+         <div  class="mb-3 d-flex justify-content-end"></div>
+         <div class="d-flex flex-wrap">
+            <p-autoComplete
+            styleClass="myClass"
+            [(ngModel)]="selectedClinica"
+            [suggestions]="items"
+            (completeMethod)="search($event)"
+            [minLength]="1"
+            field="nombre"
+            placeholder="Buscar Clínicas..."
+            [multiple]="true"
+            (ngModelChange)="onSelectedItemsChange($event)"
+            >
+            <!-- Plantilla para la lista de opciones -->
+            <ng-template let-option pTemplate="custom-chip">
+               <div class="custom-chip">
+                  <span>{{ option.entity }}</span>
+               </div>
+            </ng-template>
+            <!-- Plantilla para los chips -->
+            <ng-template let-item pTemplate="chip">
+               <div class="custom-chip">
+                  <span>{{ item.nombre }}</span>
+               </div>
+            </ng-template>
+            </p-autoComplete>
+         </div>
+      </header>
       <!-- Contenido principal aquí -->
-
-
-  <div class="row">
-  <div class="col-lg-3">
-    <app-filters-products
+      <div class="row">
+         <div class="col-lg-3">
+            <app-filters-products
+            [isSmallScreen]="isSmallScreen"
+            [product]="products"
+            [sidebarVisible]="sidebarVisible"
+            [anchoSidebar]="anchoSidebar"
+            [productosFiltrados]="productosFiltrados"
+            ></app-filters-products>
+         </div>
+         <main class="col-lg-9  g-2">
+            <ng-container *ngIf="!(loading$ | async); else loadingTpl">
+               <!-- ========= content items ========= -->
+               <div class="row ">
+                  <ng-container *ngIf="isLoaded" >
+                     <ng-container *ngIf="view === 'grid' || isSmallScreen">
+                        <div class="items col-lg-4 col-md-4 col-sm-6 mb-2"  *ngFor="let product of getPagedData() | filter: SearchEmpresa:'empresa' | sort: [SortbyParam, SortDirection]">
+                           <app-product-card
+                           [product]="product"
+                           [compareList]="compareList">
+                           </app-product-card>
+                        </div>
+                     </ng-container>
+                     <ng-container *ngIf="view === 'list' && !isSmallScreen">
+                        <div class="items" *ngFor="let product of getPagedData() | filter: SearchEmpresa:'empresa'  |  sort: [SortbyParam, SortDirection]" >
+                           <app-product-land 
+                           [product]="product"
+                           [compareList]="compareList">
+                           ></app-product-land>
+                        </div>
+                     </ng-container>
+                  </ng-container>
+                  <div *ngFor="let product of products"  class="col-lg-4 col-md-6 col-sm-6 ">
+                     <div class="custom-skeleton p-4" *ngIf="!isLoaded" >
+                        <div class="flex mb-3">
+                           <p-skeleton shape="circle" size="4rem" styleClass="mr-2"></p-skeleton>
+                           <div>
+                              <p-skeleton width="10rem" styleClass="mb-2"></p-skeleton>
+                              <p-skeleton width="5rem" styleClass="mb-2"></p-skeleton>
+                              <p-skeleton height=".5rem"></p-skeleton>
+                           </div>
+                        </div>
+                        <p-skeleton width="100%" height="150px"></p-skeleton>
+                        <div class="flex justify-content-between mt-3">
+                           <p-skeleton width="4rem" height="2rem"></p-skeleton>
+                           <p-skeleton width="4rem" height="2rem"></p-skeleton>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div >
+                  <!-- Paginación -->
+                  <nav class="pt-4" aria-label="Page navigation">
+                     <ul class="pagination justify-content-center">
+                        <!-- Botón para ir a la primera página -->
+                        <li class="page-item" [class.disabled]="currentPage === 1">
+                           <a class="page-link fw-bolder text-uppercase" (click)="goToFirstPage()" aria-disabled="currentPage === 1">Primera</a>
+                        </li>
+                        <!-- Botón para ir a la página anterior -->
+                        <li class="page-item" [class.disabled]="currentPage === 1">
+                           <a class="page-link fw-bolder text-uppercase" (click)="prevPage()" aria-disabled="currentPage === 1">Anterior</a>
+                        </li>
+                        <!-- Páginas -->
+                        <li class="page-item" [class.active]="page === currentPage" *ngFor="let page of getPaginationArray()">
+                        <a class="page-link" (click)="goToPage(page)">{{ page }}</a>
+                        </li>
+                        <!-- Botón para ir a la página siguiente -->
+                        <li class="page-item" [class.disabled]="currentPage === getTotalPages()">
+                           <a class="page-link fw-bolder text-uppercase" (click)="nextPage()" aria-disabled="currentPage === getTotalPages()">Siguiente</a>
+                        </li>
+                        <!-- Botón para ir a la última página -->
+                        <li class="page-item" [class.disabled]="currentPage === getTotalPages()">
+                           <a class="page-link fw-bolder text-uppercase" (click)="goToLastPage()" aria-disabled="currentPage === getTotalPages()">Última</a>
+                        </li>
+                        <!-- Selector de productos por página -->
+                        <li class="page-item">
+                           <select class="form-select" [(ngModel)]="itemsPerPage" (change)="onItemsPerPageChange($event)">
+                           <option *ngFor="let option of itemsPerPageOptions" [value]="option">{{ option }} por página</option>
+                           </select>
+                        </li>
+                     </ul>
+                  </nav>
+               </div>
+               <!-- <hr> -->
+            </ng-container>
+         </main>
+      </div>
+   </div>
+   <!--Spinner-->
+   <ng-template #loadingTpl>
+      <div class="progress">
+         <div class="indeterminate"></div>
+         sty
+      </div>
+   </ng-template>
+   <!-- s -->
+   <!-- <p-sidebar [(visible)]="sidebarVisible" [style]="{ 'width': anchoSidebar }"> -->
+   <!-- <app-filters-products [product]="products" ></app-filters-products> -->
+   <!-- <app-filters-products
       [isSmallScreen]="isSmallScreen"
-      [product]="products"
-      [sidebarVisible]="sidebarVisible"
-      [anchoSidebar]="anchoSidebar"
-      [productosFiltrados]="productosFiltrados"
-    ></app-filters-products>
-  </div>
-
-
-<main class="col-lg-9">
-<ng-container *ngIf="!(loading$ | async); else loadingTpl">
-
-<!-- ========= content items ========= -->
-
-
-<div class="row justify-content-center ">
-<div class="row ">
-
-
-  
-  
-    <ng-container *ngIf="isLoaded">
+      [products]="products"
       
-        <div class="items"  *ngFor="let product of getPagedData() | filter: SearchEmpresa:'empresa'  |  sort: [SortbyParam, SortDirection]" class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-6 ">
-         
-          <app-product-card
-          *ngIf="view === 'grid'|| isSmallScreen"
-          [product]="product"
-          [compareList]="compareList">
-        </app-product-card>
-      </div>
-      
+      ></app-filters-products> -->
+   <!-- </p-sidebar> -->
+   <!-- Botón para activar el sidebar en dispositivos móviles -->
+   <!-- <button class="mobile-filters-button p-button p-button-raised" (click)="sidebarVisible = true;sidebar()">
+      <i class="pi pi-filter"></i> Filtros
+      </button> -->
+   <!--         <jw-modal id='custom-modal-3' >
+      <app-form-queplan>  <button type="button" class="btn" (click)="closeModa('custom-modal-3')">Cerrar</button>
+      </app-form-queplan>
+      </jw-modal> -->
+</section>
+<!--       <div class="card flex justify-content-center">
+   <p-button (click)="showDialog()" icon="pi pi-external-link" label="Show"></p-button>
+   <p-dialog header="Header" [(visible)]="visible" [style]="{ width: '50vw' }">
+       <div class="flex py-2 justify-content-center">
+         <body class="theme" >
+           <app-form-quote></app-form-quote>
        
-      
-      
+           
+           <p-dropdown appendTo="body" [options]="cities" [(ngModel)]="selectedCity" placeholder="Select a City" optionLabel="name"></p-dropdown>
+       </div>
+   </p-dialog>
+   </div>
+   -->
+<ng-container *ngIf='compareProdList().length >= 1 show' >
+   <div id="mybutton" >
+      <button class="feedback" mat-raised-button color="primary"
+         matBadge matBadgePosition="after" matBadgeColor="accent" >
+         <app-carrito-compara ></app-carrito-compara>
+         <span class="close" (click)="vaciarCompareProdList()" style="position: absolute; top: 5px; right: 5px; font-size: 20px; ">x</span>
+      </button>
+   </div>
+</ng-container>
 
-  
-      <div class="items" *ngFor="let product of getPagedData() | filter: SearchEmpresa:'empresa'  |  sort: [SortbyParam, SortDirection]" >
-      <app-product-land 
-      *ngIf="view === 'list' && !isSmallScreen"
-      [product]="product"
-      [compareList]="compareList">
-      ></app-product-land>
-
-      </div>  
-		
-    </ng-container>
-
-    <div *ngFor="let product of products"  class="col-lg-4 col-md-6 col-sm-6 ">
-      <div class="custom-skeleton p-4" *ngIf="!isLoaded" >
-        <div class="flex mb-3">
-          <p-skeleton shape="circle" size="4rem" styleClass="mr-2"></p-skeleton>
-          <div>
-            <p-skeleton width="10rem" styleClass="mb-2"></p-skeleton>
-            <p-skeleton width="5rem" styleClass="mb-2"></p-skeleton>
-            <p-skeleton height=".5rem"></p-skeleton>
-          </div>
-        </div>
-        <p-skeleton width="100%" height="150px"></p-skeleton>
-        <div class="flex justify-content-between mt-3">
-          <p-skeleton width="4rem" height="2rem"></p-skeleton>
-          <p-skeleton width="4rem" height="2rem"></p-skeleton>
-        </div>
-      </div>          </div>
-  </div>  
-
-    
- 
- 
-
-  </div>
-
-  <div >
- 
-
-
-			<!-- Paginación -->
-			<nav class="pt-4" aria-label="Page navigation">
-				<ul class="pagination justify-content-center">
-					<li class="page-item" [class.disabled]="currentPage === 1">
-						<a class="page-link fw-bolder text-uppercase" (click)="prevPage()" aria-disabled="currentPage === 1"
-							>Anterior</a
-						>
-					</li>
-					<li class="page-item" [class.active]="page === currentPage" *ngFor="let page of getPaginationArray()">
-						<a class="page-link" (click)="goToPage(page)">{{ page }}</a>
-					</li>
-					<li class="page-item" [class.disabled]="currentPage === getTotalPages()">
-						<a
-							class="page-link fw-bolder text-uppercase"
-							(click)="nextPage()"
-							aria-disabled="currentPage === getTotalPages()"
-							>Siguiente</a
-						>
-					</li>
-				</ul>
-			</nav>
-
-    </div>
-    <!-- <hr> -->
-  </ng-container>
-    </main>
-    </div> 
-
-
-</div>
-
-
-
-     <!--Spinner-->
-<ng-template #loadingTpl>
-  <div class="progress">
-    <div class="indeterminate"></div>sty
-  </div>
-</ng-template>
-
-<!-- s -->
-
-<!-- <p-sidebar [(visible)]="sidebarVisible" [style]="{ 'width': anchoSidebar }"> -->
-  
-    <!-- <app-filters-products [product]="products" ></app-filters-products> -->
-    <!-- <app-filters-products
-    [isSmallScreen]="isSmallScreen"
-    [products]="products"
-  
-  ></app-filters-products> -->
-
-<!-- </p-sidebar> -->
-<!-- Botón para activar el sidebar en dispositivos móviles -->
-<button class="mobile-filters-button p-button p-button-raised" (click)="sidebarVisible = true;sidebar()">
-<i class="pi pi-filter"></i> Filtros
-</button>
-
-
-
-<!--         <jw-modal id='custom-modal-3' >
-          <app-form-queplan>  <button type="button" class="btn" (click)="closeModa('custom-modal-3')">Cerrar</button>
-          </app-form-queplan>
-          </jw-modal> -->
-        </section>
-  <!--       <div class="card flex justify-content-center">
-          <p-button (click)="showDialog()" icon="pi pi-external-link" label="Show"></p-button>
-          <p-dialog header="Header" [(visible)]="visible" [style]="{ width: '50vw' }">
-              <div class="flex py-2 justify-content-center">
-                <body class="theme" >
-                  <app-form-quote></app-form-quote>
-              
-                  
-                  <p-dropdown appendTo="body" [options]="cities" [(ngModel)]="selectedCity" placeholder="Select a City" optionLabel="name"></p-dropdown>
-              </div>
-          </p-dialog>
-      </div>
- -->
-
-<ng-container *ngIf='compareProdList().length >= 1 show' >  
-
-  <div id="mybutton" >
-
-    <button class="feedback" mat-raised-button color="primary"
-    matBadge matBadgePosition="after" matBadgeColor="accent" >
-    <app-carrito-compara ></app-carrito-compara>   <span class="close" (click)="vaciarCompareProdList()" style="position: absolute; top: 5px; right: 5px; font-size: 20px; ">x</span>
-
-  </button>
-
-    </div>
-  </ng-container>

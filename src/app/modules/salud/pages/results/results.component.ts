@@ -14,7 +14,9 @@ import {
   AfterViewInit,
   AfterContentChecked,
   SimpleChanges,
-  OnChanges
+  OnChanges,
+  computed,
+  OnDestroy
 } from "@angular/core";
 import { Observable, forkJoin } from "rxjs";
 import { map, pairwise, filter, throttleTime } from "rxjs/operators";
@@ -27,7 +29,7 @@ import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
 import * as clinicas from "../../../../data/constants/mock/clinicas.json";
 import { HttpClient } from "@angular/common/http";
 import { SERVER_URL } from "../../../../constants";
-import { ItemsService } from "../../../../services/items.service";
+import { ItemsService } from '../../../../shared/item/items.service';
 import { SelectItem } from "primeng/api"; // Import SelectItem from PrimeNG
 import { Empresa } from "../../../../data/interfaces/empresas";
 import { MultiSelectModule } from 'primeng/multiselect';
@@ -79,7 +81,10 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSelectModule} from '@angular/material/select';
-
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { ResponsiveService } from "../../../../services/responsive.service";
+import { FormularioComponent } from "./../../components/atoms/formulario/formulario.component";
 declare var addProp: any;
 declare var desectItem: any;
 declare var showandHide: any;
@@ -90,47 +95,52 @@ interface ResponseData {
   planes: any[]; // Aquí debes definir el tipo correcto de los datos de planes
 }
 
+interface AutoCompleteCompleteEvent {
+  originalEvent: Event;
+  query: string;
+}
 @Component({
     selector: "app-results",
     templateUrl: "./results.component.html",
-    styleUrls: ["./results.component.css"],
+    styleUrls: ["./results.component.scss"],
     changeDetection: ChangeDetectionStrategy.Default,
     imports: [
-        BannerListComponent,
-        SearchFormComponent,
-        ButtonModule,
-        RippleModule,
-        FiltersProductsComponent,
-        NgIf,
-        NgFor,
-        ProductLandComponent,
-        SkeletonModule,
-        AsyncPipe,
-        FilterPipe,
-        SortPipe,
-        ProductCardComponent,
-        MatPaginatorModule,
-        // JsonPipe,
-        MatSlideToggleModule,
-        FormsModule,
-        MatInputModule,
-        MatFormFieldModule,
-        MatSidenavModule,
-        MatDialogModule,
-        // ComparaItemComponent,
-        DialogModule,
-        // ComparaAttributesComponent,
-        CarritoComparaComponent,
-        MatBadgeModule,
-        MultiSelectModule,
-        ReactiveFormsModule,
-        MatIconModule,
-        MatButtonToggleModule,
-        MatSelectModule,
-        CommonModule
-    ]
+    BannerListComponent,
+    SearchFormComponent,
+    ButtonModule,
+    RippleModule,
+    FiltersProductsComponent,
+    NgIf,
+    NgFor,
+    ProductLandComponent,
+    SkeletonModule,
+    AsyncPipe,
+    FilterPipe,
+    SortPipe,
+    ProductCardComponent,
+    MatPaginatorModule,
+    // JsonPipe,
+    MatSlideToggleModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSidenavModule,
+    MatDialogModule,
+    // ComparaItemComponent,
+    DialogModule,
+    // ComparaAttributesComponent,
+    CarritoComparaComponent,
+    MatBadgeModule,
+    MultiSelectModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatButtonToggleModule,
+    MatSelectModule,
+    CommonModule,
+    AutoCompleteModule
+]
 })
-export class ResultsComponent implements OnInit, OnChanges {
+export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
   @ViewChild(ListViewComponent) list: any;
   view: string = "list";
  
@@ -142,10 +152,9 @@ export class ResultsComponent implements OnInit, OnChanges {
   @ViewChild("scroller") scroller!: CdkVirtualScrollViewport;
   itemsPerPage = 9; // Número de elementos por página
   currentPage = 1; // Página actual, inicializada en 1
-
-
-
-
+  totalItems: number;
+  itemsPerPageOptions: number[] = [10, 20, 30, 50, 100]; // Opciones para productos por página
+  
   public productList: any;
   public filterCategory: any;
   [x: string]: any;
@@ -206,11 +215,23 @@ export class ResultsComponent implements OnInit, OnChanges {
   formDataInicialJSON: any[];
   anchoSidebar = "80%"; // Ancho por defecto del sidebar
   isSmallScreen: boolean = false; // Default value
+  isMediumScreen: boolean = false;
+  isLargeScreen: boolean = false;
   clinicasPorRegiones: any[];
   // data constants
   public credits: Credit[] = CREDIT_DATA_ITEMS;
   listaComparar = this.compareProdList()
   cadena: any
+  selectedItems: any[] | undefined;
+
+  items: any[] | undefined;
+ 
+previousSelectedItems: any[] = [];
+
+  
+
+
+
   definirLength(){
 if(this.productosFiltrados){
 this.cadena = this.productosFiltrados.length
@@ -237,6 +258,7 @@ return this.cadena
     private localStorageService: LocalStorageService,
     private renderer: Renderer2,
     private breakpointObserver: BreakpointObserver,
+    private responsiveService: ResponsiveService
   ) // @Inject(MAT_DIALOG_DATA) public data: DialogData
   {
     this.formDataInicial = this.crearFormularioInicial();
@@ -244,7 +266,41 @@ return this.cadena
   }
   ngAfterContentChecked(): void {
     this.cdr.detectChanges();
- }  
+ } 
+
+   themeSelectorMode = computed(() => {
+    if(this.responsiveService.isLarge) {
+      // console.log(' 271 themeSelectorMode isLarge ',this.responsiveService.isLarge)
+      return true;
+    }
+    // console.log(' 274  themeSelectorMode isLarge ',this.responsiveService.isLarge)
+
+    return false;;
+  }) 
+
+
+// Función que actualiza isSmallScreen según el estado de la pantalla
+componentSelectorMode(breakpoints: { [key: string]: boolean }) {
+  // Asignamos los valores de los breakpoints a variables locales
+  const smallScreen = breakpoints['(max-width: 480px)'] ?? false;
+  const mediumScreen = breakpoints['(min-width: 481px) and (max-width: 992px)'] ?? false;
+  const largeScreen = breakpoints['(min-width: 993px)'] ?? false;
+
+  // También podrías hacer algo cuando se actualice, por ejemplo:
+  if (smallScreen) {
+    // console.log(' 289  La pantalla es Small.', smallScreen);
+    this.isSmallScreen = true;
+  } else if (mediumScreen) {
+    // console.log(' 292 La pantalla es Medium.', mediumScreen);
+    this.isSmallScreen = true;
+  } else if (largeScreen) {
+    // console.log(' 295  La pantalla es Large.', largeScreen);
+    this.isSmallScreen = false;
+  }
+}
+
+  
+
      // Ejemplo de cómo acceder al formulario desde otro componente
   
      SortbyParamControl = new FormControl(this.SortbyParam);
@@ -307,41 +363,43 @@ actualizarLista() {
   this.compararService.updateList(resultado);
 }
   compareProdList() {
-    // console.log(" results 261 this.products:");
+    // console.log(" results 364 this.products:");
     // console.log(this.products);
 
     if (this.products.resultado) {
       this.products = this.products.resultado;
-      // console.log("results 261  this.products.resultado:", this.products);
+      // console.log("results 369  this.products.resultado:", this.products);
     }
 
-    // console.log("results 268 this.servicioComparar.compareList");
+    // console.log("results 372 this.servicioComparar.compareList");
     // console.log( this.servicioComparar.compareList);
     this.compareLength = this.products.filter(
       (p: { compare: any }) => p.compare
     ).length;
     this.compareList = this.products.filter((p: { compare: any }) => p.compare);
-    // console.log("results 275 this.compareList");
+    // console.log("results 378 this.compareList");
     // console.log(this.compareList);
 
     var planesSel = this.products.filter((p) => p.compare);
-    // console.log("results 275 this.servicioComparar.compareList");
+    // console.log("results 382 this.servicioComparar.compareList");
 
     this.servicioComparar.compareList = this.products.filter(
       (p: { compare: any }) => p.compare
     );
-    // console.log('results 280 this.servicioComparar.compareList')
+  // console.log('results 387 this.servicioComparar.compareList')
 
     // console.log(this.servicioComparar.compareList)
-    // console.log('results 288 this.compareProdClinicas(this.servicioComparar.compareList)')
+    // console.log('results 390 this.compareProdClinicas(this.servicioComparar.compareList)')
 
     // console.log(this.compareProdClinicas(this.servicioComparar.compareList))
     
     return this.servicioComparar.compareList;
   }
+
+
   compareCliListVal() {
     var clinicasGrilla = this.compareProdClinicas(this.compareProdList());
-    // // console.log(clinicasGrilla)
+    // console.log(clinicasGrilla)
     return clinicasGrilla;
   }
 
@@ -361,8 +419,8 @@ actualizarLista() {
   compareProdClinicas(products: any[]) {
     var clinicas = [];
     let itemSelected = products;
-    // // console.log(products)
-    // // console.log(clinicas)
+    // console.log(products)
+    // console.log(clinicas)
 
     itemSelected.forEach((product: { clinicas: any[] }) => {
       product.clinicas.forEach((clinic) => {
@@ -377,24 +435,24 @@ actualizarLista() {
       });
     });
     var data = [];
-    // // console.log(clinicas)
+    // console.log(clinicas)
     for (let x in clinicas) {
       clinicas[x].valida = [];
       clinicas[x].planesSeleccionados = [];
       clinicas[x].cliPased = [];
-      // // console.log(clinicas)
+      // console.log(clinicas)
 
       for (let i = 0; i < products.length; i++) {
         var obj = {};
         clinicas[x].planesSeleccionados.push(products[i].name);
-        // // console.log(products[i].name)
+        // console.log(products[i].name)
       }
       obj["nombre"] = clinicas[x].entity;
       obj["barrio"] = clinicas[x].ubicacion.barrio;
       for (let i = 0; i < products.length; i++) {
         let id = products[i].item_id;
         if (clinicas[x].cartillas.includes(id) == true) {
-          // // console.log(clinicas[x].cliPased)
+          // console.log(clinicas[x].cliPased)
 
           obj[products[i].item_id] = "ok";
           clinicas[x].cliPased.push(obj);
@@ -408,7 +466,7 @@ actualizarLista() {
       clinicas[x].cliPased = obj;
 
       data.push(obj);
-      // // console.log(data)
+      // console.log(data)
     }
     var planesElegidos = [];
     for (let n in clinicas) {
@@ -444,13 +502,13 @@ actualizarLista() {
     let clinicasSurPased = clSur.map((planes) => planes.cliPased);
     let clinicasLaPlataPased = clLaPlata.map((planes) => planes.cliPased);
 
-    // // console.log(clinicasCabaPased);
-    // // console.log(clinicasNortePased);
-    // // console.log(clinicasOestePased);
-    // // console.log(clinicasSurPased);
-    // // console.log(clinicasLaPlataPased);
+    // console.log(clinicasCabaPased);
+    // console.log(clinicasNortePased);
+    // console.log(clinicasOestePased);
+    // console.log(clinicasSurPased);
+    // console.log(clinicasLaPlataPased);
 
-    // // console.log(clinicasCaba);
+    // console.log(clinicasCaba);
     return [
       clinicasCabaPased,
       clinicasNortePased,
@@ -473,9 +531,9 @@ actualizarLista() {
   }
 
   sidebar() {
-    // console.log("apreto el boton filtros sidebarVisible", this.sidebarVisible);
-    // console.log("apreto el boton filtros anchoSidebar ", this.anchoSidebar);
-    // console.log("apreto el boton filtros isSmallScreen ", this.isSmallScreen);
+    // console.log("532 apreto el boton filtros sidebarVisible", this.sidebarVisible);
+    // console.log("533 apreto el boton filtros anchoSidebar ", this.anchoSidebar);
+    // console.log("534 apreto el boton filtros isSmallScreen ", this.isSmallScreen);
   }
   toggleBadgeVisibility() {
     this.hidden = !this.hidden;
@@ -499,7 +557,7 @@ actualizarLista() {
       delete producto.compare;
     });
     
-    console.log('Lista actualizada sin la propiedad "compare":', lista);
+    // console.log(' 558  Lista actualizada sin la propiedad "compare":', lista);
     return lista;
   }
   hideButton() {
@@ -508,159 +566,197 @@ actualizarLista() {
     container.classList.add("hide");
   }
 
-  onItemSelect(selectedClinica: any) {
-    // // console.log('onItemSelect', selectedClinica);
-    //  // // console.log(this.tempArrayShow);
-    //  // // console.log(this.tempArrayHide);
+ onItemSelect(selectedClinica: any){
+  console.log(' 568  onItemSelect', selectedClinica);
+   console.log(this.tempArrayShow);
+   console.log(this.tempArrayHide);
+  
+   console.log(' 572   Selected item:', selectedClinica);
 
-    let newArray = [];
-// console.log('this.productosFiltrados 1')
-    this.productosFiltrados = this.products;
 
-    // // console.log(this.products)
-    var seleccion = this.selectedClinica;
-    for (let i = 0; i < seleccion.length; i++) {
-      // // console.log(seleccion[i])
+  let newArray = [];
+  
+
+  this.productosFiltrados = this.products;
+
+console.log(this.products)
+  var seleccion = selectedClinica
+  console.log(" 582 this.selectedClinica :",selectedClinica)
+  console.log(" 583 seleccion :",seleccion)
+  for( let i=0;i<seleccion.length;i++){
+    console.log(" 585  seleccion[i] ",seleccion[i])
+  }
+  var planes = this.productosFiltrados;
+  this.showandHide = this.productosFiltrados;
+// planes = this.tempArrayHide.concat(this.tempArrayShow);
+  var clinicas_seleccionadas = seleccion.map(function (selectas, index, array) {
+    return selectas.nombre; 
+});
+if ( seleccion.length === 0 ){
+  for (let j in planes  ){
+    this.productosFiltrados[j].validacionclinica = 'show'
+  }
+ 
+
+} else {
+for (let j in planes  ) {
+  var clinicas = planes[j].clinicas 
+var clinicas_del_plan = clinicas.map(function (clinicas_list: { nombre: any; }, index: any, array: any) {
+  return clinicas_list.nombre; 
+});
+var validation = 0
+clinicas_seleccionadas.forEach( item => { 
+  if (clinicas_del_plan.includes(item) == true){
+    validation = validation + 1 ;
+  }
+})
+if ( validation == clinicas_seleccionadas.length){
+  planes[j].validacionclinica = 'show'
+}else {
+  planes[j].validacionclinica = 'hide'
+}};
+}
+
+// console.log(planes)
+this.tempArrayHide  = planes.filter((e:any)=> e.validacionclinica != "show");
+this.tempArrayShow  = planes.filter((e:any)=> e.validacionclinica == "show");
+console.log(" 621  this.tempArrayShow  :",  this.tempArrayShow)
+console.log(" 622  this.tempArrayHide  :",this.tempArrayHide)
+this.productosFiltrados = this.tempArrayShow;
+console.log('624 this.actualizarProductos(this.productosFiltrados :',this.productosFiltrados)
+this.actualizarProductos(this.productosFiltrados)
+
+this.newArray = this.tempArrayShow.concat(this.tempArrayHide);
+this.productoService.activarFuncionEnComponenteB();
+
+
+}   
+
+  // FILTRO DE CLINICAS
+
+  // funcion search - buscar clinica
+  search(event: AutoCompleteCompleteEvent) {
+    console.log(" 636   Buscando clínicas con:", event.query);
+    
+    if (!this.clinicas || this.clinicas.length === 0) {
+      this.items = [];
+      return;
     }
-    // console.log('this.productosFiltrados 2')
+  
+    this.items = this.clinicas
+      .filter((clinic: any) => clinic && clinic.nombre && typeof clinic.nombre === 'string') // Validamos `clinic` y `nombre`
+      .filter((clinic: any) => clinic.nombre.toLowerCase().includes(event.query.toLowerCase()));
+  
+    // console.log(" 647 Resultados filtrados:", this.items);
+  }
+    // funcion actiualizar listadod e clinicas
 
-    var planes = this.productosFiltrados;
-    // console.log('this.productosFiltrados 3')
+  onSelectedItemsChange(event: any) {
+    console.log(' 652   Selected items changed:', event);
+    console.log(" 653 this.selectedItems antes ", this.selectedItems);
+    this.selectedItems = event;
+this.onItemSelect(this.selectedClinica)
+const previousSelectedItemslength = this.previousSelectedItems.length;
+const selectedItemslength = this.selectedItems.length; // Fix the typo here
 
-    this.showandHide = this.productosFiltrados;
-    // planes = this.tempArrayHide.concat(this.tempArrayShow);
-    var clinicas_seleccionadas = seleccion.map(function (
-      selectas,
-      index,
-      array
-    ) {
-      return selectas.nombre;
-    });
-    if (seleccion.length === 0) {
-      for (let j in planes) {
-        // console.log('this.productosFiltrados 4')
-
-        this.productosFiltrados[j].validacionclinica = "show";
-      }
-    } else {
-      for (let j in planes) {
-        var clinicas = planes[j].clinicas;
-        var clinicas_del_plan = clinicas.map(function (
-          clinicas_list,
-          index,
-          array
-        ) {
-          return clinicas_list.nombre;
-        });
-        var validation = 0;
-        clinicas_seleccionadas.forEach((item) => {
-          if (clinicas_del_plan.includes(item) == true) {
-            validation = validation + 1;
-          }
-        });
-        if (validation == clinicas_seleccionadas.length) {
-          planes[j].validacionclinica = "show";
-        } else {
-          planes[j].validacionclinica = "hide";
-        }
-      }
-    }
-
-    // // console.log(planes)
-    this.tempArrayHide = planes.filter(
-      (e: any) => e.validacionclinica != "show"
-    );
-    this.tempArrayShow = planes.filter(
-      (e: any) => e.validacionclinica == "show"
-    );
-    // // console.log(this.tempArrayShow)
-    // // console.log(this.tempArrayHide)
-    // console.log('this.productosFiltrados 5')
-
-    this.productosFiltrados = this.tempArrayShow;
-    // console.log('this.productosFiltrados 6')
-
-    this.actualizarProductos(this.productosFiltrados);
-
-    this.newArray = this.tempArrayShow.concat(this.tempArrayHide);
-    this.productoService.activarFuncionEnComponenteB();
+console.log(" 659 previousSelectedItems-length  :", previousSelectedItemslength);
+console.log(" 660 selectedItems-length  :", selectedItemslength)
+  
+if(this.previousSelectedItems.length > this.selectedItems.length){
+  // Determine removed items
+  const removedItems = this.previousSelectedItems.filter(item => !this.selectedItems.includes(item));
+    
+  console.log(' 666   Removed items:', removedItems);
+  this.onItemDeSelect(removedItems)
+  // Update the previous state
+    // Update the previous state
+    this.previousSelectedItems = this.selectedItems.slice();
+    console.log('671  this.previousSelectedItems:',this.previousSelectedItems)
+    }else if( this.previousSelectedItems.length < this.selectedItems.length ){
+        
+      const addedItems = this.selectedItems.filter(item => !this.previousSelectedItems.includes(item));
+      console.log(" 674 addedItems  :", addedItems)
+      this.previousSelectedItems = this.selectedItems;
+    this.onItemSelect(this.selectedClinica)
+    // Add your specific logic here
+  }
   }
 
-  onItemDeSelect(item: any) {
-    // // console.log('onItemSelect', item);
-    //  // // console.log(this.tempArrayShow);
-    //  // // console.log(this.tempArrayHide);
-
+  
+  onItemDeSelect(item: any[]){
+    console.log(' 683   onItemDeSelect', item)
+    //  // console.log(this.tempArrayShow);
+    //  // console.log(this.tempArrayHide);
+    
+   
+  
     let newArray = [];
-    // console.log('this.productosFiltrados 7')
-
+    
+  
     this.productosFiltrados = this.productosFiltrados;
+  
+  // console.log(this.products)
+  var seleccion = this.selectedClinica
+  console.log('696 seleccion.length  ',seleccion.length)
 
-    // // console.log(this.products)
-    var seleccion = this.selectedClinica;
-    for (let i = 0; i < seleccion.length; i++) {
-      // // console.log(seleccion[i])
-    }
-    // console.log('this.productosFiltrados 8')
+    // for( let i=0;i<seleccion.length;i++){
+    //   console.log(' 698   seleccion.length   :')
+    //   console.log(seleccion.length)
 
+    //   console.log(' 701    seleccion[i]   :')
+    //   console.log(seleccion[i])
+    // }
     var planes = this.productosFiltrados;
-    // console.log('this.productosFiltrados 9')
-
     this.showandHide = this.productosFiltrados;
-    // planes = this.tempArrayHide.concat(this.tempArrayShow);
-    var clinicas_seleccionadas = seleccion.map(function (
-      selectas,
-      index,
-      array
-    ) {
-      return selectas.nombre;
-    });
-    if ((seleccion.length = 0)) {
-      for (let j in planes) {
-        // console.log('this.productosFiltrados[j].validacionclinica = "show";')
-        this.productosFiltrados[j].validacionclinica = "show";
-      }
-    } else {
-      for (let j in planes) {
-        var clinicas = planes[j].clinicas;
-        var clinicas_del_plan = clinicas.map(function (
-          clinicas_list,
-          index,
-          array
-        ) {
-          return clinicas_list.entity;
-        });
-        var validation = 0;
-        clinicas_seleccionadas.forEach((item) => {
-          if (clinicas_del_plan.includes(item) == true) {
-            validation = validation + 1;
-          }
-        });
-        if (validation == clinicas_seleccionadas.length) {
-          planes[j].validacionclinica = "show";
-        } else {
-          planes[j].validacionclinica = "hide";
-        }
-      }
+  // planes = this.tempArrayHide.concat(this.tempArrayShow);
+    var clinicas_seleccionadas = seleccion.map(function (selectas: { nombre: any; }, index: any, array: any) {
+     console.log(' 708    selectas.nombre  ',selectas.nombre)
+      return selectas.nombre; 
+  });
+  if ( seleccion.length === 0 ){
+    for (let j in planes  ){
+      this.productosFiltrados[j].validacionclinica = 'show'
     }
-    // // console.log(planes)
-    this.tempArrayHide = planes.filter(
-      (e: any) => e.validacionclinica != "show"
-    );
-    this.tempArrayShow = planes.filter(
-      (e: any) => e.validacionclinica == "show"
-    );
-    // // console.log(this.tempArrayShow)
-    // // console.log(this.tempArrayHide)
-        // console.log('results 619 this.productosFiltrados = this.tempArrayShow;')
-
-    this.productosFiltrados = this.tempArrayShow;
-
-    this.actualizarProductos(this.productosFiltrados);
-
-    this.newArray = this.tempArrayShow.concat(this.tempArrayHide);
-    this.productoService.activarFuncionEnComponenteB();
+   
+  
+  } else {
+  for (let j in planes  ) {
+    let clinicas = planes[j].clinicas 
+  let clinicas_del_plan = clinicas.map(function (clinicas_list: { entity: any; }, index: any, array: any) {
+    return clinicas_list.entity;
+  });
+  let validation = 0
+  clinicas_seleccionadas.forEach( item => { 
+    if (clinicas_del_plan.includes(item) == true){
+      validation = validation + 1 ;
+    }
+  })
+  console.log(' ')
+  if ( validation === clinicas_seleccionadas.length){
+    planes[j].validacionclinica = 'hide'
+  }else {
+    planes[j].validacionclinica = 'show'
+  }};
   }
+  console.log('742 planes   ',planes)
+  this.tempArrayHide  = planes.filter((e:any)=> e.validacionclinica != "show");
+  this.tempArrayShow  = planes.filter((e:any)=> e.validacionclinica == "show");
+  console.log('745 this.tempArrayShow   ',this.tempArrayShow)
+  console.log('746 this.tempArrayHide   ',this.tempArrayHide)
+  this.productosFiltrados = this.tempArrayShow;
+  console.log('749 this.actualizarProductos(this.productosFiltrados :',this.productosFiltrados)
+
+  this.actualizarProductos(this.productosFiltrados)
+  
+  this.newArray = this.tempArrayShow.concat(this.tempArrayHide);
+  this.productoService.activarFuncionEnComponenteB();
+  
+  
+  }   
+
+
+
+
 
   filtrarPorClinicasExistente(
     productosFiltrados: any[],
@@ -701,35 +797,12 @@ actualizarLista() {
     return tempArrayShow;
   }
 
-  openModal(_id: string) {
-    this.modalService.open("custom-modal-2");
-  }
-  onPrint() {
-    window.print();
-  }
-  closeModal(_id: string) {
-    this.modalService.close("custom-modal-2");
-  }
-  openModa(_id: string) {
-    this.modalService.open("custom-modal-3");
-  }
-
-  closeModa(_id: string) {
-    this.modalService.close("custom-modal-3");
-  }
-
-  closeButon() {
-    alert(this.compareList.length);
-  }
-  addtocart(item: any) {
-    this.cartService.addtoCart(item);
-  }
 
 
 
   showComparionSidebar(){
     if(this.compareLength >=1 ){
-      console.log('results 718  this.compareLength');
+      console.log('results 797  this.compareLength');
       console.log(this.compareLength);
 
 
@@ -755,16 +828,17 @@ actualizarLista() {
       this.planes = planes;
       this.empresas = empresas;
     });
-    // // console.log('sidebarVisible  :',this.sidebarVisible)
-    //        consoale.log('anchoSidebar  :',this.anchoSidebar);
-    //        // console.log('isSmallScreen  :',this.isSmallScreen);
+        // Al iniciar el componente, verificamos el estado actual de la pantalla
+      
 
-
- 
-    this.definirLength()
-
-
- 
+        // Nos suscribimos a los cambios del servicio para actualizar isSmallScreen cuando cambien
+        this.responsiveService.screenWidth$.subscribe((state) => {
+          this.cdr.detectChanges(); // Forzar actualización del DOM
+          console.log(' 829     Estado actual de breakpoints:', state.breakpoints);
+          this.componentSelectorMode(state.breakpoints);
+        });
+  
+    
  
 
 
@@ -779,49 +853,49 @@ actualizarLista() {
         if (response) {
           response.json().then((products) => {
             cachedProducts = products;
-            // console.log("Productos obtenidos de la caché:", cachedProducts);
+            // console.log(" 848 Productos obtenidos de la caché:", cachedProducts);
           });
         }
       });
     });
     let formData = this.dataFormularios.getFormularioData();
-    // console.log("formData :", formData);
+    // console.log(" 854 formData :", formData);
     // Lógica para usar datos iniciales o cacheados
     if (!formData && !cachedProducts) {
       this.dataFormularios.setFormularioData(this.formDataInicial.value);
       formData = this.dataFormularios.getFormularioData();
-      // console.log("Usando datos iniciales del formulario : ", formData);
+      // console.log(" 859  Usando datos iniciales del formulario : ", formData);
     } else if (!formData && cachedProducts) {
-      // console.log("results 756 this.productosFiltrados = cachedProducts;");
+      // console.log("results 861 this.productosFiltrados = cachedProducts;");
 
       this.productosFiltrados = cachedProducts;
     }
 
     // Si hay datos del formulario, realiza la solicitud de precios
     if (formData) {
-      // console.log("Datos del formulario disponibles:", formData);
+      // console.log(" 868   Datos del formulario disponibles:", formData);
       this.cotizacionService.getPrecios(formData).subscribe(
         (response: Planes) => {
           const tipo: string = formData.tipo;
           this.products = response;
-          // console.log('this.products 688  :')
+          // console.log('this.products 873  :')
           // console.log(this.products)
 
           setTimeout(() => {
-            // console.log('this.products.resultado 757:')
+            // console.log('this.products.resultado 877:')
             // console.log(this.products )
 
-            // console.log('this.products.resultado  760:' )
+            // console.log('this.products.resultado  880:' )
             // console.log(this.products.resultado )
 
-            // // la propiedad tipo no esta no es una propiedad de los planes , no se porque quice filtrar, es un dato del formulario 
+            // la propiedad tipo no esta no es una propiedad de los planes , no se porque quice filtrar, es un dato del formulario 
             // this.productosFiltrados = this.products.resultado.filter(
             //   (product: { tipo: string }) => product.tipo === tipo
             // );
 
             // Guardar productos filtrados en caché
             caches.open("products").then((cache) => {
-              // console.log("results 785 JSON.stringify(this.productosFiltrados)")
+              // console.log("results 890 JSON.stringify(this.productosFiltrados)")
 
               const productosResponse = new Response(
                 JSON.stringify(this.productosFiltrados)
@@ -829,43 +903,40 @@ actualizarLista() {
               cache
                 .put("productos", productosResponse)
                 .then(() => {
-                  console.log(
-                    "Productos almacenados en caché:",
-                    productosResponse
-                  );
+                  // console.log(" 898 Productos almacenados en caché:", productosResponse);
                 })
                 .catch((cacheError) => {
-                  console.error("Error al almacenar en caché:", cacheError);
+                  // console.error("901 Error al almacenar en caché:", cacheError);
                 });
             });
-// console.log('this.products.resultado 785',this.products.resultado)
+// console.log(' 904   this.products.resultado 785',this.products.resultado)
             // Actualizar la vista con los productos
             this.compareProdList();
             this.onItemSelect(this.selectedClinica);
           }, 0);
         },
         (error: any) => {
-          console.error("Error en la solicitud de precios:", error);
+          // console.error("Error en la solicitud de precios:", error);
         }
       );
     }
 
     // Observadores y configuraciones adicionales
     this.SortbyParamControl.valueChanges.subscribe((selectedValue: string) => {
-      // console.log("Nuevo valor seleccionado:", selectedValue);
+      // console.log(" 918 Nuevo valor seleccionado:", selectedValue);
     });
 
     this.empresa.valueChanges.subscribe((selectedValue: string) => {
-      // console.log("Valor seleccionado de la empresa:", selectedValue);
+      // console.log(" 922 Valor seleccionado de la empresa:", selectedValue);
     });
 
     this.productoService.filteredProducts$.subscribe((filteredProducts) => {
-      // console.log("this.productosFiltrados = filteredProducts;");
+      // console.log(" 926 this.productosFiltrados = filteredProducts;");
       this.productosFiltrados = filteredProducts;
     });
 
     this.productoService.eventoFilterClinicas$.subscribe(() => {
-            // console.log("this.productosFiltrados = filteredProducts;");
+            // console.log(" 931 this.productosFiltrados = filteredProducts;");
 
       this.productosFiltrados = this.filtrarPorClinicasExistente(
         this.productosFiltrados,
@@ -877,11 +948,11 @@ actualizarLista() {
       this.productosFiltrados = productos;
     });
 
-    this.breakpointObserver
-      .observe([Breakpoints.Handset, Breakpoints.Tablet])
-      .subscribe((result) => {
-        this.isSmallScreen = result.matches;
-      });
+    // this.breakpointObserver
+    //   .observe([Breakpoints.Handset, Breakpoints.Tablet])
+    //   .subscribe((result) => {
+    //     this.isSmallScreen = result.matches;
+    //   });
 
     setTimeout(() => {
       this.isLoaded = true;
@@ -892,17 +963,17 @@ actualizarLista() {
     }
     this.SortbyParamControl.valueChanges.subscribe((selectedValue: string) => {
       // Realiza acciones basadas en el valor seleccionado
-      // console.log('Nuevo valor seleccionado:', selectedValue);
+      // console.log(' 958  Nuevo valor seleccionado:', selectedValue);
     });
     this.empresa.valueChanges.subscribe((selectedValue: string) => {
       // Realiza accioNuevones basadas en el valor seleccionado de la empresa
-      // console.log(' valor seleccionado de la empresa:', selectedValue);
+      // console.log(' 962  valor seleccionado de la empresa:', selectedValue);
       // Puedes agregar aquí la lógica para filtrar o realizar otras acciones
     });
     this.productoService.filteredProducts$.subscribe((filteredProducts) => {
       this.productosFiltrados = filteredProducts;
       // Aquí puedes usar los productos filtrados en tu componente
-      // console.log('Productos filtrados:', filteredProducts);
+      // console.log(' 968  Productos filtrados:', filteredProducts);
     });
 
     this.productoService.eventoFilterClinicas$.subscribe(() => {
@@ -916,18 +987,18 @@ actualizarLista() {
       this.productosFiltrados = productos;
       // Realiza cualquier acción que necesites con los datos actualizados.
     });
-    // console.log('this.products.resultado 2',this.products.resultado)
+    // console.log(' 982   this.products.resultado 2',this.products.resultado)
 
     this.compareProdList();
     this.onItemSelect(this.selectedClinica);
 
     
 
-    this.breakpointObserver
-      .observe([Breakpoints.Handset, Breakpoints.Tablet])
-      .subscribe((result) => {
-        this.isSmallScreen = result.matches;
-      });
+    // this.breakpointObserver
+    //   .observe([Breakpoints.Handset, Breakpoints.Tablet])
+    //   .subscribe((result) => {
+    //     this.isSmallScreen = result.matches;
+    //   });
   }
   onEmpresaFilter() {
     // Obtener el valor del FormControl y asignarlo a SearchEmpresa
@@ -941,7 +1012,7 @@ actualizarLista() {
   }
 
   onSelectAll(items: any) {
-    // console.log('onSelectAll', items);
+    // console.log(' 1007 onSelectAll', items);
   }
   toogleShowFilter() {
     this.ShowFilter = !this.ShowFilter;
@@ -962,7 +1033,12 @@ actualizarLista() {
     }
   }
 
-
+  ngOnDestroy(): void {
+    // Nos desuscribimos para evitar fugas de memoria
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 
   onClinicaFilter() {
     this.SearchClinica = "show";
@@ -1089,7 +1165,7 @@ actualizarLista() {
   removeSelectedItem(item: any) {
     this.itemsService.removeSelection(item);
     {
-      // console.log('ok')
+      // console.log(' 1160 ok')
     }
   }
 
@@ -1130,42 +1206,59 @@ actualizarLista() {
     });
   }
 
-  actualizarProductos(nuevosProductos: any): void {
-    // console.log('results 1087 actualizarProductos(nuevosProductos: any): void {')
+  actualizarProductos(nuevosProductos: any[]): void {
+    console.log('results 1209 actualizarProductos(nuevosProductos: any): void {')
+   console.log('nuevosProductos  ',nuevosProductos)
     this.productoService.setProductosFiltrados(nuevosProductos);
   }
 
-  prevPage() {
-		if (this.currentPage === 1) {
-      return
-		} else {	this.currentPage--;
-    
+  // Cambiar el número de productos por página
+  onItemsPerPageChange(event: any) {
+    this.itemsPerPage = event.target.value;
+    this.currentPage = 1; // Volver a la primera página cuando cambia la cantidad
+    console.log(`Productos por página: ${this.itemsPerPage}`);
   }
-	}
 
-	nextPage() {
-		if (this.currentPage < this.getTotalPages()) {
-			this.currentPage++;
-		}
-	}
+  // Ir a la página seleccionada
+  goToPage(page: number) {
+    this.currentPage = page;
+    console.log(`Ir a la página: ${page}`);
+  }
 
-	goToPage(page: number) {
-		if (page >= 1 && page <= this.getTotalPages()) {
-			this.currentPage = page;
-		}
-	}
+  // Ir a la página anterior
+  prevPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
 
+  // Ir a la siguiente página
+  nextPage() {
+    if (this.currentPage < this.getTotalPages()) {
+      this.currentPage++;
+    }
+  }
+
+  // Ir a la primera página
+  goToFirstPage() {
+    this.currentPage = 1;
+  }
+
+  // Ir a la última página
+  goToLastPage() {
+    this.currentPage = this.getTotalPages();
+  }
 	getTotalPages(): number {
     let filteredItems: number
 		if(this.productosFiltrados){
     // Calcular el número total de páginas en función de la cantidad de productos filtrados
-		// console.log('results 1122  const filteredItems = this.productosFiltrados.length;');
+		// console.log('results 1230  const filteredItems = this.productosFiltrados.length;');
     filteredItems = this.productosFiltrados.length; // Cantidad de productos filtrados
-    // console.log('results 1124  return Math.ceil(filteredItems / this.itemsPerPage);');
+    // console.log('results 1232  return Math.ceil(filteredItems / this.itemsPerPage);');
     } else {
-      // console.log('results 1126  const filteredItems = this.productosFiltrados.length;');
+      // console.log('results 1234  const filteredItems = this.productosFiltrados.length;');
     filteredItems = this.products.length; // Cantidad de productos filtrados
-    // console.log('results 1128  return Math.ceil(filteredItems / this.itemsPerPage);');
+    // console.log('results 1236  return Math.ceil(filteredItems / this.itemsPerPage);');
     }
     return Math.ceil(filteredItems / this.itemsPerPage);
 	  }
@@ -1193,7 +1286,7 @@ actualizarLista() {
 	onSortByChange(event: any) {
 		if (event && event.target && event.target.value) {
 			const selectedOption: string = event.target.value;
-			// console.log('selectedOption:', selectedOption);
+			// console.log(' 1264selectedOption:', selectedOption);
 			this.SortbyParam = selectedOption;
 			this.SortbyParam = selectedOption;
 
@@ -1202,7 +1295,7 @@ actualizarLista() {
 
 			// Realiza cualquier acción adicional que necesites aquí, como volver a cargar los datos ordenados.
 		} else { 
-      // console.log('selectedOption: error');
+      // console.log(' 1273 selectedOption: error');
     }
 	}
 

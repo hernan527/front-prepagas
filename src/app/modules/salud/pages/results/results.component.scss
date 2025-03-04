@@ -1,15 +1,106 @@
+// @use './../../../../../assets/scss';
+/* Estilos globales */
+:root {
+    --primary-color: #00a4b2;
+    --secondary-color: #243179;
+    --text-color: #333;
+    --background-color: #f5f5f5;
+    --white: #ffffff;
+  }
+  .row {
+    --bs-gutter-x: 5px; /* Reduce spacing between columns */
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Header Styles */
+  
+  .header-container {
+    width: 100%;
+    background-color: var(--white);
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .header-logo {
+    height: 4.5rem;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    text-indent: -100000px;
+  }
+  
+  .header-bar {
+    height: 0.25rem;
+    background-color: var(--secondary-color);
+  }
+  
+  /* Banner Styles */
+  .banner {
+    position: relative;
+    padding: 2rem 0;
+    background-color: var(--white);
+  }
+  
+  .banner-title {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .banner-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Form Styles */
+  .search-form {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .btn-calculate {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
 .items{
     margin:0px;
-    padding:0px 5px 0px 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+
 
 }
 
 .items .card {
-    // margin-left:5px;
-    // margin-right:5px; 
-    margin-left:5hpx;
-    margin-right:5px; 
+   display: flex;
+   flex-wrap: wrap;
+   gap: 25px;  /* Adjust the gap as needed */
+   margin:0 5px 0 0; 
 }
+
+
 @import'~primeicons/primeicons.css';
 .example-container{
     width:500px;
@@ -20,7 +111,8 @@
     display:flex;
     height:90%;
     align-items:center;
-    justify-content:center
+    justify-content:center,
+   
 }
 .example-sidenav{
     padding:5px
@@ -227,23 +319,13 @@ mat-button-toggle-group{
     background-color:#000;
     color:red
 }
-:host ::ng-deep .custom-ms .p-multiselect-label{
+:host ::ng-deep .myClass .p-multiselect-label{
     width:450px !important
 }
-:host ::ng-deep .custom-ms .div{
+:host ::ng-deep .myClass .div{
     width:450px !important
 }
-.custom-ms .p-chip.p-highlight{
-    white-space:pre-line
-}
-.custom-ms .p-multiselect-chips{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start
-}
-.custom-ms .p-multiselect-token{
-    margin:2px 0
-}
+
 .p-overlay-badge{
     background-color:red;
     color:#fff;
@@ -272,15 +354,34 @@ mat-button-toggle-group{
 .contenedor-grid{
     display:flex;
     flex-wrap:nowrap;
-    gap:20px
+    gap:5px
 }
-.container-compare{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
-    width:100%
-}
+
+@media (min-width: 993px) {
+    .container-compare {
+      max-width: 1200px; /* Ancho máximo para pantallas grandes */
+      margin: 0 auto; /* Centra el contenedor */
+      display:flex;
+      flex-wrap:wrap;
+      gap:5px;
+    }
+  }
+
+  /* Para pantallas grandes */
+@media (min-width: 1200px) {
+    .main-content {
+      width: 0%;
+      margin: 0 auto;
+    }
+  }
+  
+  /* Para pantallas medianas y pequeñas */
+  @media (max-width: 1199px) {
+    .main-content {
+      width: 100%;
+      margin: 0;
+    }
+  }
 .rectangulo{
     width:150px;
     height:80px;
@@ -406,7 +507,7 @@ background: blue;
 }
 .common-view{
     width:100%;
-    max-width:1200px;
+    max-width:992px;
     margin:0 auto;
     display:flex;
     flex-wrap:wrap;
@@ -423,8 +524,21 @@ background: blue;
 }
 .content{
     flex:1;
-    padding:20px
+    padding:20px;
+    column-gap: 5px
 }
+
+/* Estilos para el selector de productos por página */
+.page-item select {
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  /* Espaciado entre los elementos de la paginación */
+  .pagination li {
+    margin-right: 8px;
+  }
 @media(min-width: 768px){
     .filters-sidebar{
         display:block
@@ -436,43 +550,63 @@ background: blue;
     }
 }
 @media(max-width: 767px){
-    :host ::ng-deep .custom-ms .p-multiselect-label,:host ::ng-deep .custom-ms .div{
+    :host ::ng-deep .myClass .p-multiselect-label,:host ::ng-deep .myClass .div{
         width:100% !important
     }
 }
-.custom-ms .p-multiselect-token{
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    max-width:150px;
-    position:relative
-}
-.custom-ms .p-multiselect-token:hover::after{
-    content:attr(title);
-    position:absolute;
-    top:100%;
-    left:0;
-    white-space:normal;
-    background-color:#fff;
-    border:1px solid #ccc;
-    box-shadow:0 2px 4px rgba(0,0,0,.2);
-    padding:5px;
-    z-index:999
-}
-.custom-ms .p-multiselect-panel{
-    max-width:300px
-}
-.custom-ms .p-multiselect-item{
-    max-width:250px;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis
-}
-button{
-    display:block
-}
-@media(max-width: 900px){
-    .custom-hidden-button{
-        display:none
-    }
-}
+::ng-deep .myClass {
+    width: 100%; /* Asegura que el input ocupe todo el ancho */
+    display: flex;
+    align-items: center;
+    padding: 0; /* Elimina cualquier relleno extra */
+    background-color: transparent;
+  }
+  
+  ::ng-deep .myClass input {
+    width: 100%; /* Hace que el input ocupe el 100% */
+    padding: 8px 0; /* Ajuste de espacio para que se vea más estrecho */
+    border: none !important; /* Elimina el borde del input */
+    outline: none !important; /* Elimina el borde de enfoque */
+    background: transparent !important; /* Fondo transparente */
+    font-size: 16px;
+    border-bottom: 2px solid #64b4e5; /* Línea de borde inferior visible */
+    box-sizing: border-box;
+  }
+  
+  /* Cuando el input tiene el foco */
+  ::ng-deep .myClass input:focus {
+    border-bottom: none !important; /* Línea inferior resaltada en foco */
+    box-shadow: none !important; /* Elimina cualquier sombra de enfoque */
+  }
+  
+  /* Para los elementos del panel de autocompletado */
+  ::ng-deep .myClass .p-autocomplete-panel {
+    background-color: transparent !important; /* Fondo transparente en el panel */
+    box-shadow: none !important; /* Elimina cualquier sombra del panel */
+    border-radius: 0 !important; /* Elimina bordes redondeados */
+    border: none !important; /* Elimina cualquier borde */
+  }
+  
+  /* Estilo para las opciones de autocompletado */
+  ::ng-deep .myClass .autocomplete-option {
+    padding: 8px 10px;
+    cursor: pointer;
+    background-color: transparent; /* Opciones sin fondo */
+  }
+  
+  /* Estilo para los chips */
+  ::ng-deep .myClass .custom-chip {
+    background-color: #64b4e5;
+    color: white;
+    border-radius: 16px;
+    padding: 4px 10px;
+    margin: 2px;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  ::ng-deep .myClass .custom-chip i {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  

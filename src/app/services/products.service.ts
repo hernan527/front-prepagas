@@ -130,7 +130,7 @@ interface SearchResult {
    
             this.products =this.cotizacionService.planes
             this.secureProducts =this.cotizacionService.planes
-            console.log(this.products )
+            // console.log(this.products )
        
     }
   setForm(form: FormGroup) {
@@ -209,7 +209,7 @@ interface SearchResult {
      let products = this.products;
     
      for ( let i = 0; i<products.length;i++){
-      console.log(this.products[i].id)
+      // console.log(this.products[i].id)
       let clinicPlan = []
     
       for ( let x in this.clinicas ){
@@ -232,12 +232,12 @@ interface SearchResult {
               next: (planesData) => {
                 this.products = planesData;
                 this.secureProducts = planesData;
-                console.log(this.products);
+                // console.log(this.products);
                 observer.next(this.products); // Emitir los productos una vez que se obtengan
                 observer.complete();
               },
               error: (error) => {
-                console.log(error);
+                // console.log(error);
                 observer.error(error); // Propagar el error si la solicitud no se realiza correctamente
               }    
         });
@@ -247,7 +247,7 @@ interface SearchResult {
         this.products=listadoPlanes // Copia de los productos originales
         const filteredProducts = this.filterLogic(form); // Realiza el filtrado de productos
         this.filteredProductsSubject.next(filteredProducts);
-        console.log('filteredProducts ',filteredProducts)
+        // console.log('filteredProducts ',filteredProducts)
       } 
       
       private filterLogic(form: FormGroup): any[] {        // Obtiene los valores de los filtros del formulario
@@ -278,22 +278,23 @@ interface SearchResult {
             (Sin_Copagos === false || product.Sin_Copagos === true)
           );
         });
-    console.log(filteredProducts)
+    // console.log(filteredProducts)
         return filteredProducts;
       }
    
       activarFuncionEnComponenteB() {
-        console.log('product-service 287');
+        // console.log('product-service 287');
 
         this.eventoFiltering.next();
       }
       applyFiltersDespuesDeOnItemSelect() {
-        console.log('product-service 289');
+        // console.log('product-service 289');
         this.eventoFilterClinicas.next();
       }
 
       setProductosFiltrados(productos: any[]): void {
-        console.log('product-service 293');
+        console.log('product-service 296',productos);
+
         this.productosFiltradosSubject.next(productos);
       }
   // private _search(): Observable<SearchResult> {

@@ -438,27 +438,27 @@ margin: 0 ;
       color:#212529
     }
 
-    .title-insurance[_ngcontent-ng-c1132987951]{
+    .title-insurance {
     font-size:1.125rem;
     font-weight:600;
     text-align:center;
     text-transform:uppercase
 }
 @media only screen and (max-width: 700px){
-    .title-insurance[_ngcontent-ng-c1132987951]{
+    .title-insurance {
         font-size:1rem
     }
 }
-.info-qp4b73876f-insurance[_ngcontent-ng-c1132987951]{
+.info-qp4b73876f-insurance {
     width:100%;
     line-height:1.5
 }
-.info-qp4b73876f-insurance[_ngcontent-ng-c1132987951] .icon[_ngcontent-ng-c1132987951]{
+.info-qp4b73876f-insurance  .icon {
     font-size:1.2rem;
     text-align:center;
     color:var(--color-primary, #40b4e5)
 }
-.nota-insurance[_ngcontent-ng-c1132987951]{
+.nota-insurance {
     font-size:1rem !important;
     background-color:#ff0046;
     border-radius:5px;
@@ -467,7 +467,7 @@ margin: 0 ;
     margin:0rem .2rem;
     color:var(--color-white, #ffffff)
 }
-.font-size-nota[_ngcontent-ng-c1132987951]{
+.font-size-nota {
     font-size:1rem !important
 }
 .prestadores{
@@ -476,21 +476,21 @@ margin: 0 ;
 .ngx-pagination .current{
     background:var(--color-primary, #40b4e5) !important
 }
-.tieneCopago[_ngcontent-ng-c1132987951] i[_ngcontent-ng-c1132987951]{
+.tieneCopago  i {
     color:#5e5
 }
-.best-product[_ngcontent-ng-c1132987951]{
+.best-product {
     border:4px solid #5ecf90
 }
-.best-product[_ngcontent-ng-c1132987951] .margin-best[_ngcontent-ng-c1132987951]{
+.best-product  .margin-best {
     margin-top:35px !important
 }
 @media only screen and (max-width: 768px){
-    .best-product[_ngcontent-ng-c1132987951] .margin-best[_ngcontent-ng-c1132987951]{
+    .best-product  .margin-best {
         margin-top:18px !important
     }
 }
-.best-product[_ngcontent-ng-c1132987951] .span-best[_ngcontent-ng-c1132987951]{
+.best-product  .span-best {
     top:-1px;
     left:-1px;
     height:28px;
@@ -500,32 +500,32 @@ margin: 0 ;
     width:calc(100% + 2px)
 }
 @media only screen and (max-width: 768px){
-    .best-product[_ngcontent-ng-c1132987951] .span-best[_ngcontent-ng-c1132987951]{
+    .best-product  .span-best {
         height:25px;
         text-align:left
     }
 }
-.best-product[_ngcontent-ng-c1132987951] .span-best[_ngcontent-ng-c1132987951] span[_ngcontent-ng-c1132987951]{
+.best-product  .span-best  span {
     font-size:.875rem !important;
     margin-left:8px
 }
-.item-title[_ngcontent-ng-c1132987951]{
+.item-title {
     font-size:.75rem;
     color:var(--color-secondary, #808080)
 }
-.item-value[_ngcontent-ng-c1132987951]{
+.item-value {
     line-height:1.5
 }
-.text-libre-eleccion[_ngcontent-ng-c1132987951]{
+.text-libre-eleccion {
     white-space:break-spaces;
     font-size:.875rem;
     font-weight:500
 }
-.item-title[_ngcontent-ng-c1132987951]{
+.item-title {
     font-size:.75rem !important;
     color:var(--color-secondary, #808080)
 }
-.card-items[_ngcontent-ng-c1132987951] span[_ngcontent-ng-c1132987951]{
+.card-items  span {
     font-size:.875rem;
     font-weight:500;
     overflow:hidden;
