@@ -11,7 +11,7 @@ RUN corepack enable && corepack prepare pnpm@latest --activate
 COPY package.json pnpm-lock.yaml ./
 
 # Install project dependencies
-RUN pnpm ci
+RUN pnpm i
 
 # Copy the rest of the application code
 COPY . .
