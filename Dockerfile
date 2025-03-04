@@ -9,13 +9,13 @@ COPY package*.json ./
 
 
 # Install project dependencies
-RUN npm ci --force
+RUN pnpm ci --force
 
 # Copy the rest of the application code
 COPY . .
 
 # Build the Angular application
-RUN npm run build
+RUN pnpm run build
 
 ### Stage 2: Serve the application with Nginx
 FROM nginx:1.25.3-alpine-slim
