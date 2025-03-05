@@ -144,6 +144,7 @@
                </div>
                <div >
                   <!-- Paginación -->
+                   <ng-container *ngIf="isSmallScreen != true hide">
                   <nav class="pt-4" aria-label="Page navigation">
                      <ul class="pagination justify-content-center">
                         <!-- Botón para ir a la primera página -->
@@ -174,6 +175,8 @@
                         </li>
                      </ul>
                   </nav>
+               </ng-container>
+
                </div>
                <!-- <hr> -->
             </ng-container>

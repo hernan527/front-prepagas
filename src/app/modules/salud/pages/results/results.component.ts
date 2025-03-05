@@ -84,7 +84,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ResponsiveService } from "../../../../services/responsive.service";
-import { FormularioComponent } from "./../../components/atoms/formulario/formulario.component";
+// import { FormularioComponent } from "./../../components/atoms/formulario/formulario.component";
 declare var addProp: any;
 declare var desectItem: any;
 declare var showandHide: any;
@@ -221,6 +221,7 @@ export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
   // data constants
   public credits: Credit[] = CREDIT_DATA_ITEMS;
   listaComparar = this.compareProdList()
+  pagination = 'show';
   cadena: any
   selectedItems: any[] | undefined;
 
@@ -290,6 +291,7 @@ componentSelectorMode(breakpoints: { [key: string]: boolean }) {
   if (smallScreen) {
     // console.log(' 289  La pantalla es Small.', smallScreen);
     this.isSmallScreen = true;
+    this.itemsPerPage = 10000;
   } else if (mediumScreen) {
     // console.log(' 292 La pantalla es Medium.', mediumScreen);
     this.isSmallScreen = true;

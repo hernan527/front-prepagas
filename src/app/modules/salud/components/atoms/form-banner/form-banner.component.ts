@@ -9,7 +9,10 @@ import { DialogModule } from 'primeng/dialog';
     selector: 'app-form-banner',
     templateUrl: './form-banner.component.html',
     styleUrls: ['./form-banner.component.css'],
-    imports: [FormsModule,CommonModule,FormularioComponent,DialogModule]
+    imports: [
+      FormsModule,CommonModule,
+      FormularioComponent,
+      DialogModule]
 })
 export class FormBannerComponent implements OnInit{
   @Input() isSmallScreen = false;
