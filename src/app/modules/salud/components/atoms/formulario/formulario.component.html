@@ -253,68 +253,7 @@
 		 </form>
 
 						 
-<form [formGroup]="formPersonalData"  (ngSubmit)="salvar($event)"  >
-   
 
-	<div class="container container--half-width">
- 
-	  <div class="form-group" formControlName="name" >
-	   <label for="nombre">
-		  Nombre completo
-	   </label>
-	   <input #campoNombre type="text" required>
- 
-	</div>
-   <div class="form-group" formControlName="email" >
-	  <label for="email">
-	   email
-	  </label>
-	  <input type="text"  required>
-   </div>
-   <div class="form-group" formControlName="phone" >
-	  <label for="cellphone">
-	   Celular
-	  </label>
-	  <input type="text" required>
-   </div>
- 
-   <div>          
-	<div class="btn" (click)="selectContactoType('true')" type="button">ver cotizacion</div>
- 
-
- </div>
- </div> 
- 
- 
- <div class="container container--half-width">
-   <div class="form-title" style="margin-bottom:15px">
-	Pronto!
-   </div>
-   <div class="form-group" style="margin-top: 0">
-	<label for="preferred_contact_method">
-	   Como você prefere continuar a sua cotação?
-	  </label>
-	  <div>
-		 <div class="btn-wrapper btn-wrapper--floating btn-wrapper--equal-sizes" name="preferred_contact_method">
-			<button class="btn btn--vertical" (click)="selectContactoType('phone')"><img class="icon" src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--social-chat" alt="ícone de chat" aria-hidden="true">
-			TELÉFONO
-		   </button>
-		   <button class="btn btn--vertical" (click)="selectContactoType('whatsapp')">
-			 <img class="icon" src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--social-whatsapp" alt="ícone de whatsapp" aria-hidden="true">
-			Whatsapp
-		   </button>
-		 </div>
-	  </div>
-	  <div class="error">
-	   <span>
-		  Este campo é requerido.
-	   </span>
-	  </div>
-   </div>
- </div>
- 
- </form>
- 
  
  
  <div class="thankyou-card" *ngIf="selectedContactoType === 'phone' && formularioEnviado === true">
