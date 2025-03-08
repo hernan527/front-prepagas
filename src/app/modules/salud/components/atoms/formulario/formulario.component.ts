@@ -1,23 +1,41 @@
 import { Options } from '@angular-slider/ngx-slider';
 import { DOCUMENT, NgIf } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
-import { Component, OnInit, Input, ElementRef, Renderer2, ViewChild, Inject,HostListener   } from '@angular/core';
-import {FormGroup, FormBuilder, Validators, FormsModule } from '@angular/forms';
+import { Component, inject, OnInit, Input, ElementRef, Renderer2, ViewChild, Inject,HostListener,ChangeDetectionStrategy   } from '@angular/core';
+import {FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ServcioRetornoPrecioService} from './../../../../../services/servcio-retorno-precio.service';
 import { filter } from 'rxjs/operators';
 import { DialogService } from './../../../../../services/dialog.service';
 import { DialogEventService } from './../../../../../services/dialog-event.service';
-import { ReactiveFormsModule } from '@angular/forms';  // Importa ReactiveFormsModule
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.css'],
-  imports: [NgIf, FormsModule, ReactiveFormsModule]
+  imports: [
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDividerModule,
+    MatListModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatStepperModule,
+    MatIconModule
+  ],
+  changeDetection: ChangeDetectionStrategy.Default,
+  
 })
 export class FormularioComponent {
   @ViewChild('campoNombre') campoNombre: ElementRef;
-    checkedmon: boolean;
+  checkedmon: boolean;
   checkedaf: boolean;
   checkedsupras: boolean;
   checkedseg: boolean;
@@ -74,8 +92,25 @@ export class FormularioComponent {
  
  showEdadConyuge: boolean = false;
  showCantidadHijos:boolean = false;
- 
- 
+   // Controlar visibilidad de mat-stepper
+   isStepperVisible: boolean = true;
+
+   // Controlar visibilidad del contenedor que aparece después
+   isCotizacionVisible: boolean = false;
+   // Función para cambiar las visibilidades cuando se hace clic en "ver cotización"
+   verCotizacion() {
+    this.isStepperVisible = false;
+    this.isCotizacionVisible = true;
+  }
+ private _formBuilder = inject(FormBuilder);
+
+ firstFormGroup = this._formBuilder.group({
+   firstCtrl: ['', Validators.required],
+ });
+ secondFormGroup = this._formBuilder.group({
+   secondCtrl: ['', Validators.required],
+ });
+ isLinear = false;
  
   constructor(
    private formBuilder: FormBuilder,
@@ -92,7 +127,9 @@ export class FormularioComponent {
  
    } 
  
- 
+
+
+   
  
    save1(event: any){
      if(this.formCotizar.valid){
@@ -368,7 +405,7 @@ export class FormularioComponent {
      const tipoValue = this.formCotizar.get('tipo').value;
    
      setTimeout(() => {
-       this.router.navigate(['/salud/results']); // Ruta a la siguiente página después de 4 segundos
+       this.router.navigate(['.']); // Ruta a la siguiente página después de 4 segundos
      }, 4000);
    }
    checkValue(value: number) {

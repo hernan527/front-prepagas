@@ -102,6 +102,7 @@
             [productosFiltrados]="productosFiltrados"
             ></app-filters-products>
          </div>
+         
          <main class="col-lg-9  g-2">
             <ng-container *ngIf="!(loading$ | async); else loadingTpl">
                <!-- ========= content items ========= -->
@@ -231,3 +232,11 @@
    </div>
 </ng-container>
 
+
+<p-dialog header="Header" [(visible)]="visible" id="form" styleClass="disable-scroll" [responsive]="true">
+   <div class="flex py-2 justify-content-center">
+       <body class="ui-dialog-content ui-widget-content theme ">
+           <app-formulario></app-formulario>
+       </body>
+   </div>
+</p-dialog>

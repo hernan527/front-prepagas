@@ -84,7 +84,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ResponsiveService } from "../../../../services/responsive.service";
-// import { FormularioComponent } from "./../../components/atoms/formulario/formulario.component";
+import { FormularioComponent } from "./../../components/atoms/formulario/formulario.component";
+import { DialogService } from "src/app/services/dialog.service";
 declare var addProp: any;
 declare var desectItem: any;
 declare var showandHide: any;
@@ -137,7 +138,8 @@ interface AutoCompleteCompleteEvent {
     MatButtonToggleModule,
     MatSelectModule,
     CommonModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    FormularioComponent
 ]
 })
 export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
@@ -224,6 +226,7 @@ export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
   pagination = 'show';
   cadena: any
   selectedItems: any[] | undefined;
+  visible = false;
 
   items: any[] | undefined;
  
@@ -259,8 +262,10 @@ return this.cadena
     private localStorageService: LocalStorageService,
     private renderer: Renderer2,
     private breakpointObserver: BreakpointObserver,
-    private responsiveService: ResponsiveService
-  ) // @Inject(MAT_DIALOG_DATA) public data: DialogData
+    private responsiveService: ResponsiveService,
+    private dialogService: DialogService,
+    
+  ) 
   {
     this.formDataInicial = this.crearFormularioInicial();
     this.buildForm();
@@ -839,7 +844,10 @@ if(this.previousSelectedItems.length > this.selectedItems.length){
           console.log(' 829     Estado actual de breakpoints:', state.breakpoints);
           this.componentSelectorMode(state.breakpoints);
         });
-  
+        this.dialogService.visible$.subscribe((value) => {
+          console.log("Valor actual de visible$: ", value);
+          this.visible = value; // Asigna el valor a una propiedad del componente
+        });
     
  
 

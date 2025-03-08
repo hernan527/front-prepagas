@@ -1,0 +1,13 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px; /* Mantiene la estructura */
+}
+
+.btn--main {
+    width: 100%;
+    max-width: 150px; /* Ajusta según necesites */
+}
