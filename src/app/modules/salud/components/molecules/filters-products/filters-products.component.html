@@ -66,8 +66,7 @@
               [options]="options" 
              >
             </ngx-slider>
-            
-  
+
                     </div> 
           </div>
           </article> 
@@ -82,11 +81,11 @@
       
       <div class="collapse show" id="collapse_aside1">
         <div class="card-body border-bottom">
-          <div>
+          <!-- <div>
 
             <p class="text-muted text-uppercase fs-13 fw-medium mb-2">Odontologia</p>
-            <p-slider [formControl]="slide3Values" (onChange)="onSlide3Change($event)"></p-slider>
-          </div>
+            <p-slider [formControl]="slideOdontoValues" (onChange)="onSlideOdontoChange($event)"></p-slider>
+          </div> -->
           <div>
             <p class="text-muted text-uppercase fs-13 fw-medium mb-2">Beneficio2</p>
             <p-slider [formControl]="slide4Values" (onChange)="onSlide4Change($event)"></p-slider>
@@ -239,6 +238,7 @@
           </header>
           <div class="collapse show" id="collapse_aside2">
             <div class="card-body">
+              <div class="custom-slider">
               <ngx-slider
               [options]="options"
               [formControl]="rangeValues"
@@ -246,7 +246,7 @@
               [showTooltip]="false"
               >
             </ngx-slider>
-              
+          </div>
 
                     </div> 
           </div>
@@ -262,11 +262,20 @@
       
       <div class="collapse show" id="collapse_aside1">
         <div class="card-body border-bottom">
-          <div>
+          <p class="text-muted text-uppercase fs-13 fw-medium mb-2">Odontologia</p>
+          <!-- <label class="form-group-label">
+            {{ this.valOdontoText }}
+          </label>
+            <div class="custom-slider">
+              <ngx-slider
+              [options]="optionsOdonto"
+              [formControl]="slideOdontoValues"
+              (userChangeEnd)="onSlideOdontoChange($event)"
+              [showTooltip]="false"
+              >
+            </ngx-slider>
+          </div> -->
 
-            <p class="text-muted text-uppercase fs-13 fw-medium mb-2">Odontologia</p>
-            <p-slider [formControl]="slide3Values" (onChange)="onSlide3Change($event)"></p-slider>
-          </div>
           <div>
             <p class="text-muted text-uppercase fs-13 fw-medium mb-2">Beneficio2</p>
             <p-slider [formControl]="slide4Values" (onChange)="onSlide4Change($event)"></p-slider>

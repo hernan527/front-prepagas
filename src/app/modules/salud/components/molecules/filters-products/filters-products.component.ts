@@ -45,7 +45,7 @@ export class FiltersProductsComponent implements OnInit  {
   Habitacion_Individual :new FormControl(false),
   Cobertura_Nacional:new FormControl(false),
   Sin_Copagos:new FormControl(false),
-    // Agrega más opciones según sea necesario
+    // Agrega m├ís opciones seg├║n sea necesario
   }
   PMO_Solo_por_Aportes  = this.checkboxOptions['PMO_Solo_por_Aportes'].value;
   Cirugia_Estetica = this.checkboxOptions['Cirugia_Estetica'].value;
@@ -121,7 +121,7 @@ export class FiltersProductsComponent implements OnInit  {
   ngOnChanges(changes: SimpleChanges): void {
     // console.log('filters-product 100 ngOnChanges - Cambios detectados:', changes);
 
-    // Aquí puedes iterar sobre los cambios y trabajar con cada propiedad
+    // Aqu├¡ puedes iterar sobre los cambios y trabajar con cada propiedad
     for (const propName in changes) {
       const change = changes[propName];
       // console.log(`filters-product 105 Propiedad: ${propName}`);
@@ -156,7 +156,7 @@ export class FiltersProductsComponent implements OnInit  {
     });
   // Listen for form control changes
 this.rangeValues.valueChanges.subscribe((newValues) => {
-  // Verificar si newValues es un array y sus elementos son números válidos
+  // Verificar si newValues es un array y sus elementos son n├║meros v├ílidos
   if (Array.isArray(newValues) && newValues.length === 2) {
     const lowValue = Number(newValues[0]);
     const highValue = Number(newValues[1]);
@@ -168,7 +168,7 @@ this.rangeValues.valueChanges.subscribe((newValues) => {
     console.log('FormControl value changed:', newValues);
     console.log('Final values -> lowValue:', validLowValue, ', highValue:', validHighValue);
 
-    // Actualizar el FormControl solo si los valores son válidos
+    // Actualizar el FormControl solo si los valores son v├ílidos
     this.filtrosSeleccionadosGroup.get('priceRange')?.setValue([validLowValue, validHighValue], { emitEvent: false });
 
     // Aplicar los filtros con los valores corregidos
@@ -197,11 +197,11 @@ this.rangeValues.valueChanges.subscribe((newValues) => {
     
     
     this.selectedRating.valueChanges.subscribe((selectedValue: number) => {
-      // console.log('filters-product 155 Valor seleccionado de la calificación:', selectedValue);
+      // console.log('filters-product 155 Valor seleccionado de la calificaci├│n:', selectedValue);
       const selectedArray = [0, 1, 2, 3, 4, 5].slice(0, selectedValue + 1);
       // Registra el cambio en el formulario
       this.filtrosSeleccionadosGroup.get('selectedRating')?.setValue(selectedArray);
-      // Envía el formulario actualizado al servicio
+      // Env├¡a el formulario actualizado al servicio
       this.filterManagerService.setFilterForm(this.filtrosSeleccionadosGroup.value);
       this.filterManagerService.applyFiltersDespuesDeOnItemSelect();
          
@@ -258,10 +258,10 @@ if(!this.highValue){
 
  
        this.slide3Values.valueChanges.subscribe((newValues) => {
-        // console.log('filters-product 192 Valor mínimo de valueSlide3:', newValues);
+        // console.log('filters-product 192 Valor m├¡nimo de valueSlide3:', newValues);
         // Registra los cambios en el formulario
         this.filtrosSeleccionadosGroup.get('valueSlide3')?.setValue(newValues);
-        // Envía el formulario actualizado al servicio
+        // Env├¡a el formulario actualizado al servicio
         this.filterManagerService.setFilterForm(this.filtrosSeleccionadosGroup.value);
         this.filterManagerService.applyFiltersDespuesDeOnItemSelect();
          
@@ -271,10 +271,10 @@ if(!this.highValue){
       });
 
       this.slide4Values.valueChanges.subscribe((newValues) => {
-        // console.log('filters-product 210 Valor mínimo de valueSlide4:', newValues);
+        // console.log('filters-product 210 Valor m├¡nimo de valueSlide4:', newValues);
         // Registra los cambios en el formulario
         this.filtrosSeleccionadosGroup.get('valueSlide4')?.setValue(newValues);
-        // Envía el formulario actualizado al servicio
+        // Env├¡a el formulario actualizado al servicio
         this.filterManagerService.setFilterForm(this.filtrosSeleccionadosGroup.value);
         this.filterManagerService.applyFiltersDespuesDeOnItemSelect();
            
@@ -301,7 +301,7 @@ if(!this.highValue){
         // console.log('filters-product 237 filteredProducts  filters-products 237');
         // console.log(filteredProducts);
 
-        // Aquí puedes usar los productos filtrados en tu componente
+        // Aqu├¡ puedes usar los productos filtrados en tu componente
         // console.log('filters-product 241 Productos filtrados   filters-products 241', filteredProducts);
       });
       this.filterManagerService.eventoFiltering$.subscribe(() => {
@@ -324,7 +324,7 @@ if(!this.highValue){
               // console.log(`c 270 El valor de ${key} ha cambiado a ${newValue}`);
               // Registra el cambio en el formulario
               this.filtrosSeleccionadosGroup.get(key)?.setValue(newValue);
-              // Envía el formulario actualizado al servicio
+              // Env├¡a el formulario actualizado al servicio
               this.filterManagerService.setFilterForm(this.filtrosSeleccionadosGroup.value);
               this.filterManagerService.applyFiltersDespuesDeOnItemSelect()
               // console.log('Esta es la fila filters-product 276 ; ');
@@ -348,11 +348,11 @@ if(!this.highValue){
   
 
   aplicarFiltro() {
-    // Aquí puedes agregar la lógica para aplicar el filtro
+    // Aqu├¡ puedes agregar la l├│gica para aplicar el filtro
     // Por ejemplo, puedes utilizar this.val y this.val2 para filtrar datos
-    // console.log('Se hizo clic en el botón Aplicar filters-product 298');
-    // console.log('Valor mínimo del rango de precios:  filters-product 299', this.rangeValues.value[0]);
-    // console.log('Valor máximo del rango de precios:  filters-product 300', this.rangeValues.value[1]);
+    // console.log('Se hizo clic en el bot├│n Aplicar filters-product 298');
+    // console.log('Valor m├¡nimo del rango de precios:  filters-product 299', this.rangeValues.value[0]);
+    // console.log('Valor m├íximo del rango de precios:  filters-product 300', this.rangeValues.value[1]);
     // console.log('Filtros seleccionados han cambiado: filters-product 301', this.filtrosSeleccionadosGroup.value);
 
 
@@ -391,7 +391,7 @@ if(!this.highValue){
     return Object.keys(this.checkboxOptions);
   }
   enviarFiltros() {
-    // Aquí puedes obtener los filtros seleccionados de filtrosSeleccionadosGroup
+    // Aqu├¡ puedes obtener los filtros seleccionados de filtrosSeleccionadosGroup
     const filtros = this.filtrosSeleccionadosGroup.value;
     
     // Luego, puedes llamar a setFilterForm para actualizar los filtros en el servicio
@@ -429,10 +429,10 @@ if(!this.highValue){
     const checkbox = document.getElementById('subscribe') as HTMLInputElement | null;
 
     if (checkbox != null) {
-      // ✅ Establecer el checkbox como marcado
+      // Γ£à Establecer el checkbox como marcado
       checkbox.checked = true;
 
-      // ✅ Establecer el checkbox como desmarcado
+      // Γ£à Establecer el checkbox como desmarcado
       // checkbox.checked = false;
     }
   }
@@ -450,8 +450,8 @@ if(!this.highValue){
  
 
   applyFilters(form: FormGroup): void {
-    // Llama a la función filterProducts del servicio y pasa el formulario de filtros como argumento
-    const productosOriginales = this.product; // Ajusta esto según cómo obtengas tus productos
+    // Llama a la funci├│n filterProducts del servicio y pasa el formulario de filtros como argumento
+    const productosOriginales = this.product; // Ajusta esto seg├║n c├│mo obtengas tus productos
     
     this.filterManagerService.filterProducts(form,productosOriginales);
     // this.filterManagerService.applyFiltersDespuesDeOnItemSelect();
@@ -473,7 +473,7 @@ if(!this.highValue){
     const precios = productos.map(producto => producto.precio);
     return { min: Math.min(...precios), max: Math.max(...precios) };
   }
-    // Encontrar el precio mínimo y máximo
+    // Encontrar el precio m├¡nimo y m├íximo
 
 
 }
