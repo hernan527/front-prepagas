@@ -251,8 +251,8 @@
 						<!-- <div class="form-text text-extra-small fw-bolder text-uppercase">Aporte Obra Social</div> -->
 						<h5 class="text-muted mb-0"style="font-size:9px" >{{ product.aporteOS }}</h5>
 					</div>
-					<div class="col-6">
-						<span container="body" class="form-text text-extra-small fw-bolder">
+					<div class="col-6"  [triggers]="triggerEvent">
+						<span container="body" class="form-text text-extra-small fw-bolder bs-popover" style="font-size:9px" [popover]="popTemplate" popoverTitle="Dynamic html inside" [triggers]="triggerEvent">
 							<i class="fal icon mr-1 fa-user-md" [ngStyle]="iconStyles"></i> Ambulatoria </span>
 						<!-- <div class="form-text text-extra-small fw-bolder text-uppercase">monto de crédito</div> -->
 						<h5 class="text-muted mb-0"style="font-size:9px" >{{ product.aporteOS }}</h5>
@@ -292,11 +292,11 @@
           
           <h6 class="text-success"><span>{{product.precio}}</span></h6>
 		<div class="form-text text-white text-extra-small fw-bolder text-uppercase pb-3">mensual</div>
-		<button (click)="openDialog(product)" class="btn btn-outline-primary btn-sm mt-2" type="button">Detalles</button>
+		<button (click)="onShowDetail()" class="btn btn-outline-primary btn-sm mt-2" type="button">Detalles</button>
 		<button (click)='toggleCompare()' class="btn btn-outline-primary btn-sm mt-2" type="button"> {{product.compare ? "Remover" : "Comparar"}}
 		</button>
 		  <!-- <button class="btn btn-primary" >Add to cart</button> -->
-	</div> -->
+	</div>
 
 
 

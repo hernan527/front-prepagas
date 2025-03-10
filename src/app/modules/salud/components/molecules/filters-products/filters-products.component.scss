@@ -91,3 +91,12 @@
       background: orange;
     }
   }
+
+  .aside_filter {
+    position: sticky;
+    top: 0; /* Esto hace que se quede pegado al principio de la pantalla cuando el usuario hace scroll */
+    z-index: 0; /* Asegúrate de que el filtro tenga una capa superior si otros elementos se solapan */
+    height: 100vh; /* Para que ocupe todo el alto de la pantalla, ajusta si es necesario */
+    overflow-y: auto; /* Para permitir el desplazamiento si el contenido es más alto que la ventana */
+    max-height: 100vh; /* Si deseas que se mantenga dentro de los límites de la ventana */
+  }

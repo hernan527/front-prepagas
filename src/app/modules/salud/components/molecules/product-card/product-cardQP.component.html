@@ -57,8 +57,14 @@
 								  <span   container="body" class="help ng-star-inserted"><span   class="ng-star-inserted">90% Libre elección</span></span>
 							   </div>
 							</div>
+							<ng-template #popTemplate>Here we go: <div [innerHtml]="html"></div></ng-template>
+
 							<div   class="px-1 ng-star-inserted col-6">
-							   <div   class="d-flex flex-column card-items mb-2"><span   container="body" class="item-title"><i   class="fal icon mr-1 fa-user-md" style="--fa-secondary-opacity: 0.6;"></i> Ambulatoria </span><span   container="body" class="help ng-star-inserted"><span   class="ng-star-inserted">80% Libre elección</span></span></div>
+							   <div   class="d-flex flex-column card-items mb-2">
+						<span container="body" class="item-title bs-popover" style="font-size:9px" [popover]="popTemplate" popoverTitle="Dynamic html inside" [triggers]="triggerEvent">
+									<i   class="fal icon mr-1 fa-user-md" style="--fa-secondary-opacity: 0.6;">
+
+							   </i> Ambulatoria </span><span   container="body" class="help ng-star-inserted"><span   class="ng-star-inserted">80% Libre elección</span></span></div>
 							</div>
 							<div   class="px-1 ng-star-inserted col-6">
 							   <div   class="d-flex flex-column card-items mb-2"><span   container="body" class="item-title"><i   class="fal icon mr-1 fa-heart-rate" style="--fa-secondary-opacity: 0.6;"></i> Urgencia </span><span   container="body" class="help card-items ng-star-inserted"><span   class="ng-star-inserted">80% Libre elección</span></span></div>
@@ -104,8 +110,8 @@
 				   </div>
 				</div>
 				<div class="ng-star-inserted" >
-				   <div  class="button-insurance ng-star-inserted"><a  href=""><span >Solicitar</span></a></div>
-				   <div  class="view-detail text-center ng-star-inserted" (click)="openDialog(product)" ><a  href="">Ver Detalle</a></div>
+				   <div  class="button-insurance ng-star-inserted"><a><span >Solicitar</span></a></div>
+				   <div  class="view-detail text-center ng-star-inserted" (click)="onShowDetail()" ><a>Ver Detalle</a></div>
 				</div>
 			 </div>
 		  </div>

@@ -16,7 +16,9 @@ import {
   SimpleChanges,
   OnChanges,
   computed,
-  OnDestroy
+  OnDestroy,
+  CUSTOM_ELEMENTS_SCHEMA,
+  NO_ERRORS_SCHEMA
 } from "@angular/core";
 import { Observable, forkJoin } from "rxjs";
 import { map, pairwise, filter, throttleTime } from "rxjs/operators";
@@ -86,6 +88,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ResponsiveService } from "../../../../services/responsive.service";
 import { FormularioComponent } from "./../../components/atoms/formulario/formulario.component";
 import { DialogService } from "src/app/services/dialog.service";
+import { register } from 'swiper/element/bundle';
+register();
+
 declare var addProp: any;
 declare var desectItem: any;
 declare var showandHide: any;
@@ -104,6 +109,7 @@ interface AutoCompleteCompleteEvent {
     selector: "app-results",
     templateUrl: "./results.component.html",
     styleUrls: ["./results.component.scss"],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
     changeDetection: ChangeDetectionStrategy.Default,
     imports: [
     BannerListComponent,
@@ -227,6 +233,8 @@ export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
   cadena: any
   selectedItems: any[] | undefined;
   visible = false;
+  productChosen: any;
+  showProductDetail = false;
 
   items: any[] | undefined;
  
@@ -284,7 +292,31 @@ return this.cadena
     return false;;
   }) 
 
+  toggleProductDetail(){
+    this.showProductDetail = !this.showProductDetail
+    if(!this.showProductDetail){
+      this.productChosen = {}
+    }
+  }
 
+  onShowDetail(id: string) {
+    console.log('this.productChosen en results fila 301  :',this.productChosen)
+
+    console.log('product en results fila 300  :', id)
+    this.statusDetail = 'loading';
+    this.toggleProductDetail();
+  
+
+      const producto = this.productosFiltrados.find((prod: { item_id: string; }) => prod.item_id === id);
+
+  
+     
+      if (producto) {
+        this.productChosen = producto; // Asignar el producto seleccionado a 'productChosen'
+      } else {
+        console.log('Producto no encontrado');
+      }
+  }
 // Función que actualiza isSmallScreen según el estado de la pantalla
 componentSelectorMode(breakpoints: { [key: string]: boolean }) {
   // Asignamos los valores de los breakpoints a variables locales

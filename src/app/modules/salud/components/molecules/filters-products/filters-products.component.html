@@ -31,26 +31,7 @@
         </ng-container>
       </div>
       
-      <article class="filter-group">
-        <header class="card-header d-flex justify-content-center align-items-center" style="background-color: #FFD700; margin: 0; opacity: 0.6">
-          Completar Perfil
-   
-        </header>
-        <div class="card-body d-flex justify-content-center">
-          <div class="row mb-12">
-            <div class="d-flex justify-content-between align-items-end" style="margin: 0 5px;">
-              <i class="pi pi-user icon-large" style="margin-right: 10px;"><span style="font-size: 20px;">   {{quote.adultos}}</span></i>
-              <i class="pi pi-users icon-small" style="margin: 0 10px;"><span style="font-size: 20px;">   {{quote.menores}}</span></i>
-              <i class="pi pi-map icon-large"  style="margin-left: 10px;"><span style="font-size: 20px;">{{quote.region}}</span></i>
-            </div>
-          </div>
-        </div>
-      
-        <div class="d-flex justify-content-center" style="margin: 20px;"> <!-- Ajusta el valor de margin según tus preferencias -->
-          <button pButton pRipple type="button" icon="pi pi-pencil" label="Completar Perfil" class="p-button-raised p-button-danger" style="animation: aura 0.5s ease-in-out;">
-          </button>
-        </div>
-      </article>
+ 
       
         <article class="filter-group" >
           <header class="card-header d-flex justify-content-center align-items-center" style="background-color: #34869b; margin: 0; opacity: 0.6" >
@@ -61,9 +42,10 @@
           <div class="collapse show" id="collapse_aside2">
             <div class="card-body">
               <ngx-slider 
-              [(value)]="value"
-              [(highValue)]="highValue"  
-              [options]="options" 
+              [options]="options"
+              [formControl]="rangeValues"
+              (userChangeEnd)="onRangeChange({ values: rangeValues.value })"
+              [showTooltip]="false"
              >
             </ngx-slider>
 
@@ -81,15 +63,22 @@
       
       <div class="collapse show" id="collapse_aside1">
         <div class="card-body border-bottom">
-          <!-- <div>
+          <div>
 
             <p class="text-muted text-uppercase fs-13 fw-medium mb-2">Odontologia</p>
-            <p-slider [formControl]="slideOdontoValues" (onChange)="onSlideOdontoChange($event)"></p-slider>
-          </div> -->
-          <div>
+            <div class="card-body">
+            <ngx-slider
+            [options]="optionsOdonto"
+            [formControl]="odontoValues"
+            (userChangeEnd)="onSlideOdontoChange($event)"
+            [showTooltip]="false"
+            ></ngx-slider>
+          </div>
+          </div>
+          <!-- <div>
             <p class="text-muted text-uppercase fs-13 fw-medium mb-2">Beneficio2</p>
             <p-slider [formControl]="slide4Values" (onChange)="onSlide4Change($event)"></p-slider>
-          </div>
+          </div> -->
         </div>
     
       </div>
@@ -180,11 +169,11 @@
 <ng-template #showAsSidebar>
     
 
-    <div class="flex flex-wrap gap-2  ">
+    <div class="flex flex-wrap gap-2    aside_filter">
       <!-- <p-button badge="" [style]="{ 'font-size': '24px', 'margin': '0px' }" label=":"><strong>Resultados</strong></p-button> -->
 
     
-      <div id="aside_filter left-column" class="card d-lg-block mb-5">
+      <div class="card d-lg-block mb-5">
     
        <div class="card-header">
         <div class="d-flex mb-3">
@@ -209,27 +198,7 @@
         </ng-container>
       </div>
       
-      <article class="filter-group">
-        <header class="card-header d-flex justify-content-center align-items-center" style="background-color: #FFD700; margin: 0; opacity: 0.6">
-          Completar Perfil
-   
-        </header>
-        <div class="card-body d-flex justify-content-center">
-          <div class="row mb-12">
-            <div class="d-flex justify-content-between align-items-end" style="margin: 0 5px;">
-              <i class="pi pi-user icon-large" style="margin-right: 10px;"><span style="font-size: 20px;">   {{quote.adultos}}</span></i>
-              <i class="pi pi-users icon-small" style="margin: 0 10px;"><span style="font-size: 20px;">   {{quote.menores}}</span></i>
-              <i class="pi pi-map icon-large"  style="margin-left: 10px;"><span style="font-size: 20px;">{{quote.region}}</span></i>
-            </div>
-          </div>
-        </div>
-      
-        <div class="d-flex justify-content-center" style="margin: 20px;"> <!-- Ajusta el valor de margin según tus preferencias -->
-          <button pButton pRipple type="button" icon="pi pi-pencil" label="Completar Perfil" class="p-button-raised p-button-danger" style="animation: aura 0.5s ease-in-out;">
-          </button>
-        </div>
-      </article>
-      
+ 
         <article class="filter-group" >
           <header class="card-header d-flex justify-content-center align-items-center" style="background-color: #34869b; margin: 0; opacity: 0.6" >
             <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside2">
@@ -263,23 +232,23 @@
       <div class="collapse show" id="collapse_aside1">
         <div class="card-body border-bottom">
           <p class="text-muted text-uppercase fs-13 fw-medium mb-2">Odontologia</p>
-          <!-- <label class="form-group-label">
+          <label class="form-group-label">
             {{ this.valOdontoText }}
           </label>
             <div class="custom-slider">
               <ngx-slider
               [options]="optionsOdonto"
-              [formControl]="slideOdontoValues"
+              [formControl]="odontoValues"
               (userChangeEnd)="onSlideOdontoChange($event)"
               [showTooltip]="false"
               >
             </ngx-slider>
-          </div> -->
+          </div>
 
-          <div>
+          <!-- <div>
             <p class="text-muted text-uppercase fs-13 fw-medium mb-2">Beneficio2</p>
             <p-slider [formControl]="slide4Values" (onChange)="onSlide4Change($event)"></p-slider>
-          </div>
+          </div> -->
         </div>
     
       </div>

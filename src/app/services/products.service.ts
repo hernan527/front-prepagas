@@ -226,22 +226,29 @@ interface SearchResult {
     
     
     }    
-    getProducts(): Observable<any> {
+    
+    getProductById(id: string): Observable<any> {
       return new Observable((observer) => {
-            this.http.get<any>(this.serverUrl + '/planes').subscribe({
-              next: (planesData) => {
-                this.products = planesData;
-                this.secureProducts = planesData;
-                // console.log(this.products);
-                observer.next(this.products); // Emitir los productos una vez que se obtengan
-                observer.complete();
-              },
-              error: (error) => {
-                // console.log(error);
-                observer.error(error); // Propagar el error si la solicitud no se realiza correctamente
-              }    
+        this.http.get<any>(this.serverUrl + '/planes').subscribe({
+          next: (planesData) => {
+            // Filtrar el producto por el ID
+            const product = planesData.find((p: { item_id: string; }) => p.item_id === id);
+            
+            if (product) {
+              observer.next(product);  // Emitir el producto encontrado
+            } else {
+              observer.error('Producto no encontrado');  // Si no se encuentra, emitir un error
+            }
+            
+            observer.complete();
+          },
+          error: (error) => {
+            observer.error(error);  // Propagar el error si la solicitud no se realiza correctamente
+          }    
         });
-      });}
+      });
+    }
+    
 
       filterProducts(form: FormGroup, listadoPlanes: any[]): void {
         this.products=listadoPlanes // Copia de los productos originales
@@ -253,7 +260,7 @@ interface SearchResult {
       private filterLogic(form: FormGroup): any[] {        // Obtiene los valores de los filtros del formulario
         const selectedRating = form.get('selectedRating')?.value;
         const priceRange = form.get('priceRange')?.value;
-        const valueSlide3 = form.get('valueSlide3')?.value;
+        const valueSlideOdonto = form.get('valueSlideOdonto')?.value;
         const valueSlide4 = form.get('valueSlide4')?.value;
         const PMO_Solo_por_Aportes = form.get('PMO_Solo_por_Aportes')?.value;
         const Cirugia_Estetica = form.get('Cirugia_Estetica')?.value;
@@ -268,7 +275,7 @@ interface SearchResult {
             // Verifica cada condición de filtro aquí
             (selectedRating.length === 0 ||  product.rating >= selectedRating) &&
             (priceRange.length === 0 || (product.precio >= priceRange[0] && product.precio <= priceRange[1])) &&
-            (valueSlide3 === null || product.valueSlide3 >= valueSlide3) &&
+            (valueSlideOdonto === null || product.beneficios.odontologia >= valueSlideOdonto) &&
             (valueSlide4 === null || product.valueSlide4 >= valueSlide4) &&
             (PMO_Solo_por_Aportes === false || product.PMO_Solo_por_Aportes === true) &&
             (Cirugia_Estetica === false || product.Cirugia_Estetica === true) &&

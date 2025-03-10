@@ -34,9 +34,9 @@ export class FiltersProductsComponent implements OnInit  {
   multiDefaultOption: any[] = []; 
   tooltipContent: string = 'Your tooltip content here';
   rangeValues: FormControl = new FormControl('');
-  slide3Values: FormControl = new FormControl(''); 
+  odontoValues: FormControl = new FormControl(''); 
   slide4Values: FormControl = new FormControl(''); 
-  valueSlide3: FormControl = new FormControl(''); 
+  valueSlideOdonto: FormControl = new FormControl(''); 
   valueSlide4: FormControl = new FormControl(''); 
   checkboxOptions = {
   PMO_Solo_por_Aportes :new FormControl(false),
@@ -66,7 +66,6 @@ export class FiltersProductsComponent implements OnInit  {
   tickStep=10
   vertical=false
 
-  val3: number;
   val4: number;
   filterKeys: string[]; // Agrega esta variable para almacenar las claves de los filtros
   priceRange: FormControl = new FormControl('');  
@@ -85,6 +84,16 @@ export class FiltersProductsComponent implements OnInit  {
   hidePointerLabels: true // Oculta el tooltip del valor actual
  
 };
+
+valOdontoText :string;
+optionsOdonto:Options = {
+  floor: 1,
+  ceil: 5,
+  step: 1,
+  showTicks: true,
+  showTicksValues: true
+ 
+};
   constructor(
     private formBuilder: FormBuilder,
     private filterManagerService: ProductsService,
@@ -98,7 +107,7 @@ export class FiltersProductsComponent implements OnInit  {
     this.filtrosSeleccionadosGroup = this.formBuilder.group({
       selectedRating:[this.selectedRating.value],
       priceRange: this.rangeValues,
-      valueSlide3: [this.slide3Values.value],
+      valueSlideOdonto: [this.odontoValues.value],
       valueSlide4: [this.slide4Values.value],
       PMO_Solo_por_Aportes: [this.PMO_Solo_por_Aportes],
       Cirugia_Estetica: [this.Cirugia_Estetica],
@@ -165,8 +174,8 @@ this.rangeValues.valueChanges.subscribe((newValues) => {
     const validLowValue = isNaN(lowValue) ? this.value : lowValue;
     const validHighValue = isNaN(highValue) ? this.highValue : highValue;
 
-    console.log('FormControl value changed:', newValues);
-    console.log('Final values -> lowValue:', validLowValue, ', highValue:', validHighValue);
+    // console.log('FormControl value changed:', newValues);
+    // console.log('Final values -> lowValue:', validLowValue, ', highValue:', validHighValue);
 
     // Actualizar el FormControl solo si los valores son v├ílidos
     this.filtrosSeleccionadosGroup.get('priceRange')?.setValue([validLowValue, validHighValue], { emitEvent: false });
@@ -257,10 +266,10 @@ if(!this.highValue){
 
 
  
-       this.slide3Values.valueChanges.subscribe((newValues) => {
-        // console.log('filters-product 192 Valor m├¡nimo de valueSlide3:', newValues);
+       this.odontoValues.valueChanges.subscribe((newValues) => {
+        // console.log('filters-product 192 Valor m├¡nimo de valueSlideOdonto:', newValues);
         // Registra los cambios en el formulario
-        this.filtrosSeleccionadosGroup.get('valueSlide3')?.setValue(newValues);
+        this.filtrosSeleccionadosGroup.get('valueSlideOdonto')?.setValue(newValues);
         // Env├¡a el formulario actualizado al servicio
         this.filterManagerService.setFilterForm(this.filtrosSeleccionadosGroup.value);
         this.filterManagerService.applyFiltersDespuesDeOnItemSelect();
@@ -375,10 +384,19 @@ if(!this.highValue){
     }
   }
   
-  onSlide3Change(event: any) {
+  onSlideOdontoChange(event: any) {
 
-    this.val3 = event.value;
-    // console.log('filters-product 316  Valor seleccionado para el slide3: ', this.val3);
+if (this.odontoValues.value === 1 ){
+  this.valOdontoText = "Odontologia en General"
+} else if (this.odontoValues.value === 2 ){
+  this.valOdontoText = "+ ortodoncia adultos"
+} else if (this.odontoValues.value === 3 ){
+  this.valOdontoText = "+ Protesis"
+} else if (this.odontoValues.value === 4 ){
+  this.valOdontoText = "+ Implantes"
+} else if (this.odontoValues.value === 5 ){
+  this.valOdontoText = "+ Blanquemiento"
+}
 
   }
   onSlide4Change(event: any) {

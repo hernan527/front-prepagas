@@ -1,4 +1,4 @@
-import { Directive, Component,Inject, Input, OnInit,ChangeDetectorRef ,ChangeDetectionStrategy, ViewChild,  ElementRef  } from '@angular/core';
+import { Directive, Component,Inject, Input, OnInit,ChangeDetectorRef ,ChangeDetectionStrategy, ViewChild,  ElementRef,EventEmitter, Output  } from '@angular/core';
 import { ModalService } from '../../../../../_modal';
 import { MasDetallesComponent } from '../../templates/mas-detalles/mas-detalles.component';
 import {MatDialog, MatDialogModule,MatDialogRef,MatDialogTitle,MAT_DIALOG_DATA,MatDialogContent,} from '@angular/material/dialog';
@@ -24,12 +24,6 @@ export interface DialogData1 {
   folleto:any;
 }
 
-export interface DialogData3 {
-  animal: string;
-
-}
-
-
 @Component({
     selector: 'app-product-land',
     templateUrl: './insurance-card.component.html',
@@ -43,6 +37,8 @@ export interface DialogData3 {
 export class ProductLandComponent implements OnInit{
   @Input() product: any;
   @Input() compareList: any;
+  @Output() showProduct = new EventEmitter<string>();
+  
   bodyText: string;
   name: string;
   price: Number;
@@ -77,6 +73,9 @@ export class ProductLandComponent implements OnInit{
   }
 
 
+  onShowDetail() {
+    this.showProduct.emit(this.product.item_id)
+  }   
   // @ViewChild("compararButon") compararButon: ElementRef;
    //https://bit.ly/Replacement_ElementRef
    toggleCompare() {

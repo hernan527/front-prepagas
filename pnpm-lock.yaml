@@ -152,6 +152,9 @@ importers:
       sweetalert2:
         specifier: ^11.7.27
         version: 11.17.2
+      swiper:
+        specifier: ^11.2.5
+        version: 11.2.5
       ts-loader:
         specifier: ^9.3.1
         version: 9.5.2(typescript@5.8.2)(webpack@5.98.0)
@@ -6395,6 +6398,10 @@ packages:
 
   sweetalert2@11.17.2:
     resolution: {integrity: sha512-HKxDr1IyV3Lxr3W6sb61qm/p2epFIEdr5EKwteRFHnIg6f8nHFl2kX++DBVz16Mac+fFiU3hMpjq1L6yE2Ge5w==}
+
+  swiper@11.2.5:
+    resolution: {integrity: sha512-nG0kbIyBfeE2BPFt9nPUX03qUBF75o6+enzjIT/DfCmbh8ORlwhc4eZz1+4H/yseAgb3H+OoEYzmb64i0tYNnQ==}
+    engines: {node: '>= 4.7.0'}
 
   symbol-observable@4.0.0:
     resolution: {integrity: sha512-b19dMThMV4HVFynSAM1++gBHAbk2Tc/osgLIBZMKsyqh34jb2e8Os7T6ZW/Bt3pJFdBTd2JwAnAAEQV7rSNvcQ==}
@@ -14196,6 +14203,8 @@ snapshots:
   svg-tags@1.0.0: {}
 
   sweetalert2@11.17.2: {}
+
+  swiper@11.2.5: {}
 
   symbol-observable@4.0.0: {}
 
