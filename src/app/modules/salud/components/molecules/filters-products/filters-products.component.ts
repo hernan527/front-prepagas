@@ -21,12 +21,13 @@ import { NgxSliderModule, Options } from '@angular-slider/ngx-slider';
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
   })
 export class FiltersProductsComponent implements OnInit  {
-   @Input() isSmallScreen = false;
-   @Input() sidebarVisible = false;
-   @Input() anchoSidebar: any;
+  @Input() isSmallScreen = false;
+  @Input() sidebarVisible = false;
+  @Input() anchoSidebar: any;
   @Input() product: any[];
   @Input() productosFiltrados: any[];
   @Output() filteredProductsChange = new EventEmitter<any[]>(); // Emite los productos filtrados
+  @Output() sidebarStateChanged: EventEmitter<boolean> = new EventEmitter<boolean>();
   filtrosSeleccionadosGroup: FormGroup
   filteredProducts: any[]; // Almacena los productos filtrados
   selectedRating : FormControl = new FormControl(0);
@@ -354,7 +355,11 @@ if(!this.highValue){
 
   }
   
-  
+  onSidebarHide() {
+    // Aquí actualizas el valor de 'sidebarVisible' en caso de que quieras hacer algo adicional
+    this.sidebarVisible = false;
+    this.sidebarStateChanged.emit(this.sidebarVisible);
+  }
 
   aplicarFiltro() {
     // Aqu├¡ puedes agregar la l├│gica para aplicar el filtro

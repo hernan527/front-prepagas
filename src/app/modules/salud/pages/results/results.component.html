@@ -101,6 +101,7 @@
             [sidebarVisible]="sidebarVisible"
             [anchoSidebar]="anchoSidebar"
             [productosFiltrados]="productosFiltrados"
+            (sidebarStateChanged)="onSidebarStateChanged($event)"
             ></app-filters-products>
          </div>
          
@@ -244,7 +245,7 @@
 <ng-container *ngIf="isSmallScreen" >
    <div id="buttonShowFilters" >
       <button class="feedback" mat-raised-button color="primary"
-         matBadge matBadgePosition="after" matBadgeColor="accent" (click)="sidebarVisible = true;sidebar()" >
+         matBadge matBadgePosition="after" matBadgeColor="accent" (click)="toggleSidebar();" >
          <mat-icon>filter_list</mat-icon>
       </button>
    

@@ -3,7 +3,11 @@
   
     
 <ng-container *ngIf="isSmallScreen; else showAsSidebar">
-  <p-sidebar [(visible)]="sidebarVisible" [style]="{ 'width': anchoSidebar }">
+  <p-sidebar
+  [(visible)]="sidebarVisible"
+  [style]="{ 'width': anchoSidebar }"
+  (onHide)="onSidebarHide()"
+  >
     <div class="flex flex-wrap gap-2  ">
       <!-- <p-button badge="" [style]="{ 'font-size': '24px', 'margin': '0px' }" label=":"><strong>Resultados</strong></p-button> -->
 
@@ -41,6 +45,8 @@
           </header>
           <div class="collapse show" id="collapse_aside2">
             <div class="card-body">
+              <div class="custom-slider">
+              
               <ngx-slider 
               [options]="options"
               [formControl]="rangeValues"
@@ -48,7 +54,7 @@
               [showTooltip]="false"
              >
             </ngx-slider>
-
+          </div>
                     </div> 
           </div>
           </article> 
@@ -67,6 +73,7 @@
 
             <p class="text-muted text-uppercase fs-13 fw-medium mb-2">Odontologia</p>
             <div class="card-body">
+              <div class="custom-slider">
             <ngx-slider
             [options]="optionsOdonto"
             [formControl]="odontoValues"
@@ -74,6 +81,7 @@
             [showTooltip]="false"
             ></ngx-slider>
           </div>
+        </div>
           </div>
           <!-- <div>
             <p class="text-muted text-uppercase fs-13 fw-medium mb-2">Beneficio2</p>
@@ -117,7 +125,7 @@
     
       
     
-    <article class="filter-group"  >
+    <!-- <article class="filter-group"  >
       <header class="card-header">
         <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside3">
         <i class="icon-control fa fa-chevron-down"></i>Detalles de cobertura 
@@ -146,7 +154,7 @@
           </label>
         </div>
       </div>
-      </article> 
+      </article>  -->
       <article class="filter-group" >
         <header class="card-header">
           <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside3">
@@ -235,6 +243,7 @@
           <label class="form-group-label">
             {{ this.valOdontoText }}
           </label>
+          <div class="card-body">
             <div class="custom-slider">
               <ngx-slider
               [options]="optionsOdonto"
@@ -244,7 +253,7 @@
               >
             </ngx-slider>
           </div>
-
+        </div>
           <!-- <div>
             <p class="text-muted text-uppercase fs-13 fw-medium mb-2">Beneficio2</p>
             <p-slider [formControl]="slide4Values" (onChange)="onSlide4Change($event)"></p-slider>
@@ -287,7 +296,7 @@
     
       
     
-    <article class="filter-group"  >
+    <!-- <article class="filter-group"  >
       <header class="card-header">
         <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside3">
         <i class="icon-control fa fa-chevron-down"></i>Detalles de cobertura 
@@ -316,7 +325,7 @@
           </label>
         </div>
       </div>
-      </article> 
+      </article>  -->
       <article class="filter-group" >
         <header class="card-header">
           <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside3">

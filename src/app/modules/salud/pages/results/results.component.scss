@@ -135,6 +135,14 @@ mat-button-toggle-group{
     margin:0;
     padding:0
 }
+#buttonShowFilters{
+  position:fixed;
+  bottom:-4px;
+  right:10px;
+  z-index:1000;
+  margin:0;
+  padding:0
+}
 .selectedItems{
     background-color:#fff;
     width:80px;
@@ -182,6 +190,7 @@ mat-button-toggle-group{
         visibility:hidden;
         display:none
     }
+
     #app-compara-select *{
         visibility:hidden;
         display:none

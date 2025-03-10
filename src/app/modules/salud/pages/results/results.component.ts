@@ -221,7 +221,7 @@ export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
 
   formDataInicial: FormGroup; // Formulario inicial con valores predeterminados
   formDataInicialJSON: any[];
-  anchoSidebar = "80%"; // Ancho por defecto del sidebar
+  anchoSidebar = "50%"; // Ancho por defecto del sidebar
   isSmallScreen: boolean = false; // Default value
   isMediumScreen: boolean = false;
   isLargeScreen: boolean = false;
@@ -393,6 +393,14 @@ componentSelectorMode(breakpoints: { [key: string]: boolean }) {
       this.sidebarVisible = false;
     }
   }
+  toggleSidebar() {
+    this.sidebarVisible = !this.sidebarVisible;
+ console.log('toggleSidebar() :',this.sidebarVisible )
+} 
+onSidebarStateChanged(state: boolean) {
+  this.sidebarVisible = state;
+  // Aquí puedes realizar otras acciones con el valor de sidebarVisible si es necesario
+} 
   toggleCompare(product: any) {
     product.compare = !product.compare;
  
@@ -569,11 +577,7 @@ actualizarLista() {
     this.setInitialFilters();
   }
 
-  sidebar() {
-    // console.log("532 apreto el boton filtros sidebarVisible", this.sidebarVisible);
-    // console.log("533 apreto el boton filtros anchoSidebar ", this.anchoSidebar);
-    // console.log("534 apreto el boton filtros isSmallScreen ", this.isSmallScreen);
-  }
+ 
   toggleBadgeVisibility() {
     this.hidden = !this.hidden;
   }
