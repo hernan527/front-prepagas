@@ -1,5 +1,7 @@
 import { Options } from '@angular-slider/ngx-slider';
-import { DOCUMENT, NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
+
+import { DOCUMENT, NgIf,NgFor } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
 import { Component, inject, OnInit, Input, ElementRef, Renderer2, ViewChild, Inject,HostListener,ChangeDetectionStrategy   } from '@angular/core';
 import {FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,6 +16,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { PopoverModule } from 'ngx-bootstrap/popover';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-formulario',
@@ -21,6 +27,7 @@ import {MatIconModule} from '@angular/material/icon';
   styleUrls: ['./formulario.component.css'],
   imports: [
     NgIf,
+    NgFor,
     FormsModule,
     ReactiveFormsModule,
     MatDividerModule,
@@ -28,13 +35,21 @@ import {MatIconModule} from '@angular/material/icon';
     MatInputModule,
     MatFormFieldModule,
     MatStepperModule,
-    MatIconModule
+    MatIconModule,
+    CommonModule,
+    PopoverModule,
+    NgbModule
   ],
   changeDetection: ChangeDetectionStrategy.Default,
   
 })
 export class FormularioComponent {
   @ViewChild('campoNombre') campoNombre: ElementRef;
+  @ViewChild('desregulado', { read: ElementRef, static:false }) desregulado: ElementRef;
+  @ViewChild("first", { static: true }) first: ElementRef;
+  @ViewChild("second", { static: true }) second: ElementRef;
+  @ViewChild("third", { static: true }) third: ElementRef;
+  @ViewChild("fourth", { static: true }) fourth: ElementRef;
   checkedmon: boolean;
   checkedaf: boolean;
   checkedsupras: boolean;
@@ -89,7 +104,9 @@ export class FormularioComponent {
  edadHijo3 = 0;
  edadHijo4 = 0;
  edadHijo5 = 0;
- 
+ inputValue: string = '';
+ position: number;
+
  showEdadConyuge: boolean = false;
  showCantidadHijos:boolean = false;
    // Controlar visibilidad de mat-stepper
@@ -102,15 +119,19 @@ export class FormularioComponent {
     this.isStepperVisible = false;
     this.isCotizacionVisible = true;
   }
+public triggerEvent: string = 'mouseenter:mouseleave'; // Default trigger for desktop
+html = `<span class="btn btn-danger">Never trust not sanitized HTML!!!</span>`;
+
  private _formBuilder = inject(FormBuilder);
 
  firstFormGroup = this._formBuilder.group({
-   firstCtrl: ['', Validators.required],
- });
- secondFormGroup = this._formBuilder.group({
-   secondCtrl: ['', Validators.required],
- });
- isLinear = false;
+  firstCtrl: ['', Validators.required],
+});
+secondFormGroup = this._formBuilder.group({
+  secondCtrl: ['', Validators.required],
+});
+isLinear = false;
+
  
   constructor(
    private formBuilder: FormBuilder,
@@ -118,6 +139,8 @@ export class FormularioComponent {
    private router: Router,
    private renderer: Renderer2,
    private el: ElementRef,
+   private deviceService: DeviceDetectorService,
+   
    @Inject(DOCUMENT) private document: Document,
    
    ) {  
@@ -129,7 +152,13 @@ export class FormularioComponent {
  
 
 
-   
+   addNumber(num: number): void {
+     this.inputValue += num;
+   }
+ 
+   deleteNumber(): void {
+     this.inputValue = this.inputValue.slice(0, -1);
+   }
  
    save1(event: any){
      if(this.formCotizar.valid){
@@ -233,7 +262,7 @@ export class FormularioComponent {
  ngOnInit(): void
  
    {
-    
+
      this.formCotizar.valueChanges
      .subscribe(value => {
      });
@@ -241,7 +270,8 @@ export class FormularioComponent {
  
      this.scrollGroup = false;
      this.showTipo= false;
- 
+     this.setPopoverTrigger();
+
    
    }
    
@@ -320,7 +350,10 @@ export class FormularioComponent {
  
  
    }
- 
+   
+
+
+
    selectVolverType(type: string){
      this.selectedVolverType = type;
      if(type === 'group'){
@@ -355,16 +388,27 @@ export class FormularioComponent {
        control.markAsTouched();
      }
    }
+
+
    selectAportesType(type: string) {
      // Si el tipo seleccionado es el mismo que ya está seleccionado, lo "deseleccionamos"
      if (this.selectedAportesType === type) {
        // Si ya está seleccionado, no mostramos ningún campo y reseteamos la selección
+
+     if( type === 'D'){
+       this.desregulado.nativeElement.classList.remove('inner-square-dos-div')
+     }
+     
+
        this.selectedAportesType = '';  // Limpiamos la selección
+
        this.showTipoFieldP = false;
        this.showTipoFieldD = false;
        this.showSueldoField = false;
-     } else {
-       // Si no es el mismo tipo, lo seleccionamos normalmente
+       
+     } else{   // Si no es el mismo tipo, lo seleccionamos normalmente
+      this.desregulado.nativeElement.classList.add('inner-square-dos-div')
+
        this.selectedAportesType = type;
        if (this.selectedAportesType === 'P') {
          this.maxHeight = '400px';  // Asigna el nuevo valor a la variable maxHeight
@@ -376,6 +420,7 @@ export class FormularioComponent {
          this.showTipoFieldP = false;
          this.showTipoFieldD = true;
          this.showSueldoField = true;
+         
        }
      }
    
@@ -385,6 +430,8 @@ export class FormularioComponent {
      // Mostramos el valor del campo tipo
      const tipoValue = this.formCotizar.get('tipo').value;
      console.log('Valor de tipo:', tipoValue);
+     console.log('selectedAportesType:', this.selectedAportesType); // Debugging
+
    }
    
    
@@ -982,7 +1029,7 @@ export class FormularioComponent {
    
      switch (beneficiario) {
        case 'titular':
-         this.edadTitular = (this.edadTitular === 0) ? 17 : this.edadTitular + 1;
+         this.edadTitular = (this.edadTitular === 0) ? 18 : this.edadTitular + 1;
          this.formCotizar.get('edad_1').setValue(this.edadTitular);
          this.mostrarNumeroEnImagen(this.edadTitular);
 
@@ -993,7 +1040,7 @@ export class FormularioComponent {
          }
          break;
        case 'conyuge':
-         this.edadConyuge = (this.edadConyuge === 0) ? 17 : this.edadConyuge + 1;
+         this.edadConyuge = (this.edadConyuge === 0) ? 18 : this.edadConyuge + 1;
          this.formCotizar.get('edad_2').setValue(this.edadConyuge);
          this.mostrarNumeroEnImagen(this.edadConyuge);
          if (groupValue === 4) {
@@ -1084,6 +1131,14 @@ export class FormularioComponent {
      }
    }
 
+   setPopoverTrigger(): void {
+    const isMobile = this.deviceService.isMobile();
+    if (isMobile) {
+      this.triggerEvent = 'click';  // Change to click trigger on mobile
+    } else {
+      this.triggerEvent = 'mouseenter:mouseleave';  // Default hover trigger on desktop
+    }
+  }
   
  }
  

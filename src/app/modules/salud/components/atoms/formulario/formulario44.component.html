@@ -4,6 +4,7 @@
       <mat-step [stepControl]="firstFormGroup">
           <ng-template matStepLabel>Grupo Familiar</ng-template>
       
+          
           <div class="flex-container">
               <b class="btn--main btn btn--vertical btn-primary square1" *ngIf="this.formCotizar.get('group').value === '' ||  this.formCotizar.get('group').value === 1" [class.active]="formCotizar.get('group').value === 1" (click)="selectGroup(1)">
                   <img src="../../../../../../assets/js/scripts/style/images/17319805201332933099.webp" />
@@ -28,39 +29,30 @@
           <mat-list>
               <mat-list-item *ngIf="this.formCotizar.get('group').value !== '' && !formularioEnviado"> Edades</mat-list-item>
               <mat-divider></mat-divider>
-              <mat-list-item  *ngIf="this.formCotizar.get('group').value !== '' && !formularioEnviado">
-                <button class="btn inner-square-cuatro-div menos" id="decrementButtonTitular" (click)="decrementar('titular')">
-                </button>
-                Titular&nbsp;:&nbsp;<strong>{{ edadTitular }}&nbsp;años</strong>
-
-                <button class="btn inner-square-cuatro-div mas" id="incrementButtonTitular" (click)="incrementar('titular')">
-                </button>
-              </mat-list-item>
-              
-              <mat-divider></mat-divider>
-              <mat-list-item   *ngIf="this.formCotizar.get('group').value === 3  && showEdadConyuge === true || this.formCotizar.get('group').value === 4 && showEdadConyuge === true ">
-                <button class="btn inner-square-cuatro-div menos" id="decrementButtonConyuge" (click)="decrementar('conyuge')">
-                </button>
-    
-                Pareja&nbsp;:&nbsp;<strong>{{ edadConyuge }}&nbsp;años</strong>
-  
-
+              <mat-list-item *ngIf="this.formCotizar.get('group').value !== '' && !formularioEnviado">
+                  Titular <strong>{{ edadTitular }} años</strong>
+                  <button class="btn inner-square-cuatro-div menos" id="decrementButtonTitular" (click)="decrementar('titular')"></button>
       
-                  <button class="btn inner-square-cuatro-div mas " id="incrementButtonConyuge" (click)="incrementar('conyuge')">
-                  </button>
+                  
+      
+                  <button class="btn inner-square-cuatro-div mas" id="incrementButtonTitular" (click)="incrementar('titular')"></button>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item *ngIf="this.formCotizar.get('group').value === 3  && showEdadConyuge === true || this.formCotizar.get('group').value === 4 && showEdadConyuge === true ">
+                  Pareja<strong>{{ edadConyuge }} años</strong>
+  
+                  <button class="btn inner-square-cuatro-div menos" id="decrementButtonConyuge" (click)="decrementar('conyuge')"></button>
+      
+      
+                  <button class="btn inner-square-cuatro-div mas" id="incrementButtonConyuge" (click)="incrementar('conyuge')"></button>
               </mat-list-item>
               <mat-divider></mat-divider>
   
-              <mat-list-item   *ngIf="this.formCotizar.get('group').value === 2  && showCantidadHijos === true || this.formCotizar.get('group').value === 4 && showCantidadHijos === true ">
-                <button class="btn inner-square-cuatro-div menos" id="decrementButtonHijos" (click)="decrementar('hijos')">
-
-                </button>
-                Hijos&nbsp;&nbsp;&nbsp;:&nbsp;<strong>{{ cantidadHijos }}&nbsp;hijos&nbsp;&nbsp;</strong>
-
+              <mat-list-item *ngIf="this.formCotizar.get('group').value === 2  && showCantidadHijos === true || this.formCotizar.get('group').value === 4 && showCantidadHijos === true ">
+                  Hijos :<strong>{{ cantidadHijos }} hijos</strong>
+                  <button class="btn inner-square-cuatro-div menos" id="decrementButtonHijos" (click)="decrementar('hijos')"></button>
   
-                  <button class="btn inner-square-cuatro-div mas" id="incrementButtonHijos" (click)="incrementar('hijos')">
-
-                  </button>
+                  <button class="btn inner-square-cuatro-div mas" id="incrementButtonHijos" (click)="incrementar('hijos')"></button>
               </mat-list-item>
               </mat-list>
   
@@ -80,42 +72,43 @@
                       </b>
       
                       <!-- Botón Solicito privado -->
-                      <button class="btn--main btn  img particular" *ngIf="showTipoFieldP || !selectedAportesType" [class.active]="formCotizar.get('tipo').value === 'P'" (click)="selectAportesType('P')" matStepperNext>
+                      <b class="btn--main btn  img particular square1" *ngIf="showTipoFieldP || !selectedAportesType" [class.active]="formCotizar.get('tipo').value === 'P'" (click)="selectAportesType('P')">
                           Solicito privado
-                      </button>
+                      </b>
                   </div>
   <!-- Dialog container -->
   <div class="dialog-container"  *ngIf="formCotizar.get('tipo').value === 'D'">
-      <h3>ingrese su sueldo</h3>
+      <h3>Enter Your Amount</h3>
       <input type="text" [(ngModel)]="inputValue" readonly placeholder="Sueldo Bruto" />
   
       <!-- Numeric Pad -->
-	
-		
+      <div class="numpad">
+          <button class="btn" *ngFor="let num of [1,2,3,4,5,6,7,8,9,0]" (click)="addNumber(num)">
+              {{ num }}
+          </button>
+      
+          <button class="btn delete" (click)="deleteNumber()">⌫</button>
+      </div>
+  </div>
   
   
   
                           
   
-        <!-- Numeric Pad -->
-        <div class="numpad">
-          <button class="btn-pad" *ngFor="let num of [1,2,3,4,5,6,7,8,9,0]" (click)="addNumber(num)">
-              {{ num }}
-          </button>
+          
+                  
       
-          <button class="btn-pad delete" (click)="deleteNumber()">⌫</button>
-          <button class="btn-pad listo" matStepperNext>listo</button>
-      </div>
-        
-    </div>
-  </div>
-
               
+              </div>
           </div>
-		  <form [formGroup]="secondFormGroup">
-
-	  </form>
-	</mat-step>
+          
+  
+          <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button  matStepperNex>Next</button>
+          </div>
+      
+      </mat-step>
       <mat-step>
         <ng-template matStepLabel>Done</ng-template>
   
@@ -132,12 +125,11 @@
                   </label>
                   <input type="text" required />
               </div>
-              <div class="form-group ">
+              <div class="form-group">
                   <label >
                       Celular
                   </label>
-                  <input type="text" 
-				  required />
+                  <input type="text" required />
               </div>
       
               <div>
@@ -156,11 +148,11 @@
   <!-- Este contenedor se muestra cuando se hace clic en "ver cotizacion" -->
     <div  *ngIf="isCotizacionVisible && this.selectedContactoType ===''" class="container container--half-width">
       <div class="form-title" style="margin-bottom: 15px;">
-          Completa!
+          Pronto!
       </div>
       <div class="form-group" style="margin-top: 0;">
           <label for="preferred_contact_method">
-            Cómo prefieres que continúe nuestro contacto?
+              Como você prefere continuar a sua cotação?
           </label>
           <div>
               <div class="btn-wrapper btn-wrapper--floating btn-wrapper--equal-sizes" name="preferred_contact_method">
@@ -176,7 +168,7 @@
           </div>
           <div class="error">
               <span>
-                  Este campo es requerido.
+                  Este campo é requerido.
               </span>
           </div>
       </div>
@@ -197,6 +189,3 @@
       <div class="thankyou-card--title">Gracias!</div>
       <div class="thankyou-card--body">Estaremos enviandole un mensaje!</div>
     </div>
-
-
-

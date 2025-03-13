@@ -71,10 +71,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
+
   .btn-calculate {
     background-color: var(--primary-color);
     color: var(--white);
@@ -685,12 +682,7 @@ background: blue;
   }
   
 
-  @media (max-width: 600px) {
-    .form-cotacao {
-      max-width: 100%; /* Ajusta la anchura máxima al 100% del ancho de la pantalla */
-      padding: 10px; /* Añade algún espacio alrededor del formulario */
-      /* Otros ajustes de estilo para tamaños de pantalla más pequeños */
-    }
+
   
     /* Ajustes específicos para elementos dentro del formulario */
     /* .campo-pagina,
@@ -700,7 +692,7 @@ background: blue;
     /* { */
       /* Ajustes de estilo específicos para tamaños de pantalla más pequeños */
     /* } */
-  }
+  
   
   section {
     display: flex;
@@ -754,16 +746,7 @@ background: blue;
       font-weight: bold;
       font-size:10px;
     }
-  
-  .main-container{
-     /* display:flex; */
-      /* min-height:400px; */
-      /* min-width:800px; */
-      /* justify-content:center; */
-      /* background:red; */
-      /* flex-direction:column;  */
-    
-  }
+ 
   
   /* .main-container p, .possui-plano p, .possui-cnpj p{position: relative;} */
   
@@ -824,20 +807,6 @@ background: blue;
       text-align: left;
   }
   
-  .menos{
-    background-image:url(../../../../../assets/css/imagens/173198465710851448.png)
-  }
-  
-  .mas{
-    background-image:url(../../../../../assets/css/imagens/1731984657108514481.png)
-  }
-  .unomenos{
-    background-image:url(../../../../../assets/css/imagens/menos.png)
-  }
-  
-  .unomas{
-    background-image:url(../../../../../assets/css/imagens/mas.png)
-  }
   .flex-contenedor{
     /* border: 1px solid black; */
     /* background: #ccc; */
@@ -1306,7 +1275,6 @@ background: blue;
     -moz-appearance:none;
     appearance:none;
     padding:15px 30px 15px 15px;
-    background-image:url(../../../../../assets/css/images/sprite.svg#theme--select-arrow);
     background-repeat:no-repeat,repeat;
     background-position:right .7em top 50%,0 0;
     background-size:1em 1em,100%
@@ -1575,7 +1543,6 @@ background: blue;
     position:absolute;
     right:0;
     bottom:120px;
-    background:url(../../../../../assets/style/images/form/background.png);
     background-repeat:no-repeat;
     background-size:cover;
     width:137px;
@@ -1783,3 +1750,31 @@ p-dialog .p-dialog-content {
   z-index: 1000;
 }
 
+.inner-square-dos-div{
+  flex:1;
+  max-width:200px;
+  max-height:50px;
+  flex-direction:row
+}
+
+.inner-square-dos-div img{
+  display:inerhit
+}
+
+/* app.component.css */
+.inner-square-dos-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 200px;
+  max-height: 50px;
+}
+
+/* app.component.css */
+.inner-square-dos-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 200px;
+  max-height: 50px;
+}

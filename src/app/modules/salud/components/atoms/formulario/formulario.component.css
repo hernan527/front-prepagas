@@ -189,12 +189,24 @@ span {
 }
 
 .menos{
-  background-image:url(../../../../../../assets/css/imagens/173198465710851448.png)
+  background-image:url(../../../../../../assets/css/imagens/down-arrow.png)
 }
 
 .mas{
-  background-image:url(../../../../../../assets/css/imagens/1731984657108514481.png)
+  background-image:url(../../../../../../assets/css/imagens/up-arrow.png)
 }
+.menos,
+.mas {
+  background-size: contain;  /* Or use "cover" if you prefer */
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 25px;    /* Set your desired width */
+  height: 25px;   /* Set your desired height */
+  display: inline-block;  /* Ensures the element respects width/height */
+  border: none;
+  padding: 0;
+}
+
 .unomenos{
   background-image:url(../../../../../../assets/css/imagens/menos.png)
 }
@@ -246,6 +258,14 @@ span {
 
 
 }
+
+.inner-square-cuatro-div img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+ 
 .inner-square-cuatro-div.active {
   /* Estilos cuando está activo */
   background-color: #8e9294;
@@ -1155,4 +1175,108 @@ body.theme .back-to-home:hover{
   object-fit: contain;
   object-position: center;
 }
+.dialog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Centers horizontally */
+  justify-content: center; /* Centers vertically */
+  width: 100%;
+  max-width: 250px; /* Adjust to fit inside the dialog */
+  background: white;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: absolute;
+  top: 65%; /* ⬇ Move it slightly lower */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+/* Ensure the input field does not exceed dialog width */
+input {
+  width: 100%;
+  height: 40px;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 8px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  background: #fff;
+}
+
+/* Center the numpad inside the dialog */
+.numpad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  width: 100%;
+  max-width: 160px; /* Ensures it doesn't overflow */
+  margin: auto;
+}
+
+.btn-pad {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-pad:active {
+  background: #bbb;
+}
+
+.btn-pad.delete {
+  background: #f66;
+  color: white;
+}
+
+.btn-pad.delete:active {
+  background: #d44;
+}
+
+.btn-pad.listo {
+  background: rgb(102, 102, 255);
+  color: white;
+}
+
+.btn-pad.listo:active {
+  background: rgb(9, 232, 6);
+  color: white;
+}
+.popover {
+  z-index: 2000 !important;
+}
+.form-group {
+  position: relative;
+}
+.container-pad {
+  width: 442px;
+  border: 1px solid black;
+  display: inline-block;
+}
+.block {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  background: red;
+  float: right;
+}
+.block[v2] {
+  height: 210px;
+}
+.block[h2] {
+  width: 210px;
+}
+.inline-item {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* optional: space between elements */
+}
