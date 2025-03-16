@@ -37,3 +37,8 @@ img {
     flex-direction: column;
     gap: 8px; /* Espaciado entre los botones */
 }
+
+/* Si estás usando nx-selectable-card, puedes agregar un margen adicional aquí */
+nx-selectable-card {
+    margin-bottom: 16px; /* Asegura que el margen inferior se aplique también a nx-selectable-card */
+}
