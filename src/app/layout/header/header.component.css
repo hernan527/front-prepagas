@@ -15,3 +15,25 @@ figure {
     position:fixed;
     z-index:1000
 }
+
+/* Ajuste de la imagen del logo */
+.logo-image {
+    max-width: 100%;  /* Asegura que la imagen no se desborde */
+    height: auto;     /* Mantiene la proporción de la imagen */
+    display: block;   /* Elimina espacio extra debajo de la imagen */
+    max-height: 50px; /* Ajusta la altura máxima según lo que necesites */
+}
+
+/* Estilo para el texto al lado del logo */
+.logo-text {
+    font-size: 24px;  /* Ajusta el tamaño de fuente según lo necesites */
+    margin-left: 10px; /* Espacio entre el logo y el texto */
+    vertical-align: middle; /* Alinea verticalmente el texto con el logo */
+}
+
+/* Si el logo necesita estar centrado */
+header {
+    display: flex;
+    align-items: center;  /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+}
