@@ -1,0 +1,39 @@
+.card {
+    display: flex;
+    align-items: center; /* Alinea la imagen y el contenido al centro verticalmente */
+    gap: 16px; /* Espaciado entre la imagen y el contenido */
+}
+
+img {
+    width: 150px; /* Ajusta el ancho de la imagen */
+    height: auto; /* Mantiene las proporciones */
+    object-fit: contain; /* Evita que la imagen se deforme */
+}
+
+.content {
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+    justify-content: center;
+}
+
+/* En pantallas pequeñas, todo se apila en una columna */
+@media (max-width: 703px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    img {
+        width: 100%;
+        max-width: 200px; /* Evita que la imagen sea demasiado grande */
+    }
+}
+
+
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espaciado entre los botones */
+}

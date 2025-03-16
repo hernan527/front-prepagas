@@ -1,28 +1,45 @@
-<div id="header" class="com-banner">
-    <div id="corpo-topo">
+<header nx-header>
+    <nx-header-brand>
+        <nx-link>
+            <a href="#">
+                <figure nxFigure>
+                    <img
+                        src="assets/logos/aposin_logo.svg"
+                        alt="Brand Logo"
+                        role="none"
+                    />
+                </figure>
+                <span class="logo-text">AQUILA</span>
+            </a>
+        </nx-link>
+    </nx-header-brand>
 
-        <!-- LOGO -->
-        <a class="logo" href="index.html"><img class="logo-desktop" src="./../../assets/images/fotos/logo-header-tr.png" alt="Plano de Saúde" title="Plano de Saúde"><img class="logo-mobile" src="../../../assets/images/uploads/2020/06/plano-de-saude-voce-merece-o-melhor-logo-mobile.png" alt="Plano de Saúde" title="Plano de Saúde"></a>
-        <!-- MENU -->
-        <div>
-            <div class="abre-menu-mobile"></div>
-            <nav id="nav" role="navigation" class="menu-lateral-logo">
-                <div class="menu-principal-container"><ul id="menu-principal" class="menu"><li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-item-84"><a href="index.html" aria-current="page">Home</a></li>
-<li id="menu-item-74" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74"><a href="cote-agora/index.html">Cotizar ahora</a></li>
-<li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="planos-de-saude-precos/index.html">Mejores Planes</a></li>
-<li id="menu-item-222" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-222"><a href="blog/index.html">Blog</a></li>
-</ul></div>                </nav>
-            <div class="fundo-preto"></div>
-        </div>
+    <nx-header-navigation>
+        <nx-header-navigation-item>
+            <a
+                routerLink="./"
+                [routerLinkActiveOptions]="{exact: true}"
+                routerLinkActive="is-active"
+                [skipLocationChange]="true"
+                nxHeaderLink
+                >Option 1</a
+            >
+        </nx-header-navigation-item>
+        <nx-header-navigation-item>
+            <a
+                routerLink="./"
+                [queryParams]="{s: 2}"
+                routerLinkActive="is-active"
+                [skipLocationChange]="true"
+                nxHeaderLink
+                >Option 2</a
+            >
+        </nx-header-navigation-item>
+    </nx-header-navigation>
 
-        <!-- BUSCA -->
-        <form class="formulario-busca" role="search" method="get" id="searchform" action="">
-            <input type="search" id="s" name="s" placeholder="Buscar" />
-            <input type="submit" value="" id="searchsubmit" />
-        </form>
-        <div class="abre-busca-mobile"></div>
+    <nx-header-actions>
+        <button nxButton="secondary small" type="button">Login</button>
+    </nx-header-actions>
+</header>
 
-    </div>
-
-</div>
-
+            

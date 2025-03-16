@@ -6,5 +6,7 @@ export * from './incrementor/incrementor.component';
 export * from './insurance-card/insurance-card.component';
 export * from './pagination/pagination.component';
 export * from './filters/filters.component';
+export * from './card-land/card-land.component';
+
 
 

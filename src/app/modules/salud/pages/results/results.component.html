@@ -112,24 +112,32 @@
                <!-- ========= content items ========= -->
                <div class="row ">
                   <ng-container *ngIf="isLoaded" >
-                     <ng-container *ngIf="view === 'grid' || isSmallScreen">
-                        <div class="items col-lg-4 col-md-4 col-sm-6 mb-2"  *ngFor="let product of getPagedData() | filter: SearchEmpresa:'empresa' | sort: [SortbyParam, SortDirection]">
-                           <app-product-card 
+                     <ng-container *ngIf="isSmallScreen">
+                        <div nxLayout="grid" class="grid-container">
+                           <div nxRow>
+                        <div class="items" nxCol="" *ngFor="let product of getPagedData() | filter: SearchEmpresa:'empresa' | sort: [SortbyParam, SortDirection]">
+                           <app-card-grid
                            [product]="product"
                            [compareList]="compareList"
                            (showProduct)="onShowDetail($event)"
-                           >
-                           </app-product-card>
+                         ></app-card-grid>
                         </div>
+                     </div>
+                  </div>
                      </ng-container>
-                     <ng-container *ngIf="view === 'list' && !isSmallScreen">
+                     <ng-container *ngIf="!isSmallScreen">
                         <div class="items" *ngFor="let product of getPagedData() | filter: SearchEmpresa:'empresa'  |  sort: [SortbyParam, SortDirection]" >
-                           <app-product-land 
+                         <app-card-land
+                           [product]="product"
+                           [compareList]="compareList"
+                           (showProduct)="onShowDetail($event)"
+                         ></app-card-land>
+                           <!-- <app-product-land 
                            [product]="product"
                            [compareList]="compareList"
                            (showProduct)="onShowDetail($event)"
                            >
-                           </app-product-land>
+                           </app-product-land> -->
                         </div>
                      </ng-container>
                   </ng-container>

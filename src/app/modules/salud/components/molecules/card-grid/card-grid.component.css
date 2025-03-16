@@ -1,0 +1,48 @@
+.card {
+    display: block; /* Asegura que los elementos se apilen */
+    text-align: center; /* Centra los elementos si es necesario */
+}
+
+
+/* img {
+    flex: 0 0 auto;
+    margin-right: 16px;
+} */
+
+img {
+    width: 100%; /* Ajusta la imagen al ancho del contenedor */
+    max-width: 200px; /* Tamaño máximo opcional */
+    height: auto; /* Mantiene la proporción sin deformarse */
+    display: block;
+    margin: 0 auto 8px; /* Centra la imagen y añade un margen inferior */
+    object-fit: contain; /* Mantiene la imagen completa sin recortar */
+}
+.content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-basis: 100%;
+}
+
+@media (max-width: 768px) {
+    .card {
+        display: block;
+    }
+
+    img {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+}
+
+
+:host {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -4px;
+    width: 100%;
+}
+
+button {
+    margin: 0 4px 16px;
+}

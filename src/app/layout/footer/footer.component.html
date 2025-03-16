@@ -1,24 +1,17 @@
-<div class="footer-new">
+<nx-footer>
+    <nx-footer-copyright>
+        &copy; {{ currentYear }} Some company
+    </nx-footer-copyright>
 
-    <div>
-
-        <div class="col">
-            <a class="logo" href="index.html"><img src="../../assets/images/uploads/2020/06/plano-de-saude-voce-merece-o-melhor-logo-mobile.png" alt="Plano de Saúde" title="Plano de Saúde"></a>                    <p>Somos Parceiros de Vendas das Maiores Operadoras do Brasil, Aqui Você Simula seu Plano e pode Economizar até 30% na Contratação de um Novo Plano. Tudo online, na hora e sem burocracias!</p>
-        </div>
-
-        <div class="col">
-            <a class='telefone' target='_blank' href='tel:01130907096'>(11) 3090-7096</a>                                        <a class="numero-whatsapp" href="https://api.whatsapp.com/send?phone=5511954984969&amp;text=Ol%C3%A1%2C%20estou%20no%20site%20Plano%20de%20Sa%c3%bade%20(https://www.precosplanosdesaude.com.br/)%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank">Receba pelo WhatsApp</a>
-            <p>Atendimento: Segunda à Sexta 9h às 18h</p>
-        </div>
-
-    </div>
-</div>
-<div id="footer">
-    <div id="corpo-rodape">
-                            </div>
-
-    <div class="copy">
-        <p>&copy;2023 Plano de Saúde</p>
-        <p class="endereco">Endereço: Rua Conselheiro Crispiniano, 139, 4,5,9,10 e 12º andar - Centro, São Paulo/SP - CEP 01037-001. CNPJ 42.880.612/0001-66</p>
-    </div>
-</div>
+    <nx-footer-navigation>
+        <nx-footer-link>
+            <a routerLink="./">Imprint</a>
+        </nx-footer-link>
+        <nx-footer-link>
+            <a routerLink="./">Privacy Policy</a>
+        </nx-footer-link>
+        <nx-footer-link>
+            <a routerLink="./">Terms of Use</a>
+        </nx-footer-link>
+    </nx-footer-navigation>
+</nx-footer>
