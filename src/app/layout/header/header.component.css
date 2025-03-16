@@ -10,3 +10,8 @@ figure {
 .logo-text {
     color: var(--text-01, #ffffff);
 }
+
+#header {
+    position:fixed;
+    z-index:1000
+}
