@@ -91,6 +91,7 @@ import { DialogService } from "src/app/services/dialog.service";
 import { register } from 'swiper/element/bundle';
 import { CardLandComponent } from '../../components/molecules/card-land/card-land.component';
 import { CardGridComponent } from '../../components/molecules/card-grid/card-grid.component';
+import { NxToolbarComponent } from '@aposin/ng-aquila/toolbar';
 
 register();
 
@@ -150,7 +151,8 @@ interface AutoCompleteCompleteEvent {
     AutoCompleteModule,
     FormularioComponent,
     CardLandComponent,
-    CardGridComponent
+    CardGridComponent,
+    NxToolbarComponent
 ]
 })
 export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
@@ -163,7 +165,7 @@ export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
     this.view = $event;
   }
   @ViewChild("scroller") scroller!: CdkVirtualScrollViewport;
-  itemsPerPage = 9; // Número de elementos por página
+  itemsPerPage = 1000; // Número de elementos por página
   currentPage = 1; // Página actual, inicializada en 1
   totalItems: number;
   itemsPerPageOptions: number[] = [10, 20, 30, 50, 100]; // Opciones para productos por página

@@ -37,3 +37,7 @@ header {
     align-items: center;  /* Centra verticalmente */
     justify-content: center; /* Centra horizontalmente */
 }
+#header {
+    position:fixed;
+    z-index:1000
+}
