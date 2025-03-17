@@ -1,0 +1,14 @@
+/* Centrar la sección en la pantalla */
+.centered-section {
+  display: flex;
+  justify-content: center;  /* Centra el contenido horizontalmente */
+}
+
+
+/* Estilos del contenido principal */
+.main-content {
+  background-color: #f5f5f5; /* Un gris claro */
+  padding: 16px;
+  flex-grow: 1;              /* Permite que ocupe el espacio restante */
+  max-width: 900px;          /* Limita el ancho para centrar */
+}

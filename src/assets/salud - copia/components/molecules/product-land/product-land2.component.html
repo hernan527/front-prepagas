@@ -1,0 +1,40 @@
+  <!-- item-row -->
+  <article class="row gy-2 align-items-center">
+    <div class="col-xl-4 col-sm-6">
+      <div class="itemside align-items-center">
+      <div class="aside">
+        <img src="{{product.images[0].url}}" alt="{{ product.name }}" class="img-sm img-thumbnail">
+      </div>
+      <div class="info">
+        <a href="#" class="h6 link-primary">Great shop LLC</a>
+        <div class="rating-wrap">
+        <ul class="rating-stars">
+          <li class="stars-active" style="width: 70%;">
+          <img src="assets/images/misc/stars-active.svg" alt="">
+          </li>
+          <li>
+          <img src="assets/images/misc/starts-disable.svg" alt="">
+          </li>
+        </ul>
+        <span class="label-rating text-warning">4.2 Good</span>
+        </div>
+        <!-- rating-wrap.// -->
+      </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-sm-6">
+      <span>
+      <i class="me-2 text-success fa fa-check"></i> Free worldwide shipping </span>
+      <br>
+      <span>
+      <i class="me-2 text-success fa fa-check"></i> Pay with installment </span>
+    </div>
+    <div class="col-md-4 d-flex justify-content-lg-end">
+      <div>
+      <span class="price h6 me-4">${{ product.precio }}</span>
+      <a href="#" class="btn btn-primary">Buy this</a>
+      </div>
+    </div>
+    </article>
+    <!-- item-row //end -->
+  

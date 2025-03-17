@@ -1,0 +1,245 @@
+
+
+
+.inner-square-dos-div{
+  flex:1;
+  max-width:200px;
+  max-height:50px;
+  flex-direction:row
+}
+.inner-square-dos-div img{
+  display:inerhit
+}
+/* app.component.css */
+.inner-square-dos-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 200px;
+  max-height: 50px;
+}
+
+/* app.component.css */
+.inner-square-dos-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 200px;
+  max-height: 50px;
+}
+
+/* incrementador.component.css */
+/* Estilos opcionales para los botones del incrementador */
+button {
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  background-color: #e0e0e0;
+}
+
+span {
+  font-size: 16px;
+  margin: 0 10px;
+}
+/* Estilos para el botón */
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 200px;
+  overflow: hidden;
+  margin: 0;  /* Elimina los márgenes */
+  padding: 0;  /* Elimina el relleno */
+}
+
+
+
+/* Estilo activo */
+.inner-square-dos-div.active {
+  /* Estilos cuando está activo */
+  background-color: #3498db;
+  color: #fff;
+}
+
+.form-cotacao {
+  max-width: 800px; /* Ajusta el valor según tus necesidades */
+  margin: 0 auto; /* Centra el formulario en la página */
+  overflow: hidden; /* Evita que el contenido se desborde del formulario */
+
+}
+@media (max-width: 600px) {
+  .form-cotacao {
+    max-width: 100%; /* Ajusta la anchura máxima al 100% del ancho de la pantalla */
+    padding: 10px; /* Añade algún espacio alrededor del formulario */
+    /* Otros ajustes de estilo para tamaños de pantalla más pequeños */
+  }
+
+  /* Ajustes específicos para elementos dentro del formulario */
+  /* .campo-pagina,
+  .campo-operadora,
+  .plano-selecionado, */
+  /* Otros elementos dentro del formulario */
+  /* { */
+    /* Ajustes de estilo específicos para tamaños de pantalla más pequeños */
+  /* } */
+}
+
+section {
+  display: flex;
+}
+.caja {
+  border: 1px solid rgb(70, 69, 69);
+  background-color: white;
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  max-width:200px;
+  max-height:200px; 
+  line-height: 120px;
+  text-align: center;
+  margin: 5px;
+  flex-direction:row
+}
+.flex-container{
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+}
+
+.inner-square-div{ 
+  max-width:200px;
+   max-height:200px; 
+   border: 1px solid rgb(70, 69, 69);
+   background-color: white;
+   color: black;
+   font-family: 'Courier New', Courier, monospace;
+   font-weight: bold;
+  
+   line-height: 120px;
+   text-align: center;
+   margin: 5px;
+   flex-direction:column;
+
+  }
+
+  .inner-square-dos-div {
+    flex: 1;
+    max-width: 100%;
+    max-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;  /* Elimina los márgenes */
+    padding: 0;  /* Elimina el relleno */
+    font-weight: bold;
+    font-size:10px;
+  }
+
+  .main-container{
+   /* display:flex; */
+    /* min-height:400px;
+    min-width:400px; */
+    /* justify-content:center; */
+    background:red;
+    /* flex-direction:column;  */
+  
+ }
+/* .main-container p, .possui-plano p, .possui-cnpj p{position: relative;} */
+
+/* .main-container p.ok::after, .possui-plano p.ok::after, .possui-cnpj p.ok::after{width: 20px; height: 20px; content: ""; background-image: url(imagens/icone-check.svg); background-position: center; background-repeat: no-repeat; background-size: 100%; position: absolute; bottom: 2px; display: inline-block; margin: 0 0 0 5px;} */
+
+/* .main-container b{min-width: 100px;text-align: center; background-color: #fff; padding: 10px; display: inline-block; border: 1px solid #66a9d8; box-shadow: 0 5px 5px rgba(0,0,0,0.2); margin: 0 20px 0 0; font-family: 'Noto Sans', sans-serif; font-weight: 400; color: #4e636d; cursor: pointer;} */
+
+.main-container b:hover{background-color: #4caf50; border: 1px solid #047d72; color: #fff;}
+
+ .main-container b.ativa{background-color: #4caf50; border: 1px solid #047d72; color: #fff;} 
+
+/* .main-container input[type="radio"], .possui-plano input[type="radio"], .possui-cnpj input[type="radio"]{position: absolute; z-index: -1; opacity: 0;} */
+/* .main-container{text-align: center;} */
+	/* .main-container{margin: 0 0 10px 0;} */
+	/* .main-container b{width: 100%; margin: 0 0 15px 0; box-shadow: 0 5px 5px rgba(0,0,0,0.1);} */
+
+.button {
+    cursor: pointer;
+    padding: 0px;
+    border: none;
+    background-color: #e0e0e0;
+    margin: 0;  /* Elimina los márgenes */
+    padding: 0;  /* Elimina el relleno */
+    text-align: left;
+
+  }
+
+  
+  span {
+    font-size: 8px;
+    margin: 0px;
+    padding: 0;  /* Elimina el relleno */
+
+    text-align: left;
+  }
+
+.menos{
+  background-image:url(../../../../../../assets/css/imagens/menos.jpg)
+}
+
+.mas{
+  background-image:url(../../../../../../assets/css/imagens/mas.jpg)
+}
+.flex-contenedor{
+  /* border: 1px solid black; */
+  /* background: #ccc; */
+  padding: 0px;
+  display: flex;
+  flex-flow: row wrap;
+  /* justify-content: center; */
+  align-content: center;
+  max-height: 50px;
+  justify-content:space-between;
+}
+.inner-square-tres-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100px;
+  max-height: 50px; /* Ajusta la altura según sea necesario */
+  margin: 0;
+  padding: 0;
+}
+
+.inner-square-tres-div p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.p {
+      font-size: 8px;
+
+}
+
+.inner-square-cuatro-div {
+  flex: 1;
+  max-width: 25px;
+  max-height: 25px;
+  display: flex;
+  margin: 0;  /* Elimina los márgenes */
+  padding: 0;  /* Elimina el relleno */
+  justify-content: space-between;
+  align-items: center;
+  /* margin-top: 12,5;  Elimina los márgenes */
+
+
+}
+.inner-square-cuatro-div.active {
+  /* Estilos cuando está activo */
+  background-color: #3498db;
+  color: #fff;
+}

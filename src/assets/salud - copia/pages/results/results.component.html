@@ -1,0 +1,28 @@
+<section class="centered-section">
+    <app-filters-products
+    [isSmallScreen]="isSmallScreen"
+    [product]="products"
+    [sidebarVisible]="sidebarVisible"
+    [anchoSidebar]="anchoSidebar"
+    [productosFiltrados]="productosFiltrados"
+    (sidebarStateChanged)="onSidebarStateChanged($event)"
+    ></app-filters-products> 
+
+  <main class="main-content">
+  
+
+      <ng-container *ngIf="!isSmallScreen">
+        <div 
+          class="items" 
+          *ngFor="let product of getPagedData() | filter: SearchEmpresa:'empresa' | sort: [SortbyParam, SortDirection]"
+        >
+          <app-card-land
+            [product]="product"
+            [compareList]="compareList"
+            (showProduct)="onShowDetail($event)"
+          ></app-card-land>
+        </div>
+      </ng-container>
+    
+  </main>
+</section>

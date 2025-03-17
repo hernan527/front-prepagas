@@ -1,0 +1,263 @@
+<!-- <script type="text/javascript" src="./../../../../../../assets/js/formularios-cotizar.js"></script> -->
+<!-- <section class="form section" > -->
+	<div class="background-detail left"></div>
+	<div class="background-detail"></div>
+	<!-- <div class="container container--half-width form-cotacao"> -->
+	<div class="form-title">Cotice su Plan de Salúd!</div>
+	<!-- <div class="form-group" *ngIf="selectedZonaType ==='' || selectedVolverType === 'zona'">
+			  <div class="btn-wrapper--main " name="zone_type">
+				 <label for="full_name" *ngIf="selectedZonaType ==='' || selectedVolverType === 'zona'">Zona de residencia</label>
+				 <div class="flex-container" *ngIf="selectedZonaType ==='' || selectedVolverType === 'zona'">
+					 <label for="full_name" *ngIf="selectedZonaType ==='' || selectedVolverType === 'zona'">Zona de residencia</label>
+					<div class="form-group" *ngIf="selectedZonaType ==='' || selectedVolverType === 'zona'">
+						<label for="full_name">Zona de residencia</label>
+						<div class="btn-wrapper--main " name="zone_type">
+						 <button class="square" [class.active]="selectedZonaType === 'CABA'" (click)="selectZonaType('CABA')">
+						 CABA
+						 </button>
+						 <button class="square" [class.active]="selectedZonaType === 'GBA Norte'" (click)="selectZonaType('GBA Norte')">
+						 GBA Norte
+						 </button>
+						 <button class="square" [class.active]="selectedZonaType === 'GBA Sur'" (click)="selectZonaType('GBA Sur')">
+						 GBA Sur
+						 </button>
+						   <button class="square" [class.active]="selectedZonaType === 'GBA Oeste'" (click)="selectZonaType('GBA Oeste')">
+						 GBA Oeste
+						 </button>
+						 <button class="square" [class.active]="selectedZonaType === 'Interior'" (click)="selectZonaType('Interior')">
+						 Interior del país            </button>         
+					   </div></div>
+				 </div>
+			  </div>
+		   </div> -->
+	<input class="campo-pagina" type="hidden" name="formulario-pagina" id="formulario-pagina" value="cotizar-ahora-formulario-completo" />
+	
+	<div class="main-container">
+		<label class="form-group-label" for="tipo" *ngIf="!formularioEnviado && mostrarNumero === false">
+			Complete el grupo familiar:
+		</label>
+		<label class="form-group-label" for="tipo" *ngIf="!formularioEnviado && mostrarImagen === false">
+			{{ mostrarEdad }}
+		</label>
+		<div class="flex-container">
+			<b class="btn--main btn btn--vertical btn-primary" *ngIf="this.formCotizar.get('group').value === '' ||  this.formCotizar.get('group').value === 1" [class.active]="formCotizar.get('group').value === 1" (click)="selectGroup(1)">
+				<img src="../../../../../../assets/js/scripts/style/images/17319805201332933099.webp" />
+			</b>
+			<div class="overlay"></div>
+			<b class="btn--main btn btn--vertical btn-primary" *ngIf="formCotizar.get('group').value === '' || formCotizar.get('group').value === 3" [class.active]="formCotizar.get('group').value === 3" (click)="selectGroup(3)">
+				<img src="../../../../../../assets/js/scripts/style/images/zzcasdb.webp" />
+			</b>
+			<div class="overlay"></div>
+		</div>
+		<div class="flex-container">
+			<b class="btn--main btn btn--vertical btn-primary" *ngIf="this.formCotizar.get('group').value === '' || this.formCotizar.get('group').value === 2" [class.active]="formCotizar.get('group').value === 2" (click)="selectGroup(2)">
+				<img src="../../../../../../assets/js/scripts/style/images/indhijos.webp" />
+			</b>
+			<div class="overlay"></div>
+			<b class="btn--main btn btn--vertical btn-primary" *ngIf="this.formCotizar.get('group').value === '' || this.formCotizar.get('group').value === 4" [class.active]="formCotizar.get('group').value === 4" (click)="selectGroup(4)">
+				<img src="../../../../../../assets/js/scripts/style/images/173198052013329099.webp" />
+			</b>
+			<div class="overlay"></div>
+		</div>
+	
+		<mat-list>
+			<mat-list-item *ngIf="this.formCotizar.get('group').value !== '' && !formularioEnviado"> Edades</mat-list-item>
+			<mat-divider></mat-divider>
+			<mat-list-item *ngIf="this.formCotizar.get('group').value !== '' && !formularioEnviado">
+				Titular <strong>{{ edadTitular }} años</strong>
+				<button class="btn inner-square-cuatro-div menos" id="decrementButtonTitular" (click)="decrementar('titular')"></button>
+	
+				
+	
+				<button class="btn inner-square-cuatro-div mas" id="incrementButtonTitular" (click)="incrementar('titular')"></button>
+			</mat-list-item>
+			<mat-divider></mat-divider>
+			<mat-list-item *ngIf="this.formCotizar.get('group').value === 3  && showEdadConyuge === true || this.formCotizar.get('group').value === 4 && showEdadConyuge === true ">
+				Pareja<strong>{{ edadConyuge }} años</strong>
+
+				<button class="btn inner-square-cuatro-div menos" id="decrementButtonConyuge" (click)="decrementar('conyuge')"></button>
+	
+	
+				<button class="btn inner-square-cuatro-div mas" id="incrementButtonConyuge" (click)="incrementar('conyuge')"></button>
+			</mat-list-item>
+			<mat-divider></mat-divider>
+
+			<mat-list-item *ngIf="this.formCotizar.get('group').value === 2  && showCantidadHijos === true || this.formCotizar.get('group').value === 4 && showCantidadHijos === true ">
+				Hijos :<strong>{{ cantidadHijos }} hijos</strong>
+				<button class="btn inner-square-cuatro-div menos" id="decrementButtonHijo1" (click)="decrementar('numkids')"></button>
+
+				<button class="btn inner-square-cuatro-div mas" id="incrementButtonHijos" (click)="incrementar('numkids')"></button>
+			</mat-list-item>
+			<mat-divider></mat-divider>
+
+
+			<!-- <mat-list-item *ngIf="this.formCotizar.get('group').value === 2  && showCantidadHijos === true || this.formCotizar.get('group').value === 4 && showCantidadHijos === true ">
+				<button class="btn inner-square-cuatro-div menos" id="decrementButtonHijos" (click)="decrementar('hijo1')"></button>
+
+				Hijo 1:<strong>{{ edadHijo1 }}</strong>
+				<button class="btn inner-square-cuatro-div mas" id="incrementButtonHijo1" (click)="incrementar('hijo1')"></button>
+			</mat-list-item>
+			<mat-divider></mat-divider>
+			<ng-container *ngIf="cantidadHijos >= 1">
+				<mat-list-item *ngIf="this.formCotizar.get('group').value === 2  && showCantidadHijos === true && cantidadHijos >= 1|| this.formCotizar.get('group').value === 4 && showCantidadHijos === true && cantidadHijos >= 1">
+					<button class="btn inner-square-cuatro-div menos" id="decrementButtonHijo2" (click)="decrementar('hijo2')"></button>
+	
+					hijo 2:<strong>{{ edadHijo2 }}</strong>
+	
+					<button class="btn inner-square-cuatro-div mas" id="incrementButtonHijo2" (click)="incrementar('hijo2')"></button>
+				</mat-list-item>
+			</ng-container>
+			<mat-divider></mat-divider>
+			<ng-container *ngIf="cantidadHijos >= 2">
+				<mat-list-item *ngIf="this.formCotizar.get('group').value === 2  && showCantidadHijos === true && cantidadHijos >= 2|| this.formCotizar.get('group').value === 4 && showCantidadHijos === true && cantidadHijos >= 2">
+					<button class="btn inner-square-cuatro-div menos" id="decrementButtonHijo3" (click)="decrementar('hijo3')"></button>
+	
+					Hijo 3:<strong>{{ edadHijo3 }}</strong>
+	
+					<button class="btn inner-square-cuatro-div mas" id="incrementButtonHijo3" (click)="incrementar('hijo3')"></button>
+				</mat-list-item>
+			</ng-container>
+			<mat-divider></mat-divider>
+			<ng-container *ngIf="cantidadHijos >= 3">
+				<mat-list-item *ngIf="this.formCotizar.get('group').value === 2  && showCantidadHijos === true  && cantidadHijos >= 3|| this.formCotizar.get('group').value === 4 && showCantidadHijos === true && cantidadHijos >= 3">
+					<button class="btn inner-square-cuatro-div menos" id="decrementButtonHijo4" (click)="decrementar('hijo4')"></button>
+	
+					Hijo 4:<strong>{{ edadHijo4 }}</strong>
+	
+					<button class="btn inner-square-cuatro-div mas" id="incrementButtonHijo4" (click)="incrementar('hijo4')"></button>
+				</mat-list-item>
+			</ng-container>
+			<mat-divider></mat-divider>
+			<ng-container *ngIf="cantidadHijos === 4">
+				<mat-list-item *ngIf="this.formCotizar.get('group').value === 2  && showCantidadHijos === true && cantidadHijos === 4|| this.formCotizar.get('group').value === 4 && showCantidadHijos === true  && cantidadHijos === 4 ">
+					<button class="btn inner-square-cuatro-div menos" id="decrementButtonHijo5" (click)="decrementar('hijo5')"></button>
+	
+					Hijo 5:<strong>{{ edadHijo5 }}</strong>
+	
+					<button class="btn inner-square-cuatro-div mas" id="incrementButtonHijo5" (click)="incrementar('hijo5')"></button>
+				</mat-list-item>
+			</ng-container> 
+		</mat-list>
+	
+		<div class="flex-container" *ngIf="this.formCotizar.get('group').value === 2  && showCantidadHijos === true || this.formCotizar.get('group').value === 4 && showCantidadHijos === true">
+			<button class="btn inner-square-cuatro-div unomas" id="incrementButtonHijos" (click)="incrementar('hijos')"></button>
+			<span style="font-size:10px" type="hidden" >edad&nbsp;hijo&nbsp;5&nbsp;&nbsp;<strong>{{ cantidadHijos }}</strong> 
+			<button class="btn inner-square-cuatro-div unomenos" id="decrementButtonHijos" (click)="decrementar('hijos')"></button>
+		</div>
+	</div>-->
+	<form [formGroup]="formCotizar" (ngSubmit)="save($event)" *ngIf="!formularioEnviado">
+		<div>
+			<div>
+				<div class="flex-container" *ngIf="this.formCotizar.get('group').value !== '' ">
+					<!-- Botón Traspaso de aportes a obra social -->
+					<b class="btn inner-square-dos-div img desregulado btn-primary" *ngIf="showTipoFieldD || !selectedAportesType" [class.active]="formCotizar.get('tipo').value === 'D'" (click)="selectAportesType('D')">
+						Traspaso de aportes a obra social
+					</b>
+	
+					<!-- Botón Solicito privado -->
+					<b class="btn inner-square-dos-div img particular" *ngIf="showTipoFieldP || !selectedAportesType" [class.active]="formCotizar.get('tipo').value === 'P'" (click)="selectAportesType('P')">
+						Solicito privado
+					</b>
+				</div>
+				<div class="row" *ngIf="formCotizar.get('tipo').value === 'D'">
+					<p><strong>Ingresa el importe de tu sueldo Bruto (sin descuentos) ó el descuento que le hacen por aportes.</strong></p>
+					<div class="col-12">
+						<span><input class="campo-sueldo" type="text" formControlName="sueldo" placeholder="Sueldo Bruto ( antes de los descuentos) o el descuento por aportes" (input)="onInputChange($event, 'sueldo')" /></span>
+					</div>
+				</div>
+			</div>
+	
+			<div class="row monotributo" *ngIf="formCotizar.get('tipo').value === 'D'">
+				<p><strong>Campos correspondientes a aportes por monotributo </strong></p>
+	
+				<div class="col-6">
+					<p><strong>categoría </strong></p>
+					<span><input class="campo-categoria-mon" type="text" formControlName="categoriaMono" id="categoriaMono" placeholder="Categoria Monotributo" (input)="onInputChange($event, 'categoriaMono')" /></span>
+				</div>
+				<div class="col-6">
+					<p><strong>Beneficiarios</strong></p>
+					<span><input class="campo-cant-aport-mon" type="text" formControlName="cantAport" id="cantAport" placeholder="Cantidad de Aportantes" (input)="onInputChange($event, 'cantAport')" /></span>
+					<div class="container container--half-width" *ngIf="selectedGrupoType.includes('hijos') && selectedAportesType !=='' &&  selectedVolverType !== 'zona'">
+						<div class="btn-wrapper">
+							<button class="btn btn--ghost btn--previous" (click)="selectVolverType('zona')">
+								<img class="icon icon--small icon--left" src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--chevron-left" alt="ícone de retroceder" aria-hidden="true" />
+								volver
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="btn back-to-home" *ngIf="formCotizar.get('tipo').value === 'D' || formCotizar.get('tipo').value === 'P' " type="submit">cotizar</button>
+		</div>
+	</form>
+	
+	<!-- <form [formGroup]="formPersonalData" (ngSubmit)="salvar($event)">
+		<div class="container container--half-width">
+			<div class="form-group" formControlName="name">
+				<label for="nombre">
+					Nombre completo
+				</label>
+				<input #campoNombre type="text" required />
+			</div>
+			<div class="form-group" formControlName="email">
+				<label for="email">
+					email
+				</label>
+				<input type="text" required />
+			</div>
+			<div class="form-group" formControlName="phone">
+				<label for="cellphone">
+					Celular
+				</label>
+				<input type="text" required />
+			</div>
+	
+			<div>
+				<div class="btn" (click)="selectContactoType('true')" type="button">ver cotizacion</div>
+			</div>
+		</div>
+	
+		<div class="container container--half-width">
+			<div class="form-title" style="margin-bottom: 15px;">
+				Pronto!
+			</div>
+			<div class="form-group" style="margin-top: 0;">
+				<label for="preferred_contact_method">
+					Como você prefere continuar a sua cotação?
+				</label>
+				<div>
+					<div class="btn-wrapper btn-wrapper--floating btn-wrapper--equal-sizes" name="preferred_contact_method">
+						<button class="btn btn--vertical" (click)="selectContactoType('phone')">
+							<img class="icon" src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--social-chat" alt="ícone de chat" aria-hidden="true" />
+							TELÉFONO
+						</button>
+						<button class="btn btn--vertical" (click)="selectContactoType('whatsapp')">
+							<img class="icon" src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--social-whatsapp" alt="ícone de whatsapp" aria-hidden="true" />
+							Whatsapp
+						</button>
+					</div>
+				</div>
+				<div class="error">
+					<span>
+						Este campo é requerido.
+					</span>
+				</div>
+			</div>
+		</div>
+	</form> -->
+	
+	<div class="thankyou-card" *ngIf="selectedContactoType === 'phone' && formularioEnviado === true">
+		<img class="icon" src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--thankyou-phone" alt="ícone de agradecimento" />
+		<div class="thankyou-card--title">Gracias!</div>
+		<div class="thankyou-card--body">Entraremos em contato <b>em até 2 minutos!</b></div>
+	</div>
+	
+	<div class="thankyou-card" *ngIf="selectedContactoType === 'whatsapp' && formularioEnviado === true">
+		<img class="icon" src="../../../../../../assets/js/scripts/style/images/sprite.svg#theme--thankyou-whatsapp" alt="ícone de agradecimento" />
+		<div class="thankyou-card--title">Gracias!</div>
+		<div class="thankyou-card--body">Estaremos enviandole un mensaje!</div>
+	</div>
+	<!-- </div>
+	 </section>
+	  -->
+	

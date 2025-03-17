@@ -7,10 +7,7 @@
    [isSmallScreen]="isSmallScreen"
    ></app-search-form>
 <section  class="container-compare">
-   <!-- <div *ngIf="isSmallScreen" class="d-flex flex-column justify-content-center surface-card p-2 shadow-2 border-round hidden form-sticky" style="background-color: rgba(255, 215, 0, 0.6); margin: 0 0 0 0; align-items: center; animation: shake 0.5s ease-in-out;">
-      <div class="ztext-lg font-medium text-600 mb-2"><strong>Paso 1:</strong> Ingresa tu <strong>edad</strong> para calcular precios exactos y obtener los mejores planes</div>
-      <button pButton pRipple type="button" label="Completar Perfil" class="p-button-raised p-button-danger" (click)="openModa('custom-modal-3')" style="animation: aura 0.5s ease-in-out;"></button>
-      </div>  -->
+   
    <div class="content">
       <header class="d-flex flex-wrap align-items-center border-bottom mb-4 pb-3 w-100">
          <div _ngcontent-ng-c1250167330="" _nghost-ng-c1654105987="" class="d-flex align-items-center justify-content-between w-100 flex-nowrap">
@@ -112,32 +109,24 @@
                <!-- ========= content items ========= -->
                <div class="row ">
                   <ng-container *ngIf="isLoaded" >
-                     <ng-container *ngIf="isSmallScreen">
-                        <div nxLayout="grid" class="grid-container">
-                           <div nxRow>
-                        <div class="items" nxCol="" *ngFor="let product of getPagedData() | filter: SearchEmpresa:'empresa' | sort: [SortbyParam, SortDirection]">
-                           <app-card-grid
+                     <ng-container *ngIf="view === 'grid' || isSmallScreen">
+                        <div class="items col-lg-4 col-md-4 col-sm-6 mb-2"  *ngFor="let product of getPagedData() | filter: SearchEmpresa:'empresa' | sort: [SortbyParam, SortDirection]">
+                           <app-card-grid 
                            [product]="product"
                            [compareList]="compareList"
-                           (showProduct)="onShowDetail($event)"
-                         ></app-card-grid>
-                        </div>
-                     </div>
-                  </div>
-                     </ng-container>
-                     <ng-container *ngIf="!isSmallScreen">
-                        <div class="items" *ngFor="let product of getPagedData() | filter: SearchEmpresa:'empresa'  |  sort: [SortbyParam, SortDirection]" >
-                         <app-card-land
-                           [product]="product"
-                           [compareList]="compareList"
-                           (showProduct)="onShowDetail($event)"
-                         ></app-card-land>
-                           <!-- <app-product-land 
-                           [product]="product"
-                           [compareList]="compareList"
-                           (showProduct)="onShowDetail($event)"
+                           (showProduct)="onShowDetail(product.item_id)"
                            >
-                           </app-product-land> -->
+                           </app-card-grid>
+                        </div>
+                     </ng-container>
+                     <ng-container *ngIf="view === 'list' && !isSmallScreen">
+                        <div class="items" *ngFor="let product of getPagedData() | filter: SearchEmpresa:'empresa'  |  sort: [SortbyParam, SortDirection]" >
+                           <app-card-land 
+                           [product]="product"
+                           [compareList]="compareList"
+                           (showProduct)="onShowDetail(product.item_id)"
+                           >
+                           </app-card-land>
                         </div>
                      </ng-container>
                   </ng-container>
@@ -207,41 +196,9 @@
          sty
       </div>
    </ng-template>
-   <!-- s -->
-   <!-- <p-sidebar [(visible)]="sidebarVisible" [style]="{ 'width': anchoSidebar }"> -->
-   <!-- <app-filters-products [product]="products" ></app-filters-products> -->
-   <!-- <app-filters-products
-      [isSmallScreen]="isSmallScreen"
-      [products]="products"
-      
-      ></app-filters-products> -->
-   <!-- </p-sidebar> -->
-   <!-- Botón para activar el sidebar en dispositivos móviles -->
 
-
-   <!-- <button class="mobile-filters-button p-button p-button-raised" (click)="sidebarVisible = true;sidebar()">
-      <i class="pi pi-filter"></i> Filtros
-      </button> -->
-
-      
-   <!--         <jw-modal id='custom-modal-3' >
-      <app-form-queplan>  <button type="button" class="btn" (click)="closeModa('custom-modal-3')">Cerrar</button>
-      </app-form-queplan>
-      </jw-modal> -->
 </section>
-<!--       <div class="card flex justify-content-center">
-   <p-button (click)="showDialog()" icon="pi pi-external-link" label="Show"></p-button>
-   <p-dialog header="Header" [(visible)]="visible" [style]="{ width: '50vw' }">
-       <div class="flex py-2 justify-content-center">
-         <body class="theme" >
-           <app-form-quote></app-form-quote>
-       
-           
-           <p-dropdown appendTo="body" [options]="cities" [(ngModel)]="selectedCity" placeholder="Select a City" optionLabel="name"></p-dropdown>
-       </div>
-   </p-dialog>
-   </div>
-   -->
+
 <ng-container *ngIf='compareProdList().length >= 1 show' >
    <div id="mybutton" >
       <button class="feedback" mat-raised-button color="primary"

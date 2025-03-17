@@ -1,0 +1,133 @@
+<div class="grid-container">
+  <div class="grid" [class.selected]="selectedGroup !== null">
+    <b class="square1 btn--main btn btn--vertical btn-primary"
+      *ngIf="this.formCotizar.get('group').value === '' || this.formCotizar.get('group').value === 1"
+      [class.active]="formCotizar.get('group').value === 1"
+      (click)="selectGroup(1)">
+      <img src="../../../../../../assets/js/scripts/style/images/17319805201332933099.webp">
+    </b>
+
+    <b class="square1 btn--main btn btn--vertical btn-primary"
+      *ngIf="this.formCotizar.get('group').value === '' || this.formCotizar.get('group').value === 3"
+      [class.active]="formCotizar.get('group').value === 3"
+      (click)="selectGroup(3)">
+      <img src="../../../../../../assets/js/scripts/style/images/zzcasdb.webp">
+    </b>
+
+    <b class="square1 btn--main btn btn--vertical btn-primary"
+      *ngIf="this.formCotizar.get('group').value === '' || this.formCotizar.get('group').value === 2"
+      [class.active]="formCotizar.get('group').value === 2"
+      (click)="selectGroup(2)">
+      <img src="../../../../../../assets/js/scripts/style/images/indhijos.webp">
+    </b>
+
+    <b class="square1 btn--main btn btn--vertical btn-primary"
+      *ngIf="this.formCotizar.get('group').value === '' || this.formCotizar.get('group').value === 4"
+      [class.active]="formCotizar.get('group').value === 4"
+      (click)="selectGroup(4)">
+      <img src="../../../../../../assets/js/scripts/style/images/173198052013329099.webp">
+    </b>
+  </div>
+</div>
+
+   <mat-list> 
+   <mat-list-item *ngIf="this.formCotizar.get('group').value !== '' && !formularioEnviado">
+
+           <button class="btn inner-square-cuatro-div menos" id="decrementButtonTitular" (click)="decrementar('titular')">
+           </button>
+           <!-- <label>titular</label> -->
+           <button class="btn inner-square-tres-div">
+           <span style="font-size:8px">Edad&nbsp;titular:&nbsp;&nbsp;&nbsp;<strong style="font-size:20px">{{ edadTitular }}</strong>&nbsp;</span>
+           </button>
+           <button class="btn inner-square-cuatro-div mas"  id="incrementButtonTitular" (click)="incrementar('titular')">
+           </button> 
+          </mat-list-item>
+    <mat-list-item *ngIf="this.formCotizar.get('group').value === 3  && showEdadConyuge === true || this.formCotizar.get('group').value === 4 && showEdadConyuge === true ">
+     
+           <button class="btn inner-square-cuatro-div menos" id="decrementButtonConyuge" (click)="decrementar('conyuge')">
+           </button>
+           <button class="btn inner-square-tres-div">
+             <!-- <label>pareja</label><br> -->
+             <span style="font-size:8px">Edad&nbsp;pareja:&nbsp;&nbsp;&nbsp;<strong style="font-size:20px">{{ edadConyuge }}</strong>&nbsp;</span>
+           </button>
+           <button class="btn inner-square-cuatro-div mas"  id="incrementButtonConyuge" (click)="incrementar('conyuge')">
+           </button> 
+          </mat-list-item>
+
+    <mat-list-item *ngIf="this.formCotizar.get('group').value === 2  && showCantidadHijos === true || this.formCotizar.get('group').value === 4 && showCantidadHijos === true ">
+
+           <button class="btn inner-square-cuatro-div menos" id="decrementButtonHijo1" (click)="decrementar('hijo1')">
+           </button>
+           <button class="btn inner-square-tres-div">
+             <!-- <label>pareja</label><br> -->
+             <span style="font-size:8px">edad&nbsp;hijo&nbsp;1:&nbsp;&nbsp;&nbsp;<strong style="font-size:20px">{{ edadHijo1 }}</strong>&nbsp;</span>
+           </button>
+           <button class="btn inner-square-cuatro-div mas"  id="incrementButtonHijo1" (click)="incrementar('hijo1')">
+           </button> 
+          </mat-list-item>
+
+    <ng-container *ngIf="cantidadHijos >= 1">
+    <mat-list-item *ngIf="this.formCotizar.get('group').value === 2  && showCantidadHijos === true && cantidadHijos >= 1|| this.formCotizar.get('group').value === 4 && showCantidadHijos === true && cantidadHijos >= 1">
+
+           <button class="btn inner-square-cuatro-div menos" id="decrementButtonHijo2" (click)="decrementar('hijo2')">
+           </button>
+           <button class="btn inner-square-tres-div">
+             <!-- <label>pareja</label><br> -->
+             <span style="font-size:8px">edad&nbsp;hijo&nbsp;2:&nbsp;&nbsp;&nbsp;<strong style="font-size:20px">{{ edadHijo2 }}</strong>&nbsp;</span>
+           </button>
+           <button class="btn inner-square-cuatro-div mas"  id="incrementButtonHijo2" (click)="incrementar('hijo2')">
+           </button> 
+    
+          </mat-list-item>
+        </ng-container>
+    <ng-container *ngIf="cantidadHijos >= 2">
+    <mat-list-item *ngIf="this.formCotizar.get('group').value === 2  && showCantidadHijos === true && cantidadHijos >= 2|| this.formCotizar.get('group').value === 4 && showCantidadHijos === true && cantidadHijos >= 2">
+     
+    
+           <button class="btn inner-square-cuatro-div menos" id="decrementButtonHijo3" (click)="decrementar('hijo3')">
+           </button>
+           <button class="btn inner-square-tres-div">
+             <!-- <label>pareja</label><br> -->
+             <span style="font-size:10px">edad&nbsp;hijo&nbsp;3:&nbsp;&nbsp;&nbsp;<strong style="font-size:20px">{{ edadHijo3 }}</strong>&nbsp;</span>
+           </button>
+           <button class="btn inner-square-cuatro-div mas"  id="incrementButtonHijo3" (click)="incrementar('hijo3')">
+           </button> 
+      
+          </mat-list-item>
+    </ng-container>
+    <ng-container *ngIf="cantidadHijos >= 3">
+    <mat-list-item *ngIf="this.formCotizar.get('group').value === 2  && showCantidadHijos === true  && cantidadHijos >= 3|| this.formCotizar.get('group').value === 4 && showCantidadHijos === true && cantidadHijos >= 3">
+
+           <button class="btn inner-square-cuatro-div menos" id="decrementButtonHijo4" (click)="decrementar('hijo4')">
+           </button>
+           <button class="btn inner-square-tres-div">
+             <!-- <label>pareja</label><br> -->
+             <span style="font-size:10px">edad&nbsp;hijo&nbsp;4:&nbsp;&nbsp;&nbsp;<strong style="font-size:20px">{{ edadHijo4 }}</strong>&nbsp;</span>
+           </button>
+           <button class="btn inner-square-cuatro-div mas"  id="incrementButtonHijo4" (click)="incrementar('hijo4')">
+           </button> 
+          </mat-list-item>
+        </ng-container>
+    <ng-container *ngIf="cantidadHijos === 4">
+    <mat-list-item *ngIf="this.formCotizar.get('group').value === 2  && showCantidadHijos === true && cantidadHijos === 4|| this.formCotizar.get('group').value === 4 && showCantidadHijos === true  && cantidadHijos === 4 ">
+
+           <button class="btn inner-square-cuatro-div menos" id="decrementButtonHijo5" (click)="decrementar('hijo5')">
+           </button>
+           <button class="btn inner-square-tres-div">
+             <!-- <label>pareja</label><br> -->
+             <span style="font-size:10px">edad&nbsp;hijo&nbsp;5:&nbsp;&nbsp;&nbsp;<strong style="font-size:20px">{{ edadHijo5 }}</strong>&nbsp;</span>
+           </button>
+           <button class="btn inner-square-cuatro-div mas"  id="incrementButtonHijo5" (click)="incrementar('hijo5')">
+           </button> 
+          </mat-list-item>
+        </ng-container>
+   </mat-list>
+
+    <div class="flex-container" *ngIf="this.formCotizar.get('group').value === 2  && showCantidadHijos === true || this.formCotizar.get('group').value === 4 && showCantidadHijos === true">
+      <button class="btn inner-square-cuatro-div unomas"  id="incrementButtonHijos" (click)="incrementar('hijos')">
+      </button> 
+      <!-- <span style="font-size:10px" type="hidden" >edad&nbsp;hijo&nbsp;5&nbsp;&nbsp;<strong style="font-size:20px">{{ cantidadHijos }}</strong>&nbsp;</span> -->
+      <button class="btn inner-square-cuatro-div unomenos" id="decrementButtonHijos" (click)="decrementar('hijos')">
+      </button>	
+    </div>
+

@@ -1,0 +1,206 @@
+
+
+
+<script type="text/javascript" src="./../../../../../../assets/js/formularios-cotizar.js"></script>
+
+
+
+	<div id="wrapper theme" >
+		<div class="form-cotacao"  >
+
+
+
+						
+						
+
+<input class="campo-pagina" type="hidden" name="formulario-pagina" id="formulario-pagina" value="cotizar-ahora-formulario-completo">
+
+ <input class="campo-operadora" type="hidden" name="Operadora" id="Operadora" value="Sin Selección">
+
+ <div class="plano-selecionado">
+	 <p>Plan Selecionado:</p>
+	 <div class="recebe-img"></div>
+ </div>
+ 
+
+	
+
+
+	
+	<div class="main-container">
+		<section class="flex-container">
+		  <b class="btn inner-square-div img"  *ngIf="this.formCotizar.get('group').value === '' ||  this.formCotizar.get('group').value === 1" [class.active]="formCotizar.get('group').value === 1" (click)="selectGroup(1)">
+			<img src="../../../../../../assets/js/scripts/style/images/individual2.webp">
+
+		</b><div class="overlay"></div>
+	  
+		  <b class="btn inner-square-div img"  *ngIf="this.formCotizar.get('group').value === '' || this.formCotizar.get('group').value === 3" [class.active]="formCotizar.get('group').value === 3" (click)="selectGroup(3)">
+			<img src="../../../../../../assets/js/scripts/style/images/pareja2.webp">
+		</b><div class="overlay"></div>
+		
+	
+		
+
+		 
+		
+
+	    
+	</section>
+
+	<section class="flex-container">
+		  <b class="btn inner-square-div img" *ngIf="this.formCotizar.get('group').value === '' || this.formCotizar.get('group').value === 2" [class.active]="formCotizar.get('group').value === 2" (click)="selectGroup(2)">
+		  <img src="../../../../../../assets/js/scripts/style/images/individualehijos2.webp">
+		</b><div class="overlay"></div>
+	  
+		  <b class="btn inner-square-div img" *ngIf="this.formCotizar.get('group').value === '' || this.formCotizar.get('group').value === 4" [class.active]="formCotizar.get('group').value === 4" (click)="selectGroup(4)">
+			<img src="../../../../../../assets/js/scripts/style/images/parejaehijos2.webp">
+		</b><div class="overlay"></div>
+	
+	  
+	</section>
+	<section class="flex-container" *ngIf="this.formCotizar.get('group').value !== '' ">
+
+		<b><div class="flex-contenedor">
+			<button class="btn inner-square-cuatro-div menos" id="decrementButtonTitular" (click)="decrementar('titular')">
+			</button>
+			<button class="btn inner-square-tres-div">
+			   <p>Edad del<br>titular</p>
+			   <span style="font-size:18px"><strong>{{ edadTitular }}</strong></span>
+			</button>
+			<button class="btn inner-square-cuatro-div mas"  id="incrementButtonTitular" (click)="incrementar('titular')">
+			</button> 
+		  </div>
+		  </b>
+	</section>
+	<section class="flex-container" *ngIf="this.formCotizar.get('group').value === 3  && showEdadConyuge === true || this.formCotizar.get('group').value === 4 && showEdadConyuge === true ">
+
+		<b><div class="flex-contenedor">
+			<button class="btn inner-square-cuatro-div menos" id="decrementButtonConyuge" (click)="decrementar('conyuge')">
+			</button>
+			<button class="btn inner-square-tres-div">
+			   <p>Edad de la<br>Pareja</p>
+			   <span style="font-size:18px"><strong>{{ edadConyuge }}</strong></span>
+			</button>
+			<button class="btn inner-square-cuatro-div mas"  id="incrementButtonConyuge" (click)="incrementar('conyuge')">
+			</button> 
+		  </div>
+		  </b>
+	</section>
+	
+	<section class="flex-container" *ngIf="this.formCotizar.get('group').value === 2  && showCantidadHijos === true || this.formCotizar.get('group').value === 4 && showCantidadHijos === true">
+
+		<b><div class="flex-contenedor">
+			<button class="btn inner-square-cuatro-div menos" id="decrementButtonHijos" (click)="decrementar('hijos')">
+			</button>
+			<button class="btn inner-square-tres-div">
+			   <p>Cantidad de<br>Hijos</p>
+			   <span style="font-size:18px"><strong>{{ cantidadHijos }}</strong></span>
+			</button>
+			<button class="btn inner-square-cuatro-div mas"  id="incrementButtonHijos" (click)="incrementar('hijos')">
+			</button> 
+		  </div>
+		  </b>
+	</section>
+
+	<section class="flex-container">
+
+		<b class="btn inner-square-dos-div img desregulado"  *ngIf="showTipoFieldD ===true" 
+		[class.active]="formCotizar.get('tipo').value === 'D'" (click)="selectAportesType('D')">
+	    Traspaso de aportes a obra social
+	    </b>
+ 
+	    <b class="btn inner-square-dos-div img particular"  *ngIf="showTipoFieldP ===true"
+		[class.active]="formCotizar.get('tipo').value === 'P'" (click)="selectAportesType('P')">
+		Solicito privado
+	    </b>
+
+		</section>
+		
+
+	
+
+</div>
+</div>
+
+
+
+	  
+	  <div class="ocultar " [class.hidden]="formCotizar.get('group').value !== null" >
+	<div class="row edades" *ngIf="formCotizar.get('group').value !== ''">
+		<p class="edad-solo" *ngIf="formCotizar.get('group').value === 1"><strong>Edad</strong></p><p class="edad-varios" *ngIf="formCotizar.get('group').value === 4 || formCotizar.get('group').value === 3"><strong>Edades del titular y su pareja</strong></p><p class="edad-varios" *ngIf="formCotizar.get('group').value === 2"><strong>Edades del titular y las del/los hijo/s separadas por espacios</strong></p>
+ 
+		<div class="col-6 edad_1">
+		
+<span><input class="campo-edad " type="text" name="edad_1" placeholder="Su edad" [(ngModel)]="edad_1" (input)="onInputChange($event, 'edad_1')"></span>
+</div>
+<div class="col-6 edad_2" *ngIf="formCotizar.get('group').value === 3 || formCotizar.get('group').value === 4">
+	<span><input class="campo-edad-pareja" type="text" placeholder="Edad pareja" [(ngModel)]="edad_2" ></span>
+</div>
+<div class="col-6 hijos_num" *ngIf="formCotizar.get('group').value === 2">
+
+
+
+	<span><input class="campo-edades-hijos" type="text" placeholder="Edades de los hijos" [(ngModel)]="edades_Hijos" (input)="onInputChange($event, 'edades_Hijos')"></span>
+
+</div>
+</div>
+<div class="row" *ngIf="formCotizar.get('group').value === 4">
+<div class="hijos_num">
+<p><strong>Edades del/los hijo/s separadas por espacios</strong></p>
+<div class="col-4">
+	<span><input class="campo-edades-hijos" type="text" placeholder="Edades de los hijos" [(ngModel)]="edadesHijos" (input)="onInputChange($event, 'edadesHijos')"></span>
+</div>	</div>
+</div>
+
+</div>
+	<div class="possui-plano" id="tiene-os" *ngIf="showTipo==true">
+		<p><strong>Consulta por cambio de Obra Social como empleado en relacion de dependencia?<span class="recebe-img" *ngIf="formCotizar.get('tipo').value !== ''"></span></strong></p>
+		<b class="btn" [class.active]="formCotizar.get('tipo').value === 'D'" (click)="selectAportesType('D')">Si</b>
+		<b class="btn" [class.active]="formCotizar.get('tipo').value === 'P'" (click)="selectAportesType('P')">No</b>
+	</div>
+<!-- 
+
+	<div class="possui-cnpj">
+		<p><strong>Cúal como empleado o monotributista?</strong></p>
+		<input type="radio" id="rel-os" name="cualOS" value="Emplado"><b class="btn-rel-os">Relacion de dependencia</b>
+		<input type="radio" id="mon-os" name="cualOS" value="MOnotributo"><b class="btn-mon-os">OS del Monotributo</b> -->
+		<!-- <input type="radio" id="sim_cnpj" name="cualOS" value="ambas"><b class="btn-ambos">Ambos</b> -->
+
+	<!-- </div> -->
+
+	<div class="row sueldo"  *ngIf="formCotizar.get('tipo').value === 'D'">
+		<p><strong>Ingresa el importe de tu sueldo Bruto (sin descuentos)</strong></p>
+
+		
+<span><input class="campo-sueldo" type="text" placeholder="Sueldo Bruto ( antes de los descuentos)" [(ngModel)]="sueldo" (input)="onInputChange($event, 'sueldo')"></span>
+
+</div>
+<!-- <div class="row monotributo">
+	<div class="col-6">
+<span><input class="campo-categoria-mon" type="text" name="categoriaMono" id="categoriaMono" placeholder="Categoria Monotributo"></span>
+</div>
+<div class="col-6">
+
+<span><input class="campo-cant-aport-mon" type="text" name="aportantesMono" id="aportantesMono" placeholder="Cantidad de Aportantes"></span>
+</div></div> -->
+	
+	<div class="alert"></div>
+	<input type="btn-submit"  value="RECIBIR COTIZACIÓN" (click)="save()">
+	<br><br><br>
+	<div class="loader" style="display: none;"></div>
+<!-- </div> -->
+
+
+				 
+</div>
+			
+						  
+						
+						  
+						
+						
+					   
+				
+								  
+
+						

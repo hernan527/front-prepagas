@@ -1,0 +1,23 @@
+<!-- <div style="padding: .5em 0 1em 0">
+  <p-button (click)="activeIndex = 0" [icon]="activeIndex === 0 ? 'pi pi-check' : null" styleClass="p-button-raised p-button-secondary" label="Clinicas y Sanatorios"></p-button>
+  <p-button (click)="activeIndex = 1" [icon]="activeIndex === 1 ? 'pi pi-check' : null" styleClass="p-button-raised p-button-secondary" label="Folleto" [ngStyle]="{'margin-left': '.5em'}"></p-button>
+  <p-button (click)="activeIndex = 2" [icon]="activeIndex === 2 ? 'pi pi-check' : null" styleClass="p-button-raised p-button-secondary" label="Cobertura" [ngStyle]="{'margin-left': '.5em'}"></p-button>
+</div> -->
+
+
+  
+    <div [hidden]="activeIndex !== 0" class="container">
+
+      <!-- <app-clinicas-list-group-p></app-clinicas-list-group-p> -->
+    </div>
+ 
+  
+    <div [hidden]="activeIndex !== 1" class="container">
+
+    </div>
+ 
+  
+    <div [hidden]="activeIndex !== 2" class="container">
+      <!-- Contenido del tercer contenedor -->
+    </div>
+  

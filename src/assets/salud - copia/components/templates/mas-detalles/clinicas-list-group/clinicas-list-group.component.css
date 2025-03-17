@@ -1,0 +1,44 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+body {
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+  }
+  
+  .version-info {
+    font-size: 8pt;
+    float: right;
+    margin: 8px;
+  }
+  ::ng-deep .mat-tab-body-wrapper {
+    height: 75vh;
+}
+mat-tab-group {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.scrollable-tabview {
+  overflow: hidden !important; /* Evita el desplazamiento horizontal */
+}
+
+.tab-panel {
+  overflow: auto;
+  max-height: calc(100vh - 300px); /* Ajusta el valor según sea necesario */
+}
+
+.table-container {
+  position: relative;
+}
+
+.table-header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 2;
+}
+
+.table-body {
+  margin-top: 30px; /* Ajusta el valor para separar la fila de encabezado */
+}

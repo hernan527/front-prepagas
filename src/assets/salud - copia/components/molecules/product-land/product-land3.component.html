@@ -1,0 +1,110 @@
+
+<div class="large-screen" *ngIf="isLargeScreen; else smallScreen">
+    <!-- Estructura para pantallas grandes (tmpHTML) -->
+
+<div class="row row-1" style="height:100%" id="resultRow">
+    <div class="col-xl-3 col-lg-2 px-0" style="width:25%;padding:10px">
+        <div style="z-index:1;height:30px;padding-top:0.2em;padding-bottom:0.2em;padding-right:10px;color:white;text-indent:10px;font-size:14px;border-top-left-radius:10px;position:absolute;border-style:none;background-color:colorPlan;margin-top:7px;margin-left:-5px;">
+            <strong>PLAN plan_nombre</strong>
+        </div>
+        <div style="z-index:1;height:8px;width:5px;border-bottom-left-radius:5px;position:absolute;border-left-style:solid;border-bottom-style:solid;border-width:2px;border-color:colorPlan;background-color:gray;margin-top:37px;margin-left:-5px;"></div>
+        <img style="margin:0px auto;margin-top:60px;margin-left:10px" class="card-img-top" src="assets/img/logo/coberturas/sancorsalud.png" alt="Card image cap">
+    </div>
+    <div class="container col-xl-6 col-lg-6 px-0" style="width:50%;">
+        <table>
+            <caption class="center block">nivelCobertura</caption>
+            <tr>
+                <td>nivelCobertura</td>
+                <td>nivelCobertura</td>
+            </tr>
+            <tr>
+                <td>a</td>
+                <td>a</td>
+            </tr>
+            <tr>
+                <td>nivelCobertura</td>
+                <td>nivelCobertura</td>
+            </tr>
+        </table>
+        <div class="row">
+            <div class="col-md-6 col-sm-6">ss</div>
+            <div class="col-md-6 col-sm-6">ss</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6">ss</div>
+            <div class="col-md-6 col-sm-6">ss</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6">ss</div>
+            <div class="col-md-6 col-sm-6">ss</div>
+        </div>
+        <div class="row"></div>
+    </div>
+    <div class="col-xl-4 center block" style="padding:0px;width:25%;align-items:center;display:flex">
+        <div class="container-fluid">
+            <div class="col-12">stars_rating</div>
+            <div class="row justify-content-md-center justify-content-sm-center">
+                <div class="col-md-auto col-sm-auto">
+                    <strong style="font-size:28px">valor_total_plan</strong>/mes
+                </div>
+                <br>
+            </div>
+            <div class="row justify-content-md-center justify-content-sm-center">
+                <div class="col-md-auto col-sm-auto">
+                    <button style="width:0 auto" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cotizar">Cotizar</button>
+                </div>
+            </div>
+            <div class="row justify-content-md-center justify-content-sm-center">
+                <div class="col-md-auto col-sm-auto">
+                    <p>ver de talle</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+<ng-template #smallScreen>
+    <!-- Estructura para pantallas pequeñas (tmpHTML_mobile) -->
+    <div class="filter-top" style="height:27%;display:flex;">
+    <div style="width:50%;float:left;">
+        <div style="z-index:1;height:30px;padding-top:0.1em;padding-bottom:0.2em;padding-right:10px;color:white;text-indent:10px;font-size:14px;border-top-left-radius:10px;position:absolute;border-style:none;background-color:colorPlan;margin-top:0px;margin-left:-5px;">
+            <strong>PLAN plan_nombre</strong>
+        </div>
+        <div style="z-index:1;height:8px;width:5px;border-bottom-left-radius:5px;position:absolute;border-left-style:solid;border-bottom-style:solid;border-width:2px;border-color:colorPlan;background-color:gray;margin-top:30px;margin-left:-5px;"></div>
+        <img style="margin:0px auto;align-items:center;margin-left:10px;margin-top:30px" class="card-img-top" src="assets/img/logo/coberturas/sancorsalud.png" alt="Card image cap">
+    </div>
+    <div style="width:50%;float:right;margin-top:30px">
+        <strong style="font-size:28px">valor_total_plan</strong>/mes
+    </div>
+</div>
+<div style="height:12%">dos</div>
+<div style="height:33%">
+    <div class="container container-fluid">
+        <table>
+            <caption class="center block">nivelCobertura</caption>
+            <tr>
+                <td>nivelCobertura</td>
+                <td>nivelCobertura</td>
+            </tr>
+            <tr>
+                <td>a</td>
+                <td>a</td>
+            </tr>
+            <tr>
+                <td>nivelCobertura</td>
+                <td>nivelCobertura</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div style="display:flex">
+    <button style="margin:0 auto;" type="button" class="btn-box-movil" data-bs-toggle="modal" data-bs-target="#cotizar">Cotizar</button>
+</div>
+<div style="height:10%">
+    <a>ver de talle</a>
+</div>
+
+</ng-template>

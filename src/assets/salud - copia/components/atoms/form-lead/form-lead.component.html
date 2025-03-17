@@ -1,0 +1,84 @@
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+
+
+
+
+
+
+<script type="text/javascript" src="./../../../../../../assets/js/formularios-cotizar.js"></script>
+
+
+
+	<div id="wrapper" >
+		<div class="form-cotacao"  >
+
+
+
+						
+						
+
+<input class="campo-pagina" type="hidden" name="formulario-pagina" id="formulario-pagina" value="cotizar-ahora-formulario-completo">
+
+ <input class="campo-operadora" type="hidden" name="Operadora" id="Operadora" value="Sin Selección">
+
+ <div class="plano-selecionado">
+	 <p>Plan Selecionado:</p>
+	 <div class="recebe-img"></div>
+ </div>
+
+	
+	
+
+	
+
+<!-- <div class="row monotributo">
+	<div class="col-6">
+<span><input class="campo-categoria-mon" type="text" name="categoriaMono" id="categoriaMono" placeholder="Categoria Monotributo"></span>
+</div>
+<div class="col-6">
+
+<span><input class="campo-cant-aport-mon" type="text" name="aportantesMono" id="aportantesMono" placeholder="Cantidad de Aportantes"></span>
+</div></div> -->
+<div  class="datos-contacto" id="datos-contacto">
+
+	<div style="clear:both;"></div>
+
+	<p><strong>Necesitamos sus datos de contacto para enviar la cotización:</strong></p>
+<!-- <div formGroupName="personalData" > -->
+	<span><i>Nombre Completo</i>
+		<input class="campo-nome" type="text" placeholder="Su nombre" formControlName="name" ></span>
+	<div class="telefono" >
+
+		<!-- <div class="col-6 edad_1">
+		
+	<span><i>Prefijo</i><input class="campo-Prefijo" type="tel"  id="Prefijo" name="Prefijo" placeholder="Ej: 11"></span>
+
+</div> -->
+<div>
+		<span><i>Teléfono</i><input class="campo-telefone" type="tel" placeholder="Ej:11 65924325" formControlName="phone" ></span>
+
+</div></div>
+
+	<span><i>E-mail</i><input class="campo-email" type="email" placeholder="Ej: cotizar@queplan.ar" formControlName="email" ></span>
+	
+	<div class="alert"></div>
+	<input type="btn-submit"  value="RECIBIR COTIZACIÓN" (click)="save()">
+	<br><br><br>
+	<div class="loader" style="display: none;"></div>
+<!-- </div> -->
+
+
+				 
+</div>
+			
+						  
+						
+						  
+						
+						
+					   
+				
+								  
+
+						

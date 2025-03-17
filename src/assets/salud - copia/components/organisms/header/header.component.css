@@ -1,0 +1,16 @@
+.header-container {
+    width: 100%;
+    background-color: var(--white);
+  }
+  
+  .header-logo {
+    height: 4.5rem;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    text-indent: -100000px;
+  }
+  
+  .header-bar {
+    height: 0.25rem;
+    background-color: var(--secondary-color);
+  }

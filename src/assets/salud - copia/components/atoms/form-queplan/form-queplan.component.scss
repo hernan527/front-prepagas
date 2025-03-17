@@ -1,0 +1,71 @@
+.main-container {
+  display: flex;
+  min-height: 400px;
+  min-width: 400px;
+
+  
+  justify-content: center;
+  background: transparent;
+}
+
+.inner-first-items {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  
+}
+
+.individual {
+  background-image: url(../../../../../../assets/js/scripts/style/images/individual2.webp);
+
+ }
+
+ .pareja {
+  background-image: url(../../../../../../assets/js/scripts/style/images/pareja2.webp);
+ }
+
+ .individualehijos {
+  background-image: url(../../../../../../assets/js/scripts/style/images/individualehijos2.webp);
+ }
+
+ .parejaehijos {
+  background-image: url(../../../../../../assets/js/scripts/style/images/parejaehijos2.webp);
+  
+}
+.desregulado {
+  background-image: url();
+ }
+
+.particular {
+  background-image: url();
+  
+}
+
+
+.inner-square-div {
+  flex: 1;
+}
+
+
+
+
+.inner-square-div img {
+  display: inerhit;
+ 
+}
+
+
+.inner-square-dos-div {
+  flex: 1;
+  max-width:200px;
+  max-height: 50px;
+  flex-direction: row
+}
+
+
+
+.inner-square-dos-div img {
+  display: inerhit;
+ 
+}

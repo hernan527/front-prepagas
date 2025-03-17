@@ -1,0 +1,255 @@
+<form [formGroup]="formCotizar" (ngSubmit)="save($event)" >
+  
+  
+  <div class="form-group">
+
+    <label for="">Grupo Familiar</label>
+    <select class="form-control" formControlName="grupo"  >
+      <option value="">Selecciona una opción</option>
+      <option value="1">Titular</option>
+      <option value="2">Titular con hijos</option>
+      <option value="3">Pareja</option>
+      <option value="4">Pareja con hijos</option>
+    </select>
+  </div>
+  
+  
+  
+  <!-- <div class="form-group">
+    <label for="">Elegir Prepaga</label>
+    <select class="form-control" formControlName="empresa_prepaga">
+      <option selected value=0>Todas</option>
+      <option value=1>SanCor Salud</option>
+      <option value=2>Galeno</option>
+      <option value=3>Premedic</option>
+      <option value=4>Omint</option>
+      <option value=5>Omint</option>
+      <option value=6>Avalian</option>
+      <option value=7>Prevencion Salud</option>
+      <option value=8>Ospoce Integral</option>
+      <option value=9>Medife</option>
+      <option value=10>Swiss Medical</option>
+    </select>
+  </div> -->
+
+  <div class="row ">
+
+    <div class="col-4" *ngIf="grupoField.value>=1">
+
+      <label for="">Edad del Titular</label>
+
+        <input type="number" formControlName="edad_1" placeholder="Edad">
+ 
+    </div>
+
+
+    <div class="col-4" *ngIf="grupoField.value>=3">
+      <label for="">Edad del Conyuge</label>
+      <input class="form-control" type="number" formControlName="edad_2" placeholder="Edad">
+    </div>
+
+    <div class="col-4" *ngIf="grupoField.value==2 ||grupoField.value==4 ">
+      <label for="">Hijos</label>
+      <input class="form-control"type="number" formControlName="numkids" placeholder="Cuantos hijos">
+  
+    </div>
+
+  </div>
+
+  <div class="form-group" *ngIf="grupoField.value==1 && age1Field.value>=18 || grupoField.value==2 && age1Field.value>=18 && hijosField.value>=1 || grupoField.value==3 && age1Field.value>=18 && age2Field.value>=18 || grupoField.value==4 && age1Field.value>=18 && age2Field.value>=18 && hijosField.value>=1 " >
+    <label for="">Tipo de asociado {{tipoField.value}}</label>
+    <select class="form-control" formControlName="tipo"  >
+      <option value="">Selecciona una opción</option>
+      <option value="P">Particular</option>
+      <option value="M">Monotributo</option>
+      <option value="D">Relacion de dependencia</option>
+      <option value="I">Responsable Inscripto</option>
+    </select>
+  </div>
+  
+  <div class="form-group" *ngIf="tipoField.value=='D'">
+
+    <div class="form-check"  >
+
+      <input class="form-check-input" type="radio" formControlName="aporteOS"
+        value="Sueldo Bruto">
+      <label class="form-check-label"> Sueldo Bruto </label>
+
+    </div>
+
+    <div class="form-check">
+
+      <input class="form-check-input" type="radio" formControlName="aporteOS"
+        value="Aporte Obra Social">
+      <label class="form-check-label"> Aporte Obra Social</label>
+
+    </div>
+
+    <div class="input-group mb-3" >
+
+      <span class="input-group-text" id="result"></span>
+      <span class="input-group-text">$</span>
+      <input type="text" class="form-control" id="sueldo" formControlName="sueldo">
+
+    </div>
+  </div>
+    <!------------------------------monotributo AD-DIV start ----------------------->
+
+    <!-- <div class="form-check form-check-inline" *ngIf="tipoField.value=='D'">
+
+      <br>
+
+      <label class="form-check-label" for="monoadic">check si adem&aacute;s hay Aportes a Monotributo
+        ?</label>
+
+      <input class="form-check-input" type="checkbox" formControlName="monoadic" >
+
+      <br>
+
+    </div> -->
+    <!------------------------------monotributo AD-DIV end ----------------------->
+    <!------------------------------monotributoDIV start ----------------------->
+    <div class="form-group" *ngIf="monoadicField.value || tipoField.value=='M'">
+
+      <label for="">Cantidad de Aportantes al Monotributo</label>
+      <select class="form-control" formControlName="cantAport">
+        <option value="">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+
+    <!------------------------------monotributoDIV end ----------------------->
+
+    <br>
+    <!------------------------------bonificacionesDIV start----------------------->
+
+  
+    <!-- <div class="form-check form-check-inline" *ngIf="tipoField.value!='' ">
+      <br>
+      <label class="form-check-label" for="afinidad">check si es con bonificaciones ?</label>
+      <input class="form-check-input" type="checkbox"  formControlName="afinidad" >
+      <br>
+    </div>
+
+
+    <div class="form-group" *ngIf="afinidadField.value">
+      <label for="">Afinidad Porcentaje de descuento</label>
+      <select class="form-control" formControlName="bonAfinidad">
+        <option value="">Selecciona el Porcentaje correspondiente</option>
+        <option value=0.05>5%</option>
+        <option value=0.10>10%</option>
+        <option value=0.15>15%</option>
+        <option value=0.20>20%</option>
+        <option value=0.25>25%</option>
+        <option value=0.30>30%</option>
+        <option value=0.40>40%</option>
+      </select>
+    </div> -->
+    <!------------------------------bonificacionesDIV end------.
+      ----------------->
+
+
+    <!------------------------------suprasDIV start------------------------------>
+
+    <!-- <div class="form-check form-check-inline">
+      <br>
+      <label class="form-check-label" for="supras">Agregar Supras</label>
+      <input class="form-check-input" type="checkbox" formControlName="supras">
+      <br>
+    </div> -->
+    <!------------------------------suprasDIV end------------------------------>
+    <br>
+    <br>
+
+    <!------------------------------segvidaDIV start------------------------------>
+
+    <!-- <div id="segurosVidaDiv">
+      <p>Seguro de Vida : </p>
+      <div class="form-check form-check-inline">
+
+        <input class="form-check-input" type="checkbox" formControlName="segvida" checked>
+        <label class="form-check-label" for="segvida">Titular</label>
+      </div>
+      <div class="form-check form-check-inline" *ngIf="age2Field.value>=18">
+        <input class="form-check-input" type="checkbox" formControlName="segvida1">
+        <label class="form-check-label" for="segvida1">Conyuge</label>
+      </div>
+    </div> -->
+    <!------------------------------segvidaDIV end------------------------------>
+    <br>
+
+
+  
+
+  <div formGroupName="personalData" *ngIf="tipoField.value!=''">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre: {{ nameField.value}}</mat-label>
+        <input matInput type="text" formControlName="name"/>
+          <mat-icon matSuffix *ngIf="isNameFieldValid">done</mat-icon>
+          <mat-icon matSuffix *ngIf="isNameFieldInvalid">close</mat-icon>
+    </mat-form-field>
+     
+    
+    <br>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email: </mat-label>
+      <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="emailField.hasError('email') && !emailField.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailField.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Celular:</mat-label>
+      <span matPrefix>+54 9 &nbsp;</span>
+      <input type="tel" matInput placeholder="555-555-1234" formControlName="phone">
+      <mat-error *ngIf="phoneField.hasError('phone') && !phoneField.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+  
+  
+  
+  </div>
+
+      
+   
+    
+    
+      <!-- <div *ngIf="nameField.value && emailField.value && phoneField.value" > -->
+      <div>
+     
+        <button routerLink="/salud/results" [disabled]="formCotizar.invalid" type="submit">Cotizar</button>
+      
+        <!-- <button type="submit" >Cotizar</button>  -->
+        <br>
+        Estoy de acuerdo:
+        <input type="checkbox" formControlName="agree"/>
+      </div>
+    
+    </form>
+  
+
+
+
+
+
+       
+          
+
+         
+ 
+      
+          
+
+
+    

@@ -91,11 +91,7 @@ import { DialogService } from "src/app/services/dialog.service";
 import { register } from 'swiper/element/bundle';
 import { CardLandComponent } from '../../components/molecules/card-land/card-land.component';
 import { CardGridComponent } from '../../components/molecules/card-grid/card-grid.component';
-import {
-  NxColComponent,
-  NxLayoutComponent,
-  NxRowComponent,
-} from '@aposin/ng-aquila/grid';
+
 register();
 
 declare var addProp: any;
@@ -154,10 +150,7 @@ interface AutoCompleteCompleteEvent {
     AutoCompleteModule,
     FormularioComponent,
     CardLandComponent,
-    CardGridComponent,
-    NxColComponent,
-    NxLayoutComponent,
-    NxRowComponent,
+    CardGridComponent
 ]
 })
 export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
@@ -236,9 +229,6 @@ export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
   anchoSidebar = "50%"; // Ancho por defecto del sidebar
   isSmallScreen: boolean = false; // Default value
   isMediumScreen: boolean = false;
-  isLarge: boolean = false;
-  isSmall: boolean = false; // Default value
-  isMedium: boolean = false;
   isLargeScreen: boolean = false;
   clinicasPorRegiones: any[];
   // data constants
@@ -892,11 +882,7 @@ if(this.previousSelectedItems.length > this.selectedItems.length){
         // Nos suscribimos a los cambios del servicio para actualizar isSmallScreen cuando cambien
         this.responsiveService.screenWidth$.subscribe((state) => {
           this.cdr.detectChanges(); // Forzar actualización del DOM
-          console.log(' 885     Estado actual de breakpoints:', this.isSmallScreen);
-          console.log(' 886     Estado actual de isSamllScreen:', this.isSmallScreen);
-          this.isSmall = this.responsiveService.isSmall;
-          this.isMedium = this.responsiveService.isMedium;
-          this.isLarge = this.responsiveService.isLarge;
+          console.log(' 829     Estado actual de breakpoints:', state.breakpoints);
           this.componentSelectorMode(state.breakpoints);
         });
         this.dialogService.visible$.subscribe((value) => {
@@ -1396,15 +1382,5 @@ if(this.previousSelectedItems.length > this.selectedItems.length){
 		// Optionally, you can add sorting logic here if needed
 	}
 
-  getColumnConfig(): string {
-    if (this.isLarge) {
-      return '12'; // 1 columna para pantallas grandes
-    } else if (this.isMedium) {
-      return '6'; // 2 columnas para pantallas medianas
-    } else if (this.isSmall) {
-      return '4'; // 3 columnas para pantallas pequeñas
-    } else {
-      return ; // Valor predeterminado en caso de que no haya coincidencia
-    }
-  }
+
 }
