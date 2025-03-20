@@ -23,6 +23,9 @@ import {
 import { Observable, forkJoin } from "rxjs";
 import { map, pairwise, filter, throttleTime } from "rxjs/operators";
 import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NxActionComponent, NxActionIconDirective } from '@aposin/ng-aquila/action';
+import { NxIconComponent } from '@aposin/ng-aquila/icon';
 import * as planes from "../../../../../../public/products.json";
 import { ModalService } from "../../../../_modal";
 import { ServcioRetornoPrecioService } from "../../../../services/servcio-retorno-precio.service";
@@ -73,7 +76,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSidenavModule} from '@angular/material/sidenav'; 
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { NxSidebarModule } from '@aposin/ng-aquila/sidebar'; 
 import { MatDialogModule } from '@angular/material/dialog';
 import { ComparaItemComponent } from './../../components/templates/compara-item/compara-item.component';
 import { DialogModule } from 'primeng/dialog';
@@ -139,6 +143,7 @@ interface AutoCompleteCompleteEvent {
     MatInputModule,
     MatFormFieldModule,
     MatSidenavModule,
+    NxSidebarModule,
     MatDialogModule,
     // ComparaItemComponent,
     DialogModule,
@@ -158,10 +163,16 @@ interface AutoCompleteCompleteEvent {
     NxColComponent,
     NxLayoutComponent,
     NxRowComponent,
+    NxActionComponent,
+    RouterLink,
+    RouterLinkActive,
+    NxIconComponent,
+    NxActionIconDirective,
 ]
 })
 export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
   @ViewChild(ListViewComponent) list: any;
+  
   view: string = "list";
  
 
@@ -344,12 +355,15 @@ componentSelectorMode(breakpoints: { [key: string]: boolean }) {
     // console.log(' 289  La pantalla es Small.', smallScreen);
     this.isSmallScreen = true;
     this.itemsPerPage = 10000;
+    this.sidebarVisible = false;
   } else if (mediumScreen) {
     // console.log(' 292 La pantalla es Medium.', mediumScreen);
     this.isSmallScreen = true;
+    this.sidebarVisible = false;
   } else if (largeScreen) {
     // console.log(' 295  La pantalla es Large.', largeScreen);
     this.isSmallScreen = false;
+    this.sidebarVisible = true;
   }
 }
 
@@ -397,17 +411,7 @@ componentSelectorMode(breakpoints: { [key: string]: boolean }) {
     });
   }
 
-  // Método para detectar el ancho de la ventana y ocultar el sidebar en pantallas grandes
-  @HostListener("window:resize", ["$event"])
-  onResize(event: any) {
-    if (event.target.innerWidth >= 768) {
-      // Si el ancho de la pantalla es mayor o igual a 768px, ocultar el sidebar
-      this.sidebarVisible = false;
-    } else {
-      // Si el ancho de la pantalla es menor a 768px, mostrar el sidebar
-      this.sidebarVisible = false;
-    }
-  }
+
   toggleSidebar() {
     this.sidebarVisible = !this.sidebarVisible;
  console.log('toggleSidebar() :',this.sidebarVisible )
@@ -874,6 +878,7 @@ if(this.previousSelectedItems.length > this.selectedItems.length){
   async ngOnInit(): Promise<void> {
     this.isLoaded = false;
     this.showComparionSidebar()
+    this.isSmallScreen
     forkJoin([
       this.cotizacionService.getClinicas(),
       this.cotizacionService.getPlanes(),

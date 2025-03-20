@@ -29,6 +29,7 @@
     "@angular/router": "^19.1.7",
     "@aposin/ng-aquila": "^19.2.0",
     "@ckeditor/ckeditor5-angular": "^7.0.0",
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "@material/data-table": "^14.0.0",
     "@ng-bootstrap/ng-bootstrap": "^18.0.0",
     "@ngneat/tailwind": "^7.0.3",
@@ -89,6 +90,7 @@
     "tailwindcss": "^3.1.8",
     "tslib": "^2.6.2",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.3",
+    "vite": "^6.2.2"
   }
 }

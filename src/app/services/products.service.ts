@@ -273,7 +273,7 @@ interface SearchResult {
         const filteredProducts = this.products.filter(product => {          // Aplica las condiciones de filtrado
           return (
             // Verifica cada condición de filtro aquí
-            (selectedRating.length === 0 ||  product.rating >= selectedRating) &&
+            (selectedRating === null ||  product.rating >= selectedRating) &&
             (priceRange.length === 0 || (product.precio >= priceRange[0] && product.precio <= priceRange[1])) &&
             (valueSlideOdonto === null || product.beneficios.odontologia >= valueSlideOdonto) &&
             (valueSlide4 === null || product.valueSlide4 >= valueSlide4) &&
@@ -295,7 +295,7 @@ interface SearchResult {
         this.eventoFiltering.next();
       }
       applyFiltersDespuesDeOnItemSelect() {
-        // console.log('product-service 289');
+        console.log('product-service 289');
         this.eventoFilterClinicas.next();
       }
 

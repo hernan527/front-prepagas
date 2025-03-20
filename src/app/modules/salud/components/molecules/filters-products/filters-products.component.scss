@@ -100,3 +100,7 @@
     overflow-y: auto; /* Para permitir el desplazamiento si el contenido es más alto que la ventana */
     max-height: 100vh; /* Si deseas que se mantenga dentro de los límites de la ventana */
   }
+
+  nx-badge {
+    margin: 0px;
+}

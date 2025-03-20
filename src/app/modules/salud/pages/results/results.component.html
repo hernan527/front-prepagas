@@ -2,112 +2,31 @@
 <!-- <app-hero-section></app-hero-section> -->
 <!-- ============== SECTION PAGETOP END// ============== -->
 <!-- ============== SECTION CONTENT ============== -->
-<app-banner-list></app-banner-list>
-<app-search-form
-   [isSmallScreen]="isSmallScreen"
-   ></app-search-form>
-<section  class="container-compare">
+
+
+<section>
    <!-- <div *ngIf="isSmallScreen" class="d-flex flex-column justify-content-center surface-card p-2 shadow-2 border-round hidden form-sticky" style="background-color: rgba(255, 215, 0, 0.6); margin: 0 0 0 0; align-items: center; animation: shake 0.5s ease-in-out;">
       <div class="ztext-lg font-medium text-600 mb-2"><strong>Paso 1:</strong> Ingresa tu <strong>edad</strong> para calcular precios exactos y obtener los mejores planes</div>
       <button pButton pRipple type="button" label="Completar Perfil" class="p-button-raised p-button-danger" (click)="openModa('custom-modal-3')" style="animation: aura 0.5s ease-in-out;"></button>
       </div>  -->
-   <div class="content">
-      <header class="d-flex flex-wrap align-items-center border-bottom mb-4 pb-3 w-100">
-         <div _ngcontent-ng-c1250167330="" _nghost-ng-c1654105987="" class="d-flex align-items-center justify-content-between w-100 flex-nowrap">
-            <div class="d-flex align-items-center count">
-               <kbd class="py-1 px-2" style="background-color: rgb(64, 180, 229);">{{definirLength()}}</kbd>
-               <div class="ml-2">
-                  <span qptranslate="compare.header.results" class="mb-0" style="color: rgb(64, 180, 229);">Resultados</span>
-               </div>
-            </div>
-            <div class="d-flex align-items-center ml-auto">
-               <button _ngcontent-ng-c1993997668="" class="nota btn d-none d-md-block mr-2">¿Qué es el Puntaje?</button>
-               <div   class="header d-flex ml-3 pl-2 ng-star-inserted">
-                  <div class="d-flex flex-wrap justify-content-between surface-card p-2 shadow-2 border-round w-100" 
-                     style="background-color: whitesmoke; margin: 0 5px 5px 5px; align-items: center;">
-                     <div class="d-flex flex-wrap align-items-center w-100 mt-3 mt-md-0">
-                        <div class="d-flex flex-wrap">
-                           <div class="d-flex align-items-center me-2 flex-grow-1" style="min-width: 200px;">
-                              <label class="me-2">Ordenar por</label>
-                              <select class="form-select w-100" [formControl]="SortbyParamControl" (click)="onSortDirection()">
-                              <option value="empresa">Empresa</option>
-                              <option value="precio">Precio</option>
-                              <option value="name">Nombre</option>
-                              <option value="rating">Rating</option>
-                              </select>
-                           </div>
-                        </div>
-                     </div>
-                     <div> </div>
-                  </div>
-                  <button type="button" (click)="onSortDirection()" class="btn btn-light">
-                  <i *ngIf="SortDirection === 'asc'" class="fas fa-sort-alpha-down-alt fa-lg"></i>
-                  <i *ngIf="SortDirection === 'desc'" class="fas fa-sort-alpha-up-alt fa-lg"></i>
-                  </button>
-               </div>
-               <mat-button-toggle-group  *ngIf="!isSmallScreen" class="mat-button-toggle-group mat-button-toggle-group-appearance-standard">
-                  <div value="list" class="mat-button-toggle mat-button-toggle-appearance-standard">
-                     <button [class.text-primary]="view === 'list'" (click)="view = 'list';" type="button" class="mat-button-toggle-button mat-focus-indicator">
-                     <span class="mat-button-toggle-label-content">
-                        <mat-icon role="img" class="mat-icon notranslate material-icons">view_list</mat-icon>
-                     </span>
-                     </button>
-                  </div>
-                  <div value="grid" class="mat-button-toggle mat-button-toggle-appearance-standard">
-                     <button [class.text-primary]="view === 'grid'" (click)="view = 'grid';" type="button" class="mat-button-toggle-button mat-focus-indicator">
-                     <span class="mat-button-toggle-label-content">
-                        <mat-icon role="img" class="mat-icon notranslate material-icons">view_module</mat-icon>
-                     </span>
-                     </button>
-                  </div>
-               </mat-button-toggle-group>
-            </div>
-         </div>
 
+  
 
-         <div  class="mb-3 d-flex justify-content-end"></div>
-         <div class="d-flex flex-wrap">
-
-            <p-autoComplete
-            styleClass="myClass"
-            [(ngModel)]="selectedClinica"
-            [suggestions]="items"
-            (completeMethod)="search($event)"
-            [minLength]="1"
-            field="nombre"
-            placeholder="Buscar Clínicas..."
-            [multiple]="true"
-            (ngModelChange)="onSelectedItemsChange($event)"
-            >
-            <!-- Plantilla para la lista de opciones -->
-            <ng-template let-option pTemplate="custom-chip">
-               <div class="custom-chip">
-                  <span>{{ option.entity }}</span>
-               </div>
-            </ng-template>
-            <!-- Plantilla para los chips -->
-            <ng-template let-item pTemplate="chip">
-               <div class="custom-chip">
-                  <span>{{ item.nombre }}</span>
-               </div>
-            </ng-template>
-            </p-autoComplete>
-         </div>
-      </header>
       <!-- Contenido principal aquí -->
-      <div class="row">
-         <div class="col-lg-3">
-            <app-filters-products
-            [isSmallScreen]="isSmallScreen"
-            [product]="products"
-            [sidebarVisible]="sidebarVisible"
-            [anchoSidebar]="anchoSidebar"
-            [productosFiltrados]="productosFiltrados"
-            (sidebarStateChanged)="onSidebarStateChanged($event)"
-            ></app-filters-products>
-         </div>
-         
-         <main class="col-lg-9  g-2">
+   
+      <nx-sidebar
+       *ngIf="sidebarVisible"
+      resizeHandleAriaLabel="Toggle sidebar width"
+      class="my-sidebar"
+      #sidebar
+> <app-filters-products
+[product]="products"
+[sidebarVisible]="sidebarVisible"
+[anchoSidebar]="anchoSidebar"
+[productosFiltrados]="productosFiltrados"
+></app-filters-products></nx-sidebar>
+
+         <main>
             <ng-container *ngIf="!(loading$ | async); else loadingTpl">
                <!-- ========= content items ========= -->
                <div class="row ">
@@ -161,7 +80,7 @@
                </div>
                <div >
                   <!-- Paginación -->
-                   <ng-container *ngIf="isSmallScreen != true hide">
+                   <ng-container  hide>
                   <nav class="pt-4" aria-label="Page navigation">
                      <ul class="pagination justify-content-center">
                         <!-- Botón para ir a la primera página -->
@@ -198,36 +117,12 @@
                <!-- <hr> -->
             </ng-container>
          </main>
-      </div>
-   </div>
+  
+
+
+
    <!--Spinner-->
-   <ng-template #loadingTpl>
-      <div class="progress">
-         <div class="indeterminate"></div>
-         sty
-      </div>
-   </ng-template>
-   <!-- s -->
-   <!-- <p-sidebar [(visible)]="sidebarVisible" [style]="{ 'width': anchoSidebar }"> -->
-   <!-- <app-filters-products [product]="products" ></app-filters-products> -->
-   <!-- <app-filters-products
-      [isSmallScreen]="isSmallScreen"
-      [products]="products"
-      
-      ></app-filters-products> -->
-   <!-- </p-sidebar> -->
-   <!-- Botón para activar el sidebar en dispositivos móviles -->
-
-
-   <!-- <button class="mobile-filters-button p-button p-button-raised" (click)="sidebarVisible = true;sidebar()">
-      <i class="pi pi-filter"></i> Filtros
-      </button> -->
-
-      
-   <!--         <jw-modal id='custom-modal-3' >
-      <app-form-queplan>  <button type="button" class="btn" (click)="closeModa('custom-modal-3')">Cerrar</button>
-      </app-form-queplan>
-      </jw-modal> -->
+ 
 </section>
 <!--       <div class="card flex justify-content-center">
    <p-button (click)="showDialog()" icon="pi pi-external-link" label="Show"></p-button>
@@ -242,7 +137,8 @@
    </p-dialog>
    </div>
    -->
-<ng-container *ngIf='compareProdList().length >= 1 show' >
+   <ng-container *ngIf="compareProdList().length >= 1">
+
    <div id="mybutton" >
       <button class="feedback" mat-raised-button color="primary"
          matBadge matBadgePosition="after" matBadgeColor="accent" >
