@@ -18,6 +18,7 @@ import { NxErrorComponent } from '@aposin/ng-aquila/base';
 import { NxBadgeComponent } from '@aposin/ng-aquila/badge';
 import { NxIconModule } from '@aposin/ng-aquila/icon';
 import { NxDocumentationIconModule } from '@aposin/ng-aquila/documentation-icons';
+import { NxIconComponent } from '@aposin/ng-aquila/icon';
 
 @Component({
     selector: 'app-filters-products',
@@ -42,7 +43,8 @@ import { NxDocumentationIconModule } from '@aposin/ng-aquila/documentation-icons
       CommonModule,
       NxBadgeComponent,
       NxIconModule,
-      NxDocumentationIconModule
+      NxDocumentationIconModule,
+      NxIconComponent
 
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
