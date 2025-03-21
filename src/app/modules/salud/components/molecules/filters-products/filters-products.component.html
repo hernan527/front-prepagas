@@ -30,12 +30,7 @@
         <ng-container *ngFor="let key of filterKeys">
           <nx-badge nx-badge *ngIf="filtrosSeleccionadosGroup.get(key)?.value">
             {{ key }}
-       
-          
                 <nx-icon name="close" (click)="eliminarFiltro(key)" size="auto" aria-hidden="true"></nx-icon>
-
-          
-
           </nx-badge>
         </ng-container>
       </div>

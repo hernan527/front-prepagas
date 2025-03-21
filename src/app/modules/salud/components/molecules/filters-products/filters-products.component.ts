@@ -45,7 +45,6 @@ import { NxIconComponent } from '@aposin/ng-aquila/icon';
       NxIconModule,
       NxDocumentationIconModule,
       NxIconComponent
-
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
