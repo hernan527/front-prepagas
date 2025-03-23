@@ -1,7 +1,6 @@
 import {ChangeDetectionStrategy,ViewEncapsulation, Component, OnInit,Input } from '@angular/core';
 import { ActivatedRoute, Params, RouterLinkActive, RouterLink } from '@angular/router';
-import {combineLatest, Observable} from 'rxjs';
-import { map } from 'rxjs/operators';
+import {Observable} from 'rxjs';
 import { Clinicas } from 'src/app/data/interfaces/clinicas';
 import { NgFor, NgIf, NgClass, AsyncPipe, KeyValuePipe } from '@angular/common';
 import { MatListModule } from '@angular/material/list';

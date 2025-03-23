@@ -1,6 +1,5 @@
 import { Injectable, PipeTransform } from '@angular/core';
 import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
-import { debounceTime, delay, switchMap, tap } from 'rxjs/operators';
 import { SortColumn, SortDirection } from './../directives/products-sortable.directive';
 import { FormGroup } from '@angular/forms';
 import { SERVER_URL } from './../constants';

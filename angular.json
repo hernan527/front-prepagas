@@ -3,37 +3,50 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "comparisonSite": {
+    "comparisonsite": {
       "projectType": "application",
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/comparisonSite/browser",
+            "outputPath": {
+              "base": "dist/comparisonsite"
+            },
             "sourceMap": false,
             "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "src/polyfills.ts"
+            ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              { "glob": "products.json", "input": "./", "output": "./assets/" }
-
+              {
+                "glob": "products.json",
+                "input": "./",
+                "output": "./assets/"
+              }
             ],
             "styles": [
               "node_modules/@aposin/ng-aquila/css/normalize.css",
-              "node_modules/@aposin/ng-aquila/themes/aposin.css"
- 
+              "node_modules/@aposin/ng-aquila/themes/aposin.css",
+              "src/styles.scss"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "src/assets/js/funciones.js",
               "src/assets/js/scripts/vendor.js"
-            ]
+            ],
+            "browser": "src/main.ts",
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "prerender": false,
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -45,7 +58,7 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                   "maximumWarning": "5mb",
+                  "maximumWarning": "5mb",
                   "maximumError": "10mb"
                 }
               ],
@@ -58,38 +71,44 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "browserTarget": "comparisonsite:build:production",
+            "serverTarget": "comparisonsite:server:production",
+            "routes": ["/*"]
+          }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "comparisonSite:build:production"
+              "buildTarget": "comparisonsite:build:production"
             },
             "development": {
-              "buildTarget": "comparisonSite:build:development"
+              "buildTarget": "comparisonsite:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "production"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "comparisonSite:build"
+            "buildTarget": "comparisonsite:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "sourceMap": false,
+            "sourceMap": true,
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
@@ -100,77 +119,13 @@
             "styles": [
               "node_modules/@aposin/ng-aquila/css/normalize.css",
               "node_modules/@aposin/ng-aquila/themes/aposin.css"
-              
-
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.min.js", 
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "src/assets/js/funciones.js",
               "src/assets/js/scripts/vendor.js"
-                        ]
-            
-          }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/comparisonSite/server",
-            "main": "src/server.ts",
-            "tsConfig": "tsconfig.server.json",
-            "sourceMap": false
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false,
-              "vendorChunk": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve-ssr": {
-          "builder": "@angular-devkit/build-angular:ssr-dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "comparisonSite:build:development",
-              "serverTarget": "comparisonSite:server:development"
-            },
-            "production": {
-              "browserTarget": "comparisonSite:build:production",
-              "serverTarget": "comparisonSite:server:production"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "prerender": {
-          "builder": "@angular-devkit/build-angular:prerender",
-          "options": {
-            "routes": [
-              "/"
             ]
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "comparisonSite:build:production",
-              "serverTarget": "comparisonSite:server:production"
-            },
-            "development": {
-              "browserTarget": "comparisonSite:build:development",
-              "serverTarget": "comparisonSite:server:development"
-            }
-          },
-          "defaultConfiguration": "production"
+          }
         }
       }
     }

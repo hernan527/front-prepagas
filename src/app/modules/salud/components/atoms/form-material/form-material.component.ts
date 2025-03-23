@@ -4,7 +4,6 @@ import { DOCUMENT } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
 import {FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {ServcioRetornoPrecioService} from '../../../../../services/servcio-retorno-precio.service';
-import { filter } from 'rxjs/operators';
 import { Options } from '@angular-slider/ngx-slider';
 
 export interface DialogData {

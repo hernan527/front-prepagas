@@ -5,26 +5,35 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false,
     
     "allowJs": true,
-    "target": "ES2022",
+
+    "target": "es2022",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "lib": ["es2020", "dom"],
+    "types": ["vite/client"],
     "typeRoots": [
       "node_modules/@types"
     ],
-    "useDefineForClassFields": false
+    "useDefineForClassFields": false,
+    "paths": {
+      "@angular/*": ["node_modules/@angular/*"],
+      "@core/*": ["src/app/core/*"],
+      "@shared/*":["src/app/shared/*"],
+      "@components/*":["src/app/shared/*"],
+      "@env/*":["src/environments/*"],
+      "@modules/*":["src/app/modules/*"],
+      "@data/*":["src/app/data/*"],
+      "@layout/*":["src/app/layout/*"],
+      "@pipes/*":["src/app/pipes/*"],
+    },
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -32,17 +41,5 @@
     "strict": false,
     "enableIvy": true
   },
-  "paths": {
-    "@angular/*": ["node_modules/@angular/*"],
-    "@core/*": ["src/app/core/*"],
-    "@shared/*":["src/app/shared/*"],
-    "@components/*":["src/app/shared/*"],
-    "@env/*":["src/environments/*"],
-    "@modules/*":["src/app/modules/*"],
-    "@data/*":["src/app/data/*"],
-    "@layout/*":["src/app/layout/*"],
-    "@pipes/*":["src/app/pipes/*"],
 
-    
-  },
 }

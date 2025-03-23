@@ -1,6 +1,7 @@
-import { EMPTY_STRING, INTERNAL_PATHS } from './data/constants/routes';
+import { EMPTY_STRING } from './data/constants/routes';
 import { Routes } from '@angular/router';
 import { SkeletonComponent } from './layout/skeleton/skeleton.component';
+import { provideClientHydration } from '@angular/platform-browser';
 
 export const routes: Routes = [
   {
@@ -8,35 +9,35 @@ export const routes: Routes = [
     component: SkeletonComponent,
     children: [
               // Redirección por defecto a Salud
-      { path: EMPTY_STRING,
-        redirectTo: INTERNAL_PATHS.ASESORI_SALUD_DEFAULT,
+      { path: ``,
+        redirectTo: `/home`,
         pathMatch: 'full' },
+        {
+          path: `home`,
+          loadChildren: () =>
+            import('./modules/home/home.routes').then( m => m.routes ),
+          title: 'App Home'
+        },
       {
-        path: INTERNAL_PATHS.ASESORI_DEFAULT,
-        loadChildren: () =>
-          import('./modules/home/home.routes').then( m => m.routes),
-        title: 'App Home'
-      },
-      {
-        path: INTERNAL_PATHS.ASESORI_CREDIT_DEFAULT,
+        path: `credit`,
         loadChildren: () =>
           import('./modules/credit/credit.routes').then( m => m.routes ),
         title: 'App Credit'
       },
       {
-        path: INTERNAL_PATHS.ASESORI_INSURANCE_DEFAULT,
+        path: `insurance`,
         loadChildren: () =>
           import('./modules/insurance/insurance.routes').then( m => m.routes ),
         title: 'App Seguros'
       },
       {
-        path: INTERNAL_PATHS.ASESORI_SALUD_DEFAULT,
+        path: `salud`,
         loadChildren: () =>
           import('./modules/salud/salud.routes').then( m => m.routes ),
         title: 'App Salud'
       },
       {
-        path: INTERNAL_PATHS.AUTH_DEFAULT,
+        path: `auth`,
         loadChildren: () =>
           import('./modules/auth/auth.routes').then( m => m.routes ),
         title: 'App Login'

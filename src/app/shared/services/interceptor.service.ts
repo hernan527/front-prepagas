@@ -1,8 +1,8 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoaderService } from './loader.service';
-import { Observable, throwError, retry, finalize } from "rxjs";
-import { catchError } from 'rxjs/operators';
+import { Observable, throwError,  } from "rxjs";
+import { catchError, retry, finalize } from 'rxjs/operators';
 import { NotifierService } from './notifier.service';
 
 @Injectable({

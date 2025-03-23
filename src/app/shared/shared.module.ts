@@ -3,12 +3,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import * as components from './components';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ChipModule } from 'primeng/chip';
 import { CardModule } from 'primeng/card';
 import { RatingModule } from 'primeng/rating';
-import { NgSelectModule } from '@ng-select/ng-select';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { SplitButtonModule } from 'primeng/splitbutton';
@@ -31,7 +29,6 @@ const commonModules = [
     ChipModule,
     CardModule,
     RatingModule,
-    NgSelectModule,
     ButtonModule,
     RippleModule,
     SplitButtonModule,
@@ -47,9 +44,9 @@ const commonModules = [
 ]
 
 @NgModule({
-    imports: [CommonModule, RouterModule, ...commonModules, ...components.components],
+    imports: [CommonModule, RouterModule, ...commonModules],
     exports: [
-        ...commonModules, ...components.components
+        ...commonModules
     ]
 })
 export class SharedModule {}
