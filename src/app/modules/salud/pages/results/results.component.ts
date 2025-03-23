@@ -18,7 +18,9 @@ import {
   computed,
   OnDestroy,
   CUSTOM_ELEMENTS_SCHEMA,
-  NO_ERRORS_SCHEMA
+  NO_ERRORS_SCHEMA,
+  signal,
+  Signal
 } from "@angular/core";
 import { Observable, forkJoin } from "rxjs";
 import { map, pairwise, filter, throttleTime } from "rxjs/operators";
@@ -169,6 +171,10 @@ export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
   currentPage = 1; // Página actual, inicializada en 1
   totalItems: number;
   itemsPerPageOptions: number[] = [10, 20, 30, 50, 100]; // Opciones para productos por página
+    // Crear señales con valores predeterminados (vacíos en este caso)
+    clinicasSignal: Signal<any[]> = signal([]);
+    planesSignal: Signal<any[]> = signal([]);
+    empresasSignal: Signal<any[]> = signal([]);
   
   public productList: any;
   public filterCategory: any;
@@ -284,6 +290,7 @@ return this.cadena
   {
     this.formDataInicial = this.crearFormularioInicial();
     this.buildForm();
+    this.loadData();
   }
   ngAfterContentChecked(): void {
     this.cdr.detectChanges();
@@ -866,18 +873,8 @@ if(this.previousSelectedItems.length > this.selectedItems.length){
   async ngOnInit(): Promise<void> {
     this.isLoaded = false;
     this.showComparionSidebar()
-    forkJoin([
-      this.cotizacionService.getClinicas(),
-      this.cotizacionService.getPlanes(),
-      this.cotizacionService.getEmpresas(),
-    ]).subscribe(([clinicas, planes, empresas]) => {
-      this.clinicas = clinicas;
-      this.dropdownClinica = this.clinicas;
-      this.selectedClinica = [];
-      this.secureProducts = planes;
-      this.planes = planes;
-      this.empresas = empresas;
-    });
+
+    
         // Al iniciar el componente, verificamos el estado actual de la pantalla
       
 
@@ -1053,6 +1050,46 @@ if(this.previousSelectedItems.length > this.selectedItems.length){
     //     this.isSmallScreen = result.matches;
     //   });
   }
+
+  loadData(): void {
+    // Llamadas a los servicios para obtener datos y actualizar las señales
+    this.cotizacionService.getClinicas().subscribe({
+      next: (clinicas: any) => {
+        // Actualizamos el valor de la señal directamente
+        this.clinicasSignal = signal(clinicas || []);
+      },
+      error: (error: any) => {
+        console.error('Error fetching clinicas', error);
+        // En caso de error, asignamos un array vacío
+        this.clinicasSignal = signal([]);
+      },
+    });
+
+    this.cotizacionService.getPlanes().subscribe({
+      next: (planes: any) => {
+        // Actualizamos el valor de la señal directamente
+        this.planesSignal = signal(planes || []);
+      },
+      error: (error: any) => {
+        console.error('Error fetching planes', error);
+        // En caso de error, asignamos un array vacío
+        this.planesSignal = signal([]);
+      },
+    });
+
+    this.cotizacionService.getEmpresas().subscribe({
+      next: (empresas: any) => {
+        // Actualizamos el valor de la señal directamente
+        this.empresasSignal = signal(empresas || []);
+      },
+      error: (error: any) => {
+        console.error('Error fetching empresas', error);
+        // En caso de error, asignamos un array vacío
+        this.empresasSignal = signal([]);
+      },
+    });
+  }
+
   onEmpresaFilter() {
     // Obtener el valor del FormControl y asignarlo a SearchEmpresa
     this.SearchEmpresa = this.empresa.value;
