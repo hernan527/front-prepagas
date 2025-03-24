@@ -17,12 +17,11 @@ import {
   OnChanges,
   computed,
   OnDestroy,
-  CUSTOM_ELEMENTS_SCHEMA,
+  CUSTOM_ELEMENTS_SCHEMA, 
   NO_ERRORS_SCHEMA,
   Signal, signal
 } from "@angular/core";
-import { Observable, forkJoin, of } from "rxjs";
-import { startWith,catchError  } from 'rxjs/operators';
+import { Observable } from "rxjs";
 import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NxActionComponent, NxActionIconDirective } from '@aposin/ng-aquila/action';

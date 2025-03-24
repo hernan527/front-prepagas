@@ -21,5 +21,6 @@ export default defineConfig({
   },
   ssr: {
     // Configuración específica para SSR si es necesario
+    entry: './src/server.ts', // Un archivo de entrada específico para SSR en tu aplicación
   }
 });

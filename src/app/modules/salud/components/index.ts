@@ -32,7 +32,7 @@ import {
 } from './organisms';
 
 // templates
-import { MasDetallesComponent, ClinicasListComponent, ClinicasListPrimengComponent, ClinicasListGroupComponent, ClinicasListGroupPrimengComponent, PdfViewerComponent } from './templates';
+import { MasDetallesComponent, ClinicasListComponent, ClinicasListPrimengComponent, ClinicasListGroupComponent, ClinicasListGroupPrimengComponent } from './templates';
 
 export const modules = []
 
@@ -47,7 +47,6 @@ export const components = [
     ClinicasListPrimengComponent,
     ClinicasListGroupComponent,
     ClinicasListGroupPrimengComponent,
-    PdfViewerComponent,
     ResultComponent,
     FormQueplanComponent,
     FormLeadComponent,

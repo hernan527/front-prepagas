@@ -5,7 +5,6 @@ export * from './mas-detalles/clinicas-list/clinicas-list.component';
 export * from './mas-detalles/clinicas-list/clinicas-list-p.component';
 export * from './mas-detalles/clinicas-list-group/clinicas-list-group.component';
 export * from './mas-detalles/clinicas-list-group/clinicas-list-group-p.component';
-export * from './mas-detalles/pdf-viewer/pdf-viewer.component';
 
 // export const Modules = [
 //     ComparaItemModule
