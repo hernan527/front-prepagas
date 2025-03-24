@@ -20,7 +20,7 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   NO_ERRORS_SCHEMA
 } from "@angular/core";
-import { Observable, forkJoin } from "rxjs";
+import { Observable } from "rxjs";
 import { map, pairwise, filter, throttleTime } from "rxjs/operators";
 import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
 import * as planes from "../../../../../../public/products.json";
@@ -859,18 +859,7 @@ if(this.previousSelectedItems.length > this.selectedItems.length){
   async ngOnInit(): Promise<void> {
     this.isLoaded = false;
     this.showComparionSidebar()
-    forkJoin([
-      this.cotizacionService.getClinicas(),
-      this.cotizacionService.getPlanes(),
-      this.cotizacionService.getEmpresas(),
-    ]).subscribe(([clinicas, planes, empresas]) => {
-      this.clinicas = clinicas;
-      this.dropdownClinica = this.clinicas;
-      this.selectedClinica = [];
-      this.secureProducts = planes;
-      this.planes = planes;
-      this.empresas = empresas;
-    });
+
         // Al iniciar el componente, verificamos el estado actual de la pantalla
       
 
