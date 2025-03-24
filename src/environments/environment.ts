@@ -5,8 +5,9 @@
 export const environment = {
   production: false,
   apiUrl: "http://localhost:4200",
+  port: 4200,  // Añadido el puerto aquí
+  PORT:5000
 };
-
 
 
 /*

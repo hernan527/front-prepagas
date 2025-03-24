@@ -6,4 +6,4 @@ import { Component } from '@angular/core';
     styleUrls: ['./default.component.scss'],
     standalone: true,
 })
-export class DefaultComponent {}
+export class InsuranceComponent {}

@@ -8,7 +8,7 @@ import { FormQueplanComponent } from '../../components/atoms/form-queplan/form-q
     styleUrls: ['./default.component.scss'],
     imports: [FormQueplanComponent]
 })
-export class DefaultComponent {
+export class SaludComponent {
 	@HostListener('window:beforeunload', ['$event'])
 	unloadNotification($event: any): void {
         'Perdera todos los datos ingresados'

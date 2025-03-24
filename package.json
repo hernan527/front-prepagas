@@ -38,6 +38,7 @@
     "@ng-bootstrap/ng-bootstrap": "^18.0.0",
     "@ngneat/tailwind": "^7.0.3",
     "@ngneat/until-destroy": "^10.0.0",
+    "@parcel/watcher": "^2.5.1",
     "@schematics/angular": "^19.2.4",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
@@ -48,9 +49,13 @@
     "angularx-flatpickr": "^7.3.0",
     "bootstrap": "^5.3.3",
     "core-js": "^3.41.0",
+    "dotenv": "^16.4.7",
+    "esbuild": "^0.25.1",
     "express": "^4.21.2",
     "i": "^0.3.7",
+    "lmdb": "^3.2.6",
     "lottie-web": "^5.12.2",
+    "msgpackr-extract": "^3.0.3",
     "ng2-pdf-viewer": "^9.1.5",
     "ngx-bootstrap": "^19.0.2",
     "ngx-csv": "^0.3.2",
@@ -103,5 +108,14 @@
     "typescript": "^5.8.2",
     "vite": "^6.2.2",
     "vite-plugin-angular": "^0.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "core-js",
+      "esbuild",
+      "lmdb",
+      "msgpackr-extract"
+    ]
   }
 }

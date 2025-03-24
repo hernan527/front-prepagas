@@ -15,7 +15,7 @@
             "outputPath": {
               "base": "dist/comparisonsite"
             },
-            "sourceMap": false,
+            "sourceMap": true,
             "index": "src/index.html",
             "polyfills": [
               "src/polyfills.ts"
@@ -36,9 +36,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "src/assets/js/funciones.js",
-              "src/assets/js/scripts/vendor.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ],
             "browser": "src/main.ts",
             "server": "src/main.server.ts",
@@ -50,6 +48,7 @@
           },
           "configurations": {
             "production": {
+              "aot": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -80,7 +79,7 @@
           "defaultConfiguration": "development"
         },
         "prerender": {
-          "builder": "@angular-devkit/build-angular:prerender",
+          "builder": "@angular-devkit/build-angular:production",
           "options": {
             "browserTarget": "comparisonsite:build:production",
             "serverTarget": "comparisonsite:server:production",
@@ -121,9 +120,7 @@
               "node_modules/@aposin/ng-aquila/themes/aposin.css"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "src/assets/js/funciones.js",
-              "src/assets/js/scripts/vendor.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           }
         }

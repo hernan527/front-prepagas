@@ -1104,20 +1104,20 @@ body.theme .back-to-home:hover{
 }
 
 .individual {
-  background-image: url(../../../../../../assets/js/scripts/style/images/individual2.webp);
+  background-image: url(../../../../../../assets/images/images/formulario/individual2.webp);
 
  }
 
  .pareja {
-  background-image: url(../../../../../../assets/js/scripts/style/images/pareja2.webp);
+  background-image: url(../../../../../../assets/images/images/formulario/pareja2.webp);
  }
 
  .individualehijos {
-  background-image: url(../../../../../../assets/js/scripts/style/images/individualehijos2.webp);
+  background-image: url(../../../../../../assets/images/images/formulario/individualehijos2.webp);
  }
 
  .parejaehijos {
-  background-image: url(../../../../../../assets/js/scripts/style/images/parejaehijos2.webp);
+  background-image: url(../../../../../../assets/images/images/formulario/parejaehijos2.webp);
   
 }
 /* .desregulado {

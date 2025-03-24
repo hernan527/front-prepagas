@@ -1,45 +1,42 @@
 import { EMPTY_STRING } from './data/constants/routes';
 import { Routes } from '@angular/router';
 import { SkeletonComponent } from './layout/skeleton/skeleton.component';
-import { provideClientHydration } from '@angular/platform-browser';
+import { HomeComponent } from './modules/home/page/home.component';
+import { CreditComponent } from './modules/credit/pages/default/default.component';
+import { InsuranceComponent } from './modules/insurance/pages/default/default.component';
+import { SaludComponent } from './modules/salud/pages/default/default.component';
+import { SigninComponent } from './modules/auth/pages/signin/signin.component';
 
 export const routes: Routes = [
   {
-    path: EMPTY_STRING,
+    path: '',
     component: SkeletonComponent,
     children: [
-              // Redirección por defecto a Salud
-      { path: ``,
-        redirectTo: `/home`,
-        pathMatch: 'full' },
-        {
-          path: `home`,
-          loadChildren: () =>
-            import('./modules/home/home.routes').then( m => m.routes ),
-          title: 'App Home'
-        },
+      // Redirección por defecto a 'asesori'
+      { path: '', redirectTo: 'asesori', pathMatch: 'full' },
       {
-        path: `credit`,
-        loadChildren: () =>
-          import('./modules/credit/credit.routes').then( m => m.routes ),
+        path: 'asesori',
+        component: HomeComponent,
+        title: 'App Home'
+      },
+      {
+        path: 'credit',
+        component: CreditComponent,
         title: 'App Credit'
       },
       {
-        path: `insurance`,
-        loadChildren: () =>
-          import('./modules/insurance/insurance.routes').then( m => m.routes ),
+        path: 'insurance',
+        component: InsuranceComponent,
         title: 'App Seguros'
       },
       {
-        path: `salud`,
-        loadChildren: () =>
-          import('./modules/salud/salud.routes').then( m => m.routes ),
+        path: 'salud',
+        component: SaludComponent,
         title: 'App Salud'
       },
       {
-        path: `auth`,
-        loadChildren: () =>
-          import('./modules/auth/auth.routes').then( m => m.routes ),
+        path: 'auth',
+        component: SigninComponent,
         title: 'App Login'
       }
     ],
