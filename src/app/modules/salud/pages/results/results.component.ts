@@ -17,12 +17,15 @@ import {
   OnChanges,
   computed,
   OnDestroy,
-  CUSTOM_ELEMENTS_SCHEMA,
-  NO_ERRORS_SCHEMA
+  CUSTOM_ELEMENTS_SCHEMA, 
+  NO_ERRORS_SCHEMA,
+  Signal, signal
 } from "@angular/core";
 import { Observable } from "rxjs";
-import { map, pairwise, filter, throttleTime } from "rxjs/operators";
 import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NxActionComponent, NxActionIconDirective } from '@aposin/ng-aquila/action';
+import { NxIconComponent } from '@aposin/ng-aquila/icon';
 import * as planes from "../../../../../../public/products.json";
 import { ModalService } from "../../../../_modal";
 import { ServcioRetornoPrecioService } from "../../../../services/servcio-retorno-precio.service";
@@ -73,7 +76,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSidenavModule} from '@angular/material/sidenav'; 
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { NxSidebarModule } from '@aposin/ng-aquila/sidebar'; 
 import { MatDialogModule } from '@angular/material/dialog';
 import { ComparaItemComponent } from './../../components/templates/compara-item/compara-item.component';
 import { DialogModule } from 'primeng/dialog';
@@ -89,6 +93,13 @@ import { ResponsiveService } from "../../../../services/responsive.service";
 import { FormularioComponent } from "./../../components/atoms/formulario/formulario.component";
 import { DialogService } from "src/app/services/dialog.service";
 import { register } from 'swiper/element/bundle';
+// import { CardLandComponent } from '../../components/molecules/card-land/card-land.component';
+// import { CardGridComponent } from '../../components/molecules/card-grid/card-grid.component';
+import {
+  NxColComponent,
+  NxLayoutComponent,
+  NxRowComponent,
+} from '@aposin/ng-aquila/grid';
 register();
 
 declare var addProp: any;
@@ -132,6 +143,7 @@ interface AutoCompleteCompleteEvent {
     MatInputModule,
     MatFormFieldModule,
     MatSidenavModule,
+    NxSidebarModule,
     MatDialogModule,
     // ComparaItemComponent,
     DialogModule,
@@ -145,13 +157,27 @@ interface AutoCompleteCompleteEvent {
     MatSelectModule,
     CommonModule,
     AutoCompleteModule,
-    FormularioComponent
+    FormularioComponent,
+    // CardLandComponent,
+    // CardGridComponent,
+    NxColComponent,
+    NxLayoutComponent,
+    NxRowComponent,
+    NxActionComponent,
+    RouterLink,
+    RouterLinkActive,
+    NxIconComponent,
+    NxActionIconDirective,
 ]
 })
 export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
   @ViewChild(ListViewComponent) list: any;
+  
   view: string = "list";
  
+  clinicasSignal: Signal<any[]> = signal([]); // Inicializamos la signal
+  planesSignal: Signal<any[]> = signal([]);
+  empresasSignal: Signal<any[]> = signal([]);
 
 
   receiveMessage($event: string) {
@@ -207,7 +233,7 @@ export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
   showFiller = false;
   empresas: any;
 
-  minRating: number = 0; // Valor inicial de calificación mínima
+  minRating: number = 1; // Valor inicial de calificación mínima
   ShowFilter = false;
   limitSelection = false;
   formFilter: FormGroup;
@@ -224,6 +250,9 @@ export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
   anchoSidebar = "50%"; // Ancho por defecto del sidebar
   isSmallScreen: boolean = false; // Default value
   isMediumScreen: boolean = false;
+  isLarge: boolean = false;
+  isSmall: boolean = false; // Default value
+  isMedium: boolean = false;
   isLargeScreen: boolean = false;
   clinicasPorRegiones: any[];
   // data constants
@@ -277,6 +306,45 @@ return this.cadena
   {
     this.formDataInicial = this.crearFormularioInicial();
     this.buildForm();
+    this.loadData();
+  }
+  loadData(): void {
+    // Llamadas a los servicios para obtener datos y actualizar las señales
+    this.cotizacionService.getClinicas().subscribe({
+      next: (clinicas: any) => {
+        // Actualizamos el valor de la señal directamente
+        this.clinicasSignal = signal(clinicas || []);
+      },
+      error: (error: any) => {
+        console.error('Error fetching clinicas', error);
+        // En caso de error, asignamos un array vacío
+        this.clinicasSignal = signal([]);
+      },
+    });
+
+    this.cotizacionService.getPlanes().subscribe({
+      next: (planes: any) => {
+        // Actualizamos el valor de la señal directamente
+        this.planesSignal = signal(planes || []);
+      },
+      error: (error: any) => {
+        console.error('Error fetching planes', error);
+        // En caso de error, asignamos un array vacío
+        this.planesSignal = signal([]);
+      },
+    });
+
+    this.cotizacionService.getEmpresas().subscribe({
+      next: (empresas: any) => {
+        // Actualizamos el valor de la señal directamente
+        this.empresasSignal = signal(empresas || []);
+      },
+      error: (error: any) => {
+        console.error('Error fetching empresas', error);
+        // En caso de error, asignamos un array vacío
+        this.empresasSignal = signal([]);
+      },
+    });
   }
   ngAfterContentChecked(): void {
     this.cdr.detectChanges();
@@ -329,12 +397,15 @@ componentSelectorMode(breakpoints: { [key: string]: boolean }) {
     // console.log(' 289  La pantalla es Small.', smallScreen);
     this.isSmallScreen = true;
     this.itemsPerPage = 10000;
+    this.sidebarVisible = false;
   } else if (mediumScreen) {
     // console.log(' 292 La pantalla es Medium.', mediumScreen);
     this.isSmallScreen = true;
+    this.sidebarVisible = false;
   } else if (largeScreen) {
     // console.log(' 295  La pantalla es Large.', largeScreen);
     this.isSmallScreen = false;
+    this.sidebarVisible = true;
   }
 }
 
@@ -382,17 +453,7 @@ componentSelectorMode(breakpoints: { [key: string]: boolean }) {
     });
   }
 
-  // Método para detectar el ancho de la ventana y ocultar el sidebar en pantallas grandes
-  @HostListener("window:resize", ["$event"])
-  onResize(event: any) {
-    if (event.target.innerWidth >= 768) {
-      // Si el ancho de la pantalla es mayor o igual a 768px, ocultar el sidebar
-      this.sidebarVisible = false;
-    } else {
-      // Si el ancho de la pantalla es menor a 768px, mostrar el sidebar
-      this.sidebarVisible = false;
-    }
-  }
+
   toggleSidebar() {
     this.sidebarVisible = !this.sidebarVisible;
  console.log('toggleSidebar() :',this.sidebarVisible )
@@ -859,14 +920,19 @@ if(this.previousSelectedItems.length > this.selectedItems.length){
   async ngOnInit(): Promise<void> {
     this.isLoaded = false;
     this.showComparionSidebar()
-
+    this.isSmallScreen
+  
         // Al iniciar el componente, verificamos el estado actual de la pantalla
       
 
         // Nos suscribimos a los cambios del servicio para actualizar isSmallScreen cuando cambien
         this.responsiveService.screenWidth$.subscribe((state) => {
           this.cdr.detectChanges(); // Forzar actualización del DOM
-          console.log(' 829     Estado actual de breakpoints:', state.breakpoints);
+          console.log(' 885     Estado actual de breakpoints:', this.isSmallScreen);
+          console.log(' 886     Estado actual de isSamllScreen:', this.isSmallScreen);
+          this.isSmall = this.responsiveService.isSmall;
+          this.isMedium = this.responsiveService.isMedium;
+          this.isLarge = this.responsiveService.isLarge;
           this.componentSelectorMode(state.breakpoints);
         });
         this.dialogService.visible$.subscribe((value) => {
@@ -1366,5 +1432,15 @@ if(this.previousSelectedItems.length > this.selectedItems.length){
 		// Optionally, you can add sorting logic here if needed
 	}
 
-
+  getColumnConfig(): string {
+    if (this.isLarge) {
+      return '12'; // 1 columna para pantallas grandes
+    } else if (this.isMedium) {
+      return '6'; // 2 columnas para pantallas medianas
+    } else if (this.isSmall) {
+      return '4'; // 3 columnas para pantallas pequeñas
+    } else {
+      return ; // Valor predeterminado en caso de que no haya coincidencia
+    }
+  }
 }

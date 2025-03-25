@@ -7,16 +7,45 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SidebarModule } from 'primeng/sidebar';
-import { NgIf,NgFor } from '@angular/common';
+import { CommonModule,NgIf,NgFor,JsonPipe } from '@angular/common';
 import { SliderModule } from 'primeng/slider'; 
 import { RatingModule } from 'primeng/rating';
 import {MatChipsModule} from '@angular/material/chips';
 import { NgxSliderModule, Options } from '@angular-slider/ngx-slider';
+import { NxRatingComponent } from '@aposin/ng-aquila/rating';
+import { NxCheckboxComponent } from '@aposin/ng-aquila/checkbox';
+import { NxErrorComponent } from '@aposin/ng-aquila/base';
+import { NxBadgeComponent } from '@aposin/ng-aquila/badge';
+import { NxIconModule } from '@aposin/ng-aquila/icon';
+import { NxDocumentationIconModule } from '@aposin/ng-aquila/documentation-icons';
+import { NxIconComponent } from '@aposin/ng-aquila/icon';
+
 @Component({
     selector: 'app-filters-products',
     templateUrl: './filters-products.component.html',
     styleUrls: ['./filters-products.component.css','./filters-products.component.scss'],
-    imports: [MatChipsModule,NgIf, NgFor, SidebarModule, MatFormFieldModule, MatCheckboxModule, MatButtonModule,SliderModule,RatingModule,FormsModule, ReactiveFormsModule, NgxSliderModule],
+    imports: [
+      MatChipsModule,
+      NgIf,
+      NgFor,
+      SidebarModule,
+      MatFormFieldModule,
+      MatCheckboxModule,
+      MatButtonModule,
+      SliderModule,
+      RatingModule,
+      FormsModule,
+      ReactiveFormsModule,
+      NgxSliderModule,
+      NxRatingComponent,
+      JsonPipe,
+      NxCheckboxComponent,
+      CommonModule,
+      NxBadgeComponent,
+      NxIconModule,
+      NxDocumentationIconModule,
+      NxIconComponent
+    ],
     changeDetection: ChangeDetectionStrategy.OnPush,
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
   })
@@ -30,7 +59,7 @@ export class FiltersProductsComponent implements OnInit  {
   @Output() sidebarStateChanged: EventEmitter<boolean> = new EventEmitter<boolean>();
   filtrosSeleccionadosGroup: FormGroup
   filteredProducts: any[]; // Almacena los productos filtrados
-  selectedRating : FormControl = new FormControl(0);
+  selectedRating : FormControl = new FormControl(1);
   formFilter: FormGroup;
   multiDefaultOption: any[] = []; 
   tooltipContent: string = 'Your tooltip content here';
@@ -205,25 +234,16 @@ this.rangeValues.valueChanges.subscribe((newValues) => {
         }
       })
     
-    
-    this.selectedRating.valueChanges.subscribe((selectedValue: number) => {
-      // console.log('filters-product 155 Valor seleccionado de la calificaci├│n:', selectedValue);
-      const selectedArray = [0, 1, 2, 3, 4, 5].slice(0, selectedValue + 1);
-      // Registra el cambio en el formulario
-      this.filtrosSeleccionadosGroup.get('selectedRating')?.setValue(selectedArray);
-      // Env├¡a el formulario actualizado al servicio
-      this.filterManagerService.setFilterForm(this.filtrosSeleccionadosGroup.value);
-      this.filterManagerService.applyFiltersDespuesDeOnItemSelect();
-         
-    
-      this.filtrosSeleccionadosGroup.valueChanges.subscribe(() => {
-        // console.log('filters-product 165 Filtros seleccionados han cambiado:', this.filtrosSeleccionadosGroup.value);
-  // 
-        this.applyFilters(this.filtrosSeleccionadosGroup);
-  // 
+      this.selectedRating.valueChanges.subscribe((newValues) => {
+        // console.log('filters-product 192 Valor m├¡nimo de valueSlideOdonto:', newValues);
+        // Registra los cambios en el formulario
+        this.filtrosSeleccionadosGroup.get('selectedRating')?.setValue(newValues);
+        // Env├¡a el formulario actualizado al servicio
+        this.filterManagerService.setFilterForm(this.filtrosSeleccionadosGroup.value);
+        this.filterManagerService.applyFiltersDespuesDeOnItemSelect();
+
       });
 
-    });
 
     this.filterManagerService.productosFiltrados$.subscribe((productos) => {
    

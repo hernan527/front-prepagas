@@ -1,4 +1,12 @@
-#header {
-    position:fixed;
-    z-index:1000
-}
+
+:host {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Asegura que el header esté encima de otros elementos */
+    background-color: white; /* O cualquier otro color de fondo */
+    box-shadow: 0 4px 2px -2px gray; /* Puedes agregar una sombra si lo deseas */
+    width: 100%;
+  }
+  

@@ -97,14 +97,24 @@
       <!-- Contenido principal aquí -->
       <div class="row">
          <div class="col-lg-3">
-            <app-filters-products
+            <nx-sidebar
+            *ngIf="sidebarVisible"
+            resizeHandleAriaLabel="Toggle sidebar width"
+            class="my-sidebar"
+            [ngClass]="{'sidebar-overlay': isSmallScreen}"
+            #sidebar
+        >
+          <app-filters-products
             [isSmallScreen]="isSmallScreen"
             [product]="products"
             [sidebarVisible]="sidebarVisible"
             [anchoSidebar]="anchoSidebar"
             [productosFiltrados]="productosFiltrados"
             (sidebarStateChanged)="onSidebarStateChanged($event)"
-            ></app-filters-products>
+          ></app-filters-products>
+        </nx-sidebar>
+        
+    
          </div>
          
          <main class="col-lg-9  g-2">
@@ -258,7 +268,9 @@
 <p-dialog [(visible)]="visible" id="form" styleClass="disable-scroll" [responsive]="true">
    <div class="flex py-2 justify-content-center">
        <body class="ui-dialog-content ui-widget-content theme ">
-           <app-formulario></app-formulario>
+           <!-- <app-formulario></app-formulario> -->
+           <app-natural-language-form></app-natural-language-form>
+
        </body>
    </div>
 </p-dialog>

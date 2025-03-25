@@ -1,0 +1,19 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa toda la altura de la ventana */
+  }
+  
+  app-header {
+    /* Si necesitas darle algún estilo específico al header */
+  }
+  
+  router-outlet {
+    flex-grow: 1; /* Esto permite que el contenido del router-outlet ocupe el espacio disponible */
+  }
+  
+  app-footer {
+    /* Estilos para el footer */
+    margin-top: auto; /* Asegura que el footer se quede al fondo */
+  }
+  

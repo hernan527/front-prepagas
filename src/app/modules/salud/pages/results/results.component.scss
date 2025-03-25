@@ -1778,3 +1778,33 @@ p-dialog .p-dialog-content {
   max-width: 200px;
   max-height: 50px;
 }
+
+
+:host {
+  display: block;
+  height: 300px;
+}
+.my-sidebar {
+  /* Estilos generales para el sidebar */
+  position: relative;
+  width: 250px;
+  transition: all 0.3s ease;
+}
+
+/* Cuando isSmallScreen es true, se sobrepone sobre todo */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999; /* Asegura que esté encima del resto de la página */
+  background-color: rgba(0, 0, 0, 0.5); /* Agrega un fondo semitransparente si lo deseas */
+  pointer-events: auto; /* Permite interactuar con el sidebar */
+}
+
+/* Si no es pequeño, no cambia la posición */
+.sidebar-overlay.ng-leave,
+.my-sidebar.ng-leave-active {
+  z-index: -1; /* Elimina la capa cuando el sidebar se oculta */
+}

@@ -39,7 +39,9 @@
               "src/assets/css/magnific-popup.css",
               "src/assets/css/classic-themes.min68b3.css",
               "src/assets/css/queplan/style-queplan.css",
-              "src/global_styles.css"
+              "src/global_styles.css",
+              "node_modules/@aposin/ng-aquila/css/normalize.css",
+              "node_modules/@aposin/ng-aquila/themes/aposin.css"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
@@ -123,7 +125,9 @@
               "src/assets/css/magnific-popup.css",
               "src/assets/css/classic-themes.min68b3.css",
               "src/assets/css/queplan/style-queplan.css",
-              "src/global_styles.css"
+              "src/global_styles.css",
+              "node_modules/@aposin/ng-aquila/css/normalize.css",
+              "node_modules/@aposin/ng-aquila/themes/aposin.css"
 
             ],
             "scripts": [
