@@ -1,0 +1,12 @@
+@import '@aposin/ng-aquila/styles/theming';
+
+$custom_theme: (
+    interactive-primary: green,
+    link-color: interactive-primary,
+    heading-01-font-size: 3.625rem,
+    heading-01-line-height: 4rem,
+    heading-01-font-weight: 500,
+    heading-01-letter-spacing: 0.0125rem,
+);
+
+$nx-themes: nx-register-theme($custom_theme, themeName);

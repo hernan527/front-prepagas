@@ -529,9 +529,13 @@ background: blue;
     padding:20px
 }
 .content{
-    flex:1;
-    padding:20px;
-    column-gap: 5px
+    // flex:1;
+    // padding:20px;
+    // column-gap: 5px
+    background-color: #ffffff;
+    margin: 1em;
+    min-height: 77.6vh;
+    padding: 1em;
 }
 
 /* Estilos para el selector de productos por página */

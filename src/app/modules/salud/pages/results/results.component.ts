@@ -184,7 +184,7 @@ export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
     this.view = $event;
   }
   @ViewChild("scroller") scroller!: CdkVirtualScrollViewport;
-  itemsPerPage = 9; // Número de elementos por página
+  itemsPerPage = 10; // Número de elementos por página
   currentPage = 1; // Página actual, inicializada en 1
   totalItems: number;
   itemsPerPageOptions: number[] = [10, 20, 30, 50, 100]; // Opciones para productos por página

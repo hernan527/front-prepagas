@@ -41,7 +41,9 @@
               "src/assets/css/queplan/style-queplan.css",
               "src/global_styles.css",
               "node_modules/@aposin/ng-aquila/css/normalize.css",
-              "node_modules/@aposin/ng-aquila/themes/aposin.css"
+              "node_modules/@aposin/ng-aquila/themes/aposin.css",
+                "node_modules/@aposin/ng-aquila/css/utilities.css"
+
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
@@ -127,7 +129,8 @@
               "src/assets/css/queplan/style-queplan.css",
               "src/global_styles.css",
               "node_modules/@aposin/ng-aquila/css/normalize.css",
-              "node_modules/@aposin/ng-aquila/themes/aposin.css"
+              "node_modules/@aposin/ng-aquila/themes/aposin.css",
+              "node_modules/@aposin/ng-aquila/css/utilities.css"
 
             ],
             "scripts": [
