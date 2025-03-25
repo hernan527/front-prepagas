@@ -20,7 +20,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { DeviceDetectorService } from 'ngx-device-detector';
-
+import { NxNumberStepperModule } from '@aposin/ng-aquila/number-stepper'; 
+import { NxCopytextComponent } from '@aposin/ng-aquila/copytext';
+import { NxNumberStepperComponent } from '@aposin/ng-aquila/number-stepper';
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
@@ -38,7 +40,10 @@ import { DeviceDetectorService } from 'ngx-device-detector';
     MatIconModule,
     CommonModule,
     PopoverModule,
-    NgbModule
+    NgbModule,
+    NxNumberStepperModule,
+    NxCopytextComponent,
+    NxNumberStepperComponent
   ],
   changeDetection: ChangeDetectionStrategy.Default,
   

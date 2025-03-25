@@ -1,3 +1,4 @@
+@use '@angular/material' as mat;
 // @use './../../../../../assets/scss';
 /* Estilos globales */
 :root {
@@ -98,25 +99,6 @@
 }
 
 
-@import'~primeicons/primeicons.css';
-.example-container{
-    width:500px;
-    height:300px;
-    border:1px solid rgba(0,0,0,.5)
-}
-.example-sidenav-content{
-    display:flex;
-    height:90%;
-    align-items:center;
-    justify-content:center,
-   
-}
-.example-sidenav{
-    padding:5px
-}
-mat-button-toggle-group{
-    margin-left:12px
-}
 .feedback{
     background-color:#31b0d5;
     color:#fff;
@@ -529,13 +511,9 @@ background: blue;
     padding:20px
 }
 .content{
-    // flex:1;
-    // padding:20px;
-    // column-gap: 5px
-    background-color: #ffffff;
-    margin: 1em;
-    min-height: 77.6vh;
-    padding: 1em;
+    flex:1;
+    padding:20px;
+    column-gap: 5px
 }
 
 /* Estilos para el selector de productos por página */
@@ -1784,10 +1762,6 @@ p-dialog .p-dialog-content {
 }
 
 
-:host {
-  display: block;
-  height: 300px;
-}
 .my-sidebar {
   /* Estilos generales para el sidebar */
   position: relative;
@@ -1811,4 +1785,96 @@ p-dialog .p-dialog-content {
 .sidebar-overlay.ng-leave,
 .my-sidebar.ng-leave-active {
   z-index: -1; /* Elimina la capa cuando el sidebar se oculta */
+}
+
+
+/* Container */
+.layout-container {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh; /* Ensure full height */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: #f0f0f0;
+  padding: 16px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+}
+
+/* Main Content */
+.main-content {
+  background-color: #f5f5f5;
+  padding: 16px;
+  flex-grow: 1;
+  margin-left: 270px; /* Adjusted to fit next to sidebar */
+  max-width: calc(100% - 270px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: relative;
+  }
+  
+  .main-content {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+.back {
+  margin-right: auto;
+}
+.example-container {
+  height: 400px;
+}
+
+.my-sidepanel {
+  width: 240px;
+}
+
+.my-sidepanel-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 32px 24px 32px;
+}
+
+.my-sidepanel-content {
+  padding: 0 32px 32px 32px;
+}
+
+.example-hint nx-icon {
+  vertical-align: bottom;
+}
+
+
+// -----------------------TOOLBAR-------------------------------
+.nx-toolbar-description {
+  margin-right: auto;
+}
+
+.dot {
+  padding-left: 12px;
+  position: relative;
+}
+.dot::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+}
+
+
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+:root {
+  @include mat.button-toggle-overrides((
+    legacy-focus-state-layer-opacity: orange,
+    legacy-text-color: red,
+  ));
 }

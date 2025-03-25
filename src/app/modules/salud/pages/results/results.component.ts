@@ -100,6 +100,51 @@ import {
   NxLayoutComponent,
   NxRowComponent,
 } from '@aposin/ng-aquila/grid';
+import {
+  NxRadioToggleButtonComponent,
+  NxRadioToggleComponent,
+} from '@aposin/ng-aquila/radio-toggle';
+import {
+  NxSidepanelCloseButtonComponent,
+  NxSidepanelComponent,
+  NxSidepanelContentComponent,
+  NxSidepanelHeaderComponent,
+  NxSidepanelOuterContainerComponent,
+} from '@aposin/ng-aquila/sidepanel';
+import { NxBreakpoints, NxViewportService } from '@aposin/ng-aquila/utils';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { NxToolbarModule, NxToolbarComponent, NxToolbarDividerComponent } from '@aposin/ng-aquila/toolbar'; 
+import {
+  NxContextMenuComponent,
+  NxContextMenuItemComponent,
+  NxContextMenuTriggerDirective,
+} from '@aposin/ng-aquila/context-menu';
+import {
+  NxButtonComponent,
+  NxIconButtonComponent,
+  NxPlainButtonComponent,
+} from '@aposin/ng-aquila/button';
+import { CdkTextareaAutosize } from '@angular/cdk/text-field';
+import { NxFormfieldComponent } from '@aposin/ng-aquila/formfield';
+import { NxInputDirective } from '@aposin/ng-aquila/input';
+import {
+  NxBreadcrumbComponent,
+  NxBreadcrumbItemComponent,
+} from '@aposin/ng-aquila/breadcrumb';
+import { NxCopytextComponent } from '@aposin/ng-aquila/copytext';
+import { NxHeadlineComponent } from '@aposin/ng-aquila/headline';
+import { NxLinkComponent } from '@aposin/ng-aquila/link';
+import {
+  NxSmallStageComponent,
+  NxSmallStageHeaderDirective,
+  NxSmallStageImageBottomDirective,
+  NxSmallStageImageDirective,
+  NxSmallStageImageEndDirective,
+  NxSmallStageImageStartDirective,
+} from '@aposin/ng-aquila/small-stage';
+import { BannerHealthComponent } from "./../../components/organisms/banner-health/banner-health.component";
+
 register();
 
 declare var addProp: any;
@@ -121,7 +166,7 @@ interface AutoCompleteCompleteEvent {
     templateUrl: "./results.component.html",
     styleUrls: ["./results.component.scss"],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    changeDetection: ChangeDetectionStrategy.Default,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [
     BannerListComponent,
     SearchFormComponent,
@@ -168,7 +213,40 @@ interface AutoCompleteCompleteEvent {
     RouterLinkActive,
     NxIconComponent,
     NxActionIconDirective,
-]
+    NxSidepanelCloseButtonComponent,
+    NxSidepanelComponent,
+    NxSidepanelContentComponent,
+    NxSidepanelHeaderComponent,
+    NxSidepanelOuterContainerComponent,
+    NxRadioToggleComponent,
+    NxRadioToggleButtonComponent,
+    NxToolbarModule,
+    NxToolbarComponent,
+    NxToolbarDividerComponent,
+    NxContextMenuComponent,
+    NxContextMenuItemComponent,
+    NxContextMenuTriggerDirective,
+    NxButtonComponent,
+    NxIconButtonComponent,
+    NxPlainButtonComponent,
+    CdkTextareaAutosize,
+    NxFormfieldComponent,
+    NxInputDirective,
+    NxSmallStageComponent,
+    NxLinkComponent,
+    NxSmallStageHeaderDirective,
+    NxHeadlineComponent,
+    NxSmallStageImageDirective,
+    NxSmallStageImageStartDirective,
+    NxSmallStageImageEndDirective,
+    NxSmallStageImageBottomDirective,
+    NxBreadcrumbComponent,
+    NxBreadcrumbItemComponent,
+    NxCopytextComponent,
+    BannerHealthComponent
+
+
+    ]
 })
 export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
   @ViewChild(ListViewComponent) list: any;
@@ -179,7 +257,7 @@ export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
   planesSignal: Signal<any[]> = signal([]);
   empresasSignal: Signal<any[]> = signal([]);
 
-
+  hideSingleSelectionIndicator = signal(true);
   receiveMessage($event: string) {
     this.view = $event;
   }
@@ -188,7 +266,10 @@ export class ResultsComponent implements OnInit, OnChanges, OnDestroy  {
   currentPage = 1; // Página actual, inicializada en 1
   totalItems: number;
   itemsPerPageOptions: number[] = [10, 20, 30, 50, 100]; // Opciones para productos por página
-  
+  opened = true;
+  isGreaterThanSmall = true;
+
+  private readonly _destroyed = new Subject<void>();
   public productList: any;
   public filterCategory: any;
   [x: string]: any;
@@ -301,12 +382,29 @@ return this.cadena
     private breakpointObserver: BreakpointObserver,
     private responsiveService: ResponsiveService,
     private dialogService: DialogService,
+    readonly viewportService: NxViewportService,
+    private readonly _cdr: ChangeDetectorRef,
     
   ) 
   {
     this.formDataInicial = this.crearFormularioInicial();
     this.buildForm();
     this.loadData();
+    this.viewportService
+            .min(NxBreakpoints.BREAKPOINT_SMALL)
+            .pipe(takeUntil(this._destroyed))
+            .subscribe(isGreaterThanSmall => {
+                // only do something if the width has changed between small and bigger
+                if (isGreaterThanSmall !== this.isGreaterThanSmall) {
+                    this.isGreaterThanSmall = isGreaterThanSmall;
+                    if (isGreaterThanSmall && !this.opened) {
+                        this.opened = true;
+                    } else if (!isGreaterThanSmall && this.opened) {
+                        this.opened = false;
+                    }
+                    this._cdr.detectChanges();
+                }
+            });
   }
   loadData(): void {
     // Llamadas a los servicios para obtener datos y actualizar las señales
@@ -1139,6 +1237,8 @@ if(this.previousSelectedItems.length > this.selectedItems.length){
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
+    this._destroyed.next();
+    this._destroyed.complete();
   }
 
   onClinicaFilter() {

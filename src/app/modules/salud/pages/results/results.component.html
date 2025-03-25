@@ -2,27 +2,85 @@
 <!-- <app-hero-section></app-hero-section> -->
 <!-- ============== SECTION PAGETOP END// ============== -->
 <!-- ============== SECTION CONTENT ============== -->
-<app-banner-list></app-banner-list>
+<!-- <nx-small-stage class="nx-margin-bottom-m">
+   <nx-link nxSmallStageHeader>
+       <a (click)="false" href="#">
+           <nx-icon name="arrow-left" aria-hidden="true"></nx-icon>
+           Back to the shop
+       </a>
+   </nx-link>
+
+   <p nxHeadline="subsection-xsmall" class="nx-margin-bottom-s">
+       Topline text
+   </p>
+   <h2 nxHeadline="section">Headline text</h2>
+
+   <nx-small-stage-image
+       nxSmallStageImageStart
+       src="../../../../../assets/images/small-stage-image-start.svg"
+       fill
+   ></nx-small-stage-image>
+   <nx-small-stage-image
+       nxSmallStageImageEnd
+       src="../../../../../assets/images/small-stage-image-end.svg"
+       fill
+   ></nx-small-stage-image>
+   <nx-small-stage-image
+       nxSmallStageImageBottom
+       src="../../../../../assets/images/small-stage-image-narrow-screen.svg"
+       fill
+   ></nx-small-stage-image>
+</nx-small-stage> -->
+<!-- 
+<nx-small-stage class="nx-margin-bottom-m">
+   <nav aria-label="Breadcrumb" nxSmallStageHeader>
+       <ol nxBreadcrumb>
+           <li><a href="#" nxBreadcrumbItem>Home</a></li>
+           <li><a href="#" nxBreadcrumbItem>Insurance</a></li>
+           <li><a href="#" nxBreadcrumbItem>Health Insurance</a></li>
+       </ol>
+   </nav>
+
+   <p nxCopytext="large" class="nx-margin-bottom-s">
+       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+   </p>
+   <h2 nxHeadline="section">
+       Lorem ipsum dolor sit amet, consetetur sadipscing
+       <span class="highlighted">sed diam nonumy eirmod tempor</span>
+   </h2>
+
+   <nx-small-stage-image
+       nxSmallStageImageStart
+       src="../../../../../assets/images/small-stage-image-start.svg"
+       fill
+   ></nx-small-stage-image>
+   <nx-small-stage-image
+       nxSmallStageImageEnd
+       src="../../../../../assets/images/small-stage-image-end.svg"
+       fill
+   ></nx-small-stage-image>
+   <nx-small-stage-image
+       nxSmallStageImageBottom
+       src="../../../../../assets/images/small-stage-image-narrow-screen.svg"
+       fill
+   ></nx-small-stage-image>
+</nx-small-stage> -->
+<app-banner-health></app-banner-health>
 <app-search-form
    [isSmallScreen]="isSmallScreen"
    ></app-search-form>
-<section  class="container">
+<section class="container">
    <!-- <div *ngIf="isSmallScreen" class="d-flex flex-column justify-content-center surface-card p-2 shadow-2 border-round hidden form-sticky" style="background-color: rgba(255, 215, 0, 0.6); margin: 0 0 0 0; align-items: center; animation: shake 0.5s ease-in-out;">
       <div class="ztext-lg font-medium text-600 mb-2"><strong>Paso 1:</strong> Ingresa tu <strong>edad</strong> para calcular precios exactos y obtener los mejores planes</div>
       <button pButton pRipple type="button" label="Completar Perfil" class="p-button-raised p-button-danger" (click)="openModa('custom-modal-3')" style="animation: aura 0.5s ease-in-out;"></button>
       </div>  -->
-   <div>
+   <div class="content">
       <header class="d-flex flex-wrap align-items-center border-bottom mb-4 pb-3 w-100">
          <div _ngcontent-ng-c1250167330="" _nghost-ng-c1654105987="" class="d-flex align-items-center justify-content-between w-100 flex-nowrap">
-            <div class="d-flex align-items-center count">
-               <kbd class="py-1 px-2" style="background-color: rgb(64, 180, 229);">{{definirLength()}}</kbd>
-               <div class="ml-2">
-                  <span qptranslate="compare.header.results" class="mb-0" style="color: rgb(64, 180, 229);">Resultados</span>
-               </div>
-            </div>
+           
             <div class="d-flex align-items-center ml-auto">
-               <button _ngcontent-ng-c1993997668="" class="nota btn d-none d-md-block mr-2">¿Qué es el Puntaje?</button>
-               <div   class="header d-flex ml-3 pl-2 ng-star-inserted">
+               <!-- <button _ngcontent-ng-c1993997668="" class="nota btn d-none d-md-block mr-2">¿Qué es el Puntaje?</button> -->
+               <!-- <div   class="header d-flex ml-3 pl-2 ng-star-inserted">
                   <div class="d-flex flex-wrap justify-content-between surface-card p-2 shadow-2 border-round w-100" 
                      style="background-color: whitesmoke; margin: 0 5px 5px 5px; align-items: center;">
                      <div class="d-flex flex-wrap align-items-center w-100 mt-3 mt-md-0">
@@ -44,23 +102,8 @@
                   <i *ngIf="SortDirection === 'asc'" class="fas fa-sort-alpha-down-alt fa-lg"></i>
                   <i *ngIf="SortDirection === 'desc'" class="fas fa-sort-alpha-up-alt fa-lg"></i>
                   </button>
-               </div>
-               <mat-button-toggle-group  *ngIf="!isSmallScreen" class="mat-button-toggle-group mat-button-toggle-group-appearance-standard">
-                  <div value="list" class="mat-button-toggle mat-button-toggle-appearance-standard">
-                     <button [class.text-primary]="view === 'list'" (click)="view = 'list';" type="button" class="mat-button-toggle-button mat-focus-indicator">
-                     <span class="mat-button-toggle-label-content">
-                        <mat-icon role="img" class="mat-icon notranslate material-icons">view_list</mat-icon>
-                     </span>
-                     </button>
-                  </div>
-                  <div value="grid" class="mat-button-toggle mat-button-toggle-appearance-standard">
-                     <button [class.text-primary]="view === 'grid'" (click)="view = 'grid';" type="button" class="mat-button-toggle-button mat-focus-indicator">
-                     <span class="mat-button-toggle-label-content">
-                        <mat-icon role="img" class="mat-icon notranslate material-icons">view_module</mat-icon>
-                     </span>
-                     </button>
-                  </div>
-               </mat-button-toggle-group>
+               </div> -->
+
             </div>
          </div>
 
@@ -68,6 +111,19 @@
          <div  class="mb-3 d-flex justify-content-end"></div>
          <div class="d-flex flex-wrap">
 
+            
+         </div>
+            <nx-toolbar class="nx-margin-bottom-s">
+         <div class="d-flex align-items-center count">
+            <kbd class="py-1 px-2" style="background-color: rgb(64, 180, 229);">{{definirLength()}}</kbd>
+            <div class="ml-2">
+               <span qptranslate="compare.header.results" class="mb-0" style="color: rgb(64, 180, 229);">Resultados</span>
+            </div>
+         </div>
+     
+         <nx-toolbar-divider></nx-toolbar-divider>
+     
+         <div class="nx-toolbar-description">
             <p-autoComplete
             styleClass="myClass"
             [(ngModel)]="selectedClinica"
@@ -81,19 +137,46 @@
             >
             <!-- Plantilla para la lista de opciones -->
             <ng-template let-option pTemplate="custom-chip">
-               <div class="custom-chip">
-                  <span>{{ option.entity }}</span>
-               </div>
+               <nx-formfield label="Textarea with autoresizing">
+                  <textarea nxInput cdkTextareaAutosize class="custom-chip"><span>{{ option.entity }}</span></textarea>
+              </nx-formfield>
+              
+                          
+            
             </ng-template>
             <!-- Plantilla para los chips -->
             <ng-template let-item pTemplate="chip">
-               <div class="custom-chip">
-                  <span>{{ item.nombre }}</span>
-               </div>
+             
+               <nx-formfield>
+                  <textarea nxInput cdkTextareaAutosize class="custom-chip">{{ item.nombre }}</textarea>
+              </nx-formfield>
             </ng-template>
             </p-autoComplete>
          </div>
+     
+
+     
+       
+         <ng-container
+         *ngIf="!isSmallScreen"
+         >
+            <nx-radio-toggle
+            *ngIf="!isSmallScreen"
+            >
+               <nx-radio-toggle-button value="grid" ariaLabel="Favorites" (click)="view = 'grid';">
+                  <mat-icon role="img" class="mat-icon notranslate material-icons">grid_on</mat-icon>
+               </nx-radio-toggle-button>
+               <nx-radio-toggle-button value="list" ariaLabel="Warnings" (click)="view = 'list';">
+                  <mat-icon role="img" class="mat-icon notranslate material-icons">list</mat-icon>
+               </nx-radio-toggle-button>
+               
+           </nx-radio-toggle>
+           
+           </ng-container>
+     </nx-toolbar>
       </header>
+
+     
       <!-- Contenido principal aquí -->
       <div class="row">
          <div class="col-lg-3">
@@ -291,8 +374,13 @@
      </swiper-container>
    `,
          <h1>{{productChosen.empresa}}</h1>
-    <button (click)="updateProduct()">editar</button>
-    <button (click)="deleteProduct()">eliminar</button>
+
  
      </div> 
  </div>    
+
+
+
+
+
+           
